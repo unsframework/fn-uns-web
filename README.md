@@ -16,6 +16,7 @@ The homepage is `/`. Design studies remain at `/mocks/`.
 
 - `start/`: orientation and a first-pilot planning path.
 - `CONTENT-QA.md`: content review findings, coverage, and verification.
+- `GRAPHICS-QA.md`: graphics and animation fixes, browser coverage, and regression checks.
 - `index.html` and `home.css`: homepage and its factory illustration.
 - `style.css`: shared design tokens, navigation, buttons, and footer.
 - `docs.css`: documentation navigation, tables, code, and reading layout.
@@ -35,3 +36,12 @@ node --check slides.js
 ```
 
 When changing page layouts, inspect desktop and mobile views, including a guide with diagrams and tables. Check the mobile menu, documentation disclosure, diagram zoom and Escape handling, code copying, and presentation navigation.
+
+For the graphics browser checks, start the local server and run with Playwright CLI installed:
+
+```sh
+playwright-cli -s=uns-graphics open http://127.0.0.1:8765/
+playwright-cli -s=uns-graphics run-code --filename scripts/check_graphics.js
+```
+
+This checks the public pages, diagram labels and component bounds, packet motion, expanded diagrams, reduced motion, slide layouts, and content visibility without JavaScript.

@@ -180,11 +180,11 @@
       @keyframes step-activate-3{0%{opacity:0.35}29%{opacity:1}36%{opacity:1}39%{opacity:0.7}100%{opacity:0.7}}
       @keyframes step-activate-4{0%{opacity:0.35}38%{opacity:1}58%{opacity:1}61%{opacity:0.7}100%{opacity:0.7}}
       @keyframes step-activate-5{0%{opacity:0.35}60%{opacity:1}100%{opacity:1}}
-      @keyframes step-glow-1{0%{stroke:#e5e5e5}2%{stroke:#0a0a0a}7%{stroke:#0a0a0a}9%{stroke:#e5e5e5}100%{stroke:#e5e5e5}}
-      @keyframes step-glow-2{0%,7%{stroke:#e5e5e5}8%{stroke:#0a0a0a}27%{stroke:#0a0a0a}30%{stroke:#e5e5e5}100%{stroke:#e5e5e5}}
-      @keyframes step-glow-3{0%,28%{stroke:#e5e5e5}29%{stroke:#0a0a0a}36%{stroke:#0a0a0a}39%{stroke:#e5e5e5}100%{stroke:#e5e5e5}}
-      @keyframes step-glow-4{0%,37%{stroke:#e5e5e5}38%{stroke:#0a0a0a}58%{stroke:#0a0a0a}61%{stroke:#e5e5e5}100%{stroke:#e5e5e5}}
-      @keyframes step-glow-5{0%,59%{stroke:#e5e5e5}60%{stroke:#0a0a0a}100%{stroke:#0a0a0a}}
+      @keyframes step-glow-1{0%{stroke:var(--diagram-line)}2%{stroke:var(--accent)}7%{stroke:var(--accent)}9%{stroke:var(--diagram-line)}100%{stroke:var(--diagram-line)}}
+      @keyframes step-glow-2{0%,7%{stroke:var(--diagram-line)}8%{stroke:var(--accent)}27%{stroke:var(--accent)}30%{stroke:var(--diagram-line)}100%{stroke:var(--diagram-line)}}
+      @keyframes step-glow-3{0%,28%{stroke:var(--diagram-line)}29%{stroke:var(--accent)}36%{stroke:var(--accent)}39%{stroke:var(--diagram-line)}100%{stroke:var(--diagram-line)}}
+      @keyframes step-glow-4{0%,37%{stroke:var(--diagram-line)}38%{stroke:var(--accent)}58%{stroke:var(--accent)}61%{stroke:var(--diagram-line)}100%{stroke:var(--diagram-line)}}
+      @keyframes step-glow-5{0%,59%{stroke:var(--diagram-line)}60%{stroke:var(--accent)}100%{stroke:var(--accent)}}
       @keyframes sub-card-1-a{0%,3%{opacity:0}4%{opacity:1}100%{opacity:1}}
       @keyframes sub-card-1-b{0%,5%{opacity:0}6%{opacity:1}100%{opacity:1}}
       @keyframes sub-card-2-a{0%,11%{opacity:0}13%{opacity:1}100%{opacity:1}}
@@ -482,7 +482,7 @@
               <rect x="16" y="148" width="400" height="64" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
               <text x="32" y="168" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="var(--diagram-muted)">HTTP REQUEST</text>
               <text x="32" y="186" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">GET /uns-kpi?hours=8&amp;machine=cnc-01</text>
-              <text x="32" y="202" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">→ queries PostgreSQL → computes utilisation, availability, MTBF, MTTR → returns JSON in 0.3s</text>
+              <text x="32" y="202" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">→ PostgreSQL → utilisation, availability, MTBF, MTTR → JSON in 0.3s</text>
               <line x1="416" y1="180" x2="460" y2="180" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- uns-kpi -->
               <rect x="460" y="148" width="120" height="64" rx="8" fill="var(--diagram-ink)"/>
@@ -492,8 +492,8 @@
               <line x1="580" y1="180" x2="620" y2="180" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- THE ANSWER -->
               <rect x="620" y="148" width="320" height="64" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/>
-              <text x="680" y="174" font-family="'JetBrains Mono',monospace" font-size="28" font-weight="700" fill="var(--diagram-ink)">72.4%</text>
-              <text x="680" y="192" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Utilisation · cnc-01 · last shift</text>
+              <text x="636" y="174" font-family="'JetBrains Mono',monospace" font-size="28" font-weight="700" fill="var(--diagram-ink)">72.4%</text>
+              <text x="636" y="192" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Utilisation · cnc-01</text>
               <line x1="780" y1="156" x2="780" y2="204" stroke="var(--diagram-line)" stroke-width="1"/>
               <text x="796" y="168" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">94%</text><text x="838" y="168" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">Availability</text>
               <text x="796" y="182" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">48/hr</text><text x="838" y="182" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">Throughput</text>

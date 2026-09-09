@@ -636,85 +636,85 @@
       /* Border glow synced to step activation (22s cycle) */
       @keyframes step-glow-1 {
         0% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         2% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         7% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         9% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         100% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
       }
       @keyframes step-glow-2 {
         0%,
         7% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         8% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         27% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         30% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         100% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
       }
       @keyframes step-glow-3 {
         0%,
         28% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         29% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         36% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         39% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         100% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
       }
       @keyframes step-glow-4 {
         0%,
         37% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         38% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         58% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         61% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         100% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
       }
       @keyframes step-glow-5 {
         0%,
         59% {
-          stroke: #e5e5e5;
+          stroke:var(--diagram-line);
         }
         60% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
         100% {
-          stroke: #0a0a0a;
+          stroke:var(--accent);
         }
       }
       .s1-step-1 {
@@ -3023,7 +3023,8 @@
               fill="var(--diagram-muted)"
               text-anchor="middle"
             >
-              states · stoppages · runs
+              <tspan x="654" y="110">states · stoppages</tspan>
+              <tspan x="654" y="122">runs</tspan>
             </text>
 
             <!-- Flow: Functions → Database (merge at x=588) -->
@@ -3289,7 +3290,7 @@
               stroke-width="1.5"
             />
             <text
-              x="680"
+              x="636"
               y="252"
               font-family="'JetBrains Mono',monospace"
               font-size="28"
@@ -3299,7 +3300,7 @@
               72.4%
             </text>
             <text
-              x="680"
+              x="636"
               y="272"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
@@ -3308,13 +3309,13 @@
               Utilisation
             </text>
             <text
-              x="680"
+              x="636"
               y="288"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
               fill="var(--diagram-muted)"
             >
-              cnc-01 · last shift · 06:00–14:00
+              cnc-01 · 06:00–14:00
             </text>
 
             <!-- Additional KPIs in the answer card -->

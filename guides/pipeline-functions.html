@@ -703,20 +703,20 @@
         <text x="86" y="44" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">uns-sim</text>
         <text x="86" y="60" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)" text-anchor="middle">4 CNC machines</text>
         <!-- Machine status indicators -->
-        <rect x="30" y="72" width="52" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
+        <rect x="30" y="72" width="56" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
         <circle cx="42" cy="81" r="4" fill="#22c55e" class="state-indicator"/>
         <text x="58" y="85" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)">cnc-01</text>
-        <rect x="90" y="72" width="52" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
+        <rect x="90" y="72" width="56" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
         <circle cx="102" cy="81" r="4" fill="#eab308">
           <animate attributeName="fill" values="#eab308;#22c55e;#eab308" dur="4s" repeatCount="indefinite"/>
         </circle>
         <text x="118" y="85" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)">cnc-02</text>
-        <rect x="30" y="96" width="52" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
+        <rect x="30" y="96" width="56" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
         <circle cx="42" cy="105" r="4" fill="#3b82f6">
           <animate attributeName="fill" values="#3b82f6;#22c55e;#22c55e;#3b82f6" dur="6s" repeatCount="indefinite"/>
         </circle>
         <text x="58" y="109" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)">cnc-03</text>
-        <rect x="90" y="96" width="52" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
+        <rect x="90" y="96" width="56" height="18" rx="4" fill="none" stroke="var(--grey-200)" stroke-width="1"/>
         <circle cx="102" cy="105" r="4" fill="#ef4444">
           <animate attributeName="fill" values="#ef4444;#ef4444;#22c55e;#22c55e" dur="8s" repeatCount="indefinite"/>
         </circle>
@@ -727,20 +727,18 @@
         <polygon points="226,76 234,80 226,84" fill="var(--grey-300)"/>
         <text x="193" y="72" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">MQTT pub</text>
         <!-- Animated data packets -->
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle cy="80" r="3" fill="#3b82f6" opacity="0">
           <animate attributeName="cx" values="160;226" dur="1.5s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite"/>
         </circle>
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle cy="80" r="3" fill="#3b82f6" opacity="0">
           <animate attributeName="cx" values="160;226" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
           <animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
         </circle>
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle cy="80" r="3" fill="#3b82f6" opacity="0">
           <animate attributeName="cx" values="160;226" dur="1.5s" repeatCount="indefinite" begin="1s"/>
           <animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite" begin="1s"/>
         </circle>
-        <!-- Fix cy for animated dots -->
-        <animate attributeName="cy" values="80" dur="0s" fill="freeze"/>
 
         <!-- MQTT Broker -->
         <rect x="234" y="40" width="130" height="80" rx="8" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
@@ -757,7 +755,7 @@
         <polygon points="426,76 434,80 426,84" fill="var(--grey-300)"/>
         <text x="397" y="72" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">sub v1.0/#</text>
         <!-- Animated data packets -->
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle cy="80" r="3" fill="#3b82f6" opacity="0">
           <animate attributeName="cx" values="368;426" dur="1.2s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0;1;1;0" dur="1.2s" repeatCount="indefinite"/>
         </circle>
@@ -772,7 +770,7 @@
         <!-- Cache arrow -->
         <line x1="564" y1="80" x2="600" y2="80" stroke="var(--grey-300)" stroke-width="1.5"/>
         <polygon points="596,76 604,80 596,84" fill="var(--grey-300)"/>
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle cy="80" r="3" fill="#3b82f6" opacity="0">
           <animate attributeName="cx" values="568;596" dur="0.8s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0;1;1;0" dur="0.8s" repeatCount="indefinite"/>
         </circle>
@@ -860,7 +858,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>Seven functions read from the capture layer and write structured records to PostgreSQL. They run in parallel — each watching for different things in the same data.</p>
 
     <div class="network-diagram">
-      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 360" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Source: Valkey -->
         <rect x="16" y="10" width="100" height="40" rx="6" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
         <text x="66" y="34" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">Valkey</text>
@@ -869,32 +867,31 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <rect x="132" y="10" width="100" height="40" rx="6" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
         <text x="182" y="34" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">MQTT</text>
 
-        <!-- Fan-out lines from Valkey -->
-        <line x1="66" y1="50" x2="66" y2="70" stroke="var(--grey-300)" stroke-width="1.2"/>
-        <line x1="66" y1="70" x2="66" y2="90" stroke="var(--grey-300)" stroke-width="1.2"/>
-        <line x1="66" y1="70" x2="200" y2="90" stroke="var(--grey-300)" stroke-width="1.2"/>
-        <line x1="66" y1="70" x2="334" y2="90" stroke="var(--grey-300)" stroke-width="1.2"/>
-        <line x1="66" y1="70" x2="468" y2="90" stroke="var(--grey-300)" stroke-width="1.2"/>
-
-        <!-- Fan-out from MQTT -->
-        <line x1="182" y1="50" x2="182" y2="70" stroke="var(--grey-300)" stroke-width="1.2"/>
-        <line x1="182" y1="70" x2="334" y2="90" stroke="var(--grey-300)" stroke-width="1.2"/>
-
-        <!-- Animated dots on fan-out -->
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="66;66" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="55;86" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/>
+        <!-- Packets follow the same paths as the visible connectors. -->
+        <path id="process-cache" d="M66 50V60H75V90" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0s" repeatCount="indefinite"><mpath href="#process-cache"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0s" repeatCount="indefinite"/>
         </circle>
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="66;200" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-          <animate attributeName="cy" values="55;86" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+        <path id="process-log" d="M66 50V60H209V90" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin=".3s" repeatCount="indefinite"><mpath href="#process-log"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin=".3s" repeatCount="indefinite"/>
         </circle>
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="66;468" dur="2s" repeatCount="indefinite" begin="0.6s"/>
-          <animate attributeName="cy" values="55;86" dur="2s" repeatCount="indefinite" begin="0.6s"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+        <path id="process-state" d="M66 50V60H477V90" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin=".6s" repeatCount="indefinite"><mpath href="#process-state"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin=".6s" repeatCount="indefinite"/>
+        </circle>
+        <path id="process-productivity" d="M66 50V60H142V164H209V170" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin=".9s" repeatCount="indefinite"><mpath href="#process-productivity"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin=".9s" repeatCount="indefinite"/>
+        </circle>
+        <path id="process-historian" d="M182 50V76H343V90" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#3b82f6" opacity="0">
+          <animateMotion dur="2s" begin=".5s" repeatCount="indefinite"><mpath href="#process-historian"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin=".5s" repeatCount="indefinite"/>
         </circle>
 
         <!-- ═══ ROW 1: Cache, Log, Historian, State ═══ -->
@@ -916,8 +913,8 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <text x="343" y="124" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)" text-anchor="middle">Real-time logger</text>
         <text x="343" y="140" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">Go · MQTT</text>
         <!-- MQTT badge -->
-        <rect x="370" y="92" width="28" height="12" rx="3" fill="#3b82f6" opacity="0.15"/>
-        <text x="384" y="101" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="600" fill="#3b82f6" text-anchor="middle">MQTT</text>
+        <rect x="370" y="74" width="28" height="12" rx="3" fill="#3b82f6" opacity="0.15"/>
+        <text x="384" y="83" font-family="'JetBrains Mono', monospace" font-size="6" font-weight="600" fill="#3b82f6" text-anchor="middle">MQTT</text>
 
         <!-- uns-state -->
         <rect x="418" y="90" width="118" height="60" rx="6" fill="var(--white)" stroke="var(--grey-200)" stroke-width="1.5"/>
@@ -925,8 +922,8 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <text x="477" y="124" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)" text-anchor="middle">Duration tracker</text>
         <text x="477" y="140" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">Go · HTTP</text>
         <!-- State animation -->
-        <rect x="500" y="92" width="32" height="12" rx="3" fill="none" stroke="var(--grey-200)" stroke-width="0.5"/>
-        <rect x="501" y="93" width="10" height="10" rx="2">
+        <rect x="500" y="74" width="32" height="12" rx="3" fill="none" stroke="var(--grey-200)" stroke-width="0.5"/>
+        <rect x="501" y="75" width="10" height="10" rx="2" fill="#22c55e">
           <animate attributeName="fill" values="#22c55e;#eab308;#ef4444;#22c55e" dur="6s" repeatCount="indefinite"/>
         </rect>
 
@@ -936,10 +933,6 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <text x="75" y="190" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">uns-stoppage</text>
         <text x="75" y="204" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)" text-anchor="middle">Classify reasons</text>
         <text x="75" y="220" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">Node.js · HTTP</text>
-        <!-- reads uns_state arrow -->
-        <line x1="75" y1="170" x2="477" y2="150" stroke="var(--grey-200)" stroke-width="1" stroke-dasharray="3 3"/>
-        <text x="260" y="156" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">reads uns_state table</text>
-
         <!-- uns-productivity -->
         <rect x="150" y="170" width="118" height="60" rx="6" fill="var(--white)" stroke="var(--grey-200)" stroke-width="1.5"/>
         <text x="209" y="190" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">uns-productivity</text>
@@ -951,8 +944,6 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <text x="343" y="190" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">uns-input</text>
         <text x="343" y="204" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-500)" text-anchor="middle">Operator entry</text>
         <text x="343" y="220" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">Node.js · HTTP</text>
-        <!-- Operator icon -->
-        <text x="343" y="248" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--grey-400)" text-anchor="middle">↑ operator POST</text>
 
         <!-- ═══ PostgreSQL ═══ -->
         <rect x="552" y="90" width="152" height="140" rx="8" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
@@ -969,44 +960,50 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
           <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/>
         </rect>
 
-        <!-- Write arrows to PostgreSQL -->
-        <line x1="134" y1="120" x2="550" y2="132" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,129 554,132 546,135" fill="var(--grey-300)"/>
-        <line x1="268" y1="120" x2="550" y2="146" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,143 554,146 546,149" fill="var(--grey-300)"/>
-        <line x1="402" y1="120" x2="550" y2="146" stroke="var(--grey-300)" stroke-width="1"/>
-        <line x1="536" y1="120" x2="550" y2="160" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,157 554,160 546,163" fill="var(--grey-300)"/>
-        <line x1="134" y1="200" x2="550" y2="174" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,171 554,174 546,177" fill="var(--grey-300)"/>
-        <line x1="268" y1="200" x2="550" y2="188" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,185 554,188 546,191" fill="var(--grey-300)"/>
-        <line x1="402" y1="200" x2="550" y2="202" stroke="var(--grey-300)" stroke-width="1"/>
-        <polygon points="546,199 554,202 546,205" fill="var(--grey-300)"/>
-
-        <!-- Animated write dots -->
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="268;550" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="120;146" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/>
+        <!-- Writes join in the gutters, leaving function labels unobstructed. -->
+        <path id="process-write-top-0" d="M75 150V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0s" repeatCount="indefinite"><mpath href="#process-write-top-0"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0s" repeatCount="indefinite"/>
         </circle>
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="536;550" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          <animate attributeName="cy" values="120;160" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+        <path id="process-write-top-1" d="M209 150V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0.3s" repeatCount="indefinite"><mpath href="#process-write-top-1"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.3s" repeatCount="indefinite"/>
         </circle>
-        <circle r="2.5" fill="#f59e0b" opacity="0.7">
-          <animate attributeName="cx" values="134;550" dur="2.5s" repeatCount="indefinite" begin="1s"/>
-          <animate attributeName="cy" values="200;174" dur="2.5s" repeatCount="indefinite" begin="1s"/>
-          <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+        <path id="process-write-top-2" d="M343 150V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0.6s" repeatCount="indefinite"><mpath href="#process-write-top-2"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.6s" repeatCount="indefinite"/>
         </circle>
+        <path id="process-write-top-3" d="M477 150V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0.9s" repeatCount="indefinite"><mpath href="#process-write-top-3"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+        </circle>
+        <path id="process-write-bottom-0" d="M75 230V264H544V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0s" repeatCount="indefinite"><mpath href="#process-write-bottom-0"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <path id="process-write-bottom-1" d="M209 230V264H544V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0.3s" repeatCount="indefinite"><mpath href="#process-write-bottom-1"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+        </circle>
+        <path id="process-write-bottom-2" d="M343 230V264H544V160H552" stroke="var(--grey-300)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#f59e0b" opacity="0">
+          <animateMotion dur="2s" begin="0.6s" repeatCount="indefinite"><mpath href="#process-write-bottom-2"/></animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+        </circle>
+        <polygon points="546,156 552,160 546,164" fill="var(--grey-300)"/>
 
         <!-- Legend -->
-        <rect x="16" y="280" width="688" height="50" rx="6" fill="var(--grey-50)" stroke="var(--grey-200)" stroke-width="1"/>
-        <text x="32" y="300" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--grey-500)">TRIGGER TYPES:</text>
-        <text x="32" y="318" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">HTTP (polled on timer): uns-cache, uns-log, uns-state, uns-stoppage, uns-productivity, uns-input</text>
-        <text x="500" y="300" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--grey-500)">MQTT (real-time):</text>
-        <text x="500" y="318" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">uns-historian</text>
+        <rect x="16" y="280" width="688" height="70" rx="6" fill="var(--grey-50)" stroke="var(--grey-200)" stroke-width="1"/>
+        <text x="32" y="296" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--grey-500)">TRIGGER TYPES</text>
+        <text x="32" y="310" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">HTTP: uns-cache, uns-log, uns-state, uns-stoppage, uns-productivity, uns-input</text>
+        <text x="32" y="324" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">MQTT (real-time): uns-historian</text>
+        <text x="32" y="340" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">uns-stoppage reads uns_state · uns-input accepts operator POST</text>
       </svg>
     </div>
 

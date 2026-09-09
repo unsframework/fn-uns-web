@@ -87,6 +87,32 @@
 .registration { fill: none; stroke: var(--wire); stroke-width: 1; }
 @keyframes signal-flow { to { stroke-dashoffset: -24; } }
 .h-flow-line { stroke-dasharray: 4 8; animation: signal-flow 2s linear infinite; }
+@keyframes h-pulse { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+@keyframes h-packet {
+  0% { offset-distance:0%; opacity:0; }
+  10%,90% { opacity:1; }
+  100% { offset-distance:100%; opacity:0; }
+}
+@keyframes h-reveal { from { opacity:0; } to { opacity:1; } }
+.h-pulse { animation:h-pulse 2.4s ease-in-out infinite; }
+.h-pulse-d2 { animation-delay:.6s; }
+.h-pulse-d3 { animation-delay:1.2s; }
+.h-packet { offset-rotate:0deg; animation:h-packet 2.8s ease-in-out infinite backwards; }
+.h-packet-d2 { animation-delay:.7s; }
+.h-packet-d3 { animation-delay:1.4s; }
+.h-packet-d4 { animation-delay:2.1s; }
+.h-fade { animation:h-reveal .5s ease-out both; }
+.h-fade-d1 { animation-delay:.1s; }
+.h-fade-d2 { animation-delay:.25s; }
+.h-fade-d3 { animation-delay:.4s; }
+.h-fade-d4 { animation-delay:.55s; }
+.h-fade-d5 { animation-delay:.7s; }
+.h-glow { animation:diagram-glow 3s ease-in-out infinite; }
+.h-kpi { animation:h-reveal .6s ease-out both; }
+.h-kpi-d1 { animation-delay:1.8s; }
+.h-kpi-d2 { animation-delay:2s; }
+.h-kpi-d3 { animation-delay:2.2s; }
+.h-kpi-d4 { animation-delay:2.4s; }
 @media (max-width: 1100px) {
   .hero-copy h1 { font-size: 68px; }
   .hero-copy .button { font-size: 11px; padding: 15px; gap: 12px; }

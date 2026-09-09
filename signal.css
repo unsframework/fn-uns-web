@@ -35,6 +35,10 @@
 .signal-site :is(.yaml-val,.yv,.str) { color:#f3ac84; }
 .signal-site :is(.yaml-comment,.yc,.cm) { color:#9eae97; }
 .signal-site .yaml-line { opacity:1; transform:none; }
+@media (prefers-reduced-motion:no-preference) {
+  .js .signal-site :is(.yaml-preview,.yaml-animated):not(.animate-active) .yaml-line { opacity:0; transform:translateY(6px); }
+}
+html:not(.js) .signal-site :is(.tt-segment,.tt-desc,.n2-cell) { opacity:1; transform:none; }
 .signal-site .guide-hero { background:transparent; border:0; border-bottom:1px solid var(--line); padding:0 0 30px; margin-bottom:30px; }
 .signal-site .guide-hero h1 { font-size:clamp(33px,3.6vw,52px) !important; font-weight:500; line-height:1.12; letter-spacing:-.04em; margin-bottom:22px !important; }
 .signal-site .guide-subtitle { color:var(--muted); }
@@ -68,16 +72,20 @@
 .diagram-expand:hover { border-color:var(--accent); }
 .diagram-dialog { position:fixed; inset:0; margin:auto; width:96vw; max-width:1600px; height:92vh; max-height:96vh; background:var(--bg); color:var(--fg); border:1px solid var(--line); padding:0; }
 .diagram-dialog::backdrop { background:#080e09e8; backdrop-filter:blur(10px); }
+.diagram-dialog[open] { display:flex; flex-direction:column; }
 .diagram-toolbar { display:flex; justify-content:space-between; align-items:center; gap:15px; padding:15px 20px; border-bottom:1px solid var(--line); background:var(--panel); }
 .diagram-toolbar>span { font:11px var(--font-mono); }
 .diagram-toolbar>div { display:flex; align-items:center; gap:9px; }
 .diagram-toolbar button { font:11px var(--font-mono); padding:9px 12px; background:transparent; border:1px solid var(--line); }
 .diagram-toolbar button:hover { border-color:var(--accent); }
-.diagram-canvas { height:calc(100% - 67px); overflow:auto; padding:28px; }
+.diagram-canvas { flex:1; min-height:0; overflow:auto; padding:28px; }
 .diagram-canvas svg { display:block; max-width:none; width:100%; height:auto; margin:auto; }
 .diagram-canvas .factory-svg { max-height:none; }
 .code-toolbar { display:flex; justify-content:space-between; align-items:center; gap:15px; color:var(--muted); font:8px var(--font-mono); letter-spacing:.5px; padding:9px 12px; background:#182019; border:1px solid var(--line); border-bottom:0; margin-top:24px; }
 .code-toolbar+.yaml-block { margin-top:0; }
+.code-example { min-width:0; }
+.code-layout>.code-example>.code-toolbar { margin-top:0; }
+.code-example>.code-toolbar+:is(.yaml-preview,.code-block) { margin-top:0; }
 .copy-code { font:9px var(--font-mono); padding:6px 9px; border:1px solid var(--line); background:transparent; }
 .copy-code:hover { border-color:var(--accent); }
 /* Presentation keeps its slide system and diagrams, using the site identity. */
@@ -89,6 +97,8 @@
 .slide-page .btn-secondary { border-radius:0; }
 .slide-page .slide { padding-block:55px 75px; }
 .slide-page .slide-inner { min-width:0; }
+.slide-page .two-col .stats-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.slide-page .stat-number { white-space:nowrap; }
 .slide-page .slide-control { background:var(--panel); border:1px solid var(--line); color:var(--fg); padding:5px 12px; font:12px var(--font-mono); cursor:pointer; }
 .slide-page .slide-control:disabled { opacity:.35; cursor:default; }
 @media (max-width:1000px) {
@@ -111,7 +121,7 @@
   .diagram-toolbar { flex-wrap:wrap; padding:12px; }
   .diagram-toolbar>span { font-size:10px; }
   .diagram-toolbar button { padding:8px 10px; font-size:10px; }
-  .diagram-canvas { padding:18px; height:calc(100% - 105px); }
+  .diagram-canvas { padding:18px; }
   .slide-page .slide { padding:30px 5% 90px; align-items:flex-start; }
   .slide-page .slide-inner { margin-block:auto; }
   .slide-page .slide-nav { padding-inline:5%; height:64px; }
@@ -164,7 +174,18 @@
 .signal-site svg rect[fill="var(--diagram-ink)"],
 .signal-site svg circle[fill="var(--diagram-ink)"] { fill:var(--accent); }
 .signal-site svg .ink-label { fill:var(--diagram-on-ink); }
-.signal-site .ig-kpi, .signal-site .h-kpi { animation:none; opacity:1; transform:none; }
+/* SVG highlights use the active palette, including in the expanded view. */
+@keyframes diagram-glow {
+  0%,100% { stroke:var(--diagram-line); }
+  50% { stroke:var(--accent); }
+}
+.signal-site :is(.ig-fn-highlight,.ig-glow,.d-glow,.h-glow) { animation-name:diagram-glow; }
+/* Entry effects start when their diagram becomes visible. */
+.js .diagram-frame>svg:not(.animate-active) :is(.h-fade,.h-kpi,.ig-kpi,.ig-kpi-row,.ig-stage-label,.ig-machine-card) { animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce) {
+  .signal-site svg :is(.h-packet,.ig-packet,.d-pkt,.d-pkt-slow),
+  .signal-site svg circle:has(>animate[attributeName="cx"],>animate[attributeName="cy"],>animateMotion) { opacity:0 !important; }
+}
 .journey-nav { display:flex; flex-wrap:wrap; gap:1px; margin-top:35px; border:1px solid var(--line); background:var(--line); }
 .journey-nav a { flex:1 1 120px; display:flex; gap:10px; padding:14px; background:var(--bg); font:10px var(--font-mono); text-decoration:none; }
 .journey-nav a>span { color:var(--accent); }

@@ -65,7 +65,7 @@
   }
 
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const reveals = document.querySelectorAll('.fade-in, [data-animate], .yaml-preview');
+  const reveals = document.querySelectorAll('.fade-in, [data-animate], .yaml-preview, main svg, .slide svg');
   const reveal = element => element.classList.add('visible', 'animate-active');
   if ('IntersectionObserver' in window && !reduceMotion.matches) {
     const observer = new IntersectionObserver(entries => {
@@ -95,7 +95,11 @@
     status.className = 'sr-only';
     status.setAttribute('role', 'status');
     toolbar.append(label, copy, status);
-    block.before(toolbar);
+    // Keep the toolbar and sample in one grid/flex item.
+    const example = document.createElement('div');
+    example.className = 'code-example';
+    block.before(example);
+    example.append(toolbar, block);
     copy.addEventListener('click', async () => {
       const text = (block.querySelector('pre') || block).innerText;
       try {
@@ -152,6 +156,17 @@
     button.addEventListener('click', () => openDiagram(svg, title, button));
   });
 
+  // CSS motion preferences do not stop native SVG (SMIL) animations.
+  const syncMotion = () => {
+    document.querySelectorAll('.diagram-frame>svg, .diagram-canvas>svg').forEach(svg => {
+      if (reduceMotion.matches) svg.pauseAnimations();
+      else svg.unpauseAnimations();
+    });
+    if (reduceMotion.matches) reveals.forEach(reveal);
+  };
+  reduceMotion.addEventListener('change', syncMotion);
+  syncMotion();
+
   function openDiagram(source, title, trigger) {
     dialog?.remove();
     dialog = document.createElement('dialog');
@@ -180,6 +195,7 @@
     canvas.tabIndex = 0;
     canvas.setAttribute('aria-label', 'Diagram. Scroll to explore when zoomed.');
     const clone = source.cloneNode(true);
+    clone.classList.add('animate-active');
     // Avoid duplicate SVG identifiers while keeping gradients and motion paths.
     const ids = new Map();
     clone.querySelectorAll('[id]').forEach(node => {
@@ -200,6 +216,7 @@
     canvas.append(clone);
     dialog.append(toolbar, canvas);
     document.body.append(dialog);
+    syncMotion();
     let zoom = 100;
     const applyZoom = () => {
       clone.style.width = `${zoom}%`;
