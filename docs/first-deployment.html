@@ -3,56 +3,41 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>First Deployment — fn-uns Docs</title>
-<meta name="description" content="Deploy all 9 UNS components and see KPIs flowing."/>
+<title>Add history and production metrics — UNS Framework</title>
+<meta name="description" content="Extend the sample into the core fn-uns pipeline: store state and production records, then query the KPI API."/>
 <link rel="canonical" href="https://unsframework.com/docs/first-deployment.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="First Deployment — Deploy All UNS Components and See KPIs Flowing" />
-<meta property="og:description" content="Deploy all 9 UNS components and see KPIs flowing." />
+<meta property="og:title" content="Add history and production metrics" />
+<meta property="og:description" content="Extend the sample into the core fn-uns pipeline: store state and production records, then query the KPI API." />
 <meta property="og:url" content="https://unsframework.com/docs/first-deployment.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="First Deployment — Deploy All UNS Components and See KPIs Flowing" />
-<meta name="twitter:description" content="Step-by-step guide to deploying the complete UNS data pipeline." />
+<meta name="twitter:title" content="Add history and production metrics" />
+<meta name="twitter:description" content="Extend the sample into the core fn-uns pipeline: store state and production records, then query the KPI API." />
 <meta name="keywords" content="UNS deployment, manufacturing KPI, fn-uns deployment, Docker compose" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html" class="active">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
-    <h1>First Deployment</h1>
-    <p class="page-desc">Deploy all 9 UNS components and see KPIs flowing.</p>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html" class="active" aria-current="page">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
+    <h1>Add history and production metrics</h1>
+    <p class="page-desc">Extend the sample into the core fn-uns pipeline: store state and production records, then query the KPI API.</p>
 
-    <h2>Overview</h2>
+    <details class="page-outline"><summary>On this page <span>7 sections</span></summary><div><a href="#overview">Overview</a><a href="#step-1-infrastructure">Step 1: Infrastructure</a><a href="#step-2-uns-capture-layer">Step 2: UNS Capture Layer</a><a href="#step-3-processing-functions">Step 3: Processing Functions</a><a href="#step-4-kpi-reporter">Step 4: KPI Reporter</a><a href="#step-5-verify-everything">Step 5: Verify Everything</a><a href="#remote-deployment">Remote Deployment</a></div></details>
+<div class="reading-context">Start from the cloned project and broker setup in <a href="/docs/getting-started.html">the sample quick start</a>. This guide covers the core pipeline. Add <a href="/docs/uns-historian.html">signal history</a>, <a href="/docs/uns-dashboard.html">dashboards</a>, and <a href="/docs/uns-ai.html">AI analysis</a> as separate components when needed.</div><h2 id="overview">Overview</h2>
     <p>Each component builds on the previous one:</p>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre">1. Infrastructure  →  2. Capture  →  3. Process  →  4. Report
@@ -63,7 +48,7 @@
                                        cache)</pre>
     </div>
 
-    <h2>Step 1: Infrastructure</h2>
+    <h2 id="step-1-infrastructure">Step 1: Infrastructure</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># Create shared network</span>
 docker network create fnkit-network 2>/dev/null || true
@@ -81,7 +66,7 @@ docker run -d --name fnkit-postgres \
   postgres:17</pre>
     </div>
 
-    <h2>Step 2: UNS Capture Layer</h2>
+    <h2 id="step-2-uns-capture-layer">Step 2: UNS Capture Layer</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># uns-framework (topic monitor) — start first</span>
 cd uns-framework
@@ -102,7 +87,7 @@ docker exec fnkit-cache valkey-cli SMEMBERS uns:topics
 <span class="yaml-comment"># → 12 topics (4 machines × 3 tags)</span></pre>
     </div>
 
-    <h2>Step 3: Processing Functions</h2>
+    <h2 id="step-3-processing-functions">Step 3: Processing Functions</h2>
     <h3>Set Valkey Configs</h3>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># uns-state config (watches /status topics)</span>
@@ -138,7 +123,7 @@ while true; do curl -s http://localhost:8080/uns-stoppage > /dev/null; sleep 15;
       <span>In production, use the fnkit gateway orchestrator or a cron job instead of shell loops.</span>
     </div>
 
-    <h2>Step 4: KPI Reporter</h2>
+    <h2 id="step-4-kpi-reporter">Step 4: KPI Reporter</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre">cd uns-kpi
 cp .env.example .env
@@ -148,7 +133,7 @@ docker compose up -d
 curl "http://localhost:8080/uns-kpi?hours=1" | jq</pre>
     </div>
 
-    <h2>Step 5: Verify Everything</h2>
+    <h2 id="step-5-verify-everything">Step 5: Verify Everything</h2>
     <h3>Check Data in PostgreSQL</h3>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># State durations</span>
@@ -172,7 +157,7 @@ curl -X POST -H "Content-Type: application/json" \
   http://localhost:8080/uns-input | jq</pre>
     </div>
 
-    <h2>Remote Deployment</h2>
+    <h2 id="remote-deployment">Remote Deployment</h2>
     <p>Once everything works locally, deploy to a server:</p>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># Set up remote (one-time per function)</span>
@@ -196,5 +181,6 @@ git add . && git commit -m "init" && git push deploy main
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

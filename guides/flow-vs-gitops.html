@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Node-RED to GitOps — When to Graduate from Flows to Functions — UNS Framework</title>
-<meta name="description" content="A practical guide comparing flow-based programming (Node-RED) with the function-based GitOps approach used by fn-uns. When to use each, how to migrate, and why GitOps wins at scale."/>
+<title>Flows and functions: choose a workflow your team can maintain. — UNS Framework</title>
+<meta name="description" content="Compare a visual flow with the fn-uns component approach, decide what your team needs, and move processing logic only where it helps."/>
 <link rel="canonical" href="https://unsframework.com/guides/flow-vs-gitops.html" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
+<link rel="icon" href="/assets/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Node-RED to GitOps — When to Graduate from Flows to Functions" />
-<meta property="og:description" content="A practical guide comparing flow-based programming (Node-RED) with the function-based GitOps approach used by fn-uns." />
+<meta property="og:title" content="Flows and functions: choose a workflow your team can maintain." />
+<meta property="og:description" content="Compare a visual flow with the fn-uns component approach, decide what your team needs, and move processing logic only where it helps." />
 <meta property="og:url" content="https://unsframework.com/guides/flow-vs-gitops.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Node-RED to GitOps — When to Graduate from Flows to Functions" />
-<meta name="twitter:description" content="When to migrate from Node-RED flows to GitOps serverless functions." />
+<meta name="twitter:title" content="Flows and functions: choose a workflow your team can maintain." />
+<meta name="twitter:description" content="Compare a visual flow with the fn-uns component approach, decide what your team needs, and move processing logic only where it helps." />
 <meta name="keywords" content="Node-RED vs GitOps, flow-based programming, manufacturing automation, fn-uns" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -273,196 +273,23 @@
   .guide-hero-meta { gap: 8px; }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/" aria-current="page">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/guides/">All Guides</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">This Guide</div>
-      <a href="#start-with-node-red">Start with Node-RED</a>
-      <a href="#same-logic-different-delivery">Same Logic, Different Delivery</a>
-      <a href="#when-flows-stop-scaling">When Flows Stop Scaling</a>
-      <a href="#why-gitops-wins">Why GitOps Wins</a>
-      <a href="#the-migration-path">The Migration Path</a>
-      <a href="#fn-uns-equivalents">fn-uns Equivalents</a>
-      <a href="#scaling-story">The Scaling Story</a>
-      <a href="#which-approach">Which Approach?</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Related</div>
-      <a href="/guides/digital-twin-gitops.html">Digital Twins &amp; GitOps</a>
-      <a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a>
-      <a href="/guides/pipeline-functions.html">Pipeline Functions</a>
-      <a href="/docs/architecture.html">Architecture</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Practical guides <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Choose a guide</div><a href="/guides/">All guides</a></div><div class="sidebar-section"><div class="sidebar-title">Plan a first use</div><a href="/guides/staffing-uns-team.html">Team & ownership</a><a href="/guides/connectivity-options.html">Connection options</a></div><div class="sidebar-section"><div class="sidebar-title">Connect a machine</div><a href="/guides/siemens-logo-wiring.html">Logo digital inputs</a><a href="/guides/siemens-logo-mqtt.html">Logo MQTT setup</a><a href="/guides/teltonika-rut200-digital-io.html">RUT200 digital I/O</a></div><div class="sidebar-section"><div class="sidebar-title">Organize & use data</div><a href="/guides/yaml-definitions.html">Factory definitions</a><a href="/guides/pipeline-functions.html">Pipeline walkthrough</a></div><div class="sidebar-section"><div class="sidebar-title">Extend the system</div><a href="/guides/flow-vs-gitops.html" class="active" aria-current="page">Flows & functions</a><a href="/guides/digital-twin-gitops.html">Custom twin functions</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- HERO                                    -->
-    <!-- ═══════════════════════════════════════ -->
-    <div class="guide-hero">
-      <div class="guide-hero-meta">
-        <span class="tag">Architecture</span>
-        <span class="tag">Node-RED</span>
-        <span class="tag">GitOps</span>
-        <span class="tag">~15 min read</span>
-      </div>
-      <h1>Node-RED to GitOps — When to Graduate from Flows to Functions</h1>
-      <p class="guide-subtitle">
-        A practical guide comparing flow-based programming (Node-RED) with the function-based GitOps approach used by fn-uns. When to use each, how to migrate, and why code-first wins when you need to scale, collaborate, and maintain a production UNS.
-      </p>
-    </div>
-
-    <!-- TABLE OF CONTENTS -->
-    <div class="guide-toc">
-      <div class="guide-toc-title">Contents</div>
-      <ol>
-        <li><a href="#start-with-node-red">Start with Node-RED — Seriously</a></li>
-        <li><a href="#same-logic-different-delivery">Same Logic, Different Delivery</a></li>
-        <li><a href="#when-flows-stop-scaling">When Flows Stop Scaling</a></li>
-        <li><a href="#why-gitops-wins">Why GitOps Wins for Production</a></li>
-        <li><a href="#the-migration-path">The Migration Path</a></li>
-        <li><a href="#fn-uns-equivalents">fn-uns Equivalents</a></li>
-        <li><a href="#scaling-story">The Scaling Story</a></li>
-        <li><a href="#which-approach">Which Approach Should You Use?</a></li>
-      </ol>
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- START WITH NODE-RED                     -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="start-with-node-red">Start with Node-RED — Seriously</h2>
-
-    <p>If you're exploring whether a Unified Namespace makes sense for your factory, <strong>start with Node-RED</strong>. We mean it.</p>
-
-    <p>Node-RED is the fastest way to wire MQTT topics together and see results. You can go from "I have a PLC publishing data" to "I have a dashboard showing machine status" in an afternoon. No code, no containers, no deployment pipeline — just drag, drop, and connect.</p>
-
-    <h3>What Node-RED Does Brilliantly</h3>
-
-    <ul class="checklist">
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Instant feedback</strong> — wire an MQTT-in node to a debug node and you're watching live data in seconds</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Visual data flow</strong> — you can literally see how data moves from source to destination</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Low barrier to entry</strong> — manufacturing engineers and automation specialists can build flows without being software developers</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Rich ecosystem</strong> — thousands of community nodes for OPC UA, Modbus, S7, databases, dashboards</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Rapid prototyping</strong> — test an idea in minutes, not days</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Built-in dashboard</strong> — Node-RED Dashboard gives you gauges, charts, and buttons with zero frontend code</li>
-    </ul>
-
-    <div class="success-indicator">
-      <span class="success-icon">✓</span>
-      <strong>Our recommendation:</strong> Use Node-RED to validate your UNS concept. Prove that the data is there, the topic structure works, and the business value is real. Then decide how to run it in production.
-    </div>
-
-    <h3>A Typical Node-RED UNS Experiment</h3>
-
-    <p>Here's what a first UNS experiment looks like in Node-RED — and it's genuinely effective:</p>
-
-    <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># A simple Node-RED flow for UNS experimentation</span>
-
-[MQTT In] → v1.0/enterprise/site1/area1/cnc-01/status
-    ↓
-[Function] → Parse JSON, extract state field
-    ↓
-[Switch] → Route by state: ACTIVE / IDLE / ALARM / SETUP
-    ↓
-[Dashboard] → Gauge showing current state
-    ↓
-[PostgreSQL] → INSERT INTO machine_log (topic, state, timestamp)
-
-<span class="yaml-comment"># Total setup time: ~30 minutes</span>
-<span class="yaml-comment"># Nodes used: 6</span>
-<span class="yaml-comment"># Lines of code: 0 (just node configuration)</span></pre></div>
-
-    <p>This is a perfectly valid way to prove the concept. You've demonstrated that machine data flows through MQTT, gets processed, gets stored, and gets visualised. The business case is proven.</p>
-
-    <p>The question is: <strong>what happens next?</strong></p>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- SAME LOGIC, DIFFERENT DELIVERY          -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="same-logic-different-delivery">Same Logic, Different Delivery</h2>
-
-    <p>The core logic of a UNS pipeline is the same regardless of whether you implement it in Node-RED or fn-uns. The difference is <strong>how that logic is packaged, deployed, and maintained</strong>.</p>
-
-    <h3>Example: Detecting a Machine State Change</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED Approach</h4>
-        <p>An MQTT-in node subscribes to <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">v1.0/#</code>. A function node compares the incoming value to a context variable storing the previous value. If changed, it passes the message to a PostgreSQL node that inserts a row. The logic lives inside the function node's text editor — a small JavaScript snippet embedded in the flow JSON.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns Approach</h4>
-        <p><code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">uns-framework</code> (Go) subscribes to MQTT and caches current + previous values in Valkey. <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">uns-state</code> (Go) reads the cache, compares values, and writes state transitions with durations to PostgreSQL. Each is a standalone program in its own directory with its own Dockerfile, tests, and README.</p>
-      </div>
-    </div>
-
-    <h3>Example: Logging Data to a Database</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>Wire a function node to a PostgreSQL node. The function node builds the SQL query as a string. Table creation is manual — you run the CREATE TABLE statement separately. If the schema changes, you update the function node and hope you don't break the query.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns</h4>
-        <p>Each function auto-creates its table on first run with <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">CREATE TABLE IF NOT EXISTS</code>. The schema is defined in the same file as the business logic. Schema changes are version-controlled — you can see exactly when a column was added and why.</p>
-      </div>
-    </div>
-
-    <h3>Example: Computing a KPI</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>A function node queries PostgreSQL, computes utilisation as ACTIVE time divided by total time, and outputs the result to a dashboard gauge. The SQL query, the calculation logic, and the output formatting all live inside one function node's code editor.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns</h4>
-        <p><code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">uns-kpi</code> is a standalone Go function (250 lines) that queries all PostgreSQL tables and returns a structured JSON response with utilisation, availability, throughput, MTBF, MTTR, and stoppage pareto. Filterable by machine, area, and time range. Testable. Documented.</p>
-      </div>
-    </div>
-
-    <p>The logic is identical. The delivery mechanism is fundamentally different — and that difference matters enormously as you scale.</p>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- WHEN FLOWS STOP SCALING                 -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="when-flows-stop-scaling">When Flows Stop Scaling</h2>
-
-    <p>Node-RED flows work beautifully at small scale. The problems emerge gradually — and by the time you notice them, you're deeply invested.</p>
-
-    <h3>The Progression</h3>
-
-    <div class="network-diagram">
-      <svg viewBox="0 0 720 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/guides/">Guides</a></div><p class="eyebrow doc-category">IMPLEMENTATION CHOICES</p><h1>Flows and functions: choose a workflow your team can maintain.</h1><p class="page-desc">Compare a visual flow with the fn-uns component approach, decide what your team needs, and move processing logic only where it helps.</p><h2 id="start-with-node-red">Start with the work, then choose the tool</h2><p>Use a small, useful example: receive a machine state, store a change, and show a result. Evaluate who can build it, who can support it, and how a change gets tested and deployed.</p><p>Node-RED offers visual flows and JavaScript Function nodes. Its <a href="https://nodered.org/docs/user-guide/projects/">Projects feature uses Git for version control</a>. fn-uns packages processing responsibilities as programs in containers. Both need an intentional operating process.</p><h2 id="same-logic-different-delivery">The same question, different packaging</h2><p>To track machine state, compare a new value with the previous value and store the completed state duration. A flow can express those steps through connected nodes. fn-uns separates MQTT capture, cached values, and state tracking into documented components.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Workflow comparison"><table class="def-table"><thead><tr><th>Decision</th><th>Visual flow</th><th>fn-uns components</th></tr></thead><tbody><tr><td>Where logic lives</td><td>Nodes, node settings, and Function code within a flow.</td><td>Source files and configuration for each component.</td></tr><tr><td>How to review</td><td>Review the flow changes and any embedded code with the team.</td><td>Review source and configuration diffs with the team.</td></tr><tr><td>What to test</td><td>Inputs, transformations, errors, and the full path to the result.</td><td>Component behavior and shared topic, cache, and database contracts.</td></tr><tr><td>What to operate</td><td>Runtimes, nodes, credentials, state storage, and deployments.</td><td>Containers, shared infrastructure, credentials, and deployments.</td></tr></tbody></table></div><h2 id="when-flows-stop-scaling">Watch for maintenance friction</h2><p>Repeated logic, unclear ownership, untested changes, and manual differences between sites can make any implementation hard to maintain. The illustration below describes one possible growth pattern; its node counts are examples, not limits of Node-RED.</p><svg role="img" aria-label="Technical diagram" viewBox="0 0 720 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Timeline -->
         <line x1="40" y1="100" x2="680" y2="100" stroke="var(--grey-200)" stroke-width="2"/>
 
@@ -506,157 +333,7 @@
         <!-- Bottom label -->
         <text x="360" y="170" font-family="'JetBrains Mono', monospace" font-size="9" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.06em">COMPLEXITY OVER TIME →</text>
         <text x="360" y="186" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-400)" text-anchor="middle">The inflection point is usually around 50–100 nodes</text>
-      </svg>
-    </div>
-
-    <h3>The Seven Problems</h3>
-
-    <table class="def-table">
-      <thead><tr><th>Problem</th><th>What Happens</th><th>Real-World Impact</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>No version control</td>
-          <td>Flows are stored as a JSON blob in Node-RED's runtime database. There's no native git integration, no commit history, no branches.</td>
-          <td>Someone changes a flow on Friday afternoon. Monday morning it's broken. Nobody knows what changed. You can export the JSON and diff it, but a 5,000-line JSON diff is unreadable.</td>
-        </tr>
-        <tr>
-          <td>No code review</td>
-          <td>Changes go live the moment you click Deploy. There's no pull request, no approval process, no second pair of eyes.</td>
-          <td>A well-intentioned change to the stoppage classification logic silently breaks the KPI calculation. Nobody catches it for two weeks because there's no review process.</td>
-        </tr>
-        <tr>
-          <td>Single runtime</td>
-          <td>All flows run in one Node.js process. One bad function node — an infinite loop, an unhandled exception, a memory leak — crashes everything.</td>
-          <td>Your state tracking, your historian, your KPI calculation, your dashboard — all down because one experimental node had a bug. At 3am. On a Saturday.</td>
-        </tr>
-        <tr>
-          <td>Untestable</td>
-          <td>There's no standard way to unit test a Node-RED flow. You can't run automated tests before deploying. You can't validate that a change doesn't break existing behaviour.</td>
-          <td>Every deployment is a manual test. "Deploy and pray." The more complex the flow, the more likely a change has unintended side effects.</td>
-        </tr>
-        <tr>
-          <td>Multi-site replication</td>
-          <td>To deploy the same logic to 5 factories, you export the flow JSON and import it at each site. Configuration differences (broker addresses, machine names) require manual editing.</td>
-          <td>Site 3 is running a version from last month. Site 5 has a local modification that nobody documented. Keeping them in sync is a full-time job.</td>
-        </tr>
-        <tr>
-          <td>Team collaboration</td>
-          <td>Two people editing the same flow at the same time will overwrite each other's changes. There's no merge, no conflict resolution.</td>
-          <td>The automation engineer and the IT engineer both need to make changes. One deploys, the other deploys, the first person's changes are gone.</td>
-        </tr>
-        <tr>
-          <td>Debugging at scale</td>
-          <td>A flow with 200 nodes across 8 tabs becomes a visual maze. Following data through the flow requires clicking into each node to read its configuration.</td>
-          <td>When something goes wrong, you're clicking through nodes one by one trying to find where the data path diverges. The visual advantage becomes a visual nightmare.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="warning-banner">
-      <span class="warning-icon">⚠</span>
-      <div>
-        <strong>The trap:</strong> These problems don't appear during the prototype phase. They appear after you've committed to the approach, trained your team on it, and built months of logic on top of it. By then, migration feels expensive — but staying is more expensive.
-      </div>
-    </div>
-
-    <div class="persona-grid">
-      <div class="persona-card">
-        <div class="persona-icon">🔧</div>
-        <h4>Manufacturing Engineer</h4>
-        <p>You built the original flows and they work great for your line. But now management wants the same thing across all 4 sites, and the IT team is asking how to maintain it. The flows that were your strength are becoming your bottleneck — you're the only person who understands them.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">💻</div>
-        <h4>Developer</h4>
-        <p>You've been asked to "productionise" the Node-RED flows. But there's no test suite, no CI/CD, no way to do a code review. The business logic is scattered across function nodes with names like "Function 3" and "transform data". You'd rather rewrite it than maintain it.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">🖥️</div>
-        <h4>IT Engineer</h4>
-        <p>You need to run this across multiple sites with consistent configuration, monitoring, and update procedures. But Node-RED is a single process with no health checks, no independent scaling, and no way to update one piece of logic without redeploying everything. Your change management process doesn't work with "click Deploy."</p>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- WHY GITOPS WINS                         -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="why-gitops-wins">Why GitOps Wins for Production</h2>
-
-    <p><strong>GitOps</strong> means git is the single source of truth for your system. Every function, every configuration, every deployment is a git commit. This isn't a philosophical preference — it's a practical requirement for production manufacturing systems.</p>
-
-    <h3>Head-to-Head Comparison</h3>
-
-    <table class="def-table">
-      <thead><tr><th>Capability</th><th>Node-RED</th><th>fn-uns + GitOps</th></tr></thead>
-      <tbody>
-        <tr><td>Version history</td><td>Export JSON manually, diff is unreadable</td><td>Full git log — every change, every author, every reason</td></tr>
-        <tr><td>Branching</td><td>Not possible — one runtime, one version</td><td>Standard git branches — develop features in isolation</td></tr>
-        <tr><td>Code review</td><td>Not possible — changes go live on Deploy</td><td>Pull requests with line-by-line diffs and approval</td></tr>
-        <tr><td>Rollback</td><td>Manual — re-import a previous JSON export (if you have one)</td><td><code style="font-family:var(--font-mono);font-size:12px;">git revert</code> + <code style="font-family:var(--font-mono);font-size:12px;">git push</code> — instant, safe, audited</td></tr>
-        <tr><td>Testing</td><td>Manual — deploy and check</td><td>Unit tests, integration tests, CI/CD pipelines</td></tr>
-        <tr><td>Failure isolation</td><td>One bad node crashes everything</td><td>Each function is its own container — failures are isolated</td></tr>
-        <tr><td>Multi-site deploy</td><td>Export/import JSON per site, manual config changes</td><td><code style="font-family:var(--font-mono);font-size:12px;">git push</code> to each site — identical, reproducible</td></tr>
-        <tr><td>Collaboration</td><td>Shared runtime — last deploy wins</td><td>Branches + merge — parallel work without conflicts</td></tr>
-        <tr><td>Audit trail</td><td>Platform-dependent, often none</td><td>Git commits with author, date, message, and diff</td></tr>
-        <tr><td>Reproducibility</td><td>Import JSON, hope dependencies match</td><td><code style="font-family:var(--font-mono);font-size:12px;">git clone</code> + <code style="font-family:var(--font-mono);font-size:12px;">docker compose up</code> — identical environment every time</td></tr>
-        <tr><td>Onboarding</td><td>Click through nodes to understand the flow</td><td>Read the code, read the README, run the tests</td></tr>
-      </tbody>
-    </table>
-
-    <h3>The Deployment Workflow</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED Deployment</h4>
-        <p>Open the editor → make changes → click Deploy → hope it works → if it doesn't, try to remember what you changed → manually revert by re-importing an old export (if you saved one). No approval. No review. No rollback safety net.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns Deployment</h4>
-        <p>Edit the function → test locally with <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">docker compose up</code> → commit with a message explaining why → push → fnkit builds and deploys automatically. To rollback: <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">git revert</code> + <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">git push</code>.</p>
-      </div>
-    </div>
-
-    <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment"># The fn-uns deployment workflow</span>
-
-<span class="yaml-comment"># 1. Make a change</span>
-vim uns-state/function.go
-
-<span class="yaml-comment"># 2. Test locally</span>
-cd uns-state && docker compose up -d
-curl http://localhost:8080/uns-state | jq
-
-<span class="yaml-comment"># 3. Commit with context</span>
-git add .
-git commit -m "add MTBF calculation to state tracker
-
-Reads ACTIVE→ALARM transitions from uns_state table
-and computes mean time between failures per machine.
-Requested by maintenance team for predictive scheduling."
-
-<span class="yaml-comment"># 4. Push to deploy</span>
-git push deploy main
-
-<span class="yaml-comment"># 5. If something goes wrong</span>
-git revert HEAD
-git push deploy main
-<span class="yaml-comment"># → Previous version is running again in seconds</span></pre></div>
-
-    <div class="success-indicator">
-      <span class="success-icon">✓</span>
-      <strong>Key insight:</strong> Every change has an author, a timestamp, a reason, and a complete diff. Six months from now, you can answer "who changed the KPI calculation and why?" in seconds.
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- THE MIGRATION PATH                      -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="the-migration-path">The Migration Path</h2>
-
-    <p>You don't throw away your Node-RED work. The logic you prototyped in Node-RED becomes the <strong>specification</strong> for your production functions. Every flow maps to a function.</p>
-
-    <h3>From Flow to Function</h3>
-
-    <div class="network-diagram">
-      <svg viewBox="0 0 720 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      </svg><p>Before changing tools, look for a simpler structure in the current system. Separate responsibilities, establish shared conventions, and make the release process repeatable.</p><h2 id="why-gitops-wins">Define the change process</h2><p>Keep an identified version of the logic and configuration, review changes, run meaningful checks, then deploy to a known target. Record what is running at each site. Git helps track changes, while the team supplies tests, approval rules, and operational checks.</p><p>Plan state persistence explicitly. Node-RED supports <a href="https://nodered.org/docs/user-guide/context">filesystem-backed context storage</a>; fn-uns uses a shared cache and database for different responsibilities. Verify the behavior you need after restarts and outages.</p><p>A source-code revert does not restore deleted data or undo database changes. Test recovery for the whole system, including its stored state.</p><h2 id="the-migration-path">Move one responsibility at a time</h2><p>If a function is a better fit for a particular responsibility, use the existing behavior as its specification. Capture example inputs and expected outputs before moving it.</p><svg role="img" aria-label="Technical diagram" viewBox="0 0 720 260" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="18" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">NODE-RED FLOW → FN-UNS FUNCTION</text>
 
         <!-- Node-RED side -->
@@ -729,198 +406,7 @@ git push deploy main
         <!-- Metadata -->
         <text x="406" y="212" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">Logic: readable Go code in function.go</text>
         <text x="406" y="226" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-500)">Deploy: git push → auto-build → running</text>
-      </svg>
-    </div>
-
-    <h3>The Mapping</h3>
-
-    <p>Every Node-RED concept has a direct equivalent in fn-uns:</p>
-
-    <table class="def-table">
-      <thead><tr><th>Node-RED Concept</th><th>fn-uns Equivalent</th><th>What Changes</th></tr></thead>
-      <tbody>
-        <tr><td>Flow (tab)</td><td>Function directory</td><td>Each flow becomes its own directory with its own container</td></tr>
-        <tr><td>MQTT-in node</td><td>uns-framework</td><td>One Go program subscribes to all topics and caches in Valkey</td></tr>
-        <tr><td>Function node</td><td>function.go / index.js</td><td>The JavaScript snippet becomes a proper program with error handling</td></tr>
-        <tr><td>Context variables</td><td>Valkey cache</td><td>In-memory context becomes a shared, persistent cache</td></tr>
-        <tr><td>PostgreSQL node</td><td>Database calls in code</td><td>SQL is in the same file as the logic — visible, testable, version-controlled</td></tr>
-        <tr><td>Dashboard nodes</td><td>uns-dashboard (Grafana)</td><td>Grafana dashboards with SQL queries, version-controlled as JSON</td></tr>
-        <tr><td>Deploy button</td><td>git push</td><td>Deployment is audited, reversible, and automated</td></tr>
-        <tr><td>Flow export (JSON)</td><td>Git repository</td><td>Full history, branching, merging, code review</td></tr>
-      </tbody>
-    </table>
-
-    <div class="info-banner">
-      <div class="info-icon">i</div>
-      <div><strong>You don't migrate all at once.</strong> Start by moving the most critical flow — usually state tracking — to a function. Run both in parallel. Once you're confident, move the next flow. The MQTT broker doesn't care whether a subscriber is Node-RED or a Go container.</div>
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- FN-UNS EQUIVALENTS                      -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="fn-uns-equivalents">fn-uns Equivalents</h2>
-
-    <p>Here's how fn-uns handles every common Node-RED UNS pattern — and what you gain by making the switch.</p>
-
-    <h3>MQTT Subscribe &amp; Cache</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>MQTT-in node → function node that stores <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">flow.set('prev_' + topic, value)</code> in context. Previous values are lost on restart. Context is local to the Node-RED instance.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns: uns-framework</h4>
-        <p>Go program subscribes to <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">v1.0/#</code>, writes current + previous to Valkey. Persistent across restarts. Shared across all functions. Includes metadata (message count, first_seen, last_updated).</p>
-      </div>
-    </div>
-
-    <h3>State Change Detection</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>Function node compares <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">msg.payload.state</code> to <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">flow.get('last_state')</code>. Duration calculated with <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">Date.now() - flow.get('state_since')</code>. Logic is 15 lines of JavaScript inside a node config dialog.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns: uns-state</h4>
-        <p>150-line Go program with proper error handling, in-memory state tracker per machine, precise duration calculation, and automatic table creation. Reads from Valkey, writes completed states to PostgreSQL with <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">state</code>, <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">duration_s</code>, and <code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">next_state</code>.</p>
-      </div>
-    </div>
-
-    <h3>Stoppage Classification</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>Switch node routes by state → function nodes map IDLE→NO_WORK, ALARM→FAULT, etc. Operator override requires a separate dashboard input flow wired back to the database. Classification logic is split across multiple nodes.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns: uns-stoppage</h4>
-        <p>Single Node.js function that auto-classifies stoppages from the uns_state table and provides a POST endpoint for operator overrides. All classification logic in one file. The mapping is a simple object — easy to read, easy to change, easy to review.</p>
-      </div>
-    </div>
-
-    <h3>KPI Computation</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED</h4>
-        <p>Multiple function nodes with embedded SQL queries, each computing one metric. Results wired to dashboard gauges. Adding a new KPI means adding more nodes and wiring. The SQL is hidden inside node configs — invisible unless you click into each one.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns: uns-kpi</h4>
-        <p>One Go function (250 lines) that computes all KPIs in a single HTTP request: utilisation, availability, throughput, MTBF, MTTR, stoppage pareto. Filterable by machine, area, and time range. Returns structured JSON. All SQL visible in one file.</p>
-      </div>
-    </div>
-
-    <h3>Dashboards</h3>
-
-    <div class="option-grid">
-      <div class="option-card">
-        <h4>Node-RED Dashboard</h4>
-        <p>Built-in dashboard nodes — gauges, charts, buttons. Quick to set up but limited in capability. Dashboard layout is part of the flow — changes to the dashboard risk breaking the data flow. Not version-controlled separately.</p>
-      </div>
-      <div class="option-card">
-        <h4>fn-uns: Grafana</h4>
-        <p>5 Grafana dashboards querying PostgreSQL directly with SQL. Professional-grade visualisation with time-series, state timelines, pareto charts. Dashboard JSON is version-controlled. Dashboards are completely decoupled from the data pipeline.</p>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- SCALING STORY                           -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="scaling-story">The Scaling Story</h2>
-
-    <p>The real difference between flow-based and function-based approaches becomes clear when you scale. Here's what happens at each stage:</p>
-
-    <h3>1 Machine → 10 Machines</h3>
-
-    <table class="def-table">
-      <thead><tr><th>Aspect</th><th>Node-RED</th><th>fn-uns</th></tr></thead>
-      <tbody>
-        <tr><td>Effort</td><td>Duplicate nodes or use wildcard subscriptions. Manageable.</td><td>No change needed — wildcard subscription and topic parsing handle it automatically.</td></tr>
-        <tr><td>Complexity</td><td>Flow grows but stays readable. 30–50 nodes.</td><td>Same 12 functions. Zero additional complexity.</td></tr>
-        <tr><td>Verdict</td><td>Both approaches work fine at this scale.</td><td>Both approaches work fine at this scale.</td></tr>
-      </tbody>
-    </table>
-
-    <h3>10 Machines → 100 Machines</h3>
-
-    <table class="def-table">
-      <thead><tr><th>Aspect</th><th>Node-RED</th><th>fn-uns</th></tr></thead>
-      <tbody>
-        <tr><td>Effort</td><td>Flows need restructuring. Multiple tabs. Performance tuning. The single Node.js process starts to strain under message volume.</td><td>No change needed. Valkey handles the cache volume. PostgreSQL handles the write volume. Functions are stateless.</td></tr>
-        <tr><td>Complexity</td><td>200+ nodes. Multiple tabs. Hard to follow data paths. Context variables proliferate.</td><td>Same 12 functions. Topic parsing extracts machine identity automatically.</td></tr>
-        <tr><td>Verdict</td><td>Manageable but painful. You're spending time on flow management, not on business logic.</td><td>No additional work. The architecture was designed for this.</td></tr>
-      </tbody>
-    </table>
-
-    <h3>1 Site → 5 Sites</h3>
-
-    <table class="def-table">
-      <thead><tr><th>Aspect</th><th>Node-RED</th><th>fn-uns</th></tr></thead>
-      <tbody>
-        <tr><td>Deployment</td><td>Export flow JSON → import at each site → manually edit broker addresses, machine names, database credentials. Repeat for every update.</td><td><code style="font-family:var(--font-mono);font-size:12px;">git clone</code> at each site. Site-specific config in <code style="font-family:var(--font-mono);font-size:12px;">.env</code> files. Updates via <code style="font-family:var(--font-mono);font-size:12px;">git pull</code>.</td></tr>
-        <tr><td>Consistency</td><td>Each site drifts. Local modifications accumulate. No way to verify all sites run the same version.</td><td>Git ensures every site runs the same code. <code style="font-family:var(--font-mono);font-size:12px;">git log</code> shows exactly what version each site is on.</td></tr>
-        <tr><td>Updates</td><td>Manual process per site. High risk of human error. No rollback.</td><td><code style="font-family:var(--font-mono);font-size:12px;">git pull && docker compose up -d</code> at each site. Rollback with <code style="font-family:var(--font-mono);font-size:12px;">git revert</code>.</td></tr>
-        <tr><td>Verdict</td><td>This is where flow-based approaches break down. Multi-site management becomes a full-time job.</td><td>Multi-site is just git operations. The same workflow your IT team already uses for every other system.</td></tr>
-      </tbody>
-    </table>
-
-    <div class="persona-grid">
-      <div class="persona-card">
-        <div class="persona-icon">🔧</div>
-        <h4>Manufacturing Engineer</h4>
-        <p>At one site with a few machines, Node-RED is your friend. But when the plant manager says "roll this out to all our sites," you need something that scales without requiring you to manually replicate and maintain flows at each location. fn-uns gives you that — the same logic, deployed consistently, everywhere.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">💻</div>
-        <h4>Developer</h4>
-        <p>Multi-site deployment with Node-RED means building custom tooling to export, transform, and import flows — essentially building a deployment pipeline for a tool that wasn't designed for one. With fn-uns, you use git and Docker — tools you already know, with ecosystems you already trust.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">🖥️</div>
-        <h4>IT Engineer</h4>
-        <p>Your change management process requires audit trails, approval workflows, and rollback procedures. Git gives you all three out of the box. Node-RED's "click Deploy" doesn't fit into any enterprise change management framework. fn-uns deployments are just git operations — they slot into your existing ITIL processes.</p>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- WHICH APPROACH                          -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="which-approach">Which Approach Should You Use?</h2>
-
-    <p>This isn't a binary choice. The right tool depends on where you are in your UNS journey.</p>
-
-    <h3>Use Node-RED When:</h3>
-
-    <ul class="checklist">
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You're <strong>exploring</strong> whether a UNS makes sense for your operation</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You need to <strong>prove the concept</strong> to stakeholders quickly</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You're working with <strong>a few machines</strong> at a single site</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> The team is <strong>automation-focused</strong> rather than software-focused</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You need <strong>rapid iteration</strong> — trying different approaches daily</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> It's a <strong>personal project</strong> or a small-team experiment</li>
-    </ul>
-
-    <h3>Use fn-uns + GitOps When:</h3>
-
-    <ul class="checklist">
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> The UNS is becoming <strong>production infrastructure</strong> that the business depends on</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You need <strong>version control, code review, and audit trails</strong></li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Multiple people</strong> need to work on the system simultaneously</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You're deploying across <strong>multiple sites</strong> and need consistency</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> <strong>Failure isolation</strong> matters — one bug shouldn't take down the whole pipeline</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You need <strong>safe rollbacks</strong> — the ability to undo a change instantly</li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> Your IT team requires <strong>change management processes</strong></li>
-      <li><span class="check" style="background:var(--black);color:var(--white);border-color:var(--black);">✓</span> You want to <strong>scale</strong> without scaling complexity</li>
-    </ul>
-
-    <h3>The Recommended Path</h3>
-
-    <div class="network-diagram">
-      <svg viewBox="0 0 720 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      </svg><ol><li>Choose a bounded responsibility, such as state tracking.</li><li>Define the inputs, outputs, timing, and error behavior.</li><li>Compare the new implementation against the same sample messages.</li><li>Use a separate test destination while comparing writes, so two implementations do not duplicate production records.</li><li>Switch the consumer after validating the result and the recovery plan.</li></ol><h2 id="fn-uns-equivalents">Find the component for the job</h2><div class="next-reading"><a href="/docs/uns-framework.html">Subscribe and cache →</a><a href="/docs/uns-state.html">Track state duration →</a><a href="/docs/uns-stoppage.html">Classify stops →</a><a href="/docs/uns-kpi.html">Calculate metrics →</a><a href="/docs/uns-dashboard.html">Display results →</a></div><h2 id="scaling-story">Measure the workload before expanding</h2><p>Machine count alone does not tell you how a system will behave. Measure message frequency, payload size, database writes, retention, query load, and recovery time. Adding sites also adds configuration, access, support, and release coordination.</p><p>The same component design can be reused across sites, but it still needs capacity testing and operational ownership at each deployment.</p><h2 id="which-approach">Choose based on evidence from the pilot</h2><p>Keep a flow where it is understandable and well supported. Use functions where their packaging and review process fit the team. A mixed system can be a deliberate choice: both can exchange messages through the shared namespace.</p><svg role="img" aria-label="Technical diagram" viewBox="0 0 720 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Step 1 -->
         <rect x="20" y="20" width="160" height="70" rx="8" fill="#22c55e" opacity="0.08" stroke="#22c55e" stroke-width="1.5"/>
         <text x="100" y="44" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#16a34a" text-anchor="middle">1. EXPERIMENT</text>
@@ -953,44 +439,7 @@ git push deploy main
 
         <!-- Bottom label -->
         <text x="360" y="112" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--grey-400)" text-anchor="middle">Each step builds on the previous — your Node-RED prototype becomes the spec for your production functions</text>
-      </svg>
-    </div>
-
-    <h3>The Bottom Line</h3>
-
-    <p>Node-RED is an <strong>excellent experimentation tool</strong>. Use it to prove your UNS concept, validate the data flow, and demonstrate business value. It's the fastest path from "idea" to "working demo."</p>
-
-    <p>But when your UNS becomes <strong>production infrastructure</strong> — when the business depends on it, when multiple people maintain it, when it needs to run reliably across multiple sites — you need the things that flow-based programming can't give you: version control, code review, failure isolation, automated testing, and safe rollbacks.</p>
-
-    <p>That's what fn-uns and GitOps provide. Not a different way to do the same thing — a <strong>better foundation</strong> for the same logic you already proved works.</p>
-
-    <div class="success-indicator">
-      <span class="success-icon">✓</span>
-      <strong>The best UNS implementations start with Node-RED and graduate to GitOps.</strong> The prototype proves the value. The production system delivers it reliably, at scale, with confidence.
-    </div>
-
-    <!-- NAV BUTTONS -->
-    <div class="docs-nav-buttons">
-      <a href="/guides/" class="docs-nav-btn">
-        <span class="nav-label">Back</span>
-        <span class="nav-title">All Guides</span>
-      </a>
-      <a href="/docs/why-faas.html" class="docs-nav-btn next">
-        <span class="nav-label">Related</span>
-        <span class="nav-title">Why FaaS &amp; GitOps?</span>
-      </a>
-    </div>
-
-    <div style="margin-top:32px;padding:20px;background:var(--grey-50);border:1px solid var(--grey-200);border-radius:10px;">
-      <p style="font-family:var(--font-mono);font-size:12px;color:var(--grey-500);margin-bottom:4px;">
-        Guide Version: 1.0 · Applies To: fn-uns pipeline, Node-RED comparison
-      </p>
-      <p style="font-size:13px;color:var(--grey-500);margin-bottom:0;">
-        Last updated March 2026.
-      </p>
-    </div>
-
-  </main>
+      </svg><p class="example-caption">The diagram illustrates a possible migration path. Moving from flows to functions is optional; evaluate it against your team’s needs rather than treating it as a required maturity step.</p><div class="next-reading"><a href="/guides/">All guides →</a><a href="/docs/why-faas.html">fn-uns design choices →</a><a href="/docs/getting-started.html">Try the sample pipeline →</a></div></main>
 </div>
 
 <script src="../shared.js"></script>
@@ -1026,5 +475,6 @@ git push deploy main
   update();
 })();
 </script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Staffing a UNS Team — Why Team Composition Breaks More Projects Than Technology</title>
-<meta name="description" content="An in-depth guide to building the cross-functional team that delivers a Unified Namespace. Covers core roles, team sizing by phase, build vs hire vs partner, org models, and the IT/OT skills gap — with anonymised war stories from real projects."/>
+<title>Plan the team for a UNS pilot — UNS Framework</title>
+<meta name="description" content="Agree who owns the machine connection, software, data definitions, and operational result. Use the roles and project phases to plan your first deployment."/>
 <link rel="canonical" href="https://unsframework.com/guides/staffing-uns-team.html" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
+<link rel="icon" href="/assets/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Staffing a UNS Team — Why Team Composition Breaks More Projects Than Technology" />
-<meta property="og:description" content="An in-depth guide to building the cross-functional team that delivers a Unified Namespace — roles, sizing, org models, and what breaks without each one." />
+<meta property="og:title" content="Plan the team for a UNS pilot" />
+<meta property="og:description" content="Agree who owns the machine connection, software, data definitions, and operational result. Use the roles and project phases to plan your first deployment." />
 <meta property="og:url" content="https://unsframework.com/guides/staffing-uns-team.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Staffing a UNS Team — Building the Team That Actually Delivers" />
-<meta name="twitter:description" content="Why team composition breaks more UNS projects than technology. Roles, sizing, org models, and the IT/OT skills gap." />
+<meta name="twitter:title" content="Plan the team for a UNS pilot" />
+<meta name="twitter:description" content="Agree who owns the machine connection, software, data definitions, and operational result. Use the roles and project phases to plan your first deployment." />
 <meta name="keywords" content="UNS team, OT IT convergence, manufacturing staffing, DataOps team, industrial IoT team, unified namespace" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -329,56 +329,23 @@
   .guide-hero-meta { gap: 8px; }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/" aria-current="page">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/guides/">All Guides</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">This Guide</div>
-      <a href="#the-real-problem">The Real Problem</a>
-      <a href="#roles-that-matter">The Roles That Matter</a>
-      <a href="#what-breaks">What Breaks Without Each Role</a>
-      <a href="#team-sizing">Team Sizing by Phase</a>
-      <a href="#build-hire-partner">Build, Hire, or Partner</a>
-      <a href="#org-models">Three Org Models</a>
-      <a href="#bridging-the-gap">Bridging the IT/OT Gap</a>
-      <a href="#success-factors">Key Success Factors</a>
-      <a href="#bottom-line">The Bottom Line</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Related</div>
-      <a href="/guides/digital-twin-gitops.html">Digital Twins &amp; GitOps</a>
-      <a href="/guides/pipeline-functions.html">Pipeline Functions</a>
-      <a href="/docs/architecture.html">Architecture</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Practical guides <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Choose a guide</div><a href="/guides/">All guides</a></div><div class="sidebar-section"><div class="sidebar-title">Plan a first use</div><a href="/guides/staffing-uns-team.html" class="active" aria-current="page">Team & ownership</a><a href="/guides/connectivity-options.html">Connection options</a></div><div class="sidebar-section"><div class="sidebar-title">Connect a machine</div><a href="/guides/siemens-logo-wiring.html">Logo digital inputs</a><a href="/guides/siemens-logo-mqtt.html">Logo MQTT setup</a><a href="/guides/teltonika-rut200-digital-io.html">RUT200 digital I/O</a></div><div class="sidebar-section"><div class="sidebar-title">Organize & use data</div><a href="/guides/yaml-definitions.html">Factory definitions</a><a href="/guides/pipeline-functions.html">Pipeline walkthrough</a></div><div class="sidebar-section"><div class="sidebar-title">Extend the system</div><a href="/guides/flow-vs-gitops.html">Flows & functions</a><a href="/guides/digital-twin-gitops.html">Custom twin functions</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/guides/">Guides</a></div><p class="eyebrow doc-category">PRACTICAL GUIDES / UNS FRAMEWORK</p>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- HERO                                    -->
@@ -390,80 +357,22 @@
         <span class="tag">OT/IT Convergence</span>
         <span class="tag">~25 min read</span>
       </div>
-      <h1>Staffing a UNS Team — Why Team Composition Breaks More Projects Than Technology</h1>
-      <p class="guide-subtitle">
-        An in-depth guide to building the cross-functional team that actually delivers a Unified Namespace. Covers the roles that matter, what breaks without each one, how to size your team by project phase, when to build vs hire vs partner, three org models, and how to bridge the IT/OT skills gap — grounded in patterns from real industrial projects.
-      </p>
+      <h1>Plan the team for a UNS pilot</h1>
+      <p class="guide-subtitle">Agree who owns the machine connection, software, data definitions, and operational result. Use the roles and project phases to plan your first deployment.</p><div class="reading-context">Start with a <a href="/start/#plan-a-pilot">specific pilot question</a>. Roles are responsibilities to cover, not a requirement to hire a separate person for every row. Team sizes and scenarios are planning examples.</div>
     </div>
 
     <!-- TABLE OF CONTENTS -->
-    <div class="guide-toc">
-      <div class="guide-toc-title">Contents</div>
-      <ol>
-        <li><a href="#the-real-problem">The Real Problem Isn't Technology</a></li>
-        <li><a href="#roles-that-matter">The Roles That Matter</a></li>
-        <li><a href="#what-breaks">What Breaks Without Each Role</a></li>
-        <li><a href="#team-sizing">Team Sizing by Phase</a></li>
-        <li><a href="#build-hire-partner">Build, Hire, or Partner</a></li>
-        <li><a href="#org-models">Three Org Models</a></li>
-        <li><a href="#bridging-the-gap">Bridging the IT/OT Skills Gap</a></li>
-        <li><a href="#success-factors">Key Success Factors</a></li>
-        <li><a href="#bottom-line">The Bottom Line</a></li>
-      </ol>
-    </div>
+    <div class="guide-toc"><div class="guide-toc-title">Contents</div><ol><li><a href="#the-real-problem">Plan ownership alongside the technology</a></li><li><a href="#roles-that-matter">The Roles That Matter</a></li><li><a href="#what-breaks">What Breaks Without Each Role</a></li><li><a href="#team-sizing">Team Sizing by Phase</a></li><li><a href="#build-hire-partner">Build, Hire, or Partner</a></li><li><a href="#org-models">Three Org Models</a></li><li><a href="#bridging-the-gap">Bridging the IT/OT Skills Gap</a></li><li><a href="#success-factors">Key Success Factors</a></li><li><a href="#bottom-line">Where to go next</a></li></ol></div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- THE REAL PROBLEM                        -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="the-real-problem">The Real Problem Isn't Technology</h2>
 
-    <p>The technology for a Unified Namespace has been proven. MQTT brokers are mature. OPC UA is well-understood. Edge gateways are commodity hardware. Time-series databases are battle-tested. You can stand up a working UNS prototype in a day.</p>
-
-    <p>And yet, the majority of UNS and industrial IoT projects stall, shrink in scope, or quietly die after the pilot phase. The technology works. <strong>The team doesn't.</strong></p>
-
-    <p>The pattern is consistent. A manufacturer decides to build a UNS. They assign it to whoever seems closest to the problem — usually IT, sometimes OT, occasionally a lone "digital transformation" hire. That person or team builds something technically functional on a single line or a handful of machines. It works. Leadership gets excited. Then they try to scale it, and everything breaks — not because the architecture fails, but because the team lacks the breadth of skills to handle what scaling actually demands.</p>
-
-    <div class="research-callout">
-      <div>
-        <strong>73% of manufacturers cite the shortage of OT/IT hybrid skills as a primary barrier to industrial digitalisation.</strong> The gap isn't in any single domain — there are plenty of competent IT architects and experienced OT engineers. The gap is in the overlap. People who understand both PLC programming and cloud infrastructure. People who can design an ISA-95 namespace and also configure a Kubernetes deployment. These people are rare, and building a team that covers the full spectrum is the single most important decision in any UNS project.
-        <div class="research-source">Source: EITT Academy — IT Competencies in Manufacturing and Industry 4.0 (2025)</div>
-      </div>
-    </div>
-
-    <p>This guide is for the person who has been asked to make the UNS happen — and now needs to figure out who to put in the room. Whether you're a plant manager, VP of Engineering, or digital transformation lead, the decisions you make about team composition in the first three months will determine whether your project scales or stalls.</p>
-
-    <h3>The Three Failure Modes</h3>
-
-    <p>Before we talk about what works, here's what doesn't — drawn from patterns we've seen repeated across dozens of projects:</p>
-
-    <div class="persona-grid">
-      <div class="persona-card">
-        <div class="persona-icon">🖥️</div>
-        <h4>The IT-Only Team</h4>
-        <p>IT builds an elegant cloud architecture with Kafka, Kubernetes, and a beautiful Grafana dashboard. It works perfectly — with simulated data. When they try to connect real PLCs on the factory floor, they discover that the Siemens S7 they need to read from requires a specific protocol variant, the Allen-Bradley uses a different communication model entirely, and the 15-year-old Fanuc CNC only speaks serial. The project stalls for months while they learn what OT engineers already know.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">🔧</div>
-        <h4>The OT-Only Team</h4>
-        <p>The controls engineers build a perfectly functional data collection system. Every PLC is connected, every signal is mapped. But the data lands in a flat structure with no namespace governance, no semantic consistency, and no API layer. When business systems need to consume the data — MES, ERP, BI tools — there's no integration path. The architecture can't scale beyond a single site because there's no infrastructure-as-code, no CI/CD, no version control.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-icon">💼</div>
-        <h4>The Outsourced Team</h4>
-        <p>A system integrator delivers a working UNS on time and on budget. Six months later, something breaks. Nobody internal understands the architecture. The SI's engineers have moved to other projects. A simple configuration change requires a change order, a statement of work, and a 4-week lead time. The organisation has a UNS but no capability — and no ability to evolve the system as requirements change.</p>
-      </div>
-    </div>
-
-    <p>Every one of these failure modes is a team composition problem, not a technology problem. The fix isn't better tools — it's the right mix of people.</p>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!-- THE ROLES THAT MATTER                   -->
-    <!-- ═══════════════════════════════════════ -->
-    <h2 id="roles-that-matter">The Roles That Matter</h2>
+<h2 id="the-real-problem">Plan ownership alongside the technology</h2><p>For a first pilot, bring together the people who know the machine, operate the network and software, and use the result. Agree the question, the scope, and the responsibilities before connecting the first signal.</p><p>This guide is for the person coordinating that work. Use the role descriptions to find gaps in the team, then use the project phases to decide when additional support is needed.</p><h3>Three handoffs to make explicit</h3><ul><li><strong>Equipment to software:</strong> who identifies the signal, checks its meaning, and tests the connection?</li><li><strong>Data to decision:</strong> who defines the metric and checks that the output matches the floor?</li><li><strong>Project to operations:</strong> who supports the system after the initial delivery, including when a partner builds it?</li></ul><h2 id="roles-that-matter">The Roles That Matter</h2>
 
     <p>A successful UNS team is interdisciplinary by definition. It bridges OT, IT, data, security, and business domains. No single person covers all of these — but every one needs to be represented. Here are the roles that matter, what each one actually does, and why you can't skip any of them.</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Role</th><th>Domain</th><th>What They Actually Do</th><th>Key Skills</th></tr>
       </thead>
@@ -517,7 +426,7 @@
           <td>BI tools (Grafana, Power BI), SQL, time-series analysis, OEE/KPI frameworks, data storytelling</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="warning-banner">
       <span class="warning-icon">⚠</span>
@@ -544,7 +453,7 @@
 
     <p>The easiest way to understand why each role matters is to see what happens when it's missing. These aren't hypotheticals — they're compressed versions of patterns that play out repeatedly in real projects.</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Missing Role</th><th>What Goes Wrong</th><th>When You Find Out</th></tr>
       </thead>
@@ -580,14 +489,9 @@
           <td>First time the data doesn't match expectations</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <div class="research-callout">
-      <div>
-        <strong>The OT engineering workforce is facing a generational cliff.</strong> The average age of a controls engineer in North American manufacturing is over 50. Many entered the field when PLCs were programmed with hand-held terminals and serial cables. They carry decades of institutional knowledge about equipment behaviour, failure modes, and operational quirks that doesn't exist in any documentation. Every UNS project is also a knowledge-capture opportunity — but only if OT engineers are embedded in the team, not consulted after the fact.
-        <div class="research-source">Source: Synigent — The 5 Roles Manufacturers Will Regret Not Hiring by Mid-2026</div>
-      </div>
-    </div>
+    <div class="reading-context">Capture equipment knowledge while connecting the first machine. Record signal meanings, operating exceptions, and the people who can help diagnose problems.</div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- TEAM SIZING BY PHASE                    -->
@@ -650,7 +554,7 @@
     <h3>The Staffing Ramp</h3>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 260" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">TEAM SIZE OVER TIME</text>
 
         <!-- Axes -->
@@ -741,7 +645,7 @@
 
     <p>By this stage, the architecture is proven and you're scaling. The internal team should own the day-to-day — they know the systems, the equipment, the organisational context. But you'll still need external specialists for areas that don't justify a full-time hire.</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Keep Internal</th><th>Why</th></tr>
       </thead>
@@ -751,9 +655,9 @@
         <tr><td>IT Architect</td><td>Infrastructure ownership, on-call responsibility, evolving requirements</td></tr>
         <tr><td>Data Architect</td><td>Namespace governance is ongoing, not one-time — this person prevents drift</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <table class="def-table" style="margin-top:16px;">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table" style="margin-top:16px;">
       <thead>
         <tr><th>Contract or Partner</th><th>Why</th></tr>
       </thead>
@@ -763,7 +667,7 @@
         <tr><td>MES/ERP Integration</td><td>Often requires vendor-specific expertise (SAP, Oracle) that's project-based</td></tr>
         <tr><td>Architecture Validation</td><td>External review catches blind spots — useful quarterly, not daily</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Enterprise: Mostly Internal with Strategic Partners</h3>
 
@@ -788,7 +692,7 @@
     <h3>Model 1: Centralised DataOps Team</h3>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 680 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 680 300" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="340" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">CENTRALISED DATAOPS TEAM</text>
 
         <!-- Top: CDO -->
@@ -843,7 +747,7 @@
     <h3>Model 2: Federated Hub-and-Spoke</h3>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 680 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 680 320" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="340" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">FEDERATED HUB-AND-SPOKE</text>
 
         <!-- Hub: CoE -->
@@ -895,7 +799,7 @@
     <h3>Model 3: Product Team (Recommended)</h3>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 680 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 680 310" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="340" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">PRODUCT TEAM MODEL</text>
 
         <!-- Product Owner -->
@@ -969,7 +873,7 @@
 
     <h3>Choosing the Right Model</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Factor</th><th>Centralised</th><th>Hub-and-Spoke</th><th>Product Team</th></tr>
       </thead>
@@ -1011,7 +915,7 @@
           <td>Cultural resistance</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- BRIDGING THE GAP                        -->
@@ -1024,7 +928,7 @@
 
     <h3>OT Engineers → IT Skills</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Skill to Add</th><th>Why It Matters for UNS Work</th><th>How to Build It</th></tr>
       </thead>
@@ -1050,11 +954,11 @@
           <td>Start with the basics: clone, commit, push, pull request. Pair them with an IT engineer for their first few commits.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>IT Engineers → OT Skills</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Skill to Add</th><th>Why It Matters for UNS Work</th><th>How to Build It</th></tr>
       </thead>
@@ -1080,14 +984,9 @@
           <td>Embed IT engineers on the plant floor for regular rotations — minimum one day per week during the pilot. Not observing from a distance. Actually helping connect equipment.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <div class="research-callout">
-      <div>
-        <strong>Cross-training is a 6–12 month investment, not a week-long bootcamp.</strong> The goal isn't certification — it's fluency. An OT engineer who has deployed a Docker container and pushed a git commit thinks differently about integration architecture than one who hasn't. An IT architect who has watched a PLC fault halt a production line thinks differently about network design than one who hasn't. Build the training into the project work — pair people on real tasks, don't send them to classrooms.
-        <div class="research-source">Source: Slalom — Bridging the IT/OT Divide: The Operating Model Shift (2025)</div>
-      </div>
-    </div>
+    <div class="reading-context">Build cross-training into real project work. Pair the equipment specialist and software engineer on connection testing and failure investigation.</div>
 
     <div class="success-indicator">
       <span class="success-icon">✓</span>
@@ -1117,7 +1016,7 @@
 
     <p>OT and IT use different vocabularies for the same concepts — and sometimes the same words for different concepts. A "tag" in OT is a named data point. A "tag" in IT is a metadata label. A "controller" in OT is a PLC. A "controller" in IT is a software component. These misunderstandings are small but cumulative, and they erode trust between teams.</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Term</th><th>OT Meaning</th><th>IT Meaning</th><th>UNS Team Should Use</th></tr>
       </thead>
@@ -1128,7 +1027,7 @@
         <tr><td>Downtime</td><td>Machine not producing — costs money per minute</td><td>System unavailable — measured in SLA percentages</td><td>Be specific: "production downtime" vs "system outage"</td></tr>
         <tr><td>Patch</td><td>A firmware update requiring a maintenance window, possibly months away</td><td>A security update applied this week</td><td>Always specify timeline: "next maintenance window" vs "this sprint"</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Build a shared glossary in the first week. It sounds trivial. It prevents months of miscommunication.</p>
 
@@ -1138,7 +1037,7 @@
 
     <p>Define decision rights explicitly for key areas:</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead>
         <tr><th>Decision Area</th><th>Who Decides</th><th>Who Must Be Consulted</th><th>Who Is Informed</th></tr>
       </thead>
@@ -1149,7 +1048,7 @@
         <tr><td>Infrastructure and platform choices</td><td>IT Architect</td><td>Data Architect, OT Engineers</td><td>Integration Lead</td></tr>
         <tr><td>Production downtime windows for integration</td><td>Plant Manager / Operations</td><td>OT Engineer, Integration Lead</td><td>Entire team</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>5. Start with a Visible Win</h3>
 
@@ -1157,17 +1056,12 @@
 
     <p>Real-time machine status on a wall-mounted screen. Live OEE for a single production line. A simple dashboard that replaces a manual spreadsheet the supervisors update every shift. These aren't technically impressive, but they're organisationally powerful — they give operators and managers something tangible, build trust in the system, and create internal demand for the next phase.</p>
 
-    <div class="research-callout">
-      <div>
-        <strong>Projects that deliver a visible result within the first 90 days have a significantly higher success rate at reaching enterprise scale.</strong> The visible result doesn't need to be sophisticated — it needs to be real, running on live data, and used by actual people. This creates a political constituency for the project: people who depend on it, ask for more features, and resist budget cuts. Without that constituency, the project is vulnerable to the next cost-reduction exercise.
-        <div class="research-source">Source: RS Industria — The Steps and Skills Required for IIoT Implementation</div>
-      </div>
-    </div>
+    <div class="reading-context">Choose a first result people can inspect and use. Review it with those users before expanding the scope.</div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- BOTTOM LINE                             -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="bottom-line">The Bottom Line</h2>
+    <h2 id="bottom-line">Where to go next</h2>
 
     <p>The technology for a Unified Namespace is mature, proven, and increasingly commoditised. The difference between projects that stall at the pilot and projects that scale to the enterprise is almost never the broker, the database, or the protocol. It's the team.</p>
 
@@ -1191,28 +1085,19 @@
 
     <h3>Next Steps</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Resource</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Getting Started</a></td><td>Deploy the fn-uns reference pipeline in under 5 minutes — give your new team something to work with on day one</td></tr>
-        <tr><td><a href="/guides/pipeline-functions.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Pipeline Functions Guide</a></td><td>Walkthrough of the 12 functions that form the data pipeline — a shared reference for the whole team</td></tr>
+        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Getting Started</a></td><td>Run the sample capture pipeline so the team can inspect its data</td></tr>
+        <tr><td><a href="/guides/pipeline-functions.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Pipeline Functions Guide</a></td><td>Walkthrough of the 12 components that form the data pipeline — a shared reference for the whole team</td></tr>
         <tr><td><a href="/guides/digital-twin-gitops.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Digital Twins &amp; GitOps</a></td><td>Where to go after the UNS is running — building twin functions with fnkit</td></tr>
         <tr><td><a href="/guides/yaml-definitions.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">YAML Definitions Guide</a></td><td>How your data architect defines the factory structure as code — namespace governance in practice</td></tr>
         <tr><td><a href="/framework/" style="color:var(--black);border-bottom:1px solid var(--grey-300);">UNS Framework Standard</a></td><td>The open standard that defines topic hierarchy, data formats, and naming conventions</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <!-- NAV BUTTONS -->
-    <div class="docs-nav-buttons">
-      <a href="/guides/" class="docs-nav-btn">
-        <span class="nav-label">Back</span>
-        <span class="nav-title">All Guides</span>
-      </a>
-      <a href="/guides/digital-twin-gitops.html" class="docs-nav-btn next">
-        <span class="nav-label">Related</span>
-        <span class="nav-title">Digital Twins &amp; GitOps</span>
-      </a>
-    </div>
+    <div class="next-reading"><a href="/guides/">All guides →</a><a href="/guides/connectivity-options.html">Plan the machine connection →</a></div>
 
     <div style="margin-top:32px;padding:20px;background:var(--grey-50);border:1px solid var(--grey-200);border-radius:10px;">
       <p style="font-family:var(--font-mono);font-size:12px;color:var(--grey-500);margin-bottom:4px;">
@@ -1259,5 +1144,6 @@
   update();
 })();
 </script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

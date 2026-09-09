@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Digital Twins &amp; GitOps — Managing Manufacturing Complexity with fn-uns — UNS Framework</title>
-<meta name="description" content="An in-depth guide to digital twins in manufacturing — what they are, why they're hard to scale, and how a Unified Namespace with fnkit and GitOps lets you build, deploy, and manage custom twin functions for your factory. Includes a CNC quality twin case study."/>
+<title>Build a custom analysis function — UNS Framework</title>
+<meta name="description" content="Follow a CNC quality example to see how machine context and a custom function can support a manufacturing digital twin."/>
 <link rel="canonical" href="https://unsframework.com/guides/digital-twin-gitops.html" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
+<link rel="icon" href="/assets/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Digital Twins &amp; GitOps — Open Source Manufacturing Digital Twins" />
-<meta property="og:description" content="An in-depth guide to digital twins in manufacturing — what they are, why they're hard to scale, and how a UNS with GitOps solves it." />
+<meta property="og:title" content="Build a custom analysis function" />
+<meta property="og:description" content="Follow a CNC quality example to see how machine context and a custom function can support a manufacturing digital twin." />
 <meta property="og:url" content="https://unsframework.com/guides/digital-twin-gitops.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Digital Twins &amp; GitOps — Open Source Manufacturing Digital Twins" />
-<meta name="twitter:description" content="Build and manage manufacturing digital twins with GitOps and a Unified Namespace." />
+<meta name="twitter:title" content="Build a custom analysis function" />
+<meta name="twitter:description" content="Follow a CNC quality example to see how machine context and a custom function can support a manufacturing digital twin." />
 <meta name="keywords" content="digital twin manufacturing, GitOps, open source digital twin, CNC digital twin, UNS" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -366,57 +366,23 @@
   .guide-hero-meta { gap: 8px; }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/" aria-current="page">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/guides/">All Guides</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">This Guide</div>
-      <a href="#what-is-a-digital-twin">What Is a Digital Twin?</a>
-      <a href="#maturity-levels">The Three Maturity Levels</a>
-      <a href="#why-digital-twins-are-hard">Why Digital Twins Are Hard</a>
-      <a href="#uns-foundation">The UNS as Twin Foundation</a>
-      <a href="#fn-uns-digital-twin">Building Twin Functions with fnkit</a>
-      <a href="#quality-twin">Case Study: CNC Quality Twin</a>
-      <a href="#gitops-for-digital-twins">Why GitOps Is Essential</a>
-      <a href="#scaling-digital-twins">Scaling Digital Twins</a>
-      <a href="#bottom-line">The Bottom Line</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Related</div>
-      <a href="/guides/flow-vs-gitops.html">Flow vs GitOps</a>
-      <a href="/guides/pipeline-functions.html">Pipeline Functions</a>
-      <a href="/docs/architecture.html">Architecture</a>
-      <a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Practical guides <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Choose a guide</div><a href="/guides/">All guides</a></div><div class="sidebar-section"><div class="sidebar-title">Plan a first use</div><a href="/guides/staffing-uns-team.html">Team & ownership</a><a href="/guides/connectivity-options.html">Connection options</a></div><div class="sidebar-section"><div class="sidebar-title">Connect a machine</div><a href="/guides/siemens-logo-wiring.html">Logo digital inputs</a><a href="/guides/siemens-logo-mqtt.html">Logo MQTT setup</a><a href="/guides/teltonika-rut200-digital-io.html">RUT200 digital I/O</a></div><div class="sidebar-section"><div class="sidebar-title">Organize & use data</div><a href="/guides/yaml-definitions.html">Factory definitions</a><a href="/guides/pipeline-functions.html">Pipeline walkthrough</a></div><div class="sidebar-section"><div class="sidebar-title">Extend the system</div><a href="/guides/flow-vs-gitops.html">Flows & functions</a><a href="/guides/digital-twin-gitops.html" class="active" aria-current="page">Custom twin functions</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/guides/">Guides</a></div><p class="eyebrow doc-category">PRACTICAL GUIDES / UNS FRAMEWORK</p>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- HERO                                    -->
@@ -429,49 +395,30 @@
         <span class="tag">Architecture</span>
         <span class="tag">~25 min read</span>
       </div>
-      <h1>Digital Twins &amp; GitOps — Building Custom Twin Functions with fnkit</h1>
-      <p class="guide-subtitle">
-        An in-depth look at digital twins in manufacturing — what they really are, why they're notoriously hard to scale, and how a Unified Namespace with fnkit gives you the platform to scaffold, deploy, and manage whatever twin functions your factory needs. Includes a CNC quality twin case study built from scratch with fnkit.
-      </p>
+      <h1>Build a custom analysis function</h1>
+      <p class="guide-subtitle">Follow a CNC quality example to see how machine context and a custom function can support a manufacturing digital twin.</p><div class="reading-context">Advanced implementation guide · Start with the <a href="/guides/pipeline-functions.html">data pipeline</a> and a defined use case. The CNC scenario is an illustrative example; validate a model against your own process before using its output.</div>
     </div>
 
     <!-- TABLE OF CONTENTS -->
-    <div class="guide-toc">
-      <div class="guide-toc-title">Contents</div>
-      <ol>
-        <li><a href="#what-is-a-digital-twin">What Is a Digital Twin?</a></li>
-        <li><a href="#maturity-levels">The Three Maturity Levels</a></li>
-        <li><a href="#why-digital-twins-are-hard">Why Digital Twins Are Hard</a></li>
-        <li><a href="#uns-foundation">The UNS as the Foundation for Digital Twins</a></li>
-        <li><a href="#fn-uns-digital-twin">Building Twin Functions with fnkit</a></li>
-        <li><a href="#quality-twin">Case Study: A CNC Quality Twin</a></li>
-        <li><a href="#gitops-for-digital-twins">Why GitOps Is Essential for Digital Twins</a></li>
-        <li><a href="#scaling-digital-twins">Scaling Digital Twins with fn-uns</a></li>
-        <li><a href="#bottom-line">The Bottom Line</a></li>
-      </ol>
-    </div>
+    <div class="guide-toc"><div class="guide-toc-title">Contents</div><ol><li><a href="#what-is-a-digital-twin">What Is a Digital Twin?</a></li><li><a href="#maturity-levels">The Three Maturity Levels</a></li><li><a href="#why-digital-twins-are-hard">Why Digital Twins Are Hard</a></li><li><a href="#uns-foundation">The UNS as the Foundation for Digital Twins</a></li><li><a href="#fn-uns-digital-twin">Building Twin Functions with fnkit</a></li><li><a href="#quality-twin">Case Study: A CNC Quality Twin</a></li><li><a href="#gitops-for-digital-twins">Managing changes to twin functions</a></li><li><a href="#scaling-digital-twins">Scaling Digital Twins with fn-uns</a></li><li><a href="#bottom-line">Where to go next</a></li></ol></div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- WHAT IS A DIGITAL TWIN                  -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="what-is-a-digital-twin">What Is a Digital Twin?</h2>
+
+<h2 id="what-is-a-digital-twin">What Is a Digital Twin?</h2>
 
     <p>The term "digital twin" is one of the most overloaded phrases in manufacturing technology. It gets applied to everything from a 3D CAD model to a real-time simulation to a simple dashboard. Let's be precise about what it actually means.</p>
 
     <p>A digital twin is a <strong>live, software representation of a physical system that evolves in real-time as the physical system changes</strong>. It's not a static model. It's not a one-time snapshot. It's a continuously updated mirror of reality — fed by real sensor data, enriched with historical context, and capable of answering questions about the physical system's current state, past behaviour, and future trajectory.</p>
 
-    <div class="research-callout">
-      <div>
-        <strong>The concept originated at NASA in the early 2000s</strong>, where engineers built software replicas of spacecraft to diagnose problems from Earth. Michael Grieves formalised the term in 2002 at the University of Michigan, defining it as a three-part model: the physical entity, the virtual entity, and the data connection between them. Today, the concept has expanded far beyond aerospace into manufacturing, energy, healthcare, and infrastructure — driven by reduced downtime, improved quality, and optimised throughput.
-        <div class="research-source">Source: Grieves, M. (2014) "Digital Twin: Manufacturing Excellence through Virtual Factory Replication"</div>
-      </div>
-    </div>
+    <div class="reading-context">Use the term digital twin with a clear scope: the physical process, its software model, and the data connecting them.</div>
 
     <p>The critical distinction is the <strong>live data connection</strong>. A CAD model is a digital representation, but it doesn't know whether the physical machine is running, alarming, or producing scrap. A digital twin does. It knows the machine's current state, how long it's been in that state, what program it's running, what tool is loaded, and whether the spindle vibration is trending outside normal parameters.</p>
 
     <h3>What a Digital Twin Is Not</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Often Called "Digital Twin"</th><th>What It Actually Is</th><th>What's Missing</th></tr></thead>
       <tbody>
         <tr><td>3D CAD model</td><td>Static geometry</td><td>No live data, no state, no behaviour</td></tr>
@@ -480,7 +427,7 @@
         <tr><td>Dashboard</td><td>Reporting layer</td><td>No state model, no causal reasoning, no bidirectional flow</td></tr>
         <tr><td>IoT data lake</td><td>Raw data storage</td><td>No structure, no context, no real-time state representation</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>A true digital twin combines <strong>all of these capabilities</strong> — real-time data, historical context, structured state models, derived intelligence, and the ability to influence the physical system — into a single, coherent software entity.</p>
 
@@ -512,12 +459,7 @@
       </div>
     </div>
 
-    <div class="research-callout">
-      <div>
-        <strong>A 2019 Gartner survey found that 75% of organisations implementing IoT already use or plan to use digital twins.</strong> Yet the vast majority remain at Level 2 — digital shadows with one-way data flow. The gap between aspiration and reality is enormous, and it's almost entirely an architecture problem, not a technology problem. Most organisations can collect the data — they just can't structure, correlate, and act on it in real-time.
-        <div class="research-source">Source: Gartner (2019) "Gartner Survey Reveals Digital Twins Are Entering Mainstream Use"</div>
-      </div>
-    </div>
+    <div class="reading-context">Identify whether the use case needs observation, prediction, or feedback to the process. Each adds different data and validation requirements.</div>
 
     <p>Most manufacturing organisations today are at <strong>Level 2 — Digital Shadow</strong>. They have dashboards, historians, and SCADA systems that reflect machine state. The fn-uns reference pipeline gives you a solid Level 2 starting point, with a clear path to Level 3 through MQTT's bidirectional pub/sub architecture. But the real power is that <strong>fnkit lets you scaffold new twin functions</strong> — quality prediction, vibration analysis, thermal compensation, energy monitoring — whatever your specific factory needs to move up the maturity curve.</p>
 
@@ -535,7 +477,7 @@
 
     <h3>The Seven Scaling Problems</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Problem</th><th>What Happens</th><th>Why It's Hard</th></tr></thead>
       <tbody>
         <tr>
@@ -574,20 +516,16 @@
           <td>Most twin platforms have no native audit trail for logic changes. You can see what the twin does, but not why it does it or who configured it that way.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <div class="research-callout">
-      <div>
-        <strong>The "pilot trap" is the most common failure mode for digital twin initiatives.</strong> They work for one machine or one line but fail to scale to the factory or enterprise level. The reasons are consistently the same: integration complexity across heterogeneous equipment, lack of standardised data models, and inability to maintain consistency across sites. These are architecture problems, not technology problems — and they're exactly what a composable, UNS-based approach is designed to solve.
-      </div>
-    </div>
+    <div class="reading-context">Start with a defined decision and the data needed to support it. A more elaborate model is useful only if its output can be checked against the process.</div>
 
     <h3>The Cost Curve</h3>
 
     <p>Here's what happens to complexity and cost as you scale a digital twin — and why the architecture you choose at the start determines whether you succeed or stall:</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">DIGITAL TWIN COMPLEXITY AS YOU SCALE</text>
 
         <!-- Axes -->
@@ -655,7 +593,7 @@
 
     <h3>How UNS Concepts Map to Digital Twin Concepts</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Digital Twin Concept</th><th>UNS Equivalent</th><th>How It Works</th></tr></thead>
       <tbody>
         <tr>
@@ -699,7 +637,7 @@
           <td>Operators contribute context the machine can't provide — scrap reasons, quality notes, manual overrides</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="success-indicator">
       <span class="success-icon">✓</span>
@@ -709,7 +647,7 @@
     <h3>The Architecture</h3>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 760 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 760 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="380" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">PHYSICAL FACTORY ↔ DIGITAL TWIN</text>
 
         <!-- Physical side -->
@@ -880,7 +818,7 @@ fnkit node-mqtt uns-energy-monitor</pre></div>
 
     <p>The fn-uns reference pipeline handles the fundamentals — state tracking, historical logging, KPIs, stoppage classification. But your twin needs functions specific to <em>your</em> factory. Here are examples of what you'd scaffold:</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Twin Function</th><th>Scaffold Command</th><th>What It Does</th></tr></thead>
       <tbody>
         <tr>
@@ -919,7 +857,7 @@ fnkit node-mqtt uns-energy-monitor</pre></div>
           <td>Reads alarm history, stoppage patterns, and sensor trends from PostgreSQL. Identifies machines trending toward failure. Publishes maintenance recommendations.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Your Twin Is a Mix of Reference + Custom</h3>
 
@@ -959,11 +897,7 @@ fn-uns/
       </div>
     </div>
 
-    <div class="research-callout">
-      <div>
-        <strong>The composable architecture advantage is straightforward.</strong> When each capability is an independent, deployable unit, you can add new functionality without modifying or risking existing capabilities. New twin functions don't require platform upgrades, vendor negotiations, or regression testing of the entire system. You scaffold, develop, test, and deploy — and the existing functions never know the difference. This is the fundamental advantage of composable systems over monolithic platforms.
-      </div>
-    </div>
+    <div class="reading-context">Give a custom function a clear input and output contract. Test its effect on shared services and downstream consumers before deploying it.</div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- QUALITY TWIN CASE STUDY                 -->
@@ -972,11 +906,7 @@ fn-uns/
 
     <p>To make this concrete, let's walk through <strong>scaffolding and building a quality-focused digital twin function for a CNC machining cell</strong> — one of the most complex and valuable twin applications in discrete manufacturing.</p>
 
-    <div class="research-callout">
-      <div>
-        <strong>Quality is the most compelling use case for CNC digital twins.</strong> The principle is well-established in manufacturing research: correlating real-time process parameters (spindle load, vibration, tool wear) with quality outcomes enables early detection of scrap-producing conditions. The key enabler is multi-source data integration — combining machine state, tool condition, and historical quality data in real-time — which is exactly what a UNS provides.
-      </div>
-    </div>
+    <div class="reading-context">For the quality example, connect process observations to recorded quality outcomes. Check whether the available data supports the question before choosing a model.</div>
 
     <h3>The Quality Problem</h3>
 
@@ -986,7 +916,7 @@ fn-uns/
 
     <p>To answer that, you need to correlate data from multiple sources in real-time:</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Data Source</th><th>What It Tells You</th><th>UNS Topic</th></tr></thead>
       <tbody>
         <tr>
@@ -1025,7 +955,7 @@ fn-uns/
           <td>PostgreSQL → productivity table</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Scaffolding the Quality Twin Function</h3>
 
@@ -1116,7 +1046,7 @@ git push deploy main
 <span class="yaml-comment"># → Existing functions are completely untouched</span></pre></div>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 320" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">CNC QUALITY TWIN — SCAFFOLDED WITH FNKIT</text>
 
         <!-- CNC Machine -->
@@ -1213,16 +1143,12 @@ git push deploy main
 
     <p>With the UNS + fnkit approach, <strong>all of this data is already flowing through the same namespace</strong>. The quality twin is just a new function on top of existing data — scaffolded in seconds, deployed in minutes, not a new infrastructure project.</p>
 
-    <div class="research-callout">
-      <div>
-        <strong>The "last mile" problem in manufacturing AI</strong> is not the AI itself — it's getting clean, contextualised, real-time data to the AI. In practice, <strong>the majority of digital twin project effort goes into data integration</strong> — connecting disparate systems, normalising schemas, and correlating timestamps — not into the twin logic itself. The UNS eliminates this cost by providing a single, structured, real-time data layer that any function — whether reference or custom — can read from.
-      </div>
-    </div>
+    <div class="reading-context">Plan time for connecting sources, matching timestamps, and checking data quality. A shared namespace makes those conventions visible, but the integration work still needs to be done.</div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- GITOPS FOR DIGITAL TWINS                -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="gitops-for-digital-twins">Why GitOps Is Essential for Digital Twins</h2>
+    <h2 id="gitops-for-digital-twins">Managing changes to twin functions</h2>
 
     <p>A digital twin is only as trustworthy as the logic that drives it. If you can't answer "who changed the twin's behaviour, when, and why?" — then you can't trust the twin's output. This is where GitOps transforms digital twins from fragile experiments into production infrastructure.</p>
 
@@ -1268,7 +1194,7 @@ fn-uns/
 
     <h3>What GitOps Gives Your Digital Twin</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Twin Requirement</th><th>Without GitOps</th><th>With fnkit + GitOps</th></tr></thead>
       <tbody>
         <tr>
@@ -1302,7 +1228,7 @@ fn-uns/
           <td><code style="font-family:var(--font-mono);font-size:12px;">fnkit go uns-new-capability</code> → deploy. It reads from the same Valkey cache and PostgreSQL database. Existing functions are untouched.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>The Twin Drift Problem</h3>
 
@@ -1322,7 +1248,7 @@ fn-uns/
     <div class="warning-banner">
       <span class="warning-icon">⚠</span>
       <div>
-        <strong>Twin drift is the #1 reason digital twins lose trust.</strong> When the twin's output doesn't match reality — even once — users stop trusting it. And once trust is lost, it's nearly impossible to regain. GitOps prevents logic drift by making every change explicit, reviewed, and auditable. Data drift is prevented by the UNS's self-describing topic hierarchy and wildcard subscriptions.
+        <strong>Check that the model still matches the process.</strong> Track changes to logic and validate input data over time. Version control helps explain code changes; topic structure alone does not detect data or model drift.
       </div>
     </div>
 
@@ -1428,7 +1354,7 @@ git push deploy main
     </div>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">MULTI-SITE DIGITAL TWIN DEPLOYMENT</text>
 
         <!-- Git repo (centre top) -->
@@ -1479,7 +1405,7 @@ git push deploy main
 
     <h3>The Cost Comparison</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Cost Factor</th><th>Cloud Twin Platform (100 machines)</th><th>fnkit + UNS (100 machines)</th></tr></thead>
       <tbody>
         <tr>
@@ -1518,13 +1444,9 @@ git push deploy main
           <td>Zero — standard MQTT, standard SQL, standard containers</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <div class="research-callout">
-      <div>
-        <strong>Cloud-based digital twin platforms carry significant costs at scale</strong> — platform licensing, per-device fees, cloud compute, and data egress charges add up quickly when you're running 100+ machines across multiple sites. Self-hosted, open-source approaches eliminate these recurring cost categories entirely. The investment shifts to engineering time, which produces reusable, version-controlled assets that you own — rather than recurring vendor payments for capabilities you can't modify or migrate.
-      </div>
-    </div>
+    <div class="reading-context">Compare the full operating cost of each approach: hosting, storage, engineering, monitoring, support, and any platform charges. Self-hosting still has recurring costs.</div>
 
     <div class="persona-grid">
       <div class="persona-card">
@@ -1547,7 +1469,7 @@ git push deploy main
     <!-- ═══════════════════════════════════════ -->
     <!-- THE BOTTOM LINE                         -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="bottom-line">The Bottom Line</h2>
+    <h2 id="bottom-line">Where to go next</h2>
 
     <p>Digital twins don't have to be expensive, vendor-locked, or impossibly complex. The industry has been sold a vision of monolithic platforms that promise everything and deliver pilot projects that never scale. The reality is simpler.</p>
 
@@ -1561,7 +1483,7 @@ git push deploy main
 
     <p>Together, these three layers give you a digital twin that is:</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Property</th><th>What It Means</th></tr></thead>
       <tbody>
         <tr><td>Composable</td><td>Add capabilities incrementally — <code style="font-family:var(--font-mono);font-size:12px;">fnkit go uns-new-capability</code> and you have a deployable function. Start with state tracking, add quality prediction, add vibration analysis. Each function is independent.</td></tr>
@@ -1571,7 +1493,7 @@ git push deploy main
         <tr><td>Vendor-neutral</td><td>Open source. Standard protocols. Standard tools. Your data, your infrastructure, your twin.</td></tr>
         <tr><td>Cost-predictable</td><td>No per-device fees, no per-message charges, no cloud egress costs. Runs on hardware you already own.</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="success-indicator">
       <span class="success-icon">✓</span>
@@ -1580,29 +1502,20 @@ git push deploy main
 
     <h3>Next Steps</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Resource</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td><a href="/docs/fnkit-basics.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">fnkit Basics</a></td><td>Complete guide to scaffolding, developing, and deploying functions with fnkit — the tool that powers your twin</td></tr>
         <tr><td><a href="/docs/extending.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Extending the System</a></td><td>How to add new functions, KPIs, and data sources to your digital twin</td></tr>
         <tr><td><a href="/guides/pipeline-functions.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Pipeline Functions Guide</a></td><td>Walkthrough of the fn-uns reference functions — the starting point for your twin</td></tr>
-        <tr><td><a href="/guides/flow-vs-gitops.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Flow vs GitOps Guide</a></td><td>When to graduate from Node-RED experiments to production GitOps — the twin management layer</td></tr>
-        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Getting Started</a></td><td>Deploy the reference pipeline in under 5 minutes — the foundation for your digital twin</td></tr>
+        <tr><td><a href="/guides/flow-vs-gitops.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Flow vs GitOps Guide</a></td><td>Compare flow and function workflows for maintaining analysis</td></tr>
+        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Getting Started</a></td><td>Run the sample capture pipeline before adding analysis</td></tr>
         <tr><td><a href="/framework/" style="color:var(--black);border-bottom:1px solid var(--grey-300);">UNS Framework Standard</a></td><td>The open standard that defines the twin's data structure — ISA-95 topic hierarchy</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <!-- NAV BUTTONS -->
-    <div class="docs-nav-buttons">
-      <a href="/guides/" class="docs-nav-btn">
-        <span class="nav-label">Back</span>
-        <span class="nav-title">All Guides</span>
-      </a>
-      <a href="/guides/flow-vs-gitops.html" class="docs-nav-btn next">
-        <span class="nav-label">Related</span>
-        <span class="nav-title">Flow vs GitOps</span>
-      </a>
-    </div>
+    <div class="next-reading"><a href="/guides/">All guides →</a><a href="/guides/pipeline-functions.html">Review the pipeline components →</a></div>
 
     <div style="margin-top:32px;padding:20px;background:var(--grey-50);border:1px solid var(--grey-200);border-radius:10px;">
       <p style="font-family:var(--font-mono);font-size:12px;color:var(--grey-500);margin-bottom:4px;">
@@ -1649,5 +1562,6 @@ git push deploy main
   update();
 })();
 </script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

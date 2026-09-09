@@ -3,87 +3,72 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Database Schema — fn-uns Docs</title>
-<meta name="description" content="All PostgreSQL tables, columns, relationships, and useful queries."/>
+<title>Database Schema — UNS Framework</title>
+<meta name="description" content="Core production tables, relationships, and example queries."/>
 <link rel="canonical" href="https://unsframework.com/docs/database-schema.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Database Schema — PostgreSQL Tables for Manufacturing Data" />
-<meta property="og:description" content="All PostgreSQL tables, columns, relationships, and useful queries." />
+<meta property="og:title" content="Database Schema" />
+<meta property="og:description" content="Core production tables, relationships, and example queries." />
 <meta property="og:url" content="https://unsframework.com/docs/database-schema.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Database Schema — PostgreSQL Tables for Manufacturing Data" />
-<meta name="twitter:description" content="PostgreSQL schema for manufacturing state, stoppages, productivity, and KPIs." />
+<meta name="twitter:title" content="Database Schema" />
+<meta name="twitter:description" content="Core production tables, relationships, and example queries." />
 <meta name="keywords" content="PostgreSQL schema, manufacturing database, UNS database, data model" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html" class="active">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html" class="active" aria-current="page">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
     <h1>Database Schema</h1>
-    <p class="page-desc">All PostgreSQL tables, columns, relationships, and useful queries.</p>
+    <p class="page-desc">Core production tables, relationships, and example queries.</p><div class="reading-context">Reference for the core production tables. The <a href="/docs/uns-historian.html">historian</a> and <a href="/docs/uns-ai.html">AI component</a> document their own additional storage.</div>
 
-    <h2>uns_state</h2>
+    <details class="page-outline"><summary>On this page <span>6 sections</span></summary><div><a href="#uns-state">uns_state</a><a href="#uns-stoppage">uns_stoppage</a><a href="#uns-productivity">uns_productivity</a><a href="#uns-input">uns_input</a><a href="#uns-log">uns_log</a><a href="#useful-queries">Useful Queries</a></div></details>
+<h2 id="uns-state">uns_state</h2>
     <p><strong>Written by:</strong> uns-state — completed machine state durations.</p>
-    <table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
     <tr><td>machine</td><td>TEXT</td><td>Machine identifier</td></tr>
     <tr><td>state</td><td>TEXT</td><td>ACTIVE, IDLE, ALARM, etc.</td></tr>
     <tr><td>started_at / ended_at</td><td>TIMESTAMPTZ</td><td>Duration boundaries</td></tr>
     <tr><td>duration_s</td><td>NUMERIC</td><td>Seconds</td></tr>
-    <tr><td>next_state</td><td>TEXT</td><td>Transitioned to</td></tr></tbody></table>
-    <h2>uns_stoppage</h2>
+    <tr><td>next_state</td><td>TEXT</td><td>Transitioned to</td></tr></tbody></table></div>
+    <h2 id="uns-stoppage">uns_stoppage</h2>
     <p><strong>Written by:</strong> uns-stoppage — links 1:1 to uns_state via state_id.</p>
-    <table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
     <tr><td>state_id</td><td>BIGINT UNIQUE</td><td>References uns_state.id</td></tr>
     <tr><td>reason_code</td><td>TEXT</td><td>FAULT, NO_WORK, etc.</td></tr>
     <tr><td>category</td><td>TEXT</td><td>planned / unplanned</td></tr>
-    <tr><td>auto_classified</td><td>BOOLEAN</td><td>Auto vs operator override</td></tr></tbody></table>
-    <h2>uns_productivity</h2>
+    <tr><td>auto_classified</td><td>BOOLEAN</td><td>Auto vs operator override</td></tr></tbody></table></div>
+    <h2 id="uns-productivity">uns_productivity</h2>
     <p><strong>Written by:</strong> uns-productivity — completed production runs.</p>
-    <table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody>
     <tr><td>program_id / program_name</td><td>TEXT</td><td>CNC program</td></tr>
     <tr><td>parts_completed / parts_target</td><td>INT</td><td>Actual vs target</td></tr>
     <tr><td>parts_per_hour</td><td>NUMERIC</td><td>Throughput rate</td></tr>
-    <tr><td>reason</td><td>TEXT</td><td>completed, changed, stopped</td></tr></tbody></table>
-    <h2>uns_input</h2>
+    <tr><td>reason</td><td>TEXT</td><td>completed, changed, stopped</td></tr></tbody></table></div>
+    <h2 id="uns-input">uns_input</h2>
     <p><strong>Written by:</strong> uns-input — flexible JSONB data.</p>
-    <table class="def-table"><thead><tr><th>Column</th><th>Type</th></tr></thead><tbody>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Column</th><th>Type</th></tr></thead><tbody>
     <tr><td>input_type</td><td>TEXT (scrap, note, quality...)</td></tr>
-    <tr><td>operator</td><td>TEXT</td></tr><tr><td>data</td><td>JSONB</td></tr></tbody></table>
-    <h2>uns_log</h2>
+    <tr><td>operator</td><td>TEXT</td></tr><tr><td>data</td><td>JSONB</td></tr></tbody></table></div>
+    <h2 id="uns-log">uns_log</h2>
     <p><strong>Written by:</strong> uns-log — change snapshots.</p>
-    <table class="def-table"><thead><tr><th>Column</th><th>Type</th></tr></thead><tbody>
-    <tr><td>values</td><td>JSONB (complete snapshot)</td></tr><tr><td>changed</td><td>TEXT[] (changed fields)</td></tr></tbody></table>
-    <h2>Useful Queries</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Column</th><th>Type</th></tr></thead><tbody>
+    <tr><td>values</td><td>JSONB (complete snapshot)</td></tr><tr><td>changed</td><td>TEXT[] (changed fields)</td></tr></tbody></table></div>
+    <h2 id="useful-queries">Useful Queries</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-comment">-- Utilisation</span>
 SELECT machine, ROUND(SUM(CASE WHEN state='ACTIVE' THEN duration_s ELSE 0 END)/SUM(duration_s)*100,1) AS pct
 FROM uns_state WHERE started_at >= NOW()-INTERVAL '24 hours' GROUP BY machine;
@@ -99,12 +84,11 @@ WHERE state='ACTIVE' AND next_state='ALARM' GROUP BY machine;
 SELECT machine, ROUND(AVG(duration_s)/60,1) AS mttr FROM uns_state
 WHERE state='ALARM' GROUP BY machine;</pre></div>
 
-    <div class="docs-nav-buttons">
-      <a href="/docs/extending.html" class="docs-nav-btn"><span class="nav-label">Previous</span><span class="nav-title">Extending</span></a>
-      <div></div>
+    <div class="next-reading"><a href="/docs/">All documentation →</a><a href="/docs/manufacturing-kpis.html">Metric definitions →</a></div>
     </div>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

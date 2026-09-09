@@ -3,66 +3,51 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>uns-ai — AI-Powered Analysis — fn-uns Docs</title>
-<meta name="description" content="AI-powered manufacturing analysis with built-in anomaly detection, shift summaries, smart alerting, predictive maintenance, and more."/>
+<title>uns-ai — AI-Powered Analysis — UNS Framework</title>
+<meta name="description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis."/>
 <link rel="canonical" href="https://unsframework.com/docs/uns-ai.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="uns-ai — AI-Powered Manufacturing Analysis and Anomaly Detection" />
-<meta property="og:description" content="AI-powered manufacturing analysis with built-in anomaly detection, shift summaries, smart alerting, predictive maintenance, and more." />
+<meta property="og:title" content="uns-ai — AI-Powered Analysis" />
+<meta property="og:description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis." />
 <meta property="og:url" content="https://unsframework.com/docs/uns-ai.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="uns-ai — AI-Powered Manufacturing Analysis and Anomaly Detection" />
-<meta name="twitter:description" content="AI-powered anomaly detection, shift summaries, and predictive maintenance." />
+<meta name="twitter:title" content="uns-ai — AI-Powered Analysis" />
+<meta name="twitter:description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis." />
 <meta name="keywords" content="manufacturing AI, anomaly detection, predictive maintenance, smart alerting, AI manufacturing" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html" class="active">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html" class="active" aria-current="page">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
     <h1>uns-ai — AI-Powered Analysis</h1>
-    <p class="page-desc">Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis.</p>
-    <table class="def-table"><tbody>
+    <p class="page-desc">Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis.</p><div class="reading-context">Analysis · An optional component using current values and stored history. Begin with verified data from the <a href="/docs/first-deployment.html">core pipeline</a> and review generated analysis before acting on it.</div>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><tbody>
         <tr><td>Language</td><td>Node.js</td></tr>
         <tr><td>Type</td><td>HTTP function</td></tr>
         <tr><td>Scaffolded with</td><td>fnkit node</td></tr>
         <tr><td>Depends on</td><td>Valkey, PostgreSQL, MQTT Broker, AI Provider (OpenAI/Anthropic)</td></tr>
-    </tbody></table>
+    </tbody></table></div>
 
-    <h2>What It Does</h2>
+    <details class="page-outline"><summary>On this page <span>7 sections</span></summary><div><a href="#what-it-does">What It Does</a><a href="#analysis-types">Analysis Types</a><a href="#data-context-assembly">Data Context Assembly</a><a href="#config-in-valkey">Config in Valkey</a><a href="#api-usage">API Usage</a><a href="#postgresql-table">PostgreSQL Table</a><a href="#quick-start">Quick Start</a></div></details>
+<h2 id="what-it-does">What It Does</h2>
     <p>Reads live machine data from Valkey cache and historical data from PostgreSQL, assembles a rich context for the chosen analysis type, sends it to an AI provider, publishes results back to MQTT, and stores a full audit trail in PostgreSQL.</p>
 
-    <h2>Analysis Types</h2>
-    <table class="def-table">
+    <h2 id="analysis-types">Analysis Types</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Type</th><th>Purpose</th><th>Data Sources</th></tr></thead>
       <tbody>
         <tr><td><code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">anomaly</code></td><td>Detect abnormal machine behaviour</td><td>Live status, state history, baseline stats, alarms, tool data</td></tr>
@@ -73,9 +58,9 @@
         <tr><td><code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">root-cause</code></td><td>Explain why an alarm happened</td><td>State timeline, stoppages, tool condition, sensor history, notes</td></tr>
         <tr><td><code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">custom</code></td><td>User-defined prompt</td><td>Configurable — select which data sources to include</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Data Context Assembly</h2>
+    <h2 id="data-context-assembly">Data Context Assembly</h2>
     <p>Each analysis type automatically assembles the right data from across the UNS pipeline:</p>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">1. LIVE LAYER (Valkey cache)
    └─ Status, program, tool payloads per machine
@@ -89,7 +74,7 @@
 4. PROMPT ASSEMBLY
    └─ System prompt (analysis-specific) + data context → AI provider</pre></div>
 
-    <h2>Config in Valkey</h2>
+    <h2 id="config-in-valkey">Config in Valkey</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">docker exec fnkit-cache valkey-cli SET fnkit:config:uns-ai \
   '{"provider":"openai","model":"gpt-4o-mini","analysis":"anomaly",
     "machines":["cnc-01","cnc-02","cnc-03","cnc-04"],
@@ -97,7 +82,7 @@
     "output_topic":"v1.0/enterprise/site1/ai/anomaly"}'</pre></div>
     <p>Supports <code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">openai</code> and <code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">anthropic</code> providers. All responses are structured JSON with full token/latency tracking.</p>
 
-    <h2>API Usage</h2>
+    <h2 id="api-usage">API Usage</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"># Run analysis (from config)
 curl https://api.fnkit.dev/uns-ai
 
@@ -113,7 +98,7 @@ curl "https://api.fnkit.dev/uns-ai?history=true&hours=24"
 # List available analysis types
 curl "https://api.fnkit.dev/uns-ai?types=true"</pre></div>
 
-    <h2>PostgreSQL Table</h2>
+    <h2 id="postgresql-table">PostgreSQL Table</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">CREATE TABLE IF NOT EXISTS uns_ai (
   id BIGSERIAL PRIMARY KEY, logged_at TIMESTAMPTZ DEFAULT NOW(),
   enterprise TEXT, site TEXT, area TEXT, machine TEXT,
@@ -123,7 +108,7 @@ curl "https://api.fnkit.dev/uns-ai?types=true"</pre></div>
   output_topic TEXT, published BOOLEAN );</pre></div>
     <p>Every AI call is logged — full audit trail with token counts, latency, and the complete response.</p>
 
-    <h2>Quick Start</h2>
+    <h2 id="quick-start">Quick Start</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"># Set config in Valkey
 docker exec fnkit-cache valkey-cli SET fnkit:config:uns-ai \
   '{"provider":"openai","model":"gpt-4o-mini","analysis":"anomaly",
@@ -136,12 +121,10 @@ cd uns-ai && docker compose up -d
 # Run an analysis
 curl http://localhost:8080/uns-ai</pre></div>
 
-    <div class="docs-nav-buttons">
-      <a href="/docs/uns-dashboard.html" class="docs-nav-btn"><span class="nav-label">Previous</span><span class="nav-title">uns-dashboard</span></a>
-      <a href="/docs/configuration.html" class="docs-nav-btn next"><span class="nav-label">Next</span><span class="nav-title">Configuration</span></a>
-    </div>
+    <div class="next-reading"><a href="/docs/">All documentation →</a><a href="/docs/uns-dashboard.html">Dashboards →</a></div>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

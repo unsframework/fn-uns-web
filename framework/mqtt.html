@@ -3,75 +3,39 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MQTT Configuration — UNS Framework</title>
+<title>MQTT Configuration Beta — UNS Framework</title>
 <link rel="canonical" href="https://unsframework.com/framework/mqtt.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="MQTT Configuration — Broker and Topic Settings" />
-<meta property="og:description" content="Configure MQTT broker settings in the UNS Framework using YAML." />
+<meta property="og:title" content="MQTT Configuration Beta" />
+<meta property="og:description" content="The configuration for the MQTT broker, which is a server that facilitates the transmission of messages in the MQTT protocol." />
 <meta property="og:url" content="https://unsframework.com/framework/mqtt.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="MQTT Configuration — Broker and Topic Settings" />
-<meta name="twitter:description" content="Configure MQTT broker, topics, and QoS in the UNS Framework." />
+<meta name="twitter:title" content="MQTT Configuration Beta" />
+<meta name="twitter:description" content="The configuration for the MQTT broker, which is a server that facilitates the transmission of messages in the MQTT protocol." />
 <meta name="keywords" content="MQTT configuration, MQTT broker, topic hierarchy, QoS, manufacturing MQTT" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Getting Started</div>
-      <a href="/framework/">Introduction</a>
-      <a href="/framework/core-definitions.html">Core Definitions</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Definitions</div>
-      <a href="/framework/uns.html">UNS</a>
-      <a href="/framework/site.html">Site</a>
-      <a href="/framework/area.html">Area</a>
-      <a href="/framework/line.html">Line</a>
-      <a href="/framework/cell.html">Cell</a>
-      <a href="/framework/equipment.html">Equipment</a>
-      <a href="/framework/sensor.html">Sensor</a>
-      <a href="/framework/function.html">Function</a>
-      <a href="/framework/producer.html">Producer</a>
-      <a href="/framework/consumer.html">Consumer</a>
-      <a href="/framework/mqtt.html">MQTT</a>
-      <a href="/framework/database.html">Database</a>
-      <a href="/framework/artifact.html">Artifact</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Resources</div>
-      <a href="/framework/example.html">Example</a>
-      <a href="/changelog.html">Changelog</a>
-    </div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>The standard <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Read first</div><a href="/framework/">Overview</a><a href="/framework/example.html">Complete example</a><a href="/framework/core-definitions.html">Definition map</a></div><div class="sidebar-section"><div class="sidebar-title">Describe the factory</div><a href="/framework/uns.html">Namespace settings</a><a href="/framework/site.html">Site</a><a href="/framework/area.html">Area</a><a href="/framework/line.html">Line</a><a href="/framework/cell.html">Cell</a><a href="/framework/equipment.html">Equipment</a><a href="/framework/sensor.html">Sensor</a></div><div class="sidebar-section"><div class="sidebar-title">Describe data connections</div><a href="/framework/producer.html">Producer</a><a href="/framework/consumer.html">Consumer</a><a href="/framework/function.html">Function</a><a href="/framework/mqtt.html" class="active" aria-current="page">MQTT broker</a><a href="/framework/database.html">Database</a><a href="/framework/artifact.html">Artifact</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/framework/">The standard</a></div><p class="eyebrow doc-category">THE STANDARD / UNS FRAMEWORK</p>
     <h1>MQTT Configuration <span class="beta-badge">Beta</span></h1>
-    <p class="page-desc">The configuration for the MQTT broker, which is a server that facilitates the transmission of messages in the MQTT protocol.</p>
-    <h2>Parameters</h2>
-    <table class="def-table">
+    <p class="page-desc">The configuration for the MQTT broker, which is a server that facilitates the transmission of messages in the MQTT protocol.</p><div class="reading-context">Definition reference · See this in the <a href="/framework/example.html">complete factory example</a>, or follow the <a href="/guides/yaml-definitions.html">YAML walkthrough</a> to create your own.</div>
+    <h2 id="parameters">Parameters</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td>host</td><td>Host of the MQTT broker.</td></tr>
@@ -79,8 +43,8 @@
         <tr><td>username</td><td>Username for the MQTT broker.</td></tr>
         <tr><td>password</td><td>Password for the MQTT broker.</td></tr>
       </tbody>
-    </table>
-    <h2>YAML</h2>
+    </table></div>
+    <h2 id="yaml">YAML</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">mqtt:</span>
   <span class="yaml-key">broker:</span>
@@ -97,5 +61,6 @@
 </div>
 <script>document.querySelectorAll('.docs-sidebar a').forEach(function(a){if(a.getAttribute('href')==='/framework/mqtt.html')a.classList.add('active');});</script>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

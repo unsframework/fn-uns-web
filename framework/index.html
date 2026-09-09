@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Introduction — UNS Framework</title>
-<meta name="description" content="Welcome to the UNS Framework, an open-source initiative for MQTT and Unified Namespace management through YAML files."/>
+<title>The UNS Framework standard — UNS Framework</title>
+<meta name="description" content="Describe your factory and its data in shared YAML files. Use these definitions to agree names, document equipment, and give applications a common map of the namespace."/>
 
 <!-- Canonical & Sitemap -->
 <link rel="canonical" href="https://unsframework.com/framework/" />
@@ -13,18 +13,18 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="UNS Framework Standard v1.0" />
-<meta property="og:description" content="An open-source standard for MQTT and Unified Namespace management through YAML files. ISA-95 topic hierarchy, versioned namespaces, payload conventions." />
+<meta property="og:title" content="The UNS Framework standard" />
+<meta property="og:description" content="Describe your factory and its data in shared YAML files. Use these definitions to agree names, document equipment, and give applications a common map of the namespace." />
 <meta property="og:url" content="https://unsframework.com/framework/" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="UNS Framework Standard v1.0" />
-<meta name="twitter:description" content="An open standard for structuring manufacturing data in MQTT using YAML files." />
+<meta name="twitter:title" content="The UNS Framework standard" />
+<meta name="twitter:description" content="Describe your factory and its data in shared YAML files. Use these definitions to agree names, document equipment, and give applications a common map of the namespace." />
 <meta name="keywords" content="UNS Framework, ISA-95 MQTT, YAML manufacturing standard, unified namespace standard, open source" />
 
 <!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+<link rel="icon" href="/assets/favicon.svg" />
 
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -153,89 +153,30 @@
   }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Getting Started</div>
-      <a href="/framework/" class="active">Introduction</a>
-      <a href="/framework/core-definitions.html">Core Definitions</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Definitions</div>
-      <a href="/framework/uns.html">UNS</a>
-      <a href="/framework/site.html">Site</a>
-      <a href="/framework/area.html">Area</a>
-      <a href="/framework/line.html">Line</a>
-      <a href="/framework/cell.html">Cell</a>
-      <a href="/framework/equipment.html">Equipment</a>
-      <a href="/framework/sensor.html">Sensor</a>
-      <a href="/framework/function.html">Function</a>
-      <a href="/framework/producer.html">Producer</a>
-      <a href="/framework/consumer.html">Consumer</a>
-      <a href="/framework/mqtt.html">MQTT</a>
-      <a href="/framework/database.html">Database</a>
-      <a href="/framework/artifact.html">Artifact</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Resources</div>
-      <a href="/framework/example.html">Example</a>
-      <a href="/changelog.html">Changelog</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>The standard <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Read first</div><a href="/framework/" class="active" aria-current="page">Overview</a><a href="/framework/example.html">Complete example</a><a href="/framework/core-definitions.html">Definition map</a></div><div class="sidebar-section"><div class="sidebar-title">Describe the factory</div><a href="/framework/uns.html">Namespace settings</a><a href="/framework/site.html">Site</a><a href="/framework/area.html">Area</a><a href="/framework/line.html">Line</a><a href="/framework/cell.html">Cell</a><a href="/framework/equipment.html">Equipment</a><a href="/framework/sensor.html">Sensor</a></div><div class="sidebar-section"><div class="sidebar-title">Describe data connections</div><a href="/framework/producer.html">Producer</a><a href="/framework/consumer.html">Consumer</a><a href="/framework/function.html">Function</a><a href="/framework/mqtt.html">MQTT broker</a><a href="/framework/database.html">Database</a><a href="/framework/artifact.html">Artifact</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
-    <h1>Introduction</h1>
-    <p class="page-desc">
-      Welcome to the <strong>UNS Framework</strong>, an open-source initiative that offers a
-      technically-driven approach to MQTT and Unified Namespace (UNS) through the use of YAML files.
-    </p>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/framework/" aria-current="page">The standard</a></div><p class="eyebrow doc-category">THE STANDARD / UNS FRAMEWORK</p>
+    <h1>The UNS Framework standard</h1>
+    <p class="page-desc">Describe your factory and its data in shared YAML files. Use these definitions to agree names, document equipment, and give applications a common map of the namespace.</p>
 
-    <div class="info-banner">
-      <span class="info-icon">i</span>
-      <span>We're just getting started. <a href="mailto:max@cncdata.co.uk?subject=Join%20Us" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Join us</a>, and stay tuned for more updates soon!</span>
-    </div>
+    <div class="reading-context">New to the idea? <a href="/how-it-works/">Start with how a Unified Namespace works</a>. Looking for software to run? <a href="/fn-uns/">Explore fn-uns</a>, the reference implementation.</div>
 
-    <h2>Describe What You Have</h2>
-    <p>
-      The UNS Framework emphasises <strong>describing what you have without
-      changing what or how you do it</strong>, ensuring seamless integration with your existing systems.
-      Inspired by standards like Docker and Kubernetes, the UNS Framework establishes a universal
-      standard that is both <strong>human-readable</strong> and <strong>machine-readable</strong>.
-    </p>
-    <p>
-      It is not a software product but a descriptive standard that seamlessly integrates
-      with any new or existing UNS deployments. It complements existing standards like Sparkplug,
-      OPC/UA, and MT Connect by focusing on <strong>describing what you have</strong>.
-    </p>
-    <p>
-      By articulating your UNS with the framework, you enable seamless integration and understanding
-      across documentation, applications, analytics, security tools, and AI systems.
-    </p>
-
-    <div class="flow-dots">
+    <details class="page-outline"><summary>On this page <span>4 sections</span></summary><div><a href="#describe-what-you-have">Describe what you have</a><a href="#overview">What the definitions cover</a><a href="#paradigm-shift">Use the standard in a first project</a><a href="#core-definitions">Core Definitions</a></div></details>
+<h2 id="describe-what-you-have">Describe what you have</h2><p>A definition file records what a site contains and how its data is named. For example, a machine belongs to a cell and has sensors with known meanings. Teams can review these files together and applications can read the same structure.</p><p>The standard describes the system. Connecting equipment, translating messages, and running applications are implementation work. The files alone do not deploy a broker or make existing systems compatible.</p><p>The example below shows the namespace and site definitions. <a href="/framework/example.html">The complete example</a> puts all the definitions together.</p><div class="flow-dots">
       <div class="flow-dot"></div>
       <div class="flow-dot"></div>
       <div class="flow-dot"></div>
@@ -267,43 +208,7 @@
       <div class="yaml-line">              - <span class="yk">name:</span> <span class="yv">Cell 1</span></div>
     </div>
 
-    <h2>Overview</h2>
-    <p>
-      The UNS Framework is designed to create a standardized method for defining UNS and MQTT
-      using the simplicity and flexibility of YAML.
-    </p>
-    <h3>Non-Intrusive Standardisation</h3>
-    <p>
-      Similar to how Docker or Compose files do not restrict container operations, the UNS Framework
-      is not intended to replace existing standards such as Sparkplug, OPC/UA Information Models like
-      Umati, or initiatives like MT Connect. Instead, it complements these efforts by focusing on
-      <strong>describing what you have</strong> without imposing changes on <strong>what or how you do it</strong>.
-    </p>
-    <h3>Compatibility and Flexibility</h3>
-    <p>
-      The UNS Framework is not a software product but a descriptive standard that seamlessly integrates
-      with any new or existing UNS deployments. It is designed to harmonise with your current systems,
-      enhancing interoperability without imposing changes on your existing infrastructure.
-    </p>
-    <h3>Templates for Efficiency</h3>
-    <p>
-      To simplify the integration of equipment and sensors, the UNS Framework includes templates built
-      on the same user-friendly YAML format. These templates promote efficient integration and reuse,
-      accelerating the deployment process.
-    </p>
-
-    <h2>Paradigm Shift</h2>
-    <p>
-      The UNS Framework introduces a <strong>paradigm shift</strong> in how MQTT and Unified Namespace
-      (UNS) are defined and managed.
-    </p>
-    <p>
-      Traditional methods can be complex and cumbersome, especially for large-scale applications. By
-      focusing on a descriptive standard rather than a prescriptive software product, the UNS Framework
-      simplifies the process, making it more accessible and adaptable to a wide range of use cases.
-    </p>
-
-    <h2>Core Definitions</h2>
+    <h2 id="overview">What the definitions cover</h2><h3>Your factory</h3><p>Sites, areas, lines, cells, equipment, and sensors describe where a signal originates.</p><h3>Your data connections</h3><p>Producers, consumers, functions, brokers, and databases describe how systems exchange and use data.</p><h3>Your shared conventions</h3><p>Namespace settings record the topic structure and information model. Agree those conventions before mapping incoming machine signals.</p><h2 id="paradigm-shift">Use the standard in a first project</h2><p>Start with one machine. Record its location, the signals you need, and their meanings. Review that description with operations and engineering before expanding it to more equipment.</p><p>Follow the <a href="/guides/yaml-definitions.html">YAML walkthrough</a> to create a small factory model, or use the definitions below to look up individual fields.</p><h2 id="core-definitions">Core Definitions</h2>
     <p>
       The UNS Framework configuration encompasses sites, areas, lines,
       cells, equipment, sensors, functions, producers, consumers, MQTT
@@ -409,5 +314,6 @@
   )
   document.querySelectorAll('[data-animate]').forEach((el) => animateObserver.observe(el))
 </script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/" aria-current="page">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

@@ -3,178 +3,42 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Why UNS Matters — fn-uns Docs</title>
-<meta name="description" content="The business case for a Unified Namespace in manufacturing."/>
+<title>Evaluate the integration work — UNS Framework</title>
+<meta name="description" content="Use a first project to test whether shared machine data makes an operational task easier."/>
 <link rel="canonical" href="https://unsframework.com/docs/why-uns.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Why a Unified Namespace Matters — Business Case for Manufacturing UNS" />
-<meta property="og:description" content="The business case for a Unified Namespace in manufacturing." />
+<meta property="og:title" content="Evaluate the integration work" />
+<meta property="og:description" content="Use a first project to test whether shared machine data makes an operational task easier." />
 <meta property="og:url" content="https://unsframework.com/docs/why-uns.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Why a Unified Namespace Matters — Business Case for Manufacturing UNS" />
-<meta name="twitter:description" content="Real-time visibility, reduced integration cost, and faster time to insight." />
+<meta name="twitter:title" content="Evaluate the integration work" />
+<meta name="twitter:description" content="Use a first project to test whether shared machine data makes an operational task easier." />
 <meta name="keywords" content="unified namespace benefits, manufacturing data integration, UNS business case, real-time manufacturing" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">fn-uns</div>
-      <a href="/docs/">Overview</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Introduction</div>
-      <a href="/docs/what-is-uns.html">What is the UNS?</a>
-      <a href="/docs/why-uns.html" class="active">Why UNS Matters</a>
-      <a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a>
-      <a href="/docs/architecture.html">Architecture</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Getting Started</div>
-      <a href="/docs/getting-started.html">Quick Start</a>
-      <a href="/docs/fnkit-basics.html">fnkit Basics</a>
-      <a href="/docs/first-deployment.html">First Deployment</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Components</div>
-      <a href="/docs/components.html">Overview</a>
-      <a href="/docs/uns-sim.html">uns-sim</a>
-      <a href="/docs/uns-framework.html">uns-framework</a>
-      <a href="/docs/uns-cache.html">uns-cache</a>
-      <a href="/docs/uns-log.html">uns-log</a>
-      <a href="/docs/uns-historian.html">uns-historian</a>
-      <a href="/docs/uns-state.html">uns-state</a>
-      <a href="/docs/uns-stoppage.html">uns-stoppage</a>
-      <a href="/docs/uns-productivity.html">uns-productivity</a>
-      <a href="/docs/uns-input.html">uns-input</a>
-      <a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/docs/configuration.html">Configuration</a>
-      <a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a>
-      <a href="/docs/api-reference.html">API Reference</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Developer</div>
-      <a href="/docs/code-patterns.html">Code Patterns</a>
-      <a href="/docs/extending.html">Extending</a>
-      <a href="/docs/database-schema.html">Database Schema</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html" class="active" aria-current="page">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
-    <h1>Why UNS Matters</h1>
-    <p class="page-desc">The business case for a Unified Namespace in manufacturing.</p>
-
-    <h2>The Cost of Data Silos</h2>
-    <p>
-      Every manufacturing operation generates vast amounts of data — machine states, production counts, quality measurements, maintenance logs. But in most factories, this data is <strong>fragmented across disconnected systems</strong>:
-    </p>
-    <table class="def-table">
-      <thead><tr><th>System</th><th>Knows</th><th>Doesn't Know</th></tr></thead>
-      <tbody>
-        <tr><td>SCADA</td><td>Machine status</td><td>Production targets</td></tr>
-        <tr><td>MES</td><td>Production orders</td><td>Real-time machine state</td></tr>
-        <tr><td>ERP</td><td>Planned schedules</td><td>Actual throughput</td></tr>
-        <tr><td>Maintenance</td><td>Work orders</td><td>Machine alarm history</td></tr>
-        <tr><td>Quality</td><td>Inspection results</td><td>Which machine/operator was involved</td></tr>
-      </tbody>
-    </table>
-    <p>
-      Getting a complete picture requires manual data extraction, spreadsheet merging, and significant engineering effort. By the time the data is assembled, it's already stale.
-    </p>
-
-    <h2>What the UNS Enables</h2>
-
-    <h3>Real-time Visibility</h3>
-    <p>
-      Every data point is available the moment it's published. No batch exports, no overnight ETL jobs, no waiting for reports. A machine goes into ALARM — every subscribed system knows immediately.
-    </p>
-
-    <h3>Single Source of Truth</h3>
-    <p>
-      One topic, one current value. No conflicting data between systems. <code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">v1.0/enterprise/site1/area1/cnc-01/status</code> always reflects the machine's actual state.
-    </p>
-
-    <h3>Reduced Integration Cost</h3>
-    <p>
-      Adding a new consumer (dashboard, analytics tool, AI model) means subscribing to existing topics. No new point-to-point connections. No API development. No vendor negotiations.
-    </p>
-
-    <h3>Faster Time to Insight</h3>
-    <p>
-      With all data flowing through a common structure, building new analytics is straightforward. This project computes utilisation, availability, throughput, MTBF, MTTR, and stoppage pareto — all from the same UNS data, using simple SQL queries.
-    </p>
-
-    <h3>Scalability</h3>
-    <p>
-      The UNS scales horizontally. Add more machines — they publish to new topics. Add more consumers — they subscribe. The architecture doesn't change.
-    </p>
-
-    <h2>Measurable Outcomes</h2>
-    <table class="def-table">
-      <thead><tr><th>Metric</th><th>Before UNS</th><th>With UNS</th></tr></thead>
-      <tbody>
-        <tr><td>Time to answer "what's machine utilisation?"</td><td>Hours (manual data pull)</td><td>Seconds (API call)</td></tr>
-        <tr><td>New integration setup</td><td>Weeks (custom development)</td><td>Minutes (subscribe to topic)</td></tr>
-        <tr><td>Data freshness</td><td>Hours/days (batch)</td><td>Real-time (&lt; 1 second)</td></tr>
-        <tr><td>Systems with access to machine data</td><td>1-2 (SCADA, historian)</td><td>Unlimited (any MQTT subscriber)</td></tr>
-        <tr><td>Cost of adding a new KPI</td><td>Significant (cross-system)</td><td>Minimal (new SQL query)</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Who Benefits</h2>
-    <table class="def-table">
-      <thead><tr><th>Role</th><th>Value</th></tr></thead>
-      <tbody>
-        <tr><td>Operations Managers</td><td>Real-time dashboards showing utilisation, production progress, and stoppage reasons across the entire shop floor</td></tr>
-        <tr><td>Maintenance Teams</td><td>Automatic MTBF and MTTR calculations. Alarm history with durations. Stoppage pareto charts</td></tr>
-        <tr><td>Production Planners</td><td>Actual throughput data compared against planned schedules. Identify bottleneck machines</td></tr>
-        <tr><td>Quality Engineers</td><td>Scrap tracking linked to specific machines, programs, and operators</td></tr>
-        <tr><td>Continuous Improvement</td><td>Data-driven kaizen. Every state change, stoppage, and production run recorded with timestamps</td></tr>
-        <tr><td>IT &amp; Engineering</td><td>Clean, maintainable architecture. Independent functions, version-controlled, deployable via git push</td></tr>
-      </tbody>
-    </table>
-
-    <div class="docs-nav-buttons">
-      <a href="/docs/what-is-uns.html" class="docs-nav-btn">
-        <span class="nav-label">Previous</span>
-        <span class="nav-title">What is the UNS?</span>
-      </a>
-      <a href="/docs/why-faas.html" class="docs-nav-btn next">
-        <span class="nav-label">Next</span>
-        <span class="nav-title">Why FaaS &amp; GitOps?</span>
-      </a>
-    </div>
-  </main>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">DESIGN CONTEXT</p><h1>Evaluate the integration work</h1><p class="page-desc">Use a first project to test whether shared machine data makes an operational task easier.</p><h2 id="the-cost-of-data-silos">Map the current task</h2><p>Choose one question, such as shift utilisation. Record where the required data lives, who extracts it, how identifiers are matched, and how the answer is checked. Existing systems may already share some of this data; build on what works.</p><h2 id="what-the-uns-enables">Define the change you expect</h2><p>A shared namespace can let several applications use the same machine signals. The intended benefit is less repeated mapping and collection work. It requires agreed data contracts, reliable source connections, and a way to identify missing or stale messages.</p><p>For the fn-uns example, the pipeline stores state durations and production records before the KPI API queries them. Follow the <a href="/docs/architecture.html">architecture</a> to see those responsibilities.</p><h2 id="measurable-outcomes">Measure the pilot</h2><div class="table-scroll" tabindex="0" role="region" aria-label="Pilot evaluation"><table class="def-table"><thead><tr><th>Measure</th><th>What to compare</th></tr></thead><tbody><tr><td>Time to answer</td><td>Time from a question to a checked result, including manual preparation.</td></tr><tr><td>Data coverage</td><td>Expected messages and records compared with what actually arrived.</td></tr><tr><td>Freshness</td><td>Age of a value when it is used, including collection and processing delay.</td></tr><tr><td>Agreement</td><td>Difference between calculated metrics and observed production or an agreed reference.</td></tr><tr><td>Ongoing effort</td><td>Work needed to operate, change, and recover the new path.</td></tr></tbody></table></div><h2 id="who-benefits">Review with the people using the result</h2><p>Operations checks that states and shift boundaries reflect the floor. Engineering checks signal quality and failure behavior. The software owner checks service health and recovery. Together, decide whether to expand the pilot.</p><div class="next-reading"><a href="/start/#plan-a-pilot">Plan the pilot →</a><a href="/docs/manufacturing-kpis.html">Review metric definitions →</a><a href="/docs/architecture.html">Review the architecture →</a></div></main>
 </div>
 
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

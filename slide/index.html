@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNS Framework — Slide Deck</title>
     <meta name="description" content="UNS Framework presentation — why manufacturing needs a Unified Namespace, how it works, the 4-layer pipeline, AI-powered insights, and the value it delivers." />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="icon" href="/assets/favicon.svg" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
       *{margin:0;padding:0;box-sizing:border-box}
       :root{
         --black:#0a0a0a;--grey-950:#141414;--grey-900:#1a1a1a;--grey-800:#262626;
@@ -222,11 +222,12 @@
       .golden-text h4{font-size:15px;font-weight:700;margin-bottom:2px}
       .golden-text p{font-size:13px;color:var(--grey-700);line-height:1.5}
     </style>
-  </head>
-  <body>
+  <link rel="stylesheet" href="/signal.css" />
+</head>
+  <body class="signal-site slide-page">
     <div class="progress-bar" id="progressBar"></div>
 
-    <div class="slide-deck" id="slideDeck">
+    <div class="slide-deck" id="slideDeck" role="main" aria-label="UNS Framework presentation">
 
       <!-- ═══════════════════════════════════════════════════
            SLIDE 1: TITLE
@@ -234,7 +235,7 @@
       <div class="slide active" data-slide="0">
         <div class="slide-inner">
           <div class="hero-center">
-            <div class="hero-badge"><span class="dot"></span> Open Source · 12 Functions · 4 Layers · One Pipeline</div>
+            <div class="hero-badge"><span class="dot"></span> Open Source · 12 Components · 4 Layers · One Pipeline</div>
             <h1>Manufacturing data is&nbsp;trapped.<br><span class="accent">Let's&nbsp;fix&nbsp;that.</span></h1>
             <p class="subtitle">Every factory generates vast amounts of data — but it's fragmented across disconnected systems that don't talk to each other. The UNS Framework replaces point-to-point integrations with a single, shared data layer. From PLC to AI-powered insights.</p>
             <div class="cta-group" style="justify-content:center">
@@ -253,7 +254,7 @@
           <div class="hero-center">
             <div class="section-label">The Problem</div>
             <h1 style="font-size:clamp(32px,4.5vw,54px)">One simple question.<br><span class="accent">Five systems. Four hours. Still&nbsp;not&nbsp;sure.</span></h1>
-            <p class="subtitle">Every manufacturing operation faces the same problem. Someone asks a straightforward question about the shop floor — and answering it requires pulling data from multiple disconnected systems, exporting to spreadsheets, and hoping the timestamps align. By the time you have an answer, it's already stale.</p>
+            <p class="subtitle">An illustrative shift-report scenario: machine data, production records, and schedules live in separate systems. The timings in this story are examples, not measured benchmarks.</p>
             <div class="question-box">"What was the utilisation of CNC-01 last shift?"</div>
           </div>
         </div>
@@ -268,48 +269,48 @@
           <h2>Five systems. Five handoffs. No&nbsp;confidence.</h2>
           <p class="lead" style="margin-bottom:24px">To answer one question about machine utilisation, you traverse five systems, perform three manual exports, and spend hours in a spreadsheet.</p>
           <div class="info-svg">
-            <svg viewBox="0 0 960 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="960" height="460" rx="16" fill="#fafafa" stroke="#e5e5e5" stroke-width="1"/>
-              <rect x="16" y="16" width="176" height="308" rx="8" fill="#f5f5f5"/><rect x="204" y="16" width="176" height="308" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/><rect x="392" y="16" width="176" height="308" rx="8" fill="#f5f5f5"/><rect x="580" y="16" width="176" height="308" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/><rect x="768" y="16" width="176" height="308" rx="8" fill="#f5f5f5"/>
-              <text x="104" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">STEP 1</text>
-              <text x="292" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">STEP 2</text>
-              <text x="480" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">STEP 3</text>
-              <text x="668" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">STEP 4</text>
-              <text x="856" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">STEP 5</text>
+            <svg role="img" aria-label="Technical diagram" viewBox="0 0 960 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="960" height="460" rx="16" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/>
+              <rect x="16" y="16" width="176" height="308" rx="8" fill="var(--diagram-panel)"/><rect x="204" y="16" width="176" height="308" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><rect x="392" y="16" width="176" height="308" rx="8" fill="var(--diagram-panel)"/><rect x="580" y="16" width="176" height="308" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><rect x="768" y="16" width="176" height="308" rx="8" fill="var(--diagram-panel)"/>
+              <text x="104" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">STEP 1</text>
+              <text x="292" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">STEP 2</text>
+              <text x="480" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">STEP 3</text>
+              <text x="668" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">STEP 4</text>
+              <text x="856" y="44" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">STEP 5</text>
               <!-- STEP 1: SCADA -->
-              <g class="s1-step-1"><rect x="28" y="64" width="152" height="72" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" class="s1-glow-1"/><text x="58" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">SCADA</text><text x="58" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Wonderware</text><text x="58" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Live view only</text><rect x="130" y="68" width="44" height="18" rx="4" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/><text x="152" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="#a3a3a3" text-anchor="middle">2 min</text></g>
-              <g class="s1-sub-1a"><rect x="28" y="148" width="152" height="48" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="104" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Can see cnc-01 is</text><text x="104" y="184" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="#0a0a0a" text-anchor="middle">ACTIVE right now</text></g>
-              <g class="s1-sub-1b"><rect x="28" y="208" width="152" height="40" rx="6" fill="#0a0a0a"/><text x="104" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="#ffffff" text-anchor="middle">No history</text><text x="104" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Dead end → next system</text></g>
+              <g class="s1-step-1"><rect x="28" y="64" width="152" height="72" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1.5" class="s1-glow-1"/><text x="58" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">SCADA</text><text x="58" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Wonderware</text><text x="58" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Live view only</text><rect x="130" y="68" width="44" height="18" rx="4" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/><text x="152" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="var(--diagram-muted)" text-anchor="middle">2 min</text></g>
+              <g class="s1-sub-1a"><rect x="28" y="148" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="104" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Can see cnc-01 is</text><text x="104" y="184" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)" text-anchor="middle">ACTIVE right now</text></g>
+              <g class="s1-sub-1b"><rect x="28" y="208" width="152" height="40" rx="6" fill="var(--diagram-ink)"/><text class="ink-label" x="104" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-on-ink)" text-anchor="middle">No history</text><text class="ink-label" x="104" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Dead end → next system</text></g>
               <!-- STEP 2: HISTORIAN -->
-              <g class="s1-step-2"><rect x="216" y="64" width="152" height="72" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" class="s1-glow-2"/><text x="246" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">Historian</text><text x="246" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">OSIsoft PI</text><text x="246" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Tag-based archive</text><rect x="318" y="68" width="44" height="18" rx="4" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/><text x="340" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="#a3a3a3" text-anchor="middle">45 min</text></g>
-              <g class="s1-sub-2a"><rect x="216" y="148" width="152" height="48" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="292" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Find correct tag</text><text x="292" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Export 8hr CSV</text></g>
-              <g class="s1-sub-2b"><rect x="216" y="208" width="152" height="40" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="292" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Raw state changes</text><text x="292" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">No shift context</text></g>
+              <g class="s1-step-2"><rect x="216" y="64" width="152" height="72" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1.5" class="s1-glow-2"/><text x="246" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">Historian</text><text x="246" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">OSIsoft PI</text><text x="246" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Tag-based archive</text><rect x="318" y="68" width="44" height="18" rx="4" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/><text x="340" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="var(--diagram-muted)" text-anchor="middle">45 min</text></g>
+              <g class="s1-sub-2a"><rect x="216" y="148" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="292" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Find correct tag</text><text x="292" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Export 8hr CSV</text></g>
+              <g class="s1-sub-2b"><rect x="216" y="208" width="152" height="40" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="292" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Raw state changes</text><text x="292" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">No shift context</text></g>
               <!-- STEP 3: ERP -->
-              <g class="s1-step-3"><rect x="404" y="64" width="152" height="72" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" class="s1-glow-3"/><text x="434" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">ERP</text><text x="434" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">SAP / Oracle</text><text x="434" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Shift schedules</text><rect x="506" y="68" width="44" height="18" rx="4" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/><text x="528" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="#a3a3a3" text-anchor="middle">15 min</text></g>
-              <g class="s1-sub-3a"><rect x="404" y="148" width="152" height="48" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="480" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Look up shift times</text><text x="480" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">06:00 – 14:00</text></g>
-              <g class="s1-sub-3b"><rect x="404" y="208" width="152" height="40" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="480" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Copy start/end times</text><text x="480" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Manual transcription</text></g>
+              <g class="s1-step-3"><rect x="404" y="64" width="152" height="72" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1.5" class="s1-glow-3"/><text x="434" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">ERP</text><text x="434" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">SAP / Oracle</text><text x="434" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Shift schedules</text><rect x="506" y="68" width="44" height="18" rx="4" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/><text x="528" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="var(--diagram-muted)" text-anchor="middle">15 min</text></g>
+              <g class="s1-sub-3a"><rect x="404" y="148" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="480" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Look up shift times</text><text x="480" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">06:00 – 14:00</text></g>
+              <g class="s1-sub-3b"><rect x="404" y="208" width="152" height="40" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="480" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Copy start/end times</text><text x="480" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Manual transcription</text></g>
               <!-- STEP 4: SPREADSHEET -->
-              <g class="s1-step-4"><rect x="592" y="64" width="152" height="72" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" class="s1-glow-4"/><text x="622" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">Spreadsheet</text><text x="622" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Excel / Sheets</text><text x="622" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Manual calculation</text><rect x="694" y="68" width="44" height="18" rx="4" fill="#f5f5f5" stroke="#e5e5e5" stroke-width="1"/><text x="716" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="#a3a3a3" text-anchor="middle">2 hrs</text></g>
-              <g class="s1-sub-4a"><rect x="592" y="148" width="152" height="48" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="668" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Paste CSV data</text><text x="668" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">Filter by shift window</text></g>
-              <g class="s1-sub-4b"><rect x="592" y="208" width="152" height="48" rx="6" fill="#ffffff" stroke="#d4d4d4" stroke-width="1"/><text x="668" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">SUMIF(state="ACTIVE")</text><text x="668" y="238" font-family="'JetBrains Mono',monospace" font-size="9" fill="#737373" text-anchor="middle">÷ total shift hours</text><text x="668" y="250" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Hope formula is right</text></g>
+              <g class="s1-step-4"><rect x="592" y="64" width="152" height="72" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1.5" class="s1-glow-4"/><text x="622" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">Spreadsheet</text><text x="622" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Excel / Sheets</text><text x="622" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Manual calculation</text><rect x="694" y="68" width="44" height="18" rx="4" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/><text x="716" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="500" fill="var(--diagram-muted)" text-anchor="middle">2 hrs</text></g>
+              <g class="s1-sub-4a"><rect x="592" y="148" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="668" y="168" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Paste CSV data</text><text x="668" y="184" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">Filter by shift window</text></g>
+              <g class="s1-sub-4b"><rect x="592" y="208" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/><text x="668" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">SUMIF(state="ACTIVE")</text><text x="668" y="238" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-muted)" text-anchor="middle">÷ total shift hours</text><text x="668" y="250" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Hope formula is right</text></g>
               <!-- STEP 5: ANSWER -->
-              <g class="s1-step-5"><rect x="780" y="64" width="152" height="72" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" class="s1-glow-5"/><text x="810" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">Answer</text><text x="810" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Maybe correct</text><text x="810" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Already stale</text><rect x="882" y="68" width="44" height="18" rx="4" fill="#0a0a0a"/><text x="904" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="#ffffff" text-anchor="middle">4+ hrs</text></g>
-              <g class="s1-sub-5a"><rect x="780" y="148" width="152" height="48" rx="6" fill="#ffffff" stroke="#0a0a0a" stroke-width="1.5"/><text x="856" y="168" font-family="'JetBrains Mono',monospace" font-size="18" font-weight="700" fill="#0a0a0a" text-anchor="middle">~68%</text><text x="856" y="186" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373" text-anchor="middle">Utilisation (estimated)</text></g>
-              <g class="s1-sub-5b"><rect x="780" y="208" width="152" height="48" rx="6" fill="#0a0a0a"/><text x="856" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="#ffffff" text-anchor="middle">But was the tag right?</text><text x="856" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Shift boundary exact?</text><text x="856" y="250" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Formula correct?</text></g>
+              <g class="s1-step-5"><rect x="780" y="64" width="152" height="72" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1.5" class="s1-glow-5"/><text x="810" y="82" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">Answer</text><text x="810" y="98" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Maybe correct</text><text x="810" y="112" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Already stale</text><rect x="882" y="68" width="44" height="18" rx="4" fill="var(--diagram-ink)"/><text class="ink-label" x="904" y="80" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">4+ hrs</text></g>
+              <g class="s1-sub-5a"><rect x="780" y="148" width="152" height="48" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/><text x="856" y="168" font-family="'JetBrains Mono',monospace" font-size="18" font-weight="700" fill="var(--diagram-ink)" text-anchor="middle">~68%</text><text x="856" y="186" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Utilisation (estimated)</text></g>
+              <g class="s1-sub-5b"><rect x="780" y="208" width="152" height="48" rx="6" fill="var(--diagram-ink)"/><text class="ink-label" x="856" y="224" font-family="'JetBrains Mono',monospace" font-size="9" fill="var(--diagram-on-ink)" text-anchor="middle">But was the tag right?</text><text class="ink-label" x="856" y="238" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Shift boundary exact?</text><text class="ink-label" x="856" y="250" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Formula correct?</text></g>
               <!-- BOTTOM SUMMARY -->
-              <rect x="16" y="340" width="928" height="48" rx="8" fill="#0a0a0a"/>
-              <text x="480" y="360" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">4 hours 12 minutes · 5 systems · 3 manual exports · 1 spreadsheet · 0 confidence</text>
-              <text x="480" y="376" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">And tomorrow someone will ask the same question about a different machine</text>
+              <rect x="16" y="340" width="928" height="48" rx="8" fill="var(--diagram-ink)"/>
+              <text class="ink-label" x="480" y="360" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">4 hours 12 minutes · 5 systems · 3 manual exports · 1 spreadsheet · 0 confidence</text>
+              <text class="ink-label" x="480" y="376" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">And tomorrow someone will ask the same question about a different machine</text>
               <!-- TIMELINE -->
-              <line x1="28" y1="416" x2="932" y2="416" stroke="#e5e5e5" stroke-width="1"/>
-              <rect x="28" y="412" width="36" height="8" rx="2" fill="#d4d4d4"/><rect x="64" y="412" width="198" height="8" rx="2" fill="#a3a3a3"/><rect x="262" y="412" width="66" height="8" rx="2" fill="#d4d4d4"/><rect x="328" y="412" width="492" height="8" rx="2" fill="#737373"/><rect x="820" y="412" width="112" height="8" rx="2" fill="#0a0a0a"/>
-              <text x="28" y="436" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3">0 min</text>
-              <text x="932" y="436" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a" text-anchor="end">4 hrs 12 min</text>
-              <text x="46" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">SCADA</text>
-              <text x="163" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Historian export</text>
-              <text x="295" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">ERP</text>
-              <text x="574" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Spreadsheet calculation</text>
-              <text x="876" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Review</text>
+              <line x1="28" y1="416" x2="932" y2="416" stroke="var(--diagram-line)" stroke-width="1"/>
+              <rect x="28" y="412" width="36" height="8" rx="2" fill="var(--diagram-line)"/><rect x="64" y="412" width="198" height="8" rx="2" fill="var(--diagram-muted)"/><rect x="262" y="412" width="66" height="8" rx="2" fill="var(--diagram-line)"/><rect x="328" y="412" width="492" height="8" rx="2" fill="var(--diagram-muted)"/><rect x="820" y="412" width="112" height="8" rx="2" fill="var(--diagram-ink)"/>
+              <text x="28" y="436" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">0 min</text>
+              <text x="932" y="436" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)" text-anchor="end">4 hrs 12 min</text>
+              <text x="46" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">SCADA</text>
+              <text x="163" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Historian export</text>
+              <text x="295" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">ERP</text>
+              <text x="574" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Spreadsheet calculation</text>
+              <text x="876" y="452" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Review</text>
             </svg>
           </div>
         </div>
@@ -438,75 +439,75 @@
       <div class="slide" data-slide="7">
         <div class="slide-inner">
           <div class="section-label">With a Unified Namespace</div>
-          <h2>Same question. One call. 0.3&nbsp;seconds.</h2>
-          <p class="lead" style="margin-bottom:24px">The machine publishes its state every 3 seconds. Functions process the data automatically. The answer is always ready.</p>
+          <h2>The same question. Connected data.</h2>
+          <p class="lead" style="margin-bottom:24px">This example collects machine states and stores history before the question is asked. Timings shown are illustrative; actual results depend on data quality and the deployment.</p>
           <div class="info-svg">
-            <svg viewBox="0 0 960 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="960" height="340" rx="16" fill="#fafafa" stroke="#e5e5e5" stroke-width="1"/>
-              <text x="28" y="32" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em">DATA PIPELINE — CONTINUOUS</text>
+            <svg role="img" aria-label="Technical diagram" viewBox="0 0 960 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="960" height="340" rx="16" fill="var(--diagram-panel)" stroke="var(--diagram-line)" stroke-width="1"/>
+              <text x="28" y="32" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em">DATA PIPELINE — CONTINUOUS</text>
               <!-- Machine -->
-              <rect x="28" y="54" width="144" height="56" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="d-glow d-glow-1"/>
-              <circle cx="44" cy="76" r="5" fill="#0a0a0a" class="d-pulse d-pulse-1"/>
-              <text x="56" y="72" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#0a0a0a">cnc-01</text>
-              <text x="56" y="86" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373">ACTIVE · OP-7842 · T12</text>
-              <text x="56" y="100" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3">Publishing every 3s</text>
+              <rect x="28" y="54" width="144" height="56" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="d-glow d-glow-1"/>
+              <circle cx="44" cy="76" r="5" fill="var(--diagram-ink)" class="d-pulse d-pulse-1"/>
+              <text x="56" y="72" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-ink)">cnc-01</text>
+              <text x="56" y="86" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">ACTIVE · OP-7842 · T12</text>
+              <text x="56" y="100" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">Publishing every 3s</text>
               <!-- Broker -->
-              <rect x="208" y="54" width="84" height="56" rx="8" fill="#0a0a0a"/>
-              <text x="250" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">MQTT</text>
-              <text x="250" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Broker</text>
-              <line x1="172" y1="82" x2="208" y2="82" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
-              <circle r="3" fill="#0a0a0a" style="offset-path:path('M 172 82 L 208 82')" class="d-pkt d-pkt-1"/>
+              <rect x="208" y="54" width="84" height="56" rx="8" fill="var(--diagram-ink)"/>
+              <text class="ink-label" x="250" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">MQTT</text>
+              <text class="ink-label" x="250" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Broker</text>
+              <line x1="172" y1="82" x2="208" y2="82" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
+              <circle r="3" fill="var(--diagram-ink)" style="offset-path:path('M 172 82 L 208 82')" class="d-pkt d-pkt-1"/>
               <!-- Cache -->
-              <rect x="328" y="54" width="96" height="56" rx="8" fill="#ffffff" stroke="#0a0a0a" stroke-width="1.5"/>
-              <text x="376" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#0a0a0a" text-anchor="middle">Valkey</text>
-              <text x="376" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373" text-anchor="middle">uns:data:* · uns:prev:*</text>
-              <line x1="292" y1="82" x2="328" y2="82" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
-              <circle r="3" fill="#0a0a0a" style="offset-path:path('M 292 82 L 328 82')" class="d-pkt d-pkt-2"/>
+              <rect x="328" y="54" width="96" height="56" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/>
+              <text x="376" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-ink)" text-anchor="middle">Valkey</text>
+              <text x="376" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">uns:data:* · uns:prev:*</text>
+              <line x1="292" y1="82" x2="328" y2="82" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
+              <circle r="3" fill="var(--diagram-ink)" style="offset-path:path('M 292 82 L 328 82')" class="d-pkt d-pkt-2"/>
               <!-- Functions -->
-              <rect x="460" y="52" width="116" height="28" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="d-glow d-glow-2"/>
-              <text x="476" y="70" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-state</text>
-              <rect x="460" y="84" width="116" height="28" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="d-glow d-glow-3"/>
-              <text x="476" y="102" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-stoppage</text>
-              <line x1="424" y1="82" x2="460" y2="66" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
-              <line x1="424" y1="82" x2="460" y2="98" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
+              <rect x="460" y="52" width="116" height="28" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="d-glow d-glow-2"/>
+              <text x="476" y="70" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-state</text>
+              <rect x="460" y="84" width="116" height="28" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="d-glow d-glow-3"/>
+              <text x="476" y="102" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-stoppage</text>
+              <line x1="424" y1="82" x2="460" y2="66" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
+              <line x1="424" y1="82" x2="460" y2="98" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- Database -->
-              <rect x="612" y="54" width="84" height="56" rx="8" fill="#ffffff" stroke="#0a0a0a" stroke-width="1.5"/>
-              <text x="654" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#0a0a0a" text-anchor="middle">PostgreSQL</text>
-              <text x="654" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373" text-anchor="middle">6 tables</text>
-              <line x1="576" y1="82" x2="612" y2="82" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
+              <rect x="612" y="54" width="84" height="56" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/>
+              <text x="654" y="76" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-ink)" text-anchor="middle">PostgreSQL</text>
+              <text x="654" y="90" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">6 tables</text>
+              <line x1="576" y1="82" x2="612" y2="82" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- DIVIDER -->
-              <line x1="28" y1="130" x2="932" y2="130" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4 4"/>
-              <text x="480" y="126" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em" text-anchor="middle">▼ API REQUEST ▼</text>
+              <line x1="28" y1="130" x2="932" y2="130" stroke="var(--diagram-line)" stroke-width="1" stroke-dasharray="4 4"/>
+              <text x="480" y="126" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em" text-anchor="middle">▼ API REQUEST ▼</text>
               <!-- Request -->
-              <rect x="16" y="148" width="400" height="64" rx="8" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
-              <text x="32" y="168" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="#a3a3a3">HTTP REQUEST</text>
-              <text x="32" y="186" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#0a0a0a">GET /uns-kpi?hours=8&amp;machine=cnc-01</text>
-              <text x="32" y="202" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3">→ queries PostgreSQL → computes utilisation, availability, MTBF, MTTR → returns JSON in 0.3s</text>
-              <line x1="416" y1="180" x2="460" y2="180" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
+              <rect x="16" y="148" width="400" height="64" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
+              <text x="32" y="168" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="600" fill="var(--diagram-muted)">HTTP REQUEST</text>
+              <text x="32" y="186" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-ink)">GET /uns-kpi?hours=8&amp;machine=cnc-01</text>
+              <text x="32" y="202" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">→ queries PostgreSQL → computes utilisation, availability, MTBF, MTTR → returns JSON in 0.3s</text>
+              <line x1="416" y1="180" x2="460" y2="180" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- uns-kpi -->
-              <rect x="460" y="148" width="120" height="64" rx="8" fill="#0a0a0a"/>
-              <text x="520" y="174" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">uns-kpi</text>
-              <text x="520" y="190" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Go · HTTP</text>
-              <text x="520" y="204" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Compute on demand</text>
-              <line x1="580" y1="180" x2="620" y2="180" stroke="#d4d4d4" stroke-width="1" class="d-flow"/>
+              <rect x="460" y="148" width="120" height="64" rx="8" fill="var(--diagram-ink)"/>
+              <text class="ink-label" x="520" y="174" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">uns-kpi</text>
+              <text class="ink-label" x="520" y="190" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Go · HTTP</text>
+              <text class="ink-label" x="520" y="204" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Compute on demand</text>
+              <line x1="580" y1="180" x2="620" y2="180" stroke="var(--diagram-line)" stroke-width="1" class="d-flow"/>
               <!-- THE ANSWER -->
-              <rect x="620" y="148" width="320" height="64" rx="8" fill="#ffffff" stroke="#0a0a0a" stroke-width="1.5"/>
-              <text x="680" y="174" font-family="'JetBrains Mono',monospace" font-size="28" font-weight="700" fill="#0a0a0a">72.4%</text>
-              <text x="680" y="192" font-family="'JetBrains Mono',monospace" font-size="8" fill="#737373">Utilisation · cnc-01 · last shift</text>
-              <line x1="780" y1="156" x2="780" y2="204" stroke="#e5e5e5" stroke-width="1"/>
-              <text x="796" y="168" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a">94%</text><text x="838" y="168" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373">Availability</text>
-              <text x="796" y="182" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a">48/hr</text><text x="838" y="182" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373">Throughput</text>
-              <text x="796" y="196" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a">142m</text><text x="838" y="196" font-family="'JetBrains Mono',monospace" font-size="7" fill="#737373">MTBF</text>
+              <rect x="620" y="148" width="320" height="64" rx="8" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/>
+              <text x="680" y="174" font-family="'JetBrains Mono',monospace" font-size="28" font-weight="700" fill="var(--diagram-ink)">72.4%</text>
+              <text x="680" y="192" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)">Utilisation · cnc-01 · last shift</text>
+              <line x1="780" y1="156" x2="780" y2="204" stroke="var(--diagram-line)" stroke-width="1"/>
+              <text x="796" y="168" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">94%</text><text x="838" y="168" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">Availability</text>
+              <text x="796" y="182" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">48/hr</text><text x="838" y="182" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">Throughput</text>
+              <text x="796" y="196" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">142m</text><text x="838" y="196" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">MTBF</text>
               <!-- BOTTOM SUMMARY -->
-              <rect x="16" y="228" width="928" height="48" rx="8" fill="#0a0a0a"/>
-              <text x="480" y="248" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">0.3 seconds · 1 API call · 0 manual steps · 0 spreadsheets · real-time data · 100% repeatable</text>
-              <text x="480" y="264" font-family="'JetBrains Mono',monospace" font-size="8" fill="#a3a3a3" text-anchor="middle">Same call works for any machine, any time range, any shift — instantly</text>
+              <rect x="16" y="228" width="928" height="48" rx="8" fill="var(--diagram-ink)"/>
+              <text class="ink-label" x="480" y="248" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">0.3 seconds · 1 API call · 0 manual steps · 0 spreadsheets · real-time data · 100% repeatable</text>
+              <text class="ink-label" x="480" y="264" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="middle">Same call works for any machine, any time range, any shift — instantly</text>
               <!-- TIMELINE -->
-              <line x1="28" y1="300" x2="932" y2="300" stroke="#e5e5e5" stroke-width="1"/>
-              <rect x="28" y="296" width="4" height="8" rx="1" fill="#0a0a0a"/>
-              <text x="40" y="306" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a">0.3s</text>
-              <text x="100" y="306" font-family="'JetBrains Mono',monospace" font-size="7" fill="#a3a3a3">vs 4 hours 12 minutes with point-to-point</text>
-              <text x="932" y="306" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="#0a0a0a" text-anchor="end">840× faster</text>
+              <line x1="28" y1="300" x2="932" y2="300" stroke="var(--diagram-line)" stroke-width="1"/>
+              <rect x="28" y="296" width="4" height="8" rx="1" fill="var(--diagram-ink)"/>
+              <text x="40" y="306" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)">0.3s</text>
+              <text x="100" y="306" font-family="'JetBrains Mono',monospace" font-size="7" fill="var(--diagram-muted)">vs 4 hours 12 minutes with point-to-point</text>
+              <text x="932" y="306" font-family="'JetBrains Mono',monospace" font-size="8" font-weight="600" fill="var(--diagram-ink)" text-anchor="end">840× faster</text>
             </svg>
           </div>
         </div>
@@ -520,7 +521,7 @@
           <div class="two-col">
             <div>
               <div class="section-label">The Architecture</div>
-              <h2>12 functions. 4 layers. One&nbsp;pipeline.</h2>
+              <h2>12 components. 4 layers. One&nbsp;pipeline.</h2>
               <p style="font-size:15px;color:var(--grey-700);line-height:1.7;margin-bottom:24px">Data flows through infrastructure, not through function calls. Each function runs in its own container, does one job, and communicates through shared MQTT, Valkey, and PostgreSQL. Deploy, update, or replace any function independently.</p>
               <div style="border:1px solid var(--grey-200);border-radius:12px;padding:24px">
                 <div class="layer-row">
@@ -743,48 +744,12 @@
       <!-- ═══════════════════════════════════════════════════
            SLIDE 15: CODE BEATS CONFIGURATION
            ═══════════════════════════════════════════════════ -->
-      <div class="slide" data-slide="14">
-        <div class="slide-inner">
-          <div class="section-label">Why This Approach</div>
-          <h2>Code beats configuration.</h2>
-          <p class="lead">Traditional manufacturing software relies on monolithic platforms. The UNS Framework takes a fundamentally different approach.</p>
-          <div class="compare">
-            <div class="compare-col">
-              <h3>Traditional Platforms</h3>
-              <ul>
-                <li><span class="icon-x">✕</span>Vendor-locked platforms with proprietary formats</li>
-                <li><span class="icon-x">✕</span>Drag-and-drop flow UIs that become spaghetti</li>
-                <li><span class="icon-x">✕</span>No version control — flows live in runtime databases</li>
-                <li><span class="icon-x">✕</span>Impossible to unit test or run CI/CD</li>
-                <li><span class="icon-x">✕</span>Six-figure licence fees</li>
-                <li><span class="icon-x">✕</span>Monolithic deployments — all or nothing</li>
-                <li><span class="icon-x">✕</span>Manual rollback — risky and time-consuming</li>
-              </ul>
-            </div>
-            <div class="compare-col">
-              <h3>UNS Framework + fnkit</h3>
-              <ul>
-                <li><span class="icon-check">✓</span>Open source, self-hosted, your infrastructure</li>
-                <li><span class="icon-check">✓</span>Code-first — readable, auditable, maintainable</li>
-                <li><span class="icon-check">✓</span>Full git history — every change tracked</li>
-                <li><span class="icon-check">✓</span>Unit tests, integration tests, CI/CD pipelines</li>
-                <li><span class="icon-check">✓</span>Infrastructure cost only — no licence fees</li>
-                <li><span class="icon-check">✓</span>Independent microservices — deploy separately</li>
-                <li><span class="icon-check">✓</span>git revert + push — instant, safe rollback</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══════════════════════════════════════════════════
-           SLIDE 16: THREE PROJECTS
-           ═══════════════════════════════════════════════════ -->
-      <div class="slide" data-slide="15">
+      <div class="slide" data-slide="14"><div class="slide-inner"><div class="section-label">DESIGN CHOICES</div><h2>A workflow the team can maintain.</h2><p class="lead">fn-uns keeps processing in code and runs components in containers. Choose this approach when it fits the people who will operate it.</p><div class="compare"><div class="compare-col"><h3>What it provides</h3><ul><li>Focused processing components</li><li>Source and configuration in Git</li><li>Shared data contracts</li><li>Control over your infrastructure</li></ul></div><div class="compare-col"><h3>What your team owns</h3><ul><li>Reviewing and testing changes</li><li>Validating signals and calculations</li><li>Monitoring services and capacity</li><li>Backups and recovery</li></ul></div></div></div></div>
+<div class="slide" data-slide="15">
         <div class="slide-inner">
           <div class="section-label">The Ecosystem</div>
           <h2>Three projects. One unified solution.</h2>
-          <p class="lead">An open standard for structuring manufacturing data, an open platform for deploying serverless functions, and a reference implementation with 12 functions across 4 layers.</p>
+          <p class="lead">An open standard for structuring manufacturing data, an open platform for deploying serverless functions, and a reference implementation with 12 components across 4 layers.</p>
           <div class="stack-grid">
             <div class="stack-card">
               <div class="stack-num">01 STANDARD</div>
@@ -841,25 +806,12 @@
         <div class="slide-inner">
           <div class="hero-center">
             <div class="section-label">Get Started</div>
-            <h2>Stop asking questions you can't&nbsp;answer.</h2>
-            <p class="subtitle">Everything is open source, self-hosted, and ready to deploy. Read the standard, explore the reference implementation, or dive into the documentation.</p>
-            <div class="start-terminal" style="margin:0 auto 32px;text-align:left">
-              <div><span class="comment"># Clone and start the UNS pipeline</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">git clone https://github.com/functionkit/fnkit.git && cd fnkit</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">docker network create fnkit-network</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">fnkit cache start</span></div>
-              <div>&nbsp;</div>
-              <div><span class="comment"># Start capture + process + report</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">cd uns-framework && docker compose up -d && cd ..</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">cd uns-sim && docker compose up -d && cd ..</span></div>
-              <div>&nbsp;</div>
-              <div><span class="comment"># Verify real-time data</span></div>
-              <div><span class="prompt">$</span> <span class="cmd">curl http://localhost:8080/uns-cache | jq</span></div>
-            </div>
-            <div class="cta-group" style="justify-content:center">
-              <a href="/framework/" class="btn-primary">UNS Standard v1.0 →</a>
+            <h2>Start with one useful question.</h2>
+            <p class="subtitle">Explore the approach, plan a pilot, or try fn-uns with simulated machine data.</p>
+            <p class="lead" style="margin-inline:auto">Choose a useful question with your team, or ask an engineer to run the sample capture pipeline. The sample returns machine values in JSON; history and metrics are the next deployment step.</p><div class="cta-group" style="justify-content:center">
+              <a href="/start/" class="btn-primary">Choose your next step →</a>
               <a href="/fn-uns/" class="btn-secondary">Explore fn-uns →</a>
-              <a href="/docs/" class="btn-secondary">Read the Docs →</a>
+              <a href="/docs/getting-started.html" class="btn-secondary">Try sample data →</a>
               <a href="/guides/" class="btn-secondary">Guides →</a>
               <a href="https://github.com/unsframework" class="btn-secondary" target="_blank">GitHub</a>
             </div>
@@ -875,12 +827,6 @@
       <span class="slide-hint">← → arrow keys · <a href="/">View website</a></span>
     </div>
 
-    <script>
-      let current=0;const slides=document.querySelectorAll('.slide'),total=slides.length,counter=document.getElementById('slideCounter'),progress=document.getElementById('progressBar');
-      function goTo(n){if(n<0||n>=total)return;slides[current].classList.remove('active');current=n;slides[current].classList.add('active');counter.textContent=current+1+' / '+total;progress.style.width=((current+1)/total)*100+'%'}
-      document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();goTo(current+1)}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();goTo(current-1)}if(e.key==='Home'){e.preventDefault();goTo(0)}if(e.key==='End'){e.preventDefault();goTo(total-1)}});
-      let touchStartX=0;document.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].screenX},{passive:true});document.addEventListener('touchend',function(e){const diff=e.changedTouches[0].screenX-touchStartX;if(Math.abs(diff)>50){diff<0?goTo(current+1):goTo(current-1)}},{passive:true});
-      if(slides.length>0){slides[0].classList.add('active');progress.style.width=(1/total)*100+'%';counter.textContent='1 / '+total}
-    </script>
+    <script src="/shared.js" defer></script><script src="/slides.js" defer></script>
   </body>
 </html>

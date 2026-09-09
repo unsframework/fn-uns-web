@@ -3,56 +3,41 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Components — fn-uns Docs</title>
-<meta name="description" content="The 9 functions that make up the UNS pipeline."/>
+<title>Components — UNS Framework</title>
+<meta name="description" content="The 12 documented components of fn-uns, grouped by their role in capturing, processing, and using machine data."/>
 <link rel="canonical" href="https://unsframework.com/docs/components.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="UNS Pipeline Components — 11 Serverless Functions for Manufacturing" />
-<meta property="og:description" content="The 11 functions that make up the UNS pipeline." />
+<meta property="og:title" content="Components" />
+<meta property="og:description" content="The 12 documented components of fn-uns, grouped by their role in capturing, processing, and using machine data." />
 <meta property="og:url" content="https://unsframework.com/docs/components.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="UNS Pipeline Components — 11 Serverless Functions for Manufacturing" />
-<meta name="twitter:description" content="11 independent serverless functions that capture, process, and report manufacturing data." />
+<meta name="twitter:title" content="Components" />
+<meta name="twitter:description" content="The 12 documented components of fn-uns, grouped by their role in capturing, processing, and using machine data." />
 <meta name="keywords" content="UNS components, serverless functions, manufacturing pipeline, data processing" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html" class="active">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html" class="active" aria-current="page">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
     <h1>Components</h1>
-    <p class="page-desc">The 11 functions that make up the UNS pipeline. They communicate through shared infrastructure — not through direct calls to each other.</p>
+    <p class="page-desc">The 12 documented components of fn-uns, grouped by their role in capturing, processing, and using machine data.</p><div class="reading-context">Use this map to choose the components for your use case. The <a href="/docs/getting-started.html">sample quick start</a> runs only the capture pipeline.</div>
 
-    <h2>Data Pipeline</h2>
+    <details class="page-outline"><summary>On this page <span>6 sections</span></summary><div><a href="#data-pipeline">Data Pipeline</a><a href="#capture-layer">Capture Layer</a><a href="#processing-layer">Processing Layer</a><a href="#reporting-layer">Reporting Layer</a><a href="#ai-layer">AI Layer</a><a href="#shared-patterns">Shared Patterns</a></div></details>
+<h2 id="data-pipeline">Data Pipeline</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre">┌─────────────────────────────────────────────────────────────┐
 │                        CAPTURE                               │
@@ -85,17 +70,17 @@
 └─────────────────────────────────────────────────────────────┘</pre>
     </div>
 
-    <h2>Capture Layer</h2>
-    <table class="def-table">
+    <h2 id="capture-layer">Capture Layer</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Component</th><th>Language</th><th>Type</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td><a href="/docs/uns-sim.html">uns-sim</a></td><td>Node.js</td><td>MQTT publisher</td><td>Simulates 4 CNC machines across 2 areas</td></tr>
         <tr><td><a href="/docs/uns-framework.html">uns-framework</a></td><td>Go</td><td>MQTT subscriber</td><td>Caches all UNS topics to Valkey</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Processing Layer</h2>
-    <table class="def-table">
+    <h2 id="processing-layer">Processing Layer</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Component</th><th>Language</th><th>Type</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td><a href="/docs/uns-cache.html">uns-cache</a></td><td>Node.js</td><td>HTTP</td><td>Reads cached topics with change detection</td></tr>
@@ -106,28 +91,28 @@
         <tr><td><a href="/docs/uns-productivity.html">uns-productivity</a></td><td>Go</td><td>HTTP</td><td>Tracks production runs and throughput</td></tr>
         <tr><td><a href="/docs/uns-input.html">uns-input</a></td><td>Node.js</td><td>HTTP</td><td>Manual operator data entry</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Reporting Layer</h2>
-    <table class="def-table">
+    <h2 id="reporting-layer">Reporting Layer</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Component</th><th>Language</th><th>Type</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td><a href="/docs/uns-kpi.html">uns-kpi</a></td><td>Go</td><td>HTTP</td><td>Computes manufacturing KPIs from all data</td></tr>
         <tr><td><a href="/docs/uns-dashboard.html">uns-dashboard</a></td><td>Grafana</td><td>Dashboards</td><td>5 dashboards for real-time manufacturing visibility</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>AI Layer</h2>
-    <table class="def-table">
+    <h2 id="ai-layer">AI Layer</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Component</th><th>Language</th><th>Type</th><th>Purpose</th></tr></thead>
       <tbody>
         <tr><td><a href="/docs/uns-ai.html">uns-ai</a></td><td>Node.js</td><td>HTTP</td><td>AI-powered analysis: anomaly detection, shift summaries, smart alerting, predictive maintenance</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Shared Patterns</h2>
+    <h2 id="shared-patterns">Shared Patterns</h2>
     <p>All functions follow consistent patterns:</p>
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Pattern</th><th>Description</th></tr></thead>
       <tbody>
         <tr><td>Valkey config</td><td>Runtime configuration stored in fnkit:config:*, cached 30s</td></tr>
@@ -137,21 +122,13 @@
         <tr><td>Docker containers</td><td>Each function runs in its own container on fnkit-network</td></tr>
         <tr><td>Independent deploy</td><td>Update one function without affecting others</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>See <a href="/docs/code-patterns.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Code Patterns</a> for implementation details.</p>
 
-    <div class="docs-nav-buttons">
-      <a href="/docs/first-deployment.html" class="docs-nav-btn">
-        <span class="nav-label">Previous</span>
-        <span class="nav-title">First Deployment</span>
-      </a>
-      <a href="/docs/uns-sim.html" class="docs-nav-btn next">
-        <span class="nav-label">Next</span>
-        <span class="nav-title">uns-sim</span>
-      </a>
-    </div>
+    <div class="next-reading"><a href="/docs/">All documentation →</a><a href="/docs/configuration.html">Configuration →</a></div>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

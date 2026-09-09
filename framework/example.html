@@ -9,70 +9,35 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Example Deployment — Complete UNS Framework Configuration" />
+<meta property="og:title" content="Example" />
 <meta property="og:description" content="Example UNS Framework deployment, and generated topics." />
 <meta property="og:url" content="https://unsframework.com/framework/example.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Example Deployment — Complete UNS Framework Configuration" />
-<meta name="twitter:description" content="Complete example of a UNS Framework deployment with generated MQTT topics." />
+<meta name="twitter:title" content="Example" />
+<meta name="twitter:description" content="Example UNS Framework deployment, and generated topics." />
 <meta name="keywords" content="UNS example, manufacturing example, MQTT topics, ISA-95 example" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Getting Started</div>
-      <a href="/framework/">Introduction</a>
-      <a href="/framework/core-definitions.html">Core Definitions</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Definitions</div>
-      <a href="/framework/uns.html">UNS</a>
-      <a href="/framework/site.html">Site</a>
-      <a href="/framework/area.html">Area</a>
-      <a href="/framework/line.html">Line</a>
-      <a href="/framework/cell.html">Cell</a>
-      <a href="/framework/equipment.html">Equipment</a>
-      <a href="/framework/sensor.html">Sensor</a>
-      <a href="/framework/function.html">Function</a>
-      <a href="/framework/producer.html">Producer</a>
-      <a href="/framework/consumer.html">Consumer</a>
-      <a href="/framework/mqtt.html">MQTT</a>
-      <a href="/framework/database.html">Database</a>
-      <a href="/framework/artifact.html">Artifact</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Resources</div>
-      <a href="/framework/example.html" class="active">Example</a>
-      <a href="/changelog.html">Changelog</a>
-    </div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>The standard <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Read first</div><a href="/framework/">Overview</a><a href="/framework/example.html" class="active" aria-current="page">Complete example</a><a href="/framework/core-definitions.html">Definition map</a></div><div class="sidebar-section"><div class="sidebar-title">Describe the factory</div><a href="/framework/uns.html">Namespace settings</a><a href="/framework/site.html">Site</a><a href="/framework/area.html">Area</a><a href="/framework/line.html">Line</a><a href="/framework/cell.html">Cell</a><a href="/framework/equipment.html">Equipment</a><a href="/framework/sensor.html">Sensor</a></div><div class="sidebar-section"><div class="sidebar-title">Describe data connections</div><a href="/framework/producer.html">Producer</a><a href="/framework/consumer.html">Consumer</a><a href="/framework/function.html">Function</a><a href="/framework/mqtt.html">MQTT broker</a><a href="/framework/database.html">Database</a><a href="/framework/artifact.html">Artifact</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/framework/">The standard</a></div><p class="eyebrow doc-category">THE STANDARD / UNS FRAMEWORK</p>
     <h1>Example</h1>
-    <p class="page-desc">Example UNS Framework deployment, and generated topics.</p>
+    <p class="page-desc">Example UNS Framework deployment, and generated topics.</p><div class="reading-context">Worked example · Use this to see how the definitions fit together. The <a href="/framework/core-definitions.html">definition map</a> links to field-level references.</div>
 
-    <h2>uns.yml</h2>
+    <details class="page-outline"><summary>On this page <span>8 sections</span></summary><div><a href="#uns-yml">uns.yml</a><a href="#site-yml">site.yml</a><a href="#function-yml">function.yml</a><a href="#consumer-yml">consumer.yml</a><a href="#producer-yml">producer.yml</a><a href="#mqtt-yml">mqtt.yml</a><a href="#database-yml">database.yml</a><a href="#generated-mqtt-topics">Generated MQTT Topics</a></div></details>
+<h2 id="uns-yml">uns.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">uns:</span>
@@ -84,7 +49,7 @@
   <span class="yaml-key">information_model:</span> <span class="yaml-val">'User Defined'</span></pre>
     </div>
 
-    <h2>site.yml</h2>
+    <h2 id="site-yml">site.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 
@@ -146,7 +111,7 @@
                         <span class="yaml-key">&lt;&lt;:</span> <span class="yaml-val">*template_sensor_enviroment</span></pre>
     </div>
 
-    <h2>function.yml</h2>
+    <h2 id="function-yml">function.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">function:</span>
@@ -155,7 +120,7 @@
     <span class="yaml-comment"># A simple test function</span></pre>
     </div>
 
-    <h2>consumer.yml</h2>
+    <h2 id="consumer-yml">consumer.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">consumer:</span>
@@ -164,7 +129,7 @@
     <span class="yaml-comment"># ERP OPCUA Client</span></pre>
     </div>
 
-    <h2>producer.yml</h2>
+    <h2 id="producer-yml">producer.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">producer:</span>
@@ -173,7 +138,7 @@
     <span class="yaml-comment"># A Node-RED flow reads ModBus and publishes to UNS.</span></pre>
     </div>
 
-    <h2>mqtt.yml</h2>
+    <h2 id="mqtt-yml">mqtt.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">mqtt:</span>
@@ -184,7 +149,7 @@
     <span class="yaml-key">password:</span> <span class="yaml-val">'password'</span></pre>
     </div>
 
-    <h2>database.yml</h2>
+    <h2 id="database-yml">database.yml</h2>
     <div class="yaml-block">
 <pre style="margin:0;font:inherit;white-space:pre"><span class="yaml-key">version:</span> <span class="yaml-val">'1.0'</span>
 <span class="yaml-key">database:</span>
@@ -195,7 +160,7 @@
     <span class="yaml-key">password:</span> <span class="yaml-val">'password'</span></pre>
     </div>
 
-    <h2>Generated MQTT Topics</h2>
+    <h2 id="generated-mqtt-topics">Generated MQTT Topics</h2>
     <p>Based on the configuration above, the following MQTT topics are generated:</p>
 
     <h3>Equipment 1 Sensor 1</h3>
@@ -244,5 +209,6 @@ v1.0/uk/a1/l1/c1/m1/s2/tool</pre>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

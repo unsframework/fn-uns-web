@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How It Works — Follow the Data from Dashboard to Shop Floor</title>
+    <title>From a machine signal to a useful answer. — UNS Framework</title>
     <meta
       name="description"
-      content="A step-by-step guide through every layer of the Unified Namespace — from the consumer asking a question to the machine publishing data. Understand the standard, the YAML, the platform, and the process."
+      content="A machine changes state. That signal gets a shared name and a timestamp. Applications use it to show what is happening now and explain what happened during a shift."
     />
     <link rel="canonical" href="https://unsframework.com/how-it-works/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -14,30 +14,27 @@
     <meta property="og:site_name" content="UNS Framework" />
     <meta
       property="og:title"
-      content="How It Works — Follow the Data from Dashboard to Shop Floor"
+      content="From a machine signal to a useful answer."
     />
     <meta
       property="og:description"
-      content="Nine steps from consumer to producer. Understand every layer of the Unified Namespace."
+      content="A machine changes state. That signal gets a shared name and a timestamp. Applications use it to show what is happening now and explain what happened during a shift."
     />
     <meta property="og:url" content="https://unsframework.com/how-it-works/" />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="How It Works — UNS Framework Step by Step"
+      content="From a machine signal to a useful answer."
     />
     <meta
       name="twitter:description"
-      content="Follow the data backwards: from the dashboard on your screen to the sensor on the shop floor."
+      content="A machine changes state. That signal gets a shared name and a timestamp. Applications use it to show what is happening now and explain what happened during a shift."
     />
     <meta name="keywords" content="unified namespace how it works, UNS architecture, manufacturing data flow, MQTT pipeline, ISA-95" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
-    />
+    <link rel="icon" href="/assets/favicon.svg" />
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
       * {
         margin: 0;
         padding: 0;
@@ -1016,54 +1013,26 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <nav>
-      <a href="/" class="logo">UNS Framework</a>
-      <div class="links">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          aria-label="Toggle dark mode"
-        >
-          <div class="toggle-thumb">
-            <span class="toggle-icon-sun">☀</span
-            ><span class="toggle-icon-moon">☾</span>
-          </div>
-        </button>
-      </div>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        ☰
-      </button>
-      <div class="mobile-menu">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-      </div>
-    </nav>
+  <link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/signal.css" />
+</head>
+  <body class="signal-site landing-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/guides/">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
+  </div>
+</header><main id="main">
 
     <!-- ═══════════════════════════════════════════
      HERO
      ═══════════════════════════════════════════ -->
     <div class="hero">
       <div class="container">
-        <h1>
-          Follow the data<br /><span class="hero-accent"
-            >from dashboard to&nbsp;shop&nbsp;floor.</span
-          >
-        </h1>
-        <p class="subtitle">
-          You want to know machine utilisation. Here's every layer that makes
-          that answer possible — starting from the consumer who asks the
-          question, working backwards through every component, all the way to
-          the machine publishing data on the shop floor. Nine steps. Three
-          solutions. One standard.
-        </p>
+        <p class="eyebrow landing-kicker"><i class="dot"></i>THE ARCHITECTURE / FOLLOW THE DATA</p><h1>From a machine signal<br><span class="hero-accent">to a useful answer.</span></h1>
+        <p class="subtitle">A machine changes state. That signal gets a shared name and a timestamp. Applications use it to show what is happening now and explain what happened during a shift.</p>
       </div>
     </div>
 
@@ -1072,11 +1041,11 @@
     <!-- ═══════════════════════════════════════════
      STEP 1 — THE CONSUMER
      ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+    <section class="journey-overview"><p class="eyebrow">THE IDEA IN THREE STEPS</p><h2>Collect it. Give it context. Use it.</h2><div class="reading-paths"><a class="reading-card" href="#step-09"><span>01 / CONNECT</span><h3>A machine reports a change</h3><p>A producer reads a machine or sensor and publishes a message. In our example, CNC-01 changes from running to idle.</p><b>See producers →</b></a><a class="reading-card" href="#step-07"><span>02 / ORGANIZE</span><h3>The signal has a shared meaning</h3><p>A consistent topic identifies the machine. Agreed values and timestamps let other systems interpret the message.</p><b>See the data structure →</b></a><a class="reading-card" href="#step-01"><span>03 / USE</span><h3>People get an answer</h3><p>A dashboard shows the latest state. Stored history supports calculations such as how long the machine ran last shift.</p><b>See consumers →</b></a></div><p>The fn-uns implementation adds the software that stores and processes these messages. Your team still defines the machine states, connects the sources, and checks that the result matches what happened on the floor.</p><div class="next-reading"><a href="/start/#plan-a-pilot">Plan a first use →</a><a href="/fn-uns/">See the working implementation →</a></div></section><details class="technical-detail"><summary>Explore the full architecture · 9 layers</summary><p class="detail-intro">This detailed trace starts with a utilisation request and works backwards to the machine. Expand it when you want to understand the implementation, data contracts, and infrastructure behind the answer.</p><div class="journey-nav" role="navigation" aria-label="Architecture steps"><a href="#step-01"><span>01</span>Consumers</a><a href="#step-02"><span>02</span>KPIs</a><a href="#step-03"><span>03</span>Database</a><a href="#step-04"><span>04</span>Functions</a><a href="#step-05"><span>05</span>Cache</a><a href="#step-06"><span>06</span>Broker</a><a href="#step-07"><span>07</span>Standard</a><a href="#step-08"><span>08</span>Sensors</a><a href="#step-09"><span>09</span>Producers</a></div><section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="step-text">
-            <div class="step-num">Step 01</div>
+            <div class="step-num" id="step-01">Step 01</div>
             <h3>The Consumer — Who Asks the Question</h3>
             <p>
               Everything starts with someone — or something — that needs an
@@ -1139,7 +1108,7 @@
           </div>
 
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 340"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -1150,8 +1119,8 @@
                 width="440"
                 height="340"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -1162,7 +1131,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 CONSUMERS — WHO ASKS THE QUESTION
@@ -1175,8 +1144,8 @@
                 width="120"
                 height="56"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-1"
               />
@@ -1186,7 +1155,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 Dashboard
               </text>
@@ -1195,7 +1164,7 @@
                 y="88"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Live utilisation
               </text>
@@ -1206,8 +1175,8 @@
                 width="120"
                 height="56"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-2"
               />
@@ -1217,7 +1186,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 ERP System
               </text>
@@ -1226,7 +1195,7 @@
                 y="156"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Production counts
               </text>
@@ -1237,8 +1206,8 @@
                 width="120"
                 height="56"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-3"
               />
@@ -1248,7 +1217,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 Maint. App
               </text>
@@ -1257,7 +1226,7 @@
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 MTBF / MTTR
               </text>
@@ -1268,8 +1237,8 @@
                 width="120"
                 height="56"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-4"
               />
@@ -1279,7 +1248,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 AI / Analytics
               </text>
@@ -1288,7 +1257,7 @@
                 y="292"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Historical data
               </text>
@@ -1299,7 +1268,7 @@
                 y1="76"
                 x2="240"
                 y2="168"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -1308,7 +1277,7 @@
                 y1="144"
                 x2="240"
                 y2="168"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -1317,7 +1286,7 @@
                 y1="212"
                 x2="240"
                 y2="180"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -1326,7 +1295,7 @@
                 y1="280"
                 x2="240"
                 y2="180"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -1334,25 +1303,25 @@
               <!-- Packets -->
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 240 168 L 140 76')"
                 class="d-pkt d-pkt-1"
               />
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 240 168 L 140 144')"
                 class="d-pkt d-pkt-2"
               />
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 240 180 L 140 212')"
                 class="d-pkt d-pkt-3"
               />
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 240 180 L 140 280')"
                 class="d-pkt d-pkt-4"
               />
@@ -1364,35 +1333,35 @@
                 width="180"
                 height="68"
                 rx="8"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="330"
                 y="166"
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 UNS API
               </text>
-              <text
+              <text class="ink-label"
                 x="330"
                 y="182"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 One endpoint · Any question
               </text>
-              <text
+              <text class="ink-label"
                 x="330"
                 y="198"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 GET /uns-kpi?hours=8&amp;machine=cnc-01
@@ -1405,14 +1374,14 @@
                 width="400"
                 height="2"
                 rx="1"
-                fill="#e5e5e5"
+                fill="var(--diagram-line)"
               />
               <text
                 x="220"
                 y="336"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Many consumers · One API · Zero coupling
@@ -1422,17 +1391,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 2 — THE KPI LAYER
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 300"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -1443,8 +1406,8 @@
                 width="440"
                 height="300"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -1454,7 +1417,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 UNS-KPI — COMPUTE ON DEMAND
@@ -1467,8 +1430,8 @@
                 width="180"
                 height="52"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1477,7 +1440,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 HTTP REQUEST
               </text>
@@ -1487,7 +1450,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 GET /uns-kpi?hours=8
               </text>
@@ -1498,13 +1461,13 @@
                 y1="74"
                 x2="240"
                 y2="74"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 200 74 L 240 74')"
                 class="d-pkt d-pkt-1"
               />
@@ -1516,25 +1479,25 @@
                 width="100"
                 height="52"
                 rx="8"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="290"
                 y="72"
                 font-family="'JetBrains Mono',monospace"
                 font-size="10"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 uns-kpi
               </text>
-              <text
+              <text class="ink-label"
                 x="290"
                 y="88"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Go · HTTP
@@ -1546,13 +1509,13 @@
                 y1="100"
                 x2="290"
                 y2="130"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 290 130 L 290 100')"
                 class="d-pkt d-pkt-3"
               />
@@ -1564,8 +1527,8 @@
                 width="100"
                 height="44"
                 rx="8"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
               <text
@@ -1574,7 +1537,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 PostgreSQL
@@ -1584,7 +1547,7 @@
                 y="164"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 4 tables
@@ -1596,13 +1559,13 @@
                 y1="74"
                 x2="370"
                 y2="74"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
               <circle
                 r="3"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 340 74 L 370 74')"
                 class="d-pkt d-pkt-4"
               />
@@ -1614,8 +1577,8 @@
                 width="400"
                 height="92"
                 rx="8"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
               <text
@@ -1624,7 +1587,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 JSON RESPONSE · 0.3 SECONDS
               </text>
@@ -1636,7 +1599,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="20"
                 font-weight="700"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 72.4%
               </text>
@@ -1645,7 +1608,7 @@
                 y="236"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Utilisation
               </text>
@@ -1656,7 +1619,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 94%
               </text>
@@ -1665,7 +1628,7 @@
                 y="228"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Availability
               </text>
@@ -1676,7 +1639,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 48/hr
               </text>
@@ -1685,7 +1648,7 @@
                 y="244"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Throughput
               </text>
@@ -1696,7 +1659,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 142m
               </text>
@@ -1705,7 +1668,7 @@
                 y="228"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 MTBF
               </text>
@@ -1716,7 +1679,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 8.3m
               </text>
@@ -1725,7 +1688,7 @@
                 y="244"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 MTTR
               </text>
@@ -1735,7 +1698,7 @@
                 y="268"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 cnc-01 · last shift · 06:00–14:00 · Pareto: Tool Change 34%,
                 Material Wait 22%, Alarm 18%
@@ -1744,7 +1707,7 @@
           </div>
 
           <div class="step-text">
-            <div class="step-num">Step 02</div>
+            <div class="step-num" id="step-02">Step 02</div>
             <h3>The KPI Layer — Computed on Demand</h3>
             <p>
               When a consumer asks "what was the utilisation of CNC-01 last
@@ -1781,17 +1744,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 3 — THE DATABASE
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="step-text">
-            <div class="step-num">Step 03</div>
+            <div class="step-num" id="step-03">Step 03</div>
             <h3>The Database — Where History Lives</h3>
             <p>
               The KPI function needs data to compute from. That data lives in
@@ -1848,7 +1805,7 @@
           </div>
 
           <div>
-            <table class="info-table">
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="info-table">
               <thead>
                 <tr>
                   <th>Table</th>
@@ -1878,7 +1835,7 @@
                   <td>Manual operator entries — scrap, quality, notes</td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
             <p
               style="
                 font-size: 13px;
@@ -1895,17 +1852,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 4 — THE FUNCTIONS
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 360"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -1916,8 +1867,8 @@
                 width="440"
                 height="360"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -1927,7 +1878,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 FUNCTIONS — DETECT CHANGES, WRITE HISTORY
@@ -1940,8 +1891,8 @@
                 width="100"
                 height="44"
                 rx="8"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
               <text
@@ -1950,7 +1901,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 Valkey
@@ -1960,7 +1911,7 @@
                 y="82"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Cache
@@ -1972,7 +1923,7 @@
                 y1="70"
                 x2="150"
                 y2="70"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -1980,7 +1931,7 @@
                 y1="70"
                 x2="150"
                 y2="310"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -1991,7 +1942,7 @@
                 y1="70"
                 x2="180"
                 y2="70"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2001,8 +1952,8 @@
                 width="120"
                 height="44"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-1"
               />
@@ -2012,7 +1963,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns-state
               </text>
@@ -2021,7 +1972,7 @@
                 y="82"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Go · State durations
               </text>
@@ -2032,7 +1983,7 @@
                 y1="130"
                 x2="180"
                 y2="130"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2042,8 +1993,8 @@
                 width="120"
                 height="44"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-2"
               />
@@ -2053,7 +2004,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns-stoppage
               </text>
@@ -2062,7 +2013,7 @@
                 y="142"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Node · Classify reasons
               </text>
@@ -2073,7 +2024,7 @@
                 y1="190"
                 x2="180"
                 y2="190"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2083,8 +2034,8 @@
                 width="120"
                 height="44"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-3"
               />
@@ -2094,7 +2045,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns-productivity
               </text>
@@ -2103,7 +2054,7 @@
                 y="202"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Go · Production runs
               </text>
@@ -2114,7 +2065,7 @@
                 y1="250"
                 x2="180"
                 y2="250"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2124,8 +2075,8 @@
                 width="120"
                 height="44"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-4"
               />
@@ -2135,7 +2086,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns-log
               </text>
@@ -2144,7 +2095,7 @@
                 y="262"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Go · Change snapshots
               </text>
@@ -2155,7 +2106,7 @@
                 y1="310"
                 x2="180"
                 y2="310"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2165,8 +2116,8 @@
                 width="120"
                 height="44"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-5"
               />
@@ -2176,7 +2127,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns-input
               </text>
@@ -2185,7 +2136,7 @@
                 y="322"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Node · Operator data
               </text>
@@ -2196,7 +2147,7 @@
                 y1="70"
                 x2="340"
                 y2="70"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2204,7 +2155,7 @@
                 y1="130"
                 x2="340"
                 y2="130"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2212,7 +2163,7 @@
                 y1="190"
                 x2="340"
                 y2="190"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2220,7 +2171,7 @@
                 y1="250"
                 x2="340"
                 y2="250"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2228,7 +2179,7 @@
                 y1="310"
                 x2="340"
                 y2="310"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2236,7 +2187,7 @@
                 y1="70"
                 x2="340"
                 y2="310"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <line
@@ -2244,7 +2195,7 @@
                 y1="190"
                 x2="370"
                 y2="190"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2252,7 +2203,7 @@
               <!-- Packets -->
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="
                   offset-path: path('M 300 70 L 340 70 L 340 190 L 370 190');
                 "
@@ -2260,7 +2211,7 @@
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="
                   offset-path: path('M 300 190 L 340 190 L 340 190 L 370 190');
                 "
@@ -2268,7 +2219,7 @@
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="
                   offset-path: path('M 300 310 L 340 310 L 340 190 L 370 190');
                 "
@@ -2282,8 +2233,8 @@
                 width="52"
                 height="52"
                 rx="8"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
               <text
@@ -2292,7 +2243,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 Postgres
@@ -2302,7 +2253,7 @@
                 y="200"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 4 tables
@@ -2311,7 +2262,7 @@
           </div>
 
           <div class="step-text">
-            <div class="step-num">Step 04</div>
+            <div class="step-num" id="step-04">Step 04</div>
             <h3>The Functions — Processing in Real Time</h3>
             <p>
               The database doesn't fill itself. Five independent
@@ -2393,17 +2344,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 5 — THE CACHE
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="step-text">
-            <div class="step-num">Step 05</div>
+            <div class="step-num" id="step-05">Step 05</div>
             <h3>The Cache — The Real-Time Snapshot</h3>
             <p>
               Functions don't read directly from MQTT. They read from
@@ -2451,7 +2396,7 @@
           </div>
 
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 280"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -2462,8 +2407,8 @@
                 width="440"
                 height="280"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -2473,7 +2418,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 VALKEY CACHE — CURRENT + PREVIOUS
@@ -2486,8 +2431,8 @@
                 width="400"
                 height="210"
                 rx="8"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
 
@@ -2498,16 +2443,16 @@
                 width="400"
                 height="32"
                 rx="8"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <rect x="20" y="68" width="400" height="12" fill="#0a0a0a" />
-              <text
+              <rect x="20" y="68" width="400" height="12" fill="var(--diagram-ink)" />
+              <text class="ink-label"
                 x="36"
                 y="68"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
               >
                 Valkey Cache
               </text>
@@ -2519,7 +2464,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns:data:v1.0/.../cnc-01/status
               </text>
@@ -2528,7 +2473,7 @@
                 y="104"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 "ACTIVE"
               </text>
@@ -2536,7 +2481,7 @@
                 cx="404"
                 cy="100"
                 r="4"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-1"
               />
 
@@ -2545,7 +2490,7 @@
                 y1="114"
                 x2="404"
                 y2="114"
-                stroke="#f5f5f5"
+                stroke="var(--diagram-panel)"
                 stroke-width="1"
               />
 
@@ -2555,7 +2500,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns:prev:v1.0/.../cnc-01/status
               </text>
@@ -2564,7 +2509,7 @@
                 y="130"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 "IDLE"
               </text>
@@ -2574,7 +2519,7 @@
                 y1="140"
                 x2="404"
                 y2="140"
-                stroke="#f5f5f5"
+                stroke="var(--diagram-panel)"
                 stroke-width="1"
               />
 
@@ -2584,7 +2529,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns:data:v1.0/.../cnc-01/program
               </text>
@@ -2593,7 +2538,7 @@
                 y="156"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 "O1001"
               </text>
@@ -2601,7 +2546,7 @@
                 cx="404"
                 cy="152"
                 r="4"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-2"
               />
 
@@ -2610,7 +2555,7 @@
                 y1="166"
                 x2="404"
                 y2="166"
-                stroke="#f5f5f5"
+                stroke="var(--diagram-panel)"
                 stroke-width="1"
               />
 
@@ -2620,7 +2565,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 uns:prev:v1.0/.../cnc-01/program
               </text>
@@ -2629,7 +2574,7 @@
                 y="182"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 "O1001"
               </text>
@@ -2639,7 +2584,7 @@
                 y1="192"
                 x2="404"
                 y2="192"
-                stroke="#f5f5f5"
+                stroke="var(--diagram-panel)"
                 stroke-width="1"
               />
 
@@ -2650,7 +2595,7 @@
                 width="368"
                 height="44"
                 rx="6"
-                fill="#f5f5f5"
+                fill="var(--diagram-panel)"
               />
               <text
                 x="220"
@@ -2658,7 +2603,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 status: IDLE → ACTIVE = changed ✓
@@ -2668,7 +2613,7 @@
                 y="234"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 program: O1001 → O1001 = unchanged ✗
@@ -2680,7 +2625,7 @@
                 y="272"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Functions only write to PostgreSQL when a value actually changes
@@ -2690,17 +2635,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 6 — THE BROKER
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 300"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -2711,8 +2650,8 @@
                 width="440"
                 height="300"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -2722,7 +2661,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 MQTT BROKER — PUBLISH / SUBSCRIBE
@@ -2735,8 +2674,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2745,7 +2684,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 cnc-01
@@ -2757,8 +2696,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2767,7 +2706,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 cnc-02
@@ -2779,8 +2718,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2789,7 +2728,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 cnc-03
@@ -2801,8 +2740,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2811,7 +2750,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 cnc-04
@@ -2822,7 +2761,7 @@
                 y="244"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 PUBLISH
@@ -2834,7 +2773,7 @@
                 y1="74"
                 x2="180"
                 y2="140"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2843,7 +2782,7 @@
                 y1="118"
                 x2="180"
                 y2="140"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2852,7 +2791,7 @@
                 y1="162"
                 x2="180"
                 y2="152"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2861,7 +2800,7 @@
                 y1="206"
                 x2="180"
                 y2="152"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2869,25 +2808,25 @@
               <!-- Packets to broker -->
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 120 74 L 180 140')"
                 class="d-pkt d-pkt-1"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 120 118 L 180 140')"
                 class="d-pkt d-pkt-2"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 120 162 L 180 152')"
                 class="d-pkt d-pkt-3"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 120 206 L 180 152')"
                 class="d-pkt d-pkt-4"
               />
@@ -2899,35 +2838,35 @@
                 width="80"
                 height="68"
                 rx="8"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="220"
                 y="140"
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 MQTT
               </text>
-              <text
+              <text class="ink-label"
                 x="220"
                 y="156"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Broker
               </text>
-              <text
+              <text class="ink-label"
                 x="220"
                 y="170"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Pub/Sub
@@ -2939,7 +2878,7 @@
                 y1="140"
                 x2="320"
                 y2="74"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2948,7 +2887,7 @@
                 y1="146"
                 x2="320"
                 y2="130"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2957,7 +2896,7 @@
                 y1="152"
                 x2="320"
                 y2="186"
-                stroke="#d4d4d4"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-flow"
               />
@@ -2965,19 +2904,19 @@
               <!-- Packets from broker -->
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 260 140 L 320 74')"
                 class="d-pkt d-pkt-2"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 260 146 L 320 130')"
                 class="d-pkt d-pkt-3"
               />
               <circle
                 r="2.5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 style="offset-path: path('M 260 152 L 320 186')"
                 class="d-pkt d-pkt-4"
               />
@@ -2989,8 +2928,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2999,7 +2938,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 uns-framework
@@ -3009,7 +2948,7 @@
                 y="84"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 v1.0/#
@@ -3021,8 +2960,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -3031,7 +2970,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 Dashboard
@@ -3041,7 +2980,7 @@
                 y="140"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 v1.0/+/+/+/+/status
@@ -3053,8 +2992,8 @@
                 width="100"
                 height="36"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -3063,7 +3002,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 Future App
@@ -3073,7 +3012,7 @@
                 y="196"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 v1.0/.../area1/#
@@ -3084,7 +3023,7 @@
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 SUBSCRIBE
@@ -3097,8 +3036,8 @@
                 width="400"
                 height="32"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -3106,7 +3045,7 @@
                 y="272"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Producers don't know consumers · Consumers don't know producers
@@ -3116,7 +3055,7 @@
           </div>
 
           <div class="step-text">
-            <div class="step-num">Step 06</div>
+            <div class="step-num" id="step-06">Step 06</div>
             <h3>The Broker — MQTT Pub/Sub</h3>
             <p>
               The cache is populated by <strong>uns-framework</strong>, which
@@ -3182,17 +3121,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 7 — THE STANDARD
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="step-text">
-            <div class="step-num">Step 07</div>
+            <div class="step-num" id="step-07">Step 07</div>
             <h3>The Standard — ISA-95 Topic Hierarchy</h3>
             <p>
               Every data point in the UNS has a canonical address following the
@@ -3353,17 +3286,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 8 — THE INFORMATION MODEL (SENSORS)
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="step-text">
-            <div class="step-num">Step 08</div>
+            <div class="step-num" id="step-08">Step 08</div>
             <h3>The Information Model — Sensors</h3>
             <p>
               The ISA-95 hierarchy tells you <em>where</em> data comes from. But
@@ -3396,7 +3323,7 @@
 
           <div>
             <div class="mini-svg" style="margin-bottom: 24px">
-              <svg
+              <svg role="img" aria-label="Technical diagram"
                 viewBox="0 0 440 300"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -3407,8 +3334,8 @@
                   width="440"
                   height="300"
                   rx="12"
-                  fill="#fafafa"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-panel)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                 />
 
@@ -3418,7 +3345,7 @@
                   font-family="'JetBrains Mono',monospace"
                   font-size="8"
                   font-weight="600"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                   letter-spacing="0.08em"
                 >
                   SENSOR TEMPLATE → MQTT TOPICS
@@ -3431,125 +3358,125 @@
                   width="160"
                   height="140"
                   rx="8"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 />
-                <text
+                <text class="ink-label"
                   x="100"
                   y="68"
                   font-family="'JetBrains Mono',monospace"
                   font-size="8"
                   font-weight="600"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                   text-anchor="middle"
                 >
                   template_sensor_cnc
                 </text>
 
-                <text
+                <text class="ink-label"
                   x="36"
                   y="90"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   information_model:
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="106"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                 >
                   status
                 </text>
-                <text
+                <text class="ink-label"
                   x="100"
                   y="106"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   string
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="120"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                 >
                   program
                 </text>
-                <text
+                <text class="ink-label"
                   x="100"
                   y="120"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   string
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="134"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                 >
                   tool
                 </text>
-                <text
+                <text class="ink-label"
                   x="100"
                   y="134"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   float
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="148"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                 >
                   x-axis
                 </text>
-                <text
+                <text class="ink-label"
                   x="100"
                   y="148"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   float
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="162"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#ffffff"
+                  fill="var(--diagram-on-ink)"
                 >
                   z-axis
                 </text>
-                <text
+                <text class="ink-label"
                   x="100"
                   y="162"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   float
                 </text>
-                <text
+                <text class="ink-label"
                   x="44"
                   y="180"
                   font-family="'JetBrains Mono',monospace"
                   font-size="6"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                 >
                   Define once · Reuse everywhere
                 </text>
@@ -3560,7 +3487,7 @@
                   y1="100"
                   x2="220"
                   y2="72"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
@@ -3569,7 +3496,7 @@
                   y1="114"
                   x2="220"
                   y2="100"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
@@ -3578,7 +3505,7 @@
                   y1="128"
                   x2="220"
                   y2="128"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
@@ -3587,7 +3514,7 @@
                   y1="142"
                   x2="220"
                   y2="156"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
@@ -3596,7 +3523,7 @@
                   y1="156"
                   x2="220"
                   y2="184"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
@@ -3604,31 +3531,31 @@
                 <!-- Packets -->
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 100 L 220 72')"
                   class="d-pkt d-pkt-1"
                 />
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 114 L 220 100')"
                   class="d-pkt d-pkt-2"
                 />
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 128 L 220 128')"
                   class="d-pkt d-pkt-3"
                 />
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 142 L 220 156')"
                   class="d-pkt d-pkt-4"
                 />
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 156 L 220 184')"
                   class="d-pkt d-pkt-5"
                 />
@@ -3640,8 +3567,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-1"
                 />
@@ -3650,7 +3577,7 @@
                   y="74"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m1/s1/status
                 </text>
@@ -3661,8 +3588,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-2"
                 />
@@ -3671,7 +3598,7 @@
                   y="106"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m1/s1/program
                 </text>
@@ -3682,8 +3609,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-3"
                 />
@@ -3692,7 +3619,7 @@
                   y="138"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m1/s1/tool
                 </text>
@@ -3703,8 +3630,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-4"
                 />
@@ -3713,7 +3640,7 @@
                   y="170"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m1/s1/x-axis
                 </text>
@@ -3724,8 +3651,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-5"
                 />
@@ -3734,7 +3661,7 @@
                   y="202"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m1/s1/z-axis
                 </text>
@@ -3746,8 +3673,8 @@
                   width="160"
                   height="72"
                   rx="8"
-                  fill="#ffffff"
-                  stroke="#0a0a0a"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-ink)"
                   stroke-width="1.5"
                 />
                 <text
@@ -3756,7 +3683,7 @@
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
                   font-weight="600"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   text-anchor="middle"
                 >
                   template_sensor_env
@@ -3766,7 +3693,7 @@
                   y="248"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#737373"
+                  fill="var(--diagram-muted)"
                 >
                   information_model:
                 </text>
@@ -3776,7 +3703,7 @@
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
                   font-weight="500"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   temperature
                 </text>
@@ -3785,7 +3712,7 @@
                   y="264"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#737373"
+                  fill="var(--diagram-muted)"
                 >
                   float
                 </text>
@@ -3796,13 +3723,13 @@
                   y1="258"
                   x2="220"
                   y2="240"
-                  stroke="#d4d4d4"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-flow"
                 />
                 <circle
                   r="2"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                   style="offset-path: path('M 180 258 L 220 240')"
                   class="d-pkt d-pkt-2"
                 />
@@ -3813,8 +3740,8 @@
                   width="200"
                   height="28"
                   rx="4"
-                  fill="#ffffff"
-                  stroke="#e5e5e5"
+                  fill="var(--diagram-paper)"
+                  stroke="var(--diagram-line)"
                   stroke-width="1"
                   class="d-glow d-glow-6"
                 />
@@ -3823,7 +3750,7 @@
                   y="244"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#0a0a0a"
+                  fill="var(--diagram-ink)"
                 >
                   v1.0/uk/a1/l1/c1/m2/s3/temperature
                 </text>
@@ -3834,7 +3761,7 @@
                   y="286"
                   font-family="'JetBrains Mono',monospace"
                   font-size="7"
-                  fill="#a3a3a3"
+                  fill="var(--diagram-muted)"
                   text-anchor="middle"
                 >
                   Template defines the data model · Each field becomes an MQTT
@@ -3954,17 +3881,11 @@
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     STEP 9 — THE PRODUCERS
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+<section class="fade-in">
       <div class="container">
         <div class="step-grid">
           <div class="mini-svg">
-            <svg
+            <svg role="img" aria-label="Technical diagram"
               viewBox="0 0 440 340"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -3975,8 +3896,8 @@
                 width="440"
                 height="340"
                 rx="12"
-                fill="#fafafa"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
 
@@ -3986,7 +3907,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
                 font-weight="600"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 letter-spacing="0.08em"
               >
                 PRODUCERS — WHERE DATA BEGINS
@@ -3999,8 +3920,8 @@
                 width="190"
                 height="64"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-1"
               />
@@ -4008,7 +3929,7 @@
                 cx="40"
                 cy="76"
                 r="5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-1"
               />
               <text
@@ -4017,7 +3938,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="10"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 cnc-01
               </text>
@@ -4026,7 +3947,7 @@
                 y="86"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Haas VF-2 · ACTIVE
               </text>
@@ -4035,7 +3956,7 @@
                 y="100"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 O1001 · T01 · 8200 RPM
               </text>
@@ -4047,8 +3968,8 @@
                 width="190"
                 height="64"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-2"
               />
@@ -4056,7 +3977,7 @@
                 cx="40"
                 cy="148"
                 r="5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-2"
               />
               <text
@@ -4065,7 +3986,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="10"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 cnc-02
               </text>
@@ -4074,7 +3995,7 @@
                 y="158"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 DMG Mori NLX · IDLE
               </text>
@@ -4083,7 +4004,7 @@
                 y="172"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 O2001 · T03 · 0 RPM
               </text>
@@ -4095,8 +4016,8 @@
                 width="190"
                 height="64"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-3"
               />
@@ -4104,7 +4025,7 @@
                 cx="40"
                 cy="220"
                 r="5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-3"
               />
               <text
@@ -4113,7 +4034,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="10"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 cnc-03
               </text>
@@ -4122,7 +4043,7 @@
                 y="230"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Mazak Integrex · ACTIVE
               </text>
@@ -4131,7 +4052,7 @@
                 y="244"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 O3001 · T02 · 12000 RPM
               </text>
@@ -4143,8 +4064,8 @@
                 width="190"
                 height="64"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
                 class="d-glow d-glow-4"
               />
@@ -4152,7 +4073,7 @@
                 cx="40"
                 cy="292"
                 r="5"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 class="d-pulse d-pulse-4"
               />
               <text
@@ -4161,7 +4082,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="10"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 cnc-04
               </text>
@@ -4170,7 +4091,7 @@
                 y="302"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Okuma LB3000 · ALARM
               </text>
@@ -4179,7 +4100,7 @@
                 y="316"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 O4002 · T01 · 0 RPM
               </text>
@@ -4191,8 +4112,8 @@
                 width="190"
                 height="28"
                 rx="4"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -4200,7 +4121,7 @@
                 y="66"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 v1.0/.../area1/cnc-01/status
               </text>
@@ -4211,8 +4132,8 @@
                 width="190"
                 height="28"
                 rx="4"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -4220,7 +4141,7 @@
                 y="102"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 v1.0/.../area1/cnc-01/program
               </text>
@@ -4231,8 +4152,8 @@
                 width="190"
                 height="28"
                 rx="4"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -4240,7 +4161,7 @@
                 y="138"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 v1.0/.../area1/cnc-01/tool
               </text>
@@ -4252,25 +4173,25 @@
                 width="190"
                 height="40"
                 rx="6"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="325"
                 y="186"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 Every 3 seconds
               </text>
-              <text
+              <text class="ink-label"
                 x="325"
                 y="200"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 3 topics × 4 machines = 12 messages
@@ -4283,7 +4204,7 @@
                 width="60"
                 height="24"
                 rx="4"
-                fill="#f5f5f5"
+                fill="var(--diagram-panel)"
               />
               <text
                 x="260"
@@ -4291,7 +4212,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 /status
@@ -4303,7 +4224,7 @@
                 width="60"
                 height="24"
                 rx="4"
-                fill="#f5f5f5"
+                fill="var(--diagram-panel)"
               />
               <text
                 x="326"
@@ -4311,7 +4232,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 /program
@@ -4323,7 +4244,7 @@
                 width="58"
                 height="24"
                 rx="4"
-                fill="#f5f5f5"
+                fill="var(--diagram-panel)"
               />
               <text
                 x="391"
@@ -4331,7 +4252,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 /tool
@@ -4344,8 +4265,8 @@
                 width="190"
                 height="64"
                 rx="6"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -4353,7 +4274,7 @@
                 y="280"
                 font-family="'JetBrains Mono',monospace"
                 font-size="6"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
               >
                 PAYLOAD EXAMPLE
               </text>
@@ -4362,7 +4283,7 @@
                 y="296"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 { "state": "ACTIVE",
               </text>
@@ -4371,7 +4292,7 @@
                 y="308"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 &nbsp;&nbsp;"operator": "OP-7842",
               </text>
@@ -4380,7 +4301,7 @@
                 y="320"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 &nbsp;&nbsp;"timestamp": "..." }
               </text>
@@ -4388,7 +4309,7 @@
           </div>
 
           <div class="step-text">
-            <div class="step-num">Step 09</div>
+            <div class="step-num" id="step-09">Step 09</div>
             <h3>The Producers — Where Data Begins</h3>
             <p>
               At the very bottom of the stack: the machines themselves. PLCs,
@@ -4456,14 +4377,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     THE THREE SOLUTIONS
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+    </section></details><section class="fade-in">
       <div class="container">
         <div class="section-label">Three Solutions</div>
         <h2>The standard. The implementation. The&nbsp;platform.</h2>
@@ -4514,114 +4428,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
-      <div class="container" style="text-align: center; max-width: 700px">
-        <div class="section-label">Get Started</div>
-        <h2>From shop floor to dashboard in&nbsp;nine&nbsp;steps.</h2>
-        <p class="lead" style="margin-left: auto; margin-right: auto">
-          Read the open standard, explore the reference implementation, or dive
-          into the documentation. Everything is open source, self-hosted, and
-          ready to deploy.
-        </p>
-        <div class="cta-group" style="justify-content: center">
-          <a href="/framework/" class="btn-primary">UNS Standard v1.0 →</a>
-          <a href="/fn-uns/" class="btn-secondary">Explore fn-uns →</a>
-          <a href="/docs/" class="btn-secondary">Read the Docs →</a>
-          <a
-            href="https://github.com/unsframework"
-            class="btn-secondary"
-            target="_blank"
-            >GitHub</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <footer>
-      <div class="container">
-        <span>UNS Framework — Open Source</span>
-        <div class="footer-links">
-          <a href="/framework/">Standard</a>
-          <a href="/fn-uns/">fn-uns</a>
-          <a href="https://github.com/unsframework" target="_blank">GitHub</a>
-          <a href="https://functionkit.github.io/fnkit/" target="_blank"
-            >fnkit</a
-          >
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Dark mode
-      const toggle = document.getElementById('themeToggle'),
-        html = document.documentElement,
-        saved = localStorage.getItem('theme')
-      if (saved) html.setAttribute('data-theme', saved)
-      else if (window.matchMedia('(prefers-color-scheme:dark)').matches)
-        html.setAttribute('data-theme', 'dark')
-      toggle.addEventListener('click', () => {
-        const d = html.getAttribute('data-theme') === 'dark'
-        const n = d ? 'light' : 'dark'
-        html.setAttribute('data-theme', n)
-        localStorage.setItem('theme', n)
-      })
-
-      // Fade-in on scroll
-      const fo = new IntersectionObserver(
-        (e) => {
-          e.forEach((x) => {
-            if (x.isIntersecting) {
-              x.target.classList.add('visible')
-              fo.unobserve(x.target)
-            }
-          })
-        },
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-      )
-      document.querySelectorAll('.fade-in').forEach((el) => fo.observe(el))
-
-      // Mobile hamburger menu toggle
-      const menuToggle = document.querySelector('.menu-toggle')
-      const mobileMenu = document.querySelector('.mobile-menu')
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-          const isOpen = mobileMenu.classList.toggle('open')
-          menuToggle.innerHTML = isOpen ? '✕' : '☰'
-          menuToggle.setAttribute('aria-expanded', isOpen)
-        })
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open')
-            menuToggle.innerHTML = '☰'
-            menuToggle.setAttribute('aria-expanded', 'false')
-          })
-        })
-      }
-
-      // Scroll-triggered [data-animate]
-      const ao = new IntersectionObserver(
-        (e) => {
-          e.forEach((x) => {
-            if (x.isIntersecting) {
-              x.target.classList.add('animate-active')
-              ao.unobserve(x.target)
-            }
-          })
-        },
-        { threshold: 0.15, rootMargin: '0px 0px -20px 0px' },
-      )
-      document
-        .querySelectorAll('[data-animate]')
-        .forEach((el) => ao.observe(el))
-    </script>
-  </body>
+    </section><section><div class="container"><p class="section-label">NEXT STEP</p><h2>Try it with sample machine data.</h2><p class="lead">The quick start runs simulated machines and lets you read their latest values. Add history and metrics once the capture pipeline is working.</p><div class="cta-group"><a class="btn-primary" href="/docs/getting-started.html">Run the sample →</a><a class="btn-secondary" href="/framework/">Read the standard →</a></div></div></section></main><footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
+<script src="/shared.js" defer></script>
+</body>
 </html>

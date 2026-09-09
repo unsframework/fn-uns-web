@@ -3,80 +3,63 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>uns-cache — Cache Reader API — fn-uns Docs</title>
+<title>uns-cache — Cache Reader API — UNS Framework</title>
 <meta name="description" content="Reads UNS topic data from Valkey and returns JSON with change detection."/>
 <link rel="canonical" href="https://unsframework.com/docs/uns-cache.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="uns-cache — Cache Reader API with Change Detection" />
+<meta property="og:title" content="uns-cache — Cache Reader API" />
 <meta property="og:description" content="Reads UNS topic data from Valkey and returns JSON with change detection." />
 <meta property="og:url" content="https://unsframework.com/docs/uns-cache.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="uns-cache — Cache Reader API with Change Detection" />
-<meta name="twitter:description" content="HTTP API to read cached UNS topic data with automatic change detection." />
+<meta name="twitter:title" content="uns-cache — Cache Reader API" />
+<meta name="twitter:description" content="Reads UNS topic data from Valkey and returns JSON with change detection." />
 <meta name="keywords" content="UNS cache, Valkey API, change detection, manufacturing data API" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html" class="active">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html" class="active" aria-current="page">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
     <h1>uns-cache — Cache Reader API</h1>
-    <p class="page-desc">Reads UNS topic data from Valkey and returns JSON with change detection.</p>
-    <table class="def-table"><tbody>
+    <p class="page-desc">Reads UNS topic data from Valkey and returns JSON with change detection.</p><div class="reading-context">Capture · Reads the latest cached values. For a record of how a signal changed over time, use the <a href="/docs/uns-historian.html">historian</a>.</div>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><tbody>
         <tr><td>Language</td><td>Node.js</td></tr>
         <tr><td>Type</td><td>HTTP function</td></tr>
         <tr><td>Scaffolded with</td><td>fnkit node</td></tr>
         <tr><td>Depends on</td><td>Valkey cache</td></tr>
-    </tbody></table>
+    </tbody></table></div>
 
-    <h2>What It Does</h2>
+    <details class="page-outline"><summary>On this page <span>4 sections</span></summary><div><a href="#what-it-does">What It Does</a><a href="#api-usage">API Usage</a><a href="#response">Response</a><a href="#quick-start">Quick Start</a></div></details>
+<h2 id="what-it-does">What It Does</h2>
     <p>Reads cached UNS topic data from Valkey. Compares current vs previous values to detect changes.</p>
-    <h2>API Usage</h2>
+    <h2 id="api-usage">API Usage</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">curl https://api.fnkit.dev/uns-cache
 curl -d '{"topics":["v1.0/.../cnc-01/status"]}' https://api.fnkit.dev/uns-cache\</pre\>\</div\>
-    <h2>Response</h2>
+    <h2 id="response">Response</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">{ "topic_count": 12, "changed_count": 3,
   "topics": [{ "topic":"...", "value":{}, "previous_value":{}, "changed":true }],
   "changes": [{ /* only changed topics */ }] }</pre></div>
-    <h2>Quick Start</h2>
+    <h2 id="quick-start">Quick Start</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">cd uns-cache && cp .env.example .env && docker compose up -d
 curl http://localhost:8080/uns-cache | jq</pre></div>
 
-    <div class="docs-nav-buttons">
-      <a href="/docs/uns-framework.html" class="docs-nav-btn"><span class="nav-label">Previous</span><span class="nav-title">uns-framework</span></a>
-      <a href="/docs/uns-log.html" class="docs-nav-btn next"><span class="nav-label">Next</span><span class="nav-title">uns-log</span></a>
-    </div>
+    <div class="next-reading"><a href="/docs/">All documentation →</a><a href="/docs/uns-state.html">Machine state history →</a></div>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

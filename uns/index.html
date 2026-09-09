@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      The Unified Namespace — Why Manufacturing Data Needs a Single Source of
-      Truth
-    </title>
+    <title>One simple question. A clearer picture of your factory. — UNS Framework</title>
     <meta
       name="description"
-      content="One simple question. Five systems. Four hours. The Unified Namespace answers it in under a second. Follow one question through a factory to understand why manufacturing needs a shared data layer."
+      content="When machine data, production records, and reports live apart, answering a shift question can become a search through exports and spreadsheets. A Unified Namespace gives those systems a shared structure for exchanging data."
     />
     <link rel="canonical" href="https://unsframework.com/uns/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -17,30 +14,27 @@
     <meta property="og:site_name" content="UNS Framework" />
     <meta
       property="og:title"
-      content="The Unified Namespace — One Question, Two Architectures"
+      content="One simple question. A clearer picture of your factory."
     />
     <meta
       property="og:description"
-      content="Follow one question through a factory. See why manufacturing needs a Unified Namespace."
+      content="When machine data, production records, and reports live apart, answering a shift question can become a search through exports and spreadsheets. A Unified Namespace gives those systems a shared structure for exchanging data."
     />
     <meta property="og:url" content="https://unsframework.com/uns/" />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="The Unified Namespace — Manufacturing's Missing Data Layer"
+      content="One simple question. A clearer picture of your factory."
     />
     <meta
       name="twitter:description"
-      content="One simple question. Five systems. Four hours. Or one API call and 0.3 seconds."
+      content="When machine data, production records, and reports live apart, answering a shift question can become a search through exports and spreadsheets. A Unified Namespace gives those systems a shared structure for exchanging data."
     />
     <meta name="keywords" content="unified namespace, what is UNS, manufacturing data, MQTT, single source of truth, ISA-95, real-time data" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
-    />
+    <link rel="icon" href="/assets/favicon.svg" />
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
       * {
         margin: 0;
         padding: 0;
@@ -1420,52 +1414,26 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <nav>
-      <a href="/" class="logo">UNS Framework</a>
-      <div class="links">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          aria-label="Toggle dark mode"
-        >
-          <div class="toggle-thumb">
-            <span class="toggle-icon-sun">☀</span
-            ><span class="toggle-icon-moon">☾</span>
-          </div>
-        </button>
-      </div>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-      <div class="mobile-menu">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-      </div>
-    </nav>
+  <link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/signal.css" />
+</head>
+  <body class="signal-site landing-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/" aria-current="page">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
+  </div>
+</header><main id="main">
 
     <!-- ═══════════════════════════════════════════
      1. HERO — The Question
      ═══════════════════════════════════════════ -->
     <div class="hero">
       <div class="container">
-        <h1>
-          One simple question.<br /><span class="hero-accent"
-            >Five systems. Four hours. Still&nbsp;not&nbsp;sure.</span
-          >
-        </h1>
-        <p class="subtitle">
-          Every manufacturing operation faces the same problem. Someone asks a
-          straightforward question about the shop floor — and answering it
-          requires pulling data from multiple disconnected systems, exporting to
-          spreadsheets, and hoping the timestamps align. By the time you have an
-          answer, it's already stale.
-        </p>
+        <p class="eyebrow landing-kicker"><i class="dot"></i>WHY A UNIFIED NAMESPACE</p><h1>One simple question.<br><span class="hero-accent">A clearer picture of your factory.</span></h1>
+        <p class="subtitle">When machine data, production records, and reports live apart, answering a shift question can become a search through exports and spreadsheets. A Unified Namespace gives those systems a shared structure for exchanging data.</p>
         <div class="hero-question">
           "What was the utilisation of CNC-01 last shift?"
         </div>
@@ -1478,18 +1446,20 @@
      2. HOW YOU ANSWER IT TODAY — Animated SVG #1
      ═══════════════════════════════════════════ -->
     <section class="fade-in">
+      <div class="container" style="max-width: 800px">
+        <div class="section-label">The Unified Namespace</div>
+        <h2>A shared place for machine data.</h2>
+        <p class="lead">A Unified Namespace is a shared, structured layer of operational data. Machines publish signals under agreed names, and applications subscribe to what they need. In this implementation, an MQTT broker delivers the messages.</p>
+        <p class="lead">With a consistent source and stored history, a report can calculate how long CNC-01 ran last shift. That still depends on reliable signals, agreed state definitions, and a clear shift boundary.</p>
+      </div>
+    </section><section class="fade-in">
       <div class="container">
-        <div class="section-label">Today's Reality</div>
-        <h2>Five systems. Five handoffs. No&nbsp;confidence.</h2>
-        <p class="lead">
-          To answer one question about machine utilisation, you traverse five
-          systems, perform three manual exports, and spend hours in a
-          spreadsheet. Here's the actual journey. Watch it to the end, it'll
-          annoy you.
-        </p>
+        <div class="section-label">AN EXAMPLE / DISCONNECTED DATA</div>
+        <h2>The answer is spread across systems.</h2>
+        <p class="lead">Imagine checking machine status, shift records, and production data in separate tools. This example shows the handoffs needed to assemble a utilisation report. The timings in the diagrams illustrate the story; they are not measured benchmarks.</p>
 
         <div class="info-svg">
-          <svg
+          <svg role="img" aria-label="Technical diagram"
             viewBox="0 0 960 540"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1501,8 +1471,8 @@
               width="960"
               height="540"
               rx="16"
-              fill="#fafafa"
-              stroke="#e5e5e5"
+              fill="var(--diagram-panel)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
 
@@ -1513,7 +1483,7 @@
               width="176"
               height="308"
               rx="8"
-              fill="#f5f5f5"
+              fill="var(--diagram-panel)"
             />
             <rect
               x="204"
@@ -1521,8 +1491,8 @@
               width="176"
               height="308"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <rect
@@ -1531,7 +1501,7 @@
               width="176"
               height="308"
               rx="8"
-              fill="#f5f5f5"
+              fill="var(--diagram-panel)"
             />
             <rect
               x="580"
@@ -1539,8 +1509,8 @@
               width="176"
               height="308"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <rect
@@ -1549,7 +1519,7 @@
               width="176"
               height="308"
               rx="8"
-              fill="#f5f5f5"
+              fill="var(--diagram-panel)"
             />
 
             <!-- Step numbers -->
@@ -1559,7 +1529,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               text-anchor="middle"
             >
@@ -1571,7 +1541,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               text-anchor="middle"
             >
@@ -1583,7 +1553,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               text-anchor="middle"
             >
@@ -1595,7 +1565,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               text-anchor="middle"
             >
@@ -1607,7 +1577,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               text-anchor="middle"
             >
@@ -1622,8 +1592,8 @@
                 width="152"
                 height="72"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1.5"
                 class="s1-glow-1"
               />
@@ -1633,7 +1603,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 SCADA
               </text>
@@ -1642,7 +1612,7 @@
                 y="98"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Wonderware
               </text>
@@ -1651,7 +1621,7 @@
                 y="112"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Live view only
               </text>
@@ -1662,8 +1632,8 @@
                 width="44"
                 height="18"
                 rx="4"
-                fill="#f5f5f5"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1672,7 +1642,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 2 min
@@ -1686,8 +1656,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1695,7 +1665,7 @@
                 y="168"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Can see cnc-01 is
@@ -1706,7 +1676,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 ACTIVE right now
@@ -1720,24 +1690,24 @@
                 width="152"
                 height="40"
                 rx="6"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="104"
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 No history
               </text>
-              <text
+              <text class="ink-label"
                 x="104"
                 y="238"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Dead end → next system
@@ -1752,8 +1722,8 @@
                 width="152"
                 height="72"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1.5"
                 class="s1-glow-2"
               />
@@ -1763,7 +1733,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 Historian
               </text>
@@ -1772,7 +1742,7 @@
                 y="98"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 OSIsoft PI
               </text>
@@ -1781,7 +1751,7 @@
                 y="112"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Tag-based archive
               </text>
@@ -1792,8 +1762,8 @@
                 width="44"
                 height="18"
                 rx="4"
-                fill="#f5f5f5"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1802,7 +1772,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 45 min
@@ -1816,8 +1786,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1825,7 +1795,7 @@
                 y="168"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Find correct tag
@@ -1835,7 +1805,7 @@
                 y="184"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Export 8hr CSV
@@ -1849,8 +1819,8 @@
                 width="152"
                 height="40"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1858,7 +1828,7 @@
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Raw state changes
@@ -1868,7 +1838,7 @@
                 y="238"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 No shift context
@@ -1883,8 +1853,8 @@
                 width="152"
                 height="72"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1.5"
                 class="s1-glow-3"
               />
@@ -1894,7 +1864,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 ERP
               </text>
@@ -1903,7 +1873,7 @@
                 y="98"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 SAP / Oracle
               </text>
@@ -1912,7 +1882,7 @@
                 y="112"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Shift schedules
               </text>
@@ -1923,8 +1893,8 @@
                 width="44"
                 height="18"
                 rx="4"
-                fill="#f5f5f5"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1933,7 +1903,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 15 min
@@ -1947,8 +1917,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1956,7 +1926,7 @@
                 y="168"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Look up shift times
@@ -1966,7 +1936,7 @@
                 y="184"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 06:00 – 14:00
@@ -1980,8 +1950,8 @@
                 width="152"
                 height="40"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -1989,7 +1959,7 @@
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Copy start/end times
@@ -1999,7 +1969,7 @@
                 y="238"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Manual transcription
@@ -2014,8 +1984,8 @@
                 width="152"
                 height="72"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1.5"
                 class="s1-glow-4"
               />
@@ -2025,7 +1995,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 Spreadsheet
               </text>
@@ -2034,7 +2004,7 @@
                 y="98"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Excel / Sheets
               </text>
@@ -2043,7 +2013,7 @@
                 y="112"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Manual calculation
               </text>
@@ -2054,8 +2024,8 @@
                 width="44"
                 height="18"
                 rx="4"
-                fill="#f5f5f5"
-                stroke="#e5e5e5"
+                fill="var(--diagram-panel)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2064,7 +2034,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="500"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 2 hrs
@@ -2078,8 +2048,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2087,7 +2057,7 @@
                 y="168"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Paste CSV data
@@ -2097,7 +2067,7 @@
                 y="184"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Filter by shift window
@@ -2111,8 +2081,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#d4d4d4"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1"
               />
               <text
@@ -2120,7 +2090,7 @@
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 SUMIF(state="ACTIVE")
@@ -2130,7 +2100,7 @@
                 y="238"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 ÷ total shift hours
@@ -2140,7 +2110,7 @@
                 y="250"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Hope formula is right
@@ -2155,8 +2125,8 @@
                 width="152"
                 height="72"
                 rx="8"
-                fill="#ffffff"
-                stroke="#e5e5e5"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-line)"
                 stroke-width="1.5"
                 class="s1-glow-5"
               />
@@ -2166,7 +2136,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="11"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 Answer
               </text>
@@ -2175,7 +2145,7 @@
                 y="98"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Maybe correct
               </text>
@@ -2184,7 +2154,7 @@
                 y="112"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Already stale
               </text>
@@ -2195,15 +2165,15 @@
                 width="44"
                 height="18"
                 rx="4"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="904"
                 y="80"
                 font-family="'JetBrains Mono',monospace"
                 font-size="7"
                 font-weight="600"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 4+ hrs
@@ -2217,8 +2187,8 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#ffffff"
-                stroke="#0a0a0a"
+                fill="var(--diagram-paper)"
+                stroke="var(--diagram-ink)"
                 stroke-width="1.5"
               />
               <text
@@ -2227,7 +2197,7 @@
                 font-family="'JetBrains Mono',monospace"
                 font-size="18"
                 font-weight="700"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
                 text-anchor="middle"
               >
                 ~68%
@@ -2237,7 +2207,7 @@
                 y="186"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Utilisation (estimated)
@@ -2251,34 +2221,34 @@
                 width="152"
                 height="48"
                 rx="6"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               />
-              <text
+              <text class="ink-label"
                 x="856"
                 y="224"
                 font-family="'JetBrains Mono',monospace"
                 font-size="9"
-                fill="#ffffff"
+                fill="var(--diagram-on-ink)"
                 text-anchor="middle"
               >
                 But was the tag right?
               </text>
-              <text
+              <text class="ink-label"
                 x="856"
                 y="238"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Shift boundary exact?
               </text>
-              <text
+              <text class="ink-label"
                 x="856"
                 y="250"
                 font-family="'JetBrains Mono',monospace"
                 font-size="8"
-                fill="#a3a3a3"
+                fill="var(--diagram-muted)"
                 text-anchor="middle"
               >
                 Formula correct?
@@ -2292,26 +2262,26 @@
               width="928"
               height="48"
               rx="8"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             />
-            <text
+            <text class="ink-label"
               x="480"
               y="360"
               font-family="'JetBrains Mono',monospace"
               font-size="10"
               font-weight="600"
-              fill="#ffffff"
+              fill="var(--diagram-on-ink)"
               text-anchor="middle"
             >
               4 hours 12 minutes · 5 systems · 3 manual exports · 1 spreadsheet
               · 0 confidence
             </text>
-            <text
+            <text class="ink-label"
               x="480"
               y="376"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               And tomorrow someone will ask the same question about a different
@@ -2325,7 +2295,7 @@
               y1="416"
               x2="932"
               y2="416"
-              stroke="#e5e5e5"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
 
@@ -2335,7 +2305,7 @@
               y1="410"
               x2="28"
               y2="422"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2343,14 +2313,14 @@
               y="436"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="start"
             >
               0 min
             </text>
 
             <!-- Bar: SCADA (28 → 64, width 36) -->
-            <rect x="28" y="412" width="36" height="8" rx="2" fill="#d4d4d4" />
+            <rect x="28" y="412" width="36" height="8" rx="2" fill="var(--diagram-line)" />
 
             <!-- Tick: 2 min -->
             <line
@@ -2358,7 +2328,7 @@
               y1="410"
               x2="64"
               y2="422"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2366,14 +2336,14 @@
               y="436"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               2 min
             </text>
 
             <!-- Bar: Historian (64 → 262, width 198) -->
-            <rect x="64" y="412" width="198" height="8" rx="2" fill="#a3a3a3" />
+            <rect x="64" y="412" width="198" height="8" rx="2" fill="var(--diagram-muted)" />
 
             <!-- Tick: 47 min -->
             <line
@@ -2381,7 +2351,7 @@
               y1="410"
               x2="262"
               y2="422"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2389,14 +2359,14 @@
               y="436"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               47 min
             </text>
 
             <!-- Bar: ERP (262 → 328, width 66) -->
-            <rect x="262" y="412" width="66" height="8" rx="2" fill="#d4d4d4" />
+            <rect x="262" y="412" width="66" height="8" rx="2" fill="var(--diagram-line)" />
 
             <!-- Tick: 62 min -->
             <line
@@ -2404,7 +2374,7 @@
               y1="410"
               x2="328"
               y2="422"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2412,7 +2382,7 @@
               y="436"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               62 min
@@ -2425,7 +2395,7 @@
               width="492"
               height="8"
               rx="2"
-              fill="#737373"
+              fill="var(--diagram-muted)"
             />
 
             <!-- Tick: 3 hrs -->
@@ -2434,7 +2404,7 @@
               y1="410"
               x2="820"
               y2="422"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2442,7 +2412,7 @@
               y="436"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               3 hrs
@@ -2455,7 +2425,7 @@
               width="112"
               height="8"
               rx="2"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             />
 
             <!-- Tick: 4 hrs 12 min (end) -->
@@ -2464,7 +2434,7 @@
               y1="410"
               x2="932"
               y2="422"
-              stroke="#0a0a0a"
+              stroke="var(--diagram-ink)"
               stroke-width="1.5"
             />
             <text
@@ -2473,7 +2443,7 @@
               font-family="'JetBrains Mono',monospace"
               font-size="8"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               text-anchor="end"
             >
               4 hrs 12 min
@@ -2485,7 +2455,7 @@
               y="454"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               SCADA
@@ -2495,7 +2465,7 @@
               y="454"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Historian export
@@ -2505,7 +2475,7 @@
               y="454"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               ERP
@@ -2515,7 +2485,7 @@
               y="454"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Spreadsheet calculation
@@ -2525,7 +2495,7 @@
               y="454"
               font-family="'JetBrains Mono',monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Review
@@ -2538,8 +2508,8 @@
               width="928"
               height="48"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <text
@@ -2547,7 +2517,7 @@
               y="496"
               font-family="'JetBrains Mono',monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               "What was the utilisation of CNC-01 last shift?"
@@ -2557,7 +2527,7 @@
               y="512"
               font-family="'JetBrains Mono',monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Asked at 14:15 · Answered at 18:27 · Confidence: low · Repeatable:
@@ -2566,23 +2536,1016 @@
           </svg>
         </div>
       </div>
-    </section>
+    </section><section class="fade-in">
+      <div class="container">
+        <div class="section-label">With a Unified Namespace</div>
+        <h2>The same question, with data already connected.</h2>
+        <p class="lead">In this example, software collects machine states and stores the history as it arrives. A reporting application can use those records without a new round of manual exports. Response time depends on the deployment and query.</p>
 
-    <div class="divider"></div>
+        <div class="info-svg">
+          <svg role="img" aria-label="Technical diagram"
+            viewBox="0 0 960 420"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Background -->
+            <rect
+              x="0"
+              y="0"
+              width="960"
+              height="420"
+              rx="16"
+              fill="var(--diagram-panel)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
 
-    <!-- ═══════════════════════════════════════════
-     3. WHY IT'S ALWAYS THIS HARD
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+            <!-- ═══ TOP ROW: DATA PIPELINE ═══ -->
+            <!-- Pipeline label -->
+            <text
+              x="28"
+              y="32"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+            >
+              DATA PIPELINE — CONTINUOUS
+            </text>
+
+            <!-- Stage backgrounds for pipeline row -->
+            <rect
+              x="16"
+              y="44"
+              width="168"
+              height="140"
+              rx="8"
+              fill="var(--diagram-panel)"
+            />
+            <rect
+              x="196"
+              y="44"
+              width="108"
+              height="140"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <rect
+              x="316"
+              y="44"
+              width="120"
+              height="140"
+              rx="8"
+              fill="var(--diagram-panel)"
+            />
+            <rect
+              x="448"
+              y="44"
+              width="140"
+              height="140"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <rect
+              x="600"
+              y="44"
+              width="108"
+              height="140"
+              rx="8"
+              fill="var(--diagram-panel)"
+            />
+
+            <!-- Stage labels -->
+            <text
+              x="100"
+              y="62"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              MACHINE
+            </text>
+            <text
+              x="250"
+              y="62"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              BROKER
+            </text>
+            <text
+              x="376"
+              y="62"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              CACHE
+            </text>
+            <text
+              x="518"
+              y="62"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              FUNCTIONS
+            </text>
+            <text
+              x="654"
+              y="62"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              DATABASE
+            </text>
+
+            <!-- ═══ MACHINE ═══ -->
+            <rect
+              x="28"
+              y="74"
+              width="144"
+              height="56"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-glow d-glow-1"
+            />
+            <circle
+              cx="44"
+              cy="96"
+              r="5"
+              fill="var(--diagram-ink)"
+              class="d-pulse d-pulse-1"
+            />
+            <text
+              x="56"
+              y="92"
+              font-family="'JetBrains Mono',monospace"
+              font-size="10"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              cnc-01
+            </text>
+            <text
+              x="56"
+              y="106"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              ACTIVE · OP-7842 · T12
+            </text>
+            <text
+              x="56"
+              y="120"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              Publishing every 3s
+            </text>
+
+            <!-- Topic path -->
+            <rect
+              x="28"
+              y="140"
+              width="144"
+              height="24"
+              rx="4"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <text
+              x="100"
+              y="156"
+              font-family="'JetBrains Mono',monospace"
+              font-size="6"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              v1.0/acme/site1/area1/cnc-01/status
+            </text>
+
+            <!-- ═══ BROKER ═══ -->
+            <rect x="208" y="74" width="84" height="56" rx="8" fill="var(--diagram-ink)" />
+            <text class="ink-label"
+              x="250"
+              y="96"
+              font-family="'JetBrains Mono',monospace"
+              font-size="10"
+              font-weight="600"
+              fill="var(--diagram-on-ink)"
+              text-anchor="middle"
+            >
+              MQTT
+            </text>
+            <text class="ink-label"
+              x="250"
+              y="110"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              Broker · Pub/Sub
+            </text>
+
+            <!-- Flow: Machine → Broker -->
+            <line
+              x1="172"
+              y1="102"
+              x2="208"
+              y2="102"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+            <!-- Packet: Machine → Broker -->
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 172 102 L 208 102')"
+              class="d-pkt d-pkt-1"
+            />
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 172 102 L 208 102')"
+              class="d-pkt d-pkt-5"
+            />
+
+            <!-- ═══ CACHE ═══ -->
+            <rect
+              x="328"
+              y="74"
+              width="96"
+              height="56"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-ink)"
+              stroke-width="1.5"
+            />
+            <text
+              x="376"
+              y="96"
+              font-family="'JetBrains Mono',monospace"
+              font-size="10"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+              text-anchor="middle"
+            >
+              Valkey
+            </text>
+            <text
+              x="376"
+              y="110"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              uns:data:* · uns:prev:*
+            </text>
+
+            <!-- Flow: Broker → Cache -->
+            <line
+              x1="292"
+              y1="102"
+              x2="328"
+              y2="102"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+            <!-- Packet: Broker → Cache -->
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 292 102 L 328 102')"
+              class="d-pkt d-pkt-2"
+            />
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 292 102 L 328 102')"
+              class="d-pkt d-pkt-6"
+            />
+
+            <!-- ═══ FUNCTIONS ═══ -->
+            <rect
+              x="460"
+              y="72"
+              width="116"
+              height="30"
+              rx="6"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-glow d-glow-2"
+            />
+            <text
+              x="476"
+              y="91"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="500"
+              fill="var(--diagram-ink)"
+            >
+              uns-state
+            </text>
+
+            <rect
+              x="460"
+              y="108"
+              width="116"
+              height="30"
+              rx="6"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-glow d-glow-3"
+            />
+            <text
+              x="476"
+              y="127"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="500"
+              fill="var(--diagram-ink)"
+            >
+              uns-stoppage
+            </text>
+
+            <rect
+              x="460"
+              y="144"
+              width="116"
+              height="30"
+              rx="6"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-glow d-glow-4"
+            />
+            <text
+              x="476"
+              y="163"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="500"
+              fill="var(--diagram-ink)"
+            >
+              uns-productivity
+            </text>
+
+            <!-- Flow: Cache → Functions (vertical trunk at x=436, branching right) -->
+            <line
+              x1="424"
+              y1="102"
+              x2="436"
+              y2="102"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="436"
+              y1="87"
+              x2="436"
+              y2="159"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="436"
+              y1="87"
+              x2="460"
+              y2="87"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+            <line
+              x1="436"
+              y1="123"
+              x2="460"
+              y2="123"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+            <line
+              x1="436"
+              y1="159"
+              x2="460"
+              y2="159"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+
+            <!-- Packets: Cache → Functions (per branch) -->
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 424 102 L 436 102 L 436 87 L 460 87')"
+              class="d-pkt d-pkt-3"
+            />
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="
+                offset-path: path('M 424 102 L 436 102 L 436 123 L 460 123');
+              "
+              class="d-pkt d-pkt-7"
+            />
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="
+                offset-path: path('M 424 102 L 436 102 L 436 159 L 460 159');
+              "
+              class="d-pkt d-pkt-8"
+            />
+
+            <!-- ═══ DATABASE ═══ -->
+            <rect
+              x="612"
+              y="74"
+              width="84"
+              height="56"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-ink)"
+              stroke-width="1.5"
+            />
+            <text
+              x="654"
+              y="96"
+              font-family="'JetBrains Mono',monospace"
+              font-size="10"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+              text-anchor="middle"
+            >
+              PostgreSQL
+            </text>
+            <text
+              x="654"
+              y="110"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              states · stoppages · runs
+            </text>
+
+            <!-- Flow: Functions → Database (merge at x=588) -->
+            <line
+              x1="576"
+              y1="87"
+              x2="588"
+              y2="87"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="576"
+              y1="123"
+              x2="588"
+              y2="123"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="576"
+              y1="159"
+              x2="588"
+              y2="159"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="588"
+              y1="87"
+              x2="588"
+              y2="159"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="588"
+              y1="102"
+              x2="612"
+              y2="102"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+
+            <!-- Packets: Functions → Database -->
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 576 87 L 588 87 L 588 102 L 612 102')"
+              class="d-pkt d-pkt-4"
+            />
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="
+                offset-path: path('M 576 123 L 588 123 L 588 102 L 612 102');
+              "
+              class="d-pkt d-pkt-8"
+            />
+
+            <!-- ═══ DIVIDER LINE ═══ -->
+            <line
+              x1="28"
+              y1="204"
+              x2="932"
+              y2="204"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              stroke-dasharray="4 4"
+            />
+            <text
+              x="480"
+              y="200"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+            >
+              ▼ API REQUEST ▼
+            </text>
+
+            <!-- ═══ BOTTOM ROW: THE API CALL ═══ -->
+
+            <!-- Request card -->
+            <rect
+              x="16"
+              y="220"
+              width="400"
+              height="80"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <text
+              x="32"
+              y="240"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              font-weight="600"
+              fill="var(--diagram-muted)"
+              letter-spacing="0.06em"
+            >
+              HTTP REQUEST
+            </text>
+            <text
+              x="32"
+              y="260"
+              font-family="'JetBrains Mono',monospace"
+              font-size="11"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              GET /uns-kpi?hours=8&amp;machine=cnc-01
+            </text>
+            <text
+              x="32"
+              y="278"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              → queries PostgreSQL → computes utilisation, availability, MTBF,
+              MTTR, throughput
+            </text>
+            <text
+              x="32"
+              y="290"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              → returns JSON in 0.3 seconds
+            </text>
+
+            <!-- Flow: Request → uns-kpi -->
+            <line
+              x1="416"
+              y1="260"
+              x2="460"
+              y2="260"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+
+            <!-- uns-kpi card -->
+            <rect
+              x="460"
+              y="220"
+              width="120"
+              height="80"
+              rx="8"
+              fill="var(--diagram-ink)"
+            />
+            <text class="ink-label"
+              x="520"
+              y="248"
+              font-family="'JetBrains Mono',monospace"
+              font-size="11"
+              font-weight="600"
+              fill="var(--diagram-on-ink)"
+              text-anchor="middle"
+            >
+              uns-kpi
+            </text>
+            <text class="ink-label"
+              x="520"
+              y="264"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              Go · HTTP
+            </text>
+            <text class="ink-label"
+              x="520"
+              y="280"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              Compute on demand
+            </text>
+
+            <!-- Flow: uns-kpi reads from DB (vertical line up) -->
+            <line
+              x1="520"
+              y1="220"
+              x2="520"
+              y2="204"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="520"
+              y1="204"
+              x2="654"
+              y2="204"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <line
+              x1="654"
+              y1="204"
+              x2="654"
+              y2="130"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+            <!-- Packet: DB → uns-kpi -->
+            <circle
+              r="2.5"
+              fill="var(--diagram-ink)"
+              style="
+                offset-path: path('M 654 130 L 654 204 L 520 204 L 520 220');
+              "
+              class="d-pkt-slow d-pkt-3"
+            />
+
+            <!-- Flow: uns-kpi → Answer -->
+            <line
+              x1="580"
+              y1="260"
+              x2="620"
+              y2="260"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+              class="d-flow"
+            />
+
+            <!-- Packet: Request → uns-kpi -->
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 416 260 L 460 260')"
+              class="d-pkt d-pkt-1"
+            />
+
+            <!-- Packet: uns-kpi → Answer -->
+            <circle
+              r="3"
+              fill="var(--diagram-ink)"
+              style="offset-path: path('M 580 260 L 620 260')"
+              class="d-pkt d-pkt-4"
+            />
+
+            <!-- ═══ THE ANSWER ═══ -->
+            <rect
+              x="620"
+              y="220"
+              width="320"
+              height="80"
+              rx="8"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-ink)"
+              stroke-width="1.5"
+            />
+            <text
+              x="680"
+              y="252"
+              font-family="'JetBrains Mono',monospace"
+              font-size="28"
+              font-weight="700"
+              fill="var(--diagram-ink)"
+            >
+              72.4%
+            </text>
+            <text
+              x="680"
+              y="272"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              fill="var(--diagram-muted)"
+            >
+              Utilisation
+            </text>
+            <text
+              x="680"
+              y="288"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              cnc-01 · last shift · 06:00–14:00
+            </text>
+
+            <!-- Additional KPIs in the answer card -->
+            <line
+              x1="780"
+              y1="232"
+              x2="780"
+              y2="292"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <text
+              x="796"
+              y="244"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              94%
+            </text>
+            <text
+              x="838"
+              y="244"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              Availability
+            </text>
+            <text
+              x="796"
+              y="258"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              48/hr
+            </text>
+            <text
+              x="838"
+              y="258"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              Throughput
+            </text>
+            <text
+              x="796"
+              y="272"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              142m
+            </text>
+            <text
+              x="838"
+              y="272"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              MTBF
+            </text>
+            <text
+              x="796"
+              y="286"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              8.3m
+            </text>
+            <text
+              x="838"
+              y="286"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              MTTR
+            </text>
+
+            <!-- ═══ BOTTOM SUMMARY BAR ═══ -->
+            <rect
+              x="16"
+              y="320"
+              width="928"
+              height="48"
+              rx="8"
+              fill="var(--diagram-ink)"
+            />
+            <text class="ink-label"
+              x="480"
+              y="340"
+              font-family="'JetBrains Mono',monospace"
+              font-size="10"
+              font-weight="600"
+              fill="var(--diagram-on-ink)"
+              text-anchor="middle"
+            >
+              0.3 seconds · 1 API call · 0 manual steps · 0 spreadsheets ·
+              real-time data · 100% repeatable
+            </text>
+            <text class="ink-label"
+              x="480"
+              y="356"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              fill="var(--diagram-muted)"
+              text-anchor="middle"
+            >
+              Same call works for any machine, any time range, any shift —
+              instantly
+            </text>
+
+            <!-- ═══ TIMELINE COMPARISON ═══ -->
+            <line
+              x1="28"
+              y1="392"
+              x2="932"
+              y2="392"
+              stroke="var(--diagram-line)"
+              stroke-width="1"
+            />
+            <rect x="28" y="388" width="4" height="8" rx="1" fill="var(--diagram-ink)" />
+            <text
+              x="40"
+              y="398"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+            >
+              0.3s
+            </text>
+            <text
+              x="100"
+              y="398"
+              font-family="'JetBrains Mono',monospace"
+              font-size="7"
+              fill="var(--diagram-muted)"
+            >
+              vs 4 hours 12 minutes with point-to-point
+            </text>
+            <text
+              x="932"
+              y="398"
+              font-family="'JetBrains Mono',monospace"
+              font-size="8"
+              font-weight="600"
+              fill="var(--diagram-ink)"
+              text-anchor="end"
+            >
+              840× faster
+            </text>
+          </svg>
+        </div>
+      </div>
+    </section><section class="fade-in">
+      <div class="container">
+        <div class="section-label">Beyond One Question</div>
+        <h2>Start with the question your team needs answered.</h2>
+        <p class="lead">The same data can support several uses. Each needs the right inputs and a definition agreed by the people who use the result.</p>
+
+        <div>
+          <div class="scenario">
+            <div class="scenario-role">Operations Manager</div>
+            <div class="scenario-content">
+              <h3>
+                "Which machines are running right now, and what's the overall
+                shop floor utilisation?"
+              </h3><p>Combine current machine states with state history to show what is running and how much of the shift was spent active.</p>
+
+            </div>
+          </div>
+
+          <div class="scenario">
+            <div class="scenario-role">Maintenance Lead</div>
+            <div class="scenario-content">
+              <h3>
+                "Which machine has the worst reliability, and what are the top
+                stoppage reasons?"
+              </h3><p>Review recorded stops and their reasons to decide where to investigate. Validate automatic classifications with operators and maintenance staff.</p>
+
+            </div>
+          </div>
+
+          <div class="scenario">
+            <div class="scenario-role">Production Planner</div>
+            <div class="scenario-content">
+              <h3>
+                "Are we on target for today's production schedule? Where are the
+                bottlenecks?"
+              </h3><p>Compare completed parts with the target for the period. This needs production counts and an agreed schedule or target.</p>
+
+            </div>
+          </div>
+
+          <div class="scenario">
+            <div class="scenario-role">Quality Engineer</div>
+            <div class="scenario-content">
+              <h3>
+                "Where is the scrap coming from? Which machine-operator-program
+                combination has the highest reject rate?"
+              </h3><p>Link reported scrap to the machine, program, and operator where those records are available. Add the quality context needed for the investigation.</p>
+
+            </div>
+          </div>
+
+          <div class="scenario">
+            <div class="scenario-role">Continuous Improvement</div>
+            <div class="scenario-content">
+              <h3>
+                "What's actually improved since we made that change last month?"
+              </h3><p>Compare consistent metrics across periods to evaluate a change. Keep definitions and data coverage comparable so the difference is meaningful.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><details class="technical-detail"><summary>Why the shared structure matters</summary><section class="fade-in">
       <div class="container">
         <div class="section-label">The Root Cause</div>
-        <h2>Point-to-point architecture scales&nbsp;quadratically.</h2>
-        <p class="lead">
-          Every system stores its own data in its own format. Connecting any two
-          systems requires a custom integration. The number of possible
-          connections grows with the square of the number of systems — and every
-          one is a bridge that breaks when either end changes.
-        </p>
+        <h2>More systems can mean more connections to maintain.</h2>
+        <p class="lead">In a fully connected network, the possible pairwise links grow as n × (n − 1) ÷ 2. The counts below illustrate that model. Actual factories may connect only some pairs, or already use shared integration services.</p>
 
         <div class="n2-grid n2-animated" data-animate>
           <div class="n2-cell">
@@ -2618,1011 +3581,7 @@
           long.
         </p>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     4. THE INSIGHT
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
-      <div class="container" style="max-width: 800px">
-        <div class="section-label">The Unified Namespace</div>
-        <h2>
-          What if every machine published its data to one shared layer — and any
-          system could&nbsp;read&nbsp;it?
-        </h2>
-        <p
-          style="
-            font-size: 17px;
-            color: var(--grey-700);
-            line-height: 1.7;
-            margin-bottom: 24px;
-            max-width: 640px;
-          "
-        >
-          That's the Unified Namespace. Instead of connecting every system to
-          every other system, every system connects to one MQTT broker. Machines
-          publish their state. Applications subscribe to what they need. The
-          broker handles delivery. Adding a new system means one new connection
-          — not N.
-        </p>
-        <p
-          style="
-            font-size: 17px;
-            color: var(--grey-700);
-            line-height: 1.7;
-            max-width: 640px;
-          "
-        >
-          The same question — "what was the utilisation of CNC-01 last shift?" —
-          becomes a single API call that returns in under a second. Not because
-          the question got simpler, but because the architecture stopped making
-          it hard.
-        </p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     5. HOW THE UNS ANSWERS IT — Animated SVG #2
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">With a Unified Namespace</div>
-        <h2>Same question. One call. 0.3&nbsp;seconds.</h2>
-        <p class="lead">
-          The machine publishes its state every 3 seconds. Functions process the
-          data automatically. The answer is always ready — computed from
-          real-time data, not assembled from stale exports.
-        </p>
-
-        <div class="info-svg">
-          <svg
-            viewBox="0 0 960 420"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- Background -->
-            <rect
-              x="0"
-              y="0"
-              width="960"
-              height="420"
-              rx="16"
-              fill="#fafafa"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-
-            <!-- ═══ TOP ROW: DATA PIPELINE ═══ -->
-            <!-- Pipeline label -->
-            <text
-              x="28"
-              y="32"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-            >
-              DATA PIPELINE — CONTINUOUS
-            </text>
-
-            <!-- Stage backgrounds for pipeline row -->
-            <rect
-              x="16"
-              y="44"
-              width="168"
-              height="140"
-              rx="8"
-              fill="#f5f5f5"
-            />
-            <rect
-              x="196"
-              y="44"
-              width="108"
-              height="140"
-              rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <rect
-              x="316"
-              y="44"
-              width="120"
-              height="140"
-              rx="8"
-              fill="#f5f5f5"
-            />
-            <rect
-              x="448"
-              y="44"
-              width="140"
-              height="140"
-              rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <rect
-              x="600"
-              y="44"
-              width="108"
-              height="140"
-              rx="8"
-              fill="#f5f5f5"
-            />
-
-            <!-- Stage labels -->
-            <text
-              x="100"
-              y="62"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              MACHINE
-            </text>
-            <text
-              x="250"
-              y="62"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              BROKER
-            </text>
-            <text
-              x="376"
-              y="62"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              CACHE
-            </text>
-            <text
-              x="518"
-              y="62"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              FUNCTIONS
-            </text>
-            <text
-              x="654"
-              y="62"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              DATABASE
-            </text>
-
-            <!-- ═══ MACHINE ═══ -->
-            <rect
-              x="28"
-              y="74"
-              width="144"
-              height="56"
-              rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-              class="d-glow d-glow-1"
-            />
-            <circle
-              cx="44"
-              cy="96"
-              r="5"
-              fill="#0a0a0a"
-              class="d-pulse d-pulse-1"
-            />
-            <text
-              x="56"
-              y="92"
-              font-family="'JetBrains Mono',monospace"
-              font-size="10"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              cnc-01
-            </text>
-            <text
-              x="56"
-              y="106"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-            >
-              ACTIVE · OP-7842 · T12
-            </text>
-            <text
-              x="56"
-              y="120"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-            >
-              Publishing every 3s
-            </text>
-
-            <!-- Topic path -->
-            <rect
-              x="28"
-              y="140"
-              width="144"
-              height="24"
-              rx="4"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <text
-              x="100"
-              y="156"
-              font-family="'JetBrains Mono',monospace"
-              font-size="6"
-              fill="#737373"
-              text-anchor="middle"
-            >
-              v1.0/acme/site1/area1/cnc-01/status
-            </text>
-
-            <!-- ═══ BROKER ═══ -->
-            <rect x="208" y="74" width="84" height="56" rx="8" fill="#0a0a0a" />
-            <text
-              x="250"
-              y="96"
-              font-family="'JetBrains Mono',monospace"
-              font-size="10"
-              font-weight="600"
-              fill="#ffffff"
-              text-anchor="middle"
-            >
-              MQTT
-            </text>
-            <text
-              x="250"
-              y="110"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-              text-anchor="middle"
-            >
-              Broker · Pub/Sub
-            </text>
-
-            <!-- Flow: Machine → Broker -->
-            <line
-              x1="172"
-              y1="102"
-              x2="208"
-              y2="102"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-            <!-- Packet: Machine → Broker -->
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 172 102 L 208 102')"
-              class="d-pkt d-pkt-1"
-            />
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 172 102 L 208 102')"
-              class="d-pkt d-pkt-5"
-            />
-
-            <!-- ═══ CACHE ═══ -->
-            <rect
-              x="328"
-              y="74"
-              width="96"
-              height="56"
-              rx="8"
-              fill="#ffffff"
-              stroke="#0a0a0a"
-              stroke-width="1.5"
-            />
-            <text
-              x="376"
-              y="96"
-              font-family="'JetBrains Mono',monospace"
-              font-size="10"
-              font-weight="600"
-              fill="#0a0a0a"
-              text-anchor="middle"
-            >
-              Valkey
-            </text>
-            <text
-              x="376"
-              y="110"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-              text-anchor="middle"
-            >
-              uns:data:* · uns:prev:*
-            </text>
-
-            <!-- Flow: Broker → Cache -->
-            <line
-              x1="292"
-              y1="102"
-              x2="328"
-              y2="102"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-            <!-- Packet: Broker → Cache -->
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 292 102 L 328 102')"
-              class="d-pkt d-pkt-2"
-            />
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 292 102 L 328 102')"
-              class="d-pkt d-pkt-6"
-            />
-
-            <!-- ═══ FUNCTIONS ═══ -->
-            <rect
-              x="460"
-              y="72"
-              width="116"
-              height="30"
-              rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-              class="d-glow d-glow-2"
-            />
-            <text
-              x="476"
-              y="91"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="500"
-              fill="#0a0a0a"
-            >
-              uns-state
-            </text>
-
-            <rect
-              x="460"
-              y="108"
-              width="116"
-              height="30"
-              rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-              class="d-glow d-glow-3"
-            />
-            <text
-              x="476"
-              y="127"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="500"
-              fill="#0a0a0a"
-            >
-              uns-stoppage
-            </text>
-
-            <rect
-              x="460"
-              y="144"
-              width="116"
-              height="30"
-              rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-              class="d-glow d-glow-4"
-            />
-            <text
-              x="476"
-              y="163"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="500"
-              fill="#0a0a0a"
-            >
-              uns-productivity
-            </text>
-
-            <!-- Flow: Cache → Functions (vertical trunk at x=436, branching right) -->
-            <line
-              x1="424"
-              y1="102"
-              x2="436"
-              y2="102"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="436"
-              y1="87"
-              x2="436"
-              y2="159"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="436"
-              y1="87"
-              x2="460"
-              y2="87"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-            <line
-              x1="436"
-              y1="123"
-              x2="460"
-              y2="123"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-            <line
-              x1="436"
-              y1="159"
-              x2="460"
-              y2="159"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-
-            <!-- Packets: Cache → Functions (per branch) -->
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="offset-path: path('M 424 102 L 436 102 L 436 87 L 460 87')"
-              class="d-pkt d-pkt-3"
-            />
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="
-                offset-path: path('M 424 102 L 436 102 L 436 123 L 460 123');
-              "
-              class="d-pkt d-pkt-7"
-            />
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="
-                offset-path: path('M 424 102 L 436 102 L 436 159 L 460 159');
-              "
-              class="d-pkt d-pkt-8"
-            />
-
-            <!-- ═══ DATABASE ═══ -->
-            <rect
-              x="612"
-              y="74"
-              width="84"
-              height="56"
-              rx="8"
-              fill="#ffffff"
-              stroke="#0a0a0a"
-              stroke-width="1.5"
-            />
-            <text
-              x="654"
-              y="96"
-              font-family="'JetBrains Mono',monospace"
-              font-size="10"
-              font-weight="600"
-              fill="#0a0a0a"
-              text-anchor="middle"
-            >
-              PostgreSQL
-            </text>
-            <text
-              x="654"
-              y="110"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-              text-anchor="middle"
-            >
-              states · stoppages · runs
-            </text>
-
-            <!-- Flow: Functions → Database (merge at x=588) -->
-            <line
-              x1="576"
-              y1="87"
-              x2="588"
-              y2="87"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="576"
-              y1="123"
-              x2="588"
-              y2="123"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="576"
-              y1="159"
-              x2="588"
-              y2="159"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="588"
-              y1="87"
-              x2="588"
-              y2="159"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="588"
-              y1="102"
-              x2="612"
-              y2="102"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-
-            <!-- Packets: Functions → Database -->
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="offset-path: path('M 576 87 L 588 87 L 588 102 L 612 102')"
-              class="d-pkt d-pkt-4"
-            />
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="
-                offset-path: path('M 576 123 L 588 123 L 588 102 L 612 102');
-              "
-              class="d-pkt d-pkt-8"
-            />
-
-            <!-- ═══ DIVIDER LINE ═══ -->
-            <line
-              x1="28"
-              y1="204"
-              x2="932"
-              y2="204"
-              stroke="#e5e5e5"
-              stroke-width="1"
-              stroke-dasharray="4 4"
-            />
-            <text
-              x="480"
-              y="200"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.08em"
-              text-anchor="middle"
-            >
-              ▼ API REQUEST ▼
-            </text>
-
-            <!-- ═══ BOTTOM ROW: THE API CALL ═══ -->
-
-            <!-- Request card -->
-            <rect
-              x="16"
-              y="220"
-              width="400"
-              height="80"
-              rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <text
-              x="32"
-              y="240"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              font-weight="600"
-              fill="#a3a3a3"
-              letter-spacing="0.06em"
-            >
-              HTTP REQUEST
-            </text>
-            <text
-              x="32"
-              y="260"
-              font-family="'JetBrains Mono',monospace"
-              font-size="11"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              GET /uns-kpi?hours=8&amp;machine=cnc-01
-            </text>
-            <text
-              x="32"
-              y="278"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-            >
-              → queries PostgreSQL → computes utilisation, availability, MTBF,
-              MTTR, throughput
-            </text>
-            <text
-              x="32"
-              y="290"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-            >
-              → returns JSON in 0.3 seconds
-            </text>
-
-            <!-- Flow: Request → uns-kpi -->
-            <line
-              x1="416"
-              y1="260"
-              x2="460"
-              y2="260"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-
-            <!-- uns-kpi card -->
-            <rect
-              x="460"
-              y="220"
-              width="120"
-              height="80"
-              rx="8"
-              fill="#0a0a0a"
-            />
-            <text
-              x="520"
-              y="248"
-              font-family="'JetBrains Mono',monospace"
-              font-size="11"
-              font-weight="600"
-              fill="#ffffff"
-              text-anchor="middle"
-            >
-              uns-kpi
-            </text>
-            <text
-              x="520"
-              y="264"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              fill="#a3a3a3"
-              text-anchor="middle"
-            >
-              Go · HTTP
-            </text>
-            <text
-              x="520"
-              y="280"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-              text-anchor="middle"
-            >
-              Compute on demand
-            </text>
-
-            <!-- Flow: uns-kpi reads from DB (vertical line up) -->
-            <line
-              x1="520"
-              y1="220"
-              x2="520"
-              y2="204"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="520"
-              y1="204"
-              x2="654"
-              y2="204"
-              stroke="#d4d4d4"
-              stroke-width="1"
-            />
-            <line
-              x1="654"
-              y1="204"
-              x2="654"
-              y2="130"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-            <!-- Packet: DB → uns-kpi -->
-            <circle
-              r="2.5"
-              fill="#0a0a0a"
-              style="
-                offset-path: path('M 654 130 L 654 204 L 520 204 L 520 220');
-              "
-              class="d-pkt-slow d-pkt-3"
-            />
-
-            <!-- Flow: uns-kpi → Answer -->
-            <line
-              x1="580"
-              y1="260"
-              x2="620"
-              y2="260"
-              stroke="#d4d4d4"
-              stroke-width="1"
-              class="d-flow"
-            />
-
-            <!-- Packet: Request → uns-kpi -->
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 416 260 L 460 260')"
-              class="d-pkt d-pkt-1"
-            />
-
-            <!-- Packet: uns-kpi → Answer -->
-            <circle
-              r="3"
-              fill="#0a0a0a"
-              style="offset-path: path('M 580 260 L 620 260')"
-              class="d-pkt d-pkt-4"
-            />
-
-            <!-- ═══ THE ANSWER ═══ -->
-            <rect
-              x="620"
-              y="220"
-              width="320"
-              height="80"
-              rx="8"
-              fill="#ffffff"
-              stroke="#0a0a0a"
-              stroke-width="1.5"
-            />
-            <text
-              x="680"
-              y="252"
-              font-family="'JetBrains Mono',monospace"
-              font-size="28"
-              font-weight="700"
-              fill="#0a0a0a"
-            >
-              72.4%
-            </text>
-            <text
-              x="680"
-              y="272"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              fill="#737373"
-            >
-              Utilisation
-            </text>
-            <text
-              x="680"
-              y="288"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-            >
-              cnc-01 · last shift · 06:00–14:00
-            </text>
-
-            <!-- Additional KPIs in the answer card -->
-            <line
-              x1="780"
-              y1="232"
-              x2="780"
-              y2="292"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <text
-              x="796"
-              y="244"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              94%
-            </text>
-            <text
-              x="838"
-              y="244"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-            >
-              Availability
-            </text>
-            <text
-              x="796"
-              y="258"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              48/hr
-            </text>
-            <text
-              x="838"
-              y="258"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-            >
-              Throughput
-            </text>
-            <text
-              x="796"
-              y="272"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              142m
-            </text>
-            <text
-              x="838"
-              y="272"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-            >
-              MTBF
-            </text>
-            <text
-              x="796"
-              y="286"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              8.3m
-            </text>
-            <text
-              x="838"
-              y="286"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#737373"
-            >
-              MTTR
-            </text>
-
-            <!-- ═══ BOTTOM SUMMARY BAR ═══ -->
-            <rect
-              x="16"
-              y="320"
-              width="928"
-              height="48"
-              rx="8"
-              fill="#0a0a0a"
-            />
-            <text
-              x="480"
-              y="340"
-              font-family="'JetBrains Mono',monospace"
-              font-size="10"
-              font-weight="600"
-              fill="#ffffff"
-              text-anchor="middle"
-            >
-              0.3 seconds · 1 API call · 0 manual steps · 0 spreadsheets ·
-              real-time data · 100% repeatable
-            </text>
-            <text
-              x="480"
-              y="356"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              fill="#a3a3a3"
-              text-anchor="middle"
-            >
-              Same call works for any machine, any time range, any shift —
-              instantly
-            </text>
-
-            <!-- ═══ TIMELINE COMPARISON ═══ -->
-            <line
-              x1="28"
-              y1="392"
-              x2="932"
-              y2="392"
-              stroke="#e5e5e5"
-              stroke-width="1"
-            />
-            <rect x="28" y="388" width="4" height="8" rx="1" fill="#0a0a0a" />
-            <text
-              x="40"
-              y="398"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-            >
-              0.3s
-            </text>
-            <text
-              x="100"
-              y="398"
-              font-family="'JetBrains Mono',monospace"
-              font-size="7"
-              fill="#a3a3a3"
-            >
-              vs 4 hours 12 minutes with point-to-point
-            </text>
-            <text
-              x="932"
-              y="398"
-              font-family="'JetBrains Mono',monospace"
-              font-size="8"
-              font-weight="600"
-              fill="#0a0a0a"
-              text-anchor="end"
-            >
-              840× faster
-            </text>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     6. THE ARCHITECTURE — Just Enough
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+    </section><section class="fade-in">
       <div class="container">
         <div class="section-label">How It Works</div>
         <h2>Three ideas make this&nbsp;possible.</h2>
@@ -3763,237 +3722,14 @@
           >
         </div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     7. FIVE QUESTIONS, FIVE ROLES
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Beyond One Question</div>
-        <h2>
-          Every role asks different questions. The UNS answers
-          all&nbsp;of&nbsp;them.
-        </h2>
-        <p class="lead">
-          Utilisation was just the start. The same architecture — machines
-          publishing to MQTT, functions processing data, APIs serving results —
-          answers every question your factory asks.
-        </p>
-
-        <div>
-          <div class="scenario">
-            <div class="scenario-role">Operations Manager</div>
-            <div class="scenario-content">
-              <h3>
-                "Which machines are running right now, and what's the overall
-                shop floor utilisation?"
-              </h3>
-              <p>
-                Every machine publishes its state every 3 seconds. The UNS cache
-                holds the current value for every topic. A single API call
-                returns live status for every machine — ACTIVE, IDLE, ALARM, OFF
-                — with utilisation computed from state duration history. No
-                SCADA screen required. No manual aggregation. Real-time, always.
-              </p>
-              <div class="scenario-api">GET /uns-kpi?area=machining</div>
-            </div>
-          </div>
-
-          <div class="scenario">
-            <div class="scenario-role">Maintenance Lead</div>
-            <div class="scenario-content">
-              <h3>
-                "Which machine has the worst reliability, and what are the top
-                stoppage reasons?"
-              </h3>
-              <p>
-                Every state transition is logged with precise timestamps. The
-                stoppage function auto-classifies downtime reasons. MTBF and
-                MTTR are computed per machine. Stoppage pareto charts rank
-                reasons by total duration. Maintenance can see exactly where to
-                focus — not from gut feeling, but from data that updates
-                continuously.
-              </p>
-              <div class="scenario-api">
-                GET /uns-kpi?machine=cnc-04&amp;hours=168
-              </div>
-            </div>
-          </div>
-
-          <div class="scenario">
-            <div class="scenario-role">Production Planner</div>
-            <div class="scenario-content">
-              <h3>
-                "Are we on target for today's production schedule? Where are the
-                bottlenecks?"
-              </h3>
-              <p>
-                The productivity function tracks parts completed per program,
-                throughput per hour, and target attainment. Compare actual
-                output against planned schedules in real time — not at the end
-                of the shift when it's too late to adjust. Identify which
-                machines are falling behind before they impact delivery.
-              </p>
-              <div class="scenario-api">
-                GET /uns-kpi?hours=8&amp;area=machining
-              </div>
-            </div>
-          </div>
-
-          <div class="scenario">
-            <div class="scenario-role">Quality Engineer</div>
-            <div class="scenario-content">
-              <h3>
-                "Where is the scrap coming from? Which machine-operator-program
-                combination has the highest reject rate?"
-              </h3>
-              <p>
-                Operator input captures scrap counts linked to specific
-                machines, programs, and operators. Quality data flows through
-                the same UNS pipeline as production data — so you can correlate
-                rejects with machine state, tool life, and program parameters.
-                Traceability from raw material to finished part, all in one
-                query.
-              </p>
-              <div class="scenario-api">
-                GET /uns-kpi?machine=cnc-01&amp;include=quality
-              </div>
-            </div>
-          </div>
-
-          <div class="scenario">
-            <div class="scenario-role">Continuous Improvement</div>
-            <div class="scenario-content">
-              <h3>
-                "What's actually improved since we made that change last month?"
-              </h3>
-              <p>
-                Every state change, every stoppage, every production run is
-                recorded with timestamps and durations in PostgreSQL. Compare
-                any time period against any other. See whether utilisation
-                improved, whether MTBF increased, whether the top stoppage
-                reason changed. Evidence-based kaizen — not anecdotes in a
-                meeting room.
-              </p>
-              <div class="scenario-api">
-                GET
-                /uns-kpi?from=2024-01-01&amp;to=2024-01-31&amp;compare=2024-02-01,2024-02-28
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════
-     8. CTA
-     ═══════════════════════════════════════════ -->
-    <section class="fade-in">
+    </section></details><section class="fade-in">
       <div class="container" style="text-align: center; max-width: 700px">
         <div class="section-label">Get Started</div>
-        <h2>Stop asking questions you can't&nbsp;answer.</h2>
-        <p class="lead" style="margin-left: auto; margin-right: auto">
-          Read the open standard, explore the reference implementation with real
-          serverless functions, or dive into the documentation. Everything is
-          open source, self-hosted, and ready to deploy.
-        </p>
-        <div class="cta-group" style="justify-content: center">
-          <a href="/docs/" class="btn-primary">Read the Docs →</a>
-          <a href="/fn-uns/" class="btn-secondary">Explore fn-uns →</a>
-          <a href="/framework/" class="btn-secondary">UNS Standard v1.0 →</a>
-          <a
-            href="https://github.com/unsframework"
-            class="btn-secondary"
-            target="_blank"
-            >GitHub</a
-          >
-        </div>
+        <h2>Choose one question to answer first.</h2>
+        <p class="lead" style="margin-inline:auto">See how a signal becomes an answer, or plan a small pilot with the people who will use the result.</p>
+        <div class="cta-group" style="justify-content:center"><a href="/how-it-works/" class="btn-primary">See how it works →</a><a href="/start/#plan-a-pilot" class="btn-secondary">Plan a pilot →</a></div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <footer>
-      <div class="container">
-        <span>UNS Framework — Open Source</span>
-        <div class="footer-links">
-          <a href="/framework/">Standard</a>
-          <a href="/fn-uns/">fn-uns</a>
-          <a href="https://github.com/unsframework" target="_blank">GitHub</a>
-          <a href="https://functionkit.github.io/fnkit/" target="_blank"
-            >fnkit</a
-          >
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Dark mode
-      const toggle = document.getElementById('themeToggle'),
-        html = document.documentElement,
-        saved = localStorage.getItem('theme')
-      if (saved) html.setAttribute('data-theme', saved)
-      else if (window.matchMedia('(prefers-color-scheme:dark)').matches)
-        html.setAttribute('data-theme', 'dark')
-      toggle.addEventListener('click', () => {
-        const d = html.getAttribute('data-theme') === 'dark'
-        const n = d ? 'light' : 'dark'
-        html.setAttribute('data-theme', n)
-        localStorage.setItem('theme', n)
-      })
-
-      // Fade-in on scroll
-      const fo = new IntersectionObserver(
-        (e) => {
-          e.forEach((x) => {
-            if (x.isIntersecting) {
-              x.target.classList.add('visible')
-              fo.unobserve(x.target)
-            }
-          })
-        },
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-      )
-      document.querySelectorAll('.fade-in').forEach((el) => fo.observe(el))
-
-      // Mobile hamburger menu toggle
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-          const isOpen = mobileMenu.classList.toggle('open');
-          menuToggle.innerHTML = isOpen ? '✕' : '☰';
-          menuToggle.setAttribute('aria-expanded', isOpen);
-        });
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            menuToggle.innerHTML = '☰';
-            menuToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-
-      // Scroll-triggered [data-animate]
-      const ao = new IntersectionObserver(
-        (e) => {
-          e.forEach((x) => {
-            if (x.isIntersecting) {
-              x.target.classList.add('animate-active')
-              ao.unobserve(x.target)
-            }
-          })
-        },
-        { threshold: 0.15, rootMargin: '0px 0px -20px 0px' },
-      )
-      document
-        .querySelectorAll('[data-animate]')
-        .forEach((el) => ao.observe(el))
-    </script>
-  </body>
+    </section></main><footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/" aria-current="page">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
+<script src="/shared.js" defer></script>
+</body>
 </html>

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fn-uns — Unified Namespace for Manufacturing</title>
+    <title>The namespace. Put to work. — UNS Framework</title>
     <meta
       name="description"
-      content="Build a real-time manufacturing data backbone using serverless functions, MQTT, and GitOps. Open source. Self-hosted. Zero vendor lock-in."
+      content="fn-uns is a working implementation of a Unified Namespace. It collects machine signals, keeps production history, and makes the results available to dashboards and other applications. Start with simulated machines, then adapt it to your factory."
     />
 
     <!-- Canonical & Sitemap -->
@@ -16,21 +16,21 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="UNS Framework" />
-    <meta property="og:title" content="fn-uns — Unified Namespace for Manufacturing" />
-    <meta property="og:description" content="Build a real-time manufacturing data backbone using serverless functions, MQTT, and GitOps. Open source. Self-hosted. Zero vendor lock-in." />
+    <meta property="og:title" content="The namespace. Put to work." />
+    <meta property="og:description" content="fn-uns is a working implementation of a Unified Namespace. It collects machine signals, keeps production history, and makes the results available to dashboards and other applications. Start with simulated machines, then adapt it to your factory." />
     <meta property="og:url" content="https://unsframework.com/fn-uns/" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="fn-uns — Unified Namespace for Manufacturing" />
-    <meta name="twitter:description" content="Serverless functions that capture, process, and report on real-time factory data." />
+    <meta name="twitter:title" content="The namespace. Put to work." />
+    <meta name="twitter:description" content="fn-uns is a working implementation of a Unified Namespace. It collects machine signals, keeps production history, and makes the results available to dashboards and other applications. Start with simulated machines, then adapt it to your factory." />
     <meta name="keywords" content="fn-uns, open source manufacturing, serverless functions, MQTT, unified namespace, GitOps, self-hosted" />
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="icon" href="/assets/favicon.svg" />
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
       * {
         margin: 0;
         padding: 0;
@@ -1726,47 +1726,27 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <nav>
-      <a href="/" class="logo" style="text-decoration: none">UNS Framework</a>
-      <div class="links">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          aria-label="Toggle dark mode"
-        >
-          <div class="toggle-thumb">
-            <span class="toggle-icon-sun">☀</span>
-            <span class="toggle-icon-moon">☾</span>
-          </div>
-        </button>
-      </div>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-      <div class="mobile-menu">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-      </div>
-    </nav>
+  <link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/signal.css" />
+</head>
+  <body class="signal-site landing-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
+  </div>
+</header><main id="main">
 
     <!-- HERO -->
     <div class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1>Limitless functions. One UNS.</h1>
-          <p class="subtitle">
-            fn-uns is a complete Unified Namespace implementation — serverless
-            functions that capture, process, and report on real-time factory
-            data. Built on fnkit. Follows the UNS Framework standard.
-          </p>
+          <p class="eyebrow landing-kicker"><i class="dot"></i>FN-UNS / THE REFERENCE IMPLEMENTATION</p><h1>The namespace.<br><em>Put to work.</em></h1>
+          <p class="subtitle">fn-uns is a working implementation of a Unified Namespace. It collects machine signals, keeps production history, and makes the results available to dashboards and other applications. Start with simulated machines, then adapt it to your factory.</p>
           <div class="cta-group">
-            <a href="/docs/" class="btn-primary">Read the Docs →</a>
+            <a href="/docs/getting-started.html" class="btn-primary">Try the sample →</a>
             <a
               href="https://github.com/orgs/functionkit/repositories"
               class="btn-secondary"
@@ -1775,7 +1755,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <svg
+          <svg role="img" aria-label="Technical diagram"
             viewBox="0 0 520 480"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -1787,8 +1767,8 @@
               width="520"
               height="480"
               rx="16"
-              fill="#fafafa"
-              stroke="#e5e5e5"
+              fill="var(--diagram-panel)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
 
@@ -1799,7 +1779,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               class="ig-stage-label ig-stage-l1"
             >
@@ -1811,7 +1791,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               class="ig-stage-label ig-stage-l2"
             >
@@ -1823,7 +1803,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="9"
               font-weight="600"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               letter-spacing="0.08em"
               class="ig-stage-label ig-stage-l3"
             >
@@ -1836,7 +1816,7 @@
               y1="20"
               x2="180"
               y2="390"
-              stroke="#e5e5e5"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               stroke-dasharray="4 4"
             />
@@ -1845,7 +1825,7 @@
               y1="20"
               x2="370"
               y2="390"
-              stroke="#e5e5e5"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               stroke-dasharray="4 4"
             />
@@ -1876,20 +1856,20 @@
             <!-- Machines → MQTT -->
             <circle
               r="3"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="offset-path: path('M 90 108 L 90 324')"
               class="ig-packet ig-packet-d1"
             />
             <circle
               r="3"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="offset-path: path('M 90 108 L 90 324')"
               class="ig-packet ig-packet-d3"
             />
             <!-- MQTT → Valkey -->
             <circle
               r="3"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="
                 offset-path: path(
                   'M 156 350 L 175 350 Q 185 350 185 340 L 185 84 Q 185 74 195 74 L 275 74'
@@ -1899,7 +1879,7 @@
             />
             <circle
               r="3"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="
                 offset-path: path(
                   'M 156 350 L 175 350 Q 185 350 185 340 L 185 84 Q 185 74 195 74 L 275 74'
@@ -1910,20 +1890,20 @@
             <!-- Valkey → Functions -->
             <circle
               r="2.5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="offset-path: path('M 275 112 L 275 352')"
               class="ig-packet ig-packet-d1"
             />
             <circle
               r="2.5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="offset-path: path('M 275 112 L 275 352')"
               class="ig-packet ig-packet-d5"
             />
             <!-- Functions → PostgreSQL -->
             <circle
               r="2.5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="
                 offset-path: path(
                   'M 352 200 L 365 200 Q 375 200 375 190 L 375 84 Q 375 74 385 74 L 442 74'
@@ -1933,7 +1913,7 @@
             />
             <circle
               r="2.5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="
                 offset-path: path(
                   'M 352 200 L 365 200 Q 375 200 375 190 L 375 84 Q 375 74 385 74 L 442 74'
@@ -1944,14 +1924,14 @@
             <!-- PostgreSQL → KPI -->
             <circle
               r="2.5"
-              fill="#ffffff"
+              fill="var(--diagram-paper)"
               style="offset-path: path('M 442 112 L 442 174')"
               class="ig-packet ig-packet-d2"
             />
             <!-- KPI → Output -->
             <circle
               r="2.5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               style="offset-path: path('M 442 200 L 442 302')"
               class="ig-packet ig-packet-d4"
             />
@@ -1964,8 +1944,8 @@
               width="132"
               height="52"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-machine-card ig-mc-d1"
             />
@@ -1973,7 +1953,7 @@
               cx="42"
               cy="82"
               r="5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               class="ig-pulse ig-pulse-d1"
             />
             <text
@@ -1982,7 +1962,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               cnc-01
             </text>
@@ -1991,7 +1971,7 @@
               y="94"
               font-family="'JetBrains Mono', monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
             >
               ACTIVE
             </text>
@@ -2003,15 +1983,15 @@
               width="132"
               height="52"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <circle
               cx="42"
               cy="146"
               r="5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               class="ig-pulse ig-pulse-d2"
             />
             <text
@@ -2020,7 +2000,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               cnc-02
             </text>
@@ -2029,7 +2009,7 @@
               y="158"
               font-family="'JetBrains Mono', monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
             >
               IDLE
             </text>
@@ -2041,15 +2021,15 @@
               width="132"
               height="52"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <circle
               cx="42"
               cy="210"
               r="5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               class="ig-pulse ig-pulse-d3"
             />
             <text
@@ -2058,7 +2038,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               cnc-03
             </text>
@@ -2067,7 +2047,7 @@
               y="222"
               font-family="'JetBrains Mono', monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
             >
               ACTIVE
             </text>
@@ -2079,15 +2059,15 @@
               width="132"
               height="52"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
             <circle
               cx="42"
               cy="274"
               r="5"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               class="ig-pulse ig-pulse-d4"
             />
             <text
@@ -2096,7 +2076,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               cnc-04
             </text>
@@ -2105,7 +2085,7 @@
               y="286"
               font-family="'JetBrains Mono', monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
             >
               ALARM
             </text>
@@ -2117,25 +2097,25 @@
               width="132"
               height="52"
               rx="8"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             />
-            <text
+            <text class="ink-label"
               x="90"
               y="347"
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="600"
-              fill="#ffffff"
+              fill="var(--diagram-on-ink)"
               text-anchor="middle"
             >
               MQTT
             </text>
-            <text
+            <text class="ink-label"
               x="90"
               y="363"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Broker
@@ -2147,7 +2127,7 @@
               y1="108"
               x2="90"
               y2="120"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2156,7 +2136,7 @@
               y1="172"
               x2="90"
               y2="184"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2165,7 +2145,7 @@
               y1="236"
               x2="90"
               y2="248"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2174,7 +2154,7 @@
               y1="300"
               x2="90"
               y2="324"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2186,8 +2166,8 @@
               width="154"
               height="56"
               rx="8"
-              fill="#ffffff"
-              stroke="#0a0a0a"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-ink)"
               stroke-width="1.5"
             />
             <text
@@ -2196,7 +2176,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               text-anchor="middle"
             >
               Valkey Cache
@@ -2206,7 +2186,7 @@
               y="97"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#737373"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               uns:data:* · uns:prev:*
@@ -2215,7 +2195,7 @@
             <!-- Flow line: MQTT → Valkey (via uns-framework) -->
             <path
               d="M 156 350 L 175 350 Q 185 350 185 340 L 185 84 Q 185 74 195 74 L 198 74"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               fill="none"
               class="ig-flow-line"
@@ -2225,7 +2205,7 @@
               y="345"
               font-family="'JetBrains Mono', monospace"
               font-size="7"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               transform="rotate(-90 170 345)"
             >
               uns-framework
@@ -2239,8 +2219,8 @@
               width="154"
               height="40"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-fn-highlight"
             />
@@ -2250,7 +2230,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="500"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               uns-state
             </text>
@@ -2259,7 +2239,7 @@
               y="157"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="end"
             >
               Go
@@ -2272,8 +2252,8 @@
               width="154"
               height="40"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-fn-highlight"
               style="animation-delay: 0.6s"
@@ -2284,7 +2264,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="500"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               uns-stoppage
             </text>
@@ -2293,7 +2273,7 @@
               y="207"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="end"
             >
               Node
@@ -2306,8 +2286,8 @@
               width="154"
               height="40"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-fn-highlight"
               style="animation-delay: 1.2s"
@@ -2318,7 +2298,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="500"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               uns-productivity
             </text>
@@ -2327,7 +2307,7 @@
               y="257"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="end"
             >
               Go
@@ -2340,8 +2320,8 @@
               width="154"
               height="40"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-fn-highlight"
               style="animation-delay: 1.8s"
@@ -2352,7 +2332,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="500"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               uns-log
             </text>
@@ -2361,7 +2341,7 @@
               y="307"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="end"
             >
               Go
@@ -2374,8 +2354,8 @@
               width="154"
               height="40"
               rx="6"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-fn-highlight"
               style="animation-delay: 2.4s"
@@ -2386,7 +2366,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="10"
               font-weight="500"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             >
               uns-input
             </text>
@@ -2395,7 +2375,7 @@
               y="357"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="end"
             >
               Node
@@ -2407,7 +2387,7 @@
               y1="112"
               x2="275"
               y2="132"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2416,7 +2396,7 @@
               y1="172"
               x2="275"
               y2="182"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2425,7 +2405,7 @@
               y1="222"
               x2="275"
               y2="232"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2434,7 +2414,7 @@
               y1="272"
               x2="275"
               y2="282"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2443,7 +2423,7 @@
               y1="322"
               x2="275"
               y2="332"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2455,8 +2435,8 @@
               width="108"
               height="56"
               rx="8"
-              fill="#ffffff"
-              stroke="#0a0a0a"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-ink)"
               stroke-width="1.5"
             />
             <text
@@ -2465,7 +2445,7 @@
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
               text-anchor="middle"
             >
               PostgreSQL
@@ -2475,7 +2455,7 @@
               y="97"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#737373"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               4 tables
@@ -2484,28 +2464,28 @@
             <!-- Flow lines: processing → PostgreSQL -->
             <path
               d="M 352 152 L 365 152 Q 375 152 375 142 L 375 84 Q 375 74 385 74 L 388 74"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               fill="none"
               class="ig-flow-line"
             />
             <path
               d="M 352 202 L 365 202 Q 375 202 375 192 L 375 90 Q 375 80 385 80 L 388 80"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               fill="none"
               class="ig-flow-line"
             />
             <path
               d="M 352 252 L 365 252 Q 375 252 375 242 L 375 92 Q 375 82 385 82 L 388 82"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               fill="none"
               class="ig-flow-line"
             />
             <path
               d="M 352 302 L 365 302 Q 375 302 375 292 L 375 94 Q 375 84 385 84 L 388 84"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               fill="none"
               class="ig-flow-line"
@@ -2518,25 +2498,25 @@
               width="108"
               height="52"
               rx="8"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             />
-            <text
+            <text class="ink-label"
               x="442"
               y="171"
               font-family="'JetBrains Mono', monospace"
               font-size="11"
               font-weight="600"
-              fill="#ffffff"
+              fill="var(--diagram-on-ink)"
               text-anchor="middle"
             >
               uns-kpi
             </text>
-            <text
+            <text class="ink-label"
               x="442"
               y="187"
               font-family="'JetBrains Mono', monospace"
               font-size="8"
-              fill="#a3a3a3"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               Go · HTTP
@@ -2548,7 +2528,7 @@
               y1="112"
               x2="442"
               y2="148"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2560,8 +2540,8 @@
               width="108"
               height="156"
               rx="8"
-              fill="#ffffff"
-              stroke="#e5e5e5"
+              fill="var(--diagram-paper)"
+              stroke="var(--diagram-line)"
               stroke-width="1"
             />
 
@@ -2571,7 +2551,7 @@
               y1="200"
               x2="442"
               y2="224"
-              stroke="#d4d4d4"
+              stroke="var(--diagram-line)"
               stroke-width="1"
               class="ig-flow-line"
             />
@@ -2583,7 +2563,7 @@
                 font-family="'JetBrains Mono', monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 72%
               </text>
@@ -2592,7 +2572,7 @@
                 y="248"
                 font-family="'JetBrains Mono', monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Utilisation
               </text>
@@ -2603,7 +2583,7 @@
               y1="258"
               x2="480"
               y2="258"
-              stroke="#f5f5f5"
+              stroke="var(--diagram-panel)"
               stroke-width="1"
             />
 
@@ -2614,7 +2594,7 @@
                 font-family="'JetBrains Mono', monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 94%
               </text>
@@ -2623,7 +2603,7 @@
                 y="276"
                 font-family="'JetBrains Mono', monospace"
                 font-size="7"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Availability
               </text>
@@ -2634,7 +2614,7 @@
               y1="286"
               x2="480"
               y2="286"
-              stroke="#f5f5f5"
+              stroke="var(--diagram-panel)"
               stroke-width="1"
             />
 
@@ -2645,7 +2625,7 @@
                 font-family="'JetBrains Mono', monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 48/hr
               </text>
@@ -2654,7 +2634,7 @@
                 y="304"
                 font-family="'JetBrains Mono', monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 Throughput
               </text>
@@ -2665,7 +2645,7 @@
               y1="314"
               x2="480"
               y2="314"
-              stroke="#f5f5f5"
+              stroke="var(--diagram-panel)"
               stroke-width="1"
             />
 
@@ -2676,7 +2656,7 @@
                 font-family="'JetBrains Mono', monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 142m
               </text>
@@ -2685,7 +2665,7 @@
                 y="332"
                 font-family="'JetBrains Mono', monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 MTBF
               </text>
@@ -2696,7 +2676,7 @@
               y1="342"
               x2="480"
               y2="342"
-              stroke="#f5f5f5"
+              stroke="var(--diagram-panel)"
               stroke-width="1"
             />
 
@@ -2707,7 +2687,7 @@
                 font-family="'JetBrains Mono', monospace"
                 font-size="9"
                 font-weight="600"
-                fill="#0a0a0a"
+                fill="var(--diagram-ink)"
               >
                 8.3m
               </text>
@@ -2716,7 +2696,7 @@
                 y="360"
                 font-family="'JetBrains Mono', monospace"
                 font-size="8"
-                fill="#737373"
+                fill="var(--diagram-muted)"
               >
                 MTTR
               </text>
@@ -2727,7 +2707,7 @@
               y1="370"
               x2="480"
               y2="370"
-              stroke="#f5f5f5"
+              stroke="var(--diagram-panel)"
               stroke-width="1"
             />
 
@@ -2738,24 +2718,24 @@
               width="472"
               height="52"
               rx="8"
-              fill="#0a0a0a"
+              fill="var(--diagram-ink)"
             />
-            <text
+            <text class="ink-label"
               x="260"
               y="426"
               font-family="'JetBrains Mono', monospace"
               font-size="9"
-              fill="#737373"
+              fill="var(--diagram-muted)"
               text-anchor="middle"
             >
               ISA-95 TOPIC HIERARCHY
             </text>
-            <text
+            <text class="ink-label"
               x="260"
               y="444"
               font-family="'JetBrains Mono', monospace"
               font-size="10"
-              fill="#ffffff"
+              fill="var(--diagram-on-ink)"
               text-anchor="middle"
             >
               v1.0 / enterprise / site1 / area1 / cnc-01 / status
@@ -2769,7 +2749,211 @@
     <div class="divider"></div>
 
     <!-- HOW IT WORKS -->
-    <section class="fade-in">
+    <section class="fade-in" id="production-visibility">
+      <div class="container">
+        <div class="section-label">Manufacturing KPIs</div>
+        <h2>See the shift. Understand the losses.</h2>
+        <p class="lead">Use machine state history to understand running time, production records to track output, and stoppage records to investigate lost time. Agree the definitions with your operations team before using the numbers to make decisions.</p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-val">72%</div>
+            <div class="kpi-label">Utilisation</div>
+            <div class="kpi-sub">ACTIVE time ÷ total tracked time</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">94%</div>
+            <div class="kpi-label">Availability</div>
+            <div class="kpi-sub">Excluding unplanned downtime only</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">48/hr</div>
+            <div class="kpi-label">Throughput</div>
+            <div class="kpi-sub">Parts per hour with target attainment</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">142m</div>
+            <div class="kpi-label">MTBF</div>
+            <div class="kpi-sub">Mean time between failures</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">8.3m</div>
+            <div class="kpi-label">MTTR</div>
+            <div class="kpi-sub">Mean time to repair</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">Pareto</div>
+            <div class="kpi-label">Stoppages</div>
+            <div class="kpi-sub">Top reasons ranked by total duration</div>
+          </div>
+        </div>
+        <p class="example-caption">Illustrative values, not live factory results. Each metric depends on the signals, records, and time range you provide.</p><div class="next-reading"><a href="/docs/uns-dashboard.html">View the dashboard guide →</a><a href="/docs/uns-historian.html">Keep signal history →</a><a href="/docs/manufacturing-kpis.html">Understand the calculations →</a><a href="/docs/uns-ai.html">Explore optional AI analysis →</a></div>
+      </div>
+    </section><section class="fade-in">
+      <div class="container">
+        <div class="section-label">Architecture</div>
+        <h2>Capture. Process. Report.</h2>
+        <p class="lead">
+          Data flows through three stages. Each stage is independent and
+          composable — built from small functions that do one thing well.
+        </p>
+
+        <div class="arch-pipeline">
+          <div class="arch-stage">
+            <div class="arch-stage-num">STAGE 01</div>
+            <h3>Capture</h3>
+            <p>
+              Machines publish status, program, and tool data to MQTT every 3
+              seconds. The framework subscribes to the entire namespace and
+              caches every message in Valkey — current value and previous value,
+              for change detection.
+            </p>
+            <div class="arch-tags">
+              <span>uns-sim</span><span>uns-framework</span><span>MQTT</span
+              ><span>Valkey</span>
+            </div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-stage">
+            <div class="arch-stage-num">STAGE 02</div>
+            <h3>Process</h3>
+            <p>
+              HTTP functions poll the cache, detect changes, and write
+              structured records to PostgreSQL — state durations, stoppage
+              classifications, production runs, and operator input.
+            </p>
+            <div class="arch-tags">
+              <span>uns-state</span><span>uns-stoppage</span
+              ><span>uns-productivity</span><span>uns-log</span
+              ><span>uns-input</span>
+            </div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-stage">
+            <div class="arch-stage-num">STAGE 03</div>
+            <h3>Report</h3>
+            <p>
+              KPI functions query all PostgreSQL tables and compute
+              manufacturing metrics on demand — utilisation, availability,
+              throughput, MTBF, MTTR, and stoppage pareto.
+            </p>
+            <div class="arch-tags">
+              <span>uns-kpi</span><span>uns-cache</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="arch-detail">
+          All functions run as <strong>Containers</strong> on a shared network.
+          External access goes through <strong>Caddy</strong> (automatic TLS) →
+          <strong>fnkit-gateway</strong> (auth, routing, rate limiting).
+          Internal communication happens directly between containers. Deployed
+          via <strong>git push</strong> using fnkit's GitOps workflow.
+        </p>
+      </div>
+    </section><section class="fade-in">
+      <div class="container">
+        <div class="section-label">Components</div>
+        <h2>The core pipeline, component by component.</h2>
+        <p class="lead">
+          Each function is a standard Go or Node.js program — its own container,
+          its own repo, its own deploy lifecycle. They compose through shared
+          infrastructure, not through each other.
+        </p>
+
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-sim</span
+              ><span class="card-badge">Node.js · MQTT</span>
+            </div>
+            <div class="card-desc">
+              Simulates 4 CNC machines publishing realistic status, program, and
+              tool data every 3 seconds
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-framework</span
+              ><span class="card-badge">Go · MQTT</span>
+            </div>
+            <div class="card-desc">
+              Subscribes to the entire namespace, caches every message with
+              current/previous value tracking
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-cache</span
+              ><span class="card-badge">Node.js · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Read API for cached topics — returns JSON with change detection
+              and metadata
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-log</span
+              ><span class="card-badge">Go · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Logs data snapshots to PostgreSQL whenever a topic value changes
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-state</span
+              ><span class="card-badge">Go · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Tracks machine state transitions and logs precise durations — the
+              foundation for all time-based KPIs
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-stoppage</span
+              ><span class="card-badge">Node.js · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Auto-classifies why machines aren't running, with manual operator
+              override for real reasons
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-productivity</span
+              ><span class="card-badge">Go · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Tracks production runs — parts completed, target attainment,
+              throughput per hour
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-input</span
+              ><span class="card-badge">Node.js · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Manual operator data entry — scrap counts, quality notes, shift
+              handover information
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="card-header">
+              <span class="card-name">uns-kpi</span
+              ><span class="card-badge">Go · HTTP</span>
+            </div>
+            <div class="card-desc">
+              Pure read function — queries all tables and computes manufacturing
+              KPIs on demand via a single API call
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="container"><p class="example-caption">These are the core pipeline components. The <a href="/docs/components.html">full reference covers all 12</a>, including the historian, dashboards, and optional AI analysis.</p></div></section><section><div class="container"><p class="section-label">RUNNING THE SOFTWARE</p><h2>A system your team can maintain.</h2><p class="lead">The implementation keeps processing logic in code and runs components in containers. This gives an engineering team control over changes, while leaving them responsible for deployment, monitoring, backups, and data quality.</p><div class="next-reading"><a href="/docs/why-faas.html">Understand the design choices →</a><a href="/guides/flow-vs-gitops.html">Compare flows and functions →</a></div></div></section><details class="technical-detail"><summary>How the implementation is built</summary><p class="detail-intro">For the team writing and deploying processing logic: topic structure, messaging, containers, and a code example.</p><section class="fade-in">
       <div class="container">
         <div class="section-label">How It Works</div>
         <h2>Structured data. Serverless functions. Git push to deploy.</h2>
@@ -2879,186 +3063,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ARCHITECTURE -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Architecture</div>
-        <h2>Capture. Process. Report.</h2>
-        <p class="lead">
-          Data flows through three stages. Each stage is independent and
-          composable — built from small functions that do one thing well.
-        </p>
-
-        <div class="arch-pipeline">
-          <div class="arch-stage">
-            <div class="arch-stage-num">STAGE 01</div>
-            <h3>Capture</h3>
-            <p>
-              Machines publish status, program, and tool data to MQTT every 3
-              seconds. The framework subscribes to the entire namespace and
-              caches every message in Valkey — current value and previous value,
-              for change detection.
-            </p>
-            <div class="arch-tags">
-              <span>uns-sim</span><span>uns-framework</span><span>MQTT</span
-              ><span>Valkey</span>
-            </div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-stage">
-            <div class="arch-stage-num">STAGE 02</div>
-            <h3>Process</h3>
-            <p>
-              HTTP functions poll the cache, detect changes, and write
-              structured records to PostgreSQL — state durations, stoppage
-              classifications, production runs, and operator input.
-            </p>
-            <div class="arch-tags">
-              <span>uns-state</span><span>uns-stoppage</span
-              ><span>uns-productivity</span><span>uns-log</span
-              ><span>uns-input</span>
-            </div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-stage">
-            <div class="arch-stage-num">STAGE 03</div>
-            <h3>Report</h3>
-            <p>
-              KPI functions query all PostgreSQL tables and compute
-              manufacturing metrics on demand — utilisation, availability,
-              throughput, MTBF, MTTR, and stoppage pareto.
-            </p>
-            <div class="arch-tags">
-              <span>uns-kpi</span><span>uns-cache</span><span>PostgreSQL</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="arch-detail">
-          All functions run as <strong>Containers</strong> on a shared network.
-          External access goes through <strong>Caddy</strong> (automatic TLS) →
-          <strong>fnkit-gateway</strong> (auth, routing, rate limiting).
-          Internal communication happens directly between containers. Deployed
-          via <strong>git push</strong> using fnkit's GitOps workflow.
-        </p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- COMPONENTS -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Components</div>
-        <h2>Limitless functions. Zero coupling.</h2>
-        <p class="lead">
-          Each function is a standard Go or Node.js program — its own container,
-          its own repo, its own deploy lifecycle. They compose through shared
-          infrastructure, not through each other.
-        </p>
-
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-sim</span
-              ><span class="card-badge">Node.js · MQTT</span>
-            </div>
-            <div class="card-desc">
-              Simulates 4 CNC machines publishing realistic status, program, and
-              tool data every 3 seconds
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-framework</span
-              ><span class="card-badge">Go · MQTT</span>
-            </div>
-            <div class="card-desc">
-              Subscribes to the entire namespace, caches every message with
-              current/previous value tracking
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-cache</span
-              ><span class="card-badge">Node.js · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Read API for cached topics — returns JSON with change detection
-              and metadata
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-log</span
-              ><span class="card-badge">Go · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Logs data snapshots to PostgreSQL whenever a topic value changes
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-state</span
-              ><span class="card-badge">Go · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Tracks machine state transitions and logs precise durations — the
-              foundation for all time-based KPIs
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-stoppage</span
-              ><span class="card-badge">Node.js · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Auto-classifies why machines aren't running, with manual operator
-              override for real reasons
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-productivity</span
-              ><span class="card-badge">Go · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Tracks production runs — parts completed, target attainment,
-              throughput per hour
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-input</span
-              ><span class="card-badge">Node.js · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Manual operator data entry — scrap counts, quality notes, shift
-              handover information
-            </div>
-          </div>
-          <div class="component-card">
-            <div class="card-header">
-              <span class="card-name">uns-kpi</span
-              ><span class="card-badge">Go · HTTP</span>
-            </div>
-            <div class="card-desc">
-              Pure read function — queries all tables and computes manufacturing
-              KPIs on demand via a single API call
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- CODE-FIRST -->
-    <section class="fade-in">
+    </section><section class="fade-in">
       <div class="container">
         <div class="section-label">Code-First</div>
         <h2>Readable. Testable. Reviewable.</h2>
@@ -3118,406 +3123,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- KPIs -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Manufacturing KPIs</div>
-        <h2>Real-time metrics. One API call.</h2>
-        <p class="lead">
-          Utilisation, availability, throughput, reliability, stoppage analysis
-          — all computed on demand from the data flowing through the UNS
-          pipeline. No pre-aggregation, no stale reports.
-        </p>
-
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-val">72%</div>
-            <div class="kpi-label">Utilisation</div>
-            <div class="kpi-sub">ACTIVE time ÷ total tracked time</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">94%</div>
-            <div class="kpi-label">Availability</div>
-            <div class="kpi-sub">Excluding unplanned downtime only</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">48/hr</div>
-            <div class="kpi-label">Throughput</div>
-            <div class="kpi-sub">Parts per hour with target attainment</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">142m</div>
-            <div class="kpi-label">MTBF</div>
-            <div class="kpi-sub">Mean time between failures</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">8.3m</div>
-            <div class="kpi-label">MTTR</div>
-            <div class="kpi-sub">Mean time to repair</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">Pareto</div>
-            <div class="kpi-label">Stoppages</div>
-            <div class="kpi-sub">Top reasons ranked by total duration</div>
-          </div>
-        </div>
-        <div class="api-line">
-          <span class="url">GET /uns-kpi?hours=8&amp;machine=cnc-01</span> —
-          filter by machine, area, or time range
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- COMPARISON -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Why This Approach</div>
-        <h2>Code beats configuration.</h2>
-        <p class="lead">
-          Traditional manufacturing software relies on monolithic platforms,
-          drag-and-drop flow builders, or heavyweight MES systems. fn-uns takes
-          a fundamentally different approach.
-        </p>
-
-        <div class="compare">
-          <div class="compare-col">
-            <h3>Traditional Platforms</h3>
-            <ul>
-              <li>
-                <span class="icon-x">✕</span>Vendor-locked platforms with
-                proprietary formats
-              </li>
-              <li>
-                <span class="icon-x">✕</span>Drag-and-drop flow UIs that become
-                unreadable spaghetti
-              </li>
-              <li>
-                <span class="icon-x">✕</span>No version control — flows live in
-                runtime databases
-              </li>
-              <li>
-                <span class="icon-x">✕</span>No code review, no pull requests,
-                no diffs
-              </li>
-              <li>
-                <span class="icon-x">✕</span>Impossible to unit test or run
-                CI/CD
-              </li>
-              <li>
-                <span class="icon-x">✕</span>Six-figure licence fees or
-                per-device subscriptions
-              </li>
-              <li>
-                <span class="icon-x">✕</span>Monolithic deployments — one bad
-                change breaks everything
-              </li>
-              <li>
-                <span class="icon-x">✕</span>Manual rollback — risky and
-                time-consuming
-              </li>
-            </ul>
-          </div>
-          <div class="compare-col">
-            <h3>fn-uns + fnkit</h3>
-            <ul>
-              <li>
-                <span class="icon-check">✓</span>Open source, self-hosted, your
-                infrastructure
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Code-first — readable,
-                auditable, maintainable
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Full git history — every change
-                tracked with author and date
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Pull requests, diffs, and code
-                review for every change
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Unit tests, integration tests,
-                CI/CD pipelines
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Infrastructure cost only — no
-                licence fees
-              </li>
-              <li>
-                <span class="icon-check">✓</span>Independent microservices —
-                deploy each function separately
-              </li>
-              <li>
-                <span class="icon-check">✓</span>git revert + push — instant,
-                safe rollback
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- GET STARTED -->
-    <section class="fade-in">
-      <div class="container">
-        <div class="section-label">Get Started</div>
-        <h2>Running in 5 minutes.</h2>
-        <p class="lead">
-          Clone the repo, start the infrastructure, and verify data is flowing.
-          The full UNS pipeline — from simulated machines to KPI APIs — runs
-          locally as a Container.
-        </p>
-
-        <div class="start-terminal">
-          <div>
-            <span class="comment"># Clone and set up the shared network</span>
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd"
-              >git clone https://github.com/functionkit/fnkit.git && cd
-              fnkit</span
-            >
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd">docker network create fnkit-network</span>
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd">fnkit cache start</span>
-          </div>
-          <div>&nbsp;</div>
-          <div>
-            <span class="comment"># Start the UNS capture pipeline</span>
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd"
-              >cd uns-framework && docker compose up -d && cd ..</span
-            >
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd">cd uns-sim && docker compose up -d && cd ..</span>
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd"
-              >cd uns-cache && docker compose up -d && cd ..</span
-            >
-          </div>
-          <div>&nbsp;</div>
-          <div>
-            <span class="comment"># Verify real-time data is flowing</span>
-          </div>
-          <div>
-            <span class="prompt">$</span>
-            <span class="cmd">curl http://localhost:8080/uns-cache | jq</span>
-          </div>
-          <div>
-            <span class="comment"
-              ># → JSON with live data from 4 simulated CNC machines</span
-            >
-          </div>
-        </div>
-
-        <div class="cta-group">
-          <a href="/docs/" class="btn-primary">Full Documentation →</a>
-          <a
-            href="https://github.com/orgs/functionkit/repositories"
-            class="btn-secondary"
-            >View on GitHub</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <span
-          >fn-uns — Built with
-          <a href="https://functionkit.github.io/fnkit/">fnkit</a></span
-        >
-        <div class="footer-links">
-          <a href="/framework/">Standard</a>
-          <a href="https://github.com/orgs/functionkit/repositories">GitHub</a>
-          <a href="https://functionkit.github.io/fnkit/">fnkit</a>
-          <a href="slide/">Slides</a>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      const o = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible')
-              o.unobserve(e.target)
-            }
-          })
-        },
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-      )
-      document.querySelectorAll('.fade-in').forEach((el) => o.observe(el))
-
-      // ── KPI number cycling animation ──
-      const kpiData = [
-        {
-          el: null,
-          values: ['72%', '68%', '74%', '71%', '73%', '69%'],
-          suffix: '',
-        },
-        {
-          el: null,
-          values: ['94%', '92%', '95%', '93%', '96%', '94%'],
-          suffix: '',
-        },
-        {
-          el: null,
-          values: ['48/hr', '45/hr', '51/hr', '47/hr', '50/hr', '46/hr'],
-          suffix: '',
-        },
-        {
-          el: null,
-          values: ['142m', '138m', '145m', '140m', '147m', '136m'],
-          suffix: '',
-        },
-        {
-          el: null,
-          values: ['8.3m', '7.9m', '8.6m', '8.1m', '9.0m', '8.4m'],
-          suffix: '',
-        },
-      ]
-      const kpiEls = document.querySelectorAll('.kpi-val')
-      kpiData.forEach((d, i) => {
-        d.el = kpiEls[i]
-      })
-
-      // ── Hero graphic fullscreen on click ──
-      const heroVisual = document.querySelector('.hero-visual')
-      const heroSvg = heroVisual.querySelector('svg')
-
-      heroVisual.addEventListener('click', () => {
-        // Create overlay
-        const overlay = document.createElement('div')
-        overlay.className = 'hero-fullscreen-overlay'
-
-        // Use innerHTML to properly clone SVG with namespace
-        const svgWrapper = document.createElement('div')
-        svgWrapper.style.cssText =
-          'max-width:90vw;max-height:90vh;width:90vw;aspect-ratio:520/480;display:flex;align-items:center;justify-content:center;'
-        svgWrapper.innerHTML = heroSvg.outerHTML
-        const svgEl = svgWrapper.querySelector('svg')
-        svgEl.style.cssText =
-          'width:100%;height:100%;display:block;filter:drop-shadow(0 24px 48px rgba(0,0,0,0.08));'
-        overlay.appendChild(svgWrapper)
-
-        // Close button
-        const closeBtn = document.createElement('button')
-        closeBtn.className = 'hero-fullscreen-close'
-        closeBtn.innerHTML = '✕'
-        closeBtn.setAttribute('aria-label', 'Close fullscreen')
-        overlay.appendChild(closeBtn)
-
-        document.body.appendChild(overlay)
-        document.body.style.overflow = 'hidden'
-
-        // Trigger fade-in
-        requestAnimationFrame(() => {
-          overlay.classList.add('active')
-        })
-
-        // Close handlers
-        function closeOverlay() {
-          overlay.classList.remove('active')
-          overlay.addEventListener(
-            'transitionend',
-            () => {
-              overlay.remove()
-              document.body.style.overflow = ''
-            },
-            { once: true },
-          )
-        }
-
-        closeBtn.addEventListener('click', (e) => {
-          e.stopPropagation()
-          closeOverlay()
-        })
-
-        overlay.addEventListener('click', (e) => {
-          if (e.target === overlay) closeOverlay()
-        })
-
-        document.addEventListener('keydown', function escHandler(e) {
-          if (e.key === 'Escape') {
-            closeOverlay()
-            document.removeEventListener('keydown', escHandler)
-          }
-        })
-      })
-
-      // ── Mobile hamburger menu toggle ──
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-          const isOpen = mobileMenu.classList.toggle('open');
-          menuToggle.innerHTML = isOpen ? '✕' : '☰';
-          menuToggle.setAttribute('aria-expanded', isOpen);
-        });
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            menuToggle.innerHTML = '☰';
-            menuToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-
-      // ── Dark mode toggle ──
-      const toggle = document.getElementById('themeToggle')
-      const html = document.documentElement
-      const saved = localStorage.getItem('theme')
-      if (saved) {
-        html.setAttribute('data-theme', saved)
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        html.setAttribute('data-theme', 'dark')
-      }
-      toggle.addEventListener('click', () => {
-        const isDark = html.getAttribute('data-theme') === 'dark'
-        const next = isDark ? 'light' : 'dark'
-        html.setAttribute('data-theme', next)
-        localStorage.setItem('theme', next)
-      })
-
-      let kpiIdx = 0
-      setInterval(() => {
-        kpiIdx = (kpiIdx + 1) % kpiData[0].values.length
-        kpiData.forEach((d) => {
-          if (!d.el) return
-          d.el.style.transition = 'opacity 0.3s ease'
-          d.el.style.opacity = '0'
-          setTimeout(() => {
-            d.el.textContent = d.values[kpiIdx]
-            d.el.style.opacity = '1'
-          }, 300)
-        })
-      }, 8000)
-    </script>
-  </body>
+    </section></details><section><div class="container"><p class="section-label">TRY FN-UNS</p><h2>Start with simulated machines.</h2><p class="lead">The quick start brings up the simulator, topic monitor, and cache API. You will see machine values in JSON. The deployment guide then adds stored production records and metrics.</p><div class="cta-group"><a href="/docs/getting-started.html" class="btn-primary">Run the sample →</a><a href="/docs/first-deployment.html" class="btn-secondary">Add history and metrics →</a></div></div></section></main><footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/" aria-current="page">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
+<script src="/shared.js" defer></script>
+</body>
 </html>

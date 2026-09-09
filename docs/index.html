@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>fn-uns Docs — Unified Namespace for Manufacturing</title>
-<meta name="description" content="Complete documentation for fn-uns — serverless functions that implement a UNS data pipeline for manufacturing."/>
+<title>Find what you need to build. — UNS Framework</title>
+<meta name="description" content="Use the standard to describe your data, the implementation docs to run fn-uns, and the guides to connect equipment and plan the work."/>
 <link rel="canonical" href="https://unsframework.com/docs/" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="fn-uns Documentation — Build a Manufacturing UNS with Serverless Functions" />
-<meta property="og:description" content="Complete documentation for fn-uns — serverless functions that implement a UNS data pipeline for manufacturing." />
+<meta property="og:title" content="Find what you need to build." />
+<meta property="og:description" content="Use the standard to describe your data, the implementation docs to run fn-uns, and the guides to connect equipment and plan the work." />
 <meta property="og:url" content="https://unsframework.com/docs/" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="fn-uns Documentation — Build a Manufacturing UNS with Serverless Functions" />
-<meta name="twitter:description" content="Build a manufacturing data backbone using serverless functions, MQTT, and GitOps." />
+<meta name="twitter:title" content="Find what you need to build." />
+<meta name="twitter:description" content="Use the standard to describe your data, the implementation docs to run fn-uns, and the guides to connect equipment and plan the work." />
 <meta name="keywords" content="unified namespace, fn-uns, manufacturing data, serverless functions, MQTT, GitOps, open source manufacturing" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -105,248 +105,173 @@
   .docs-component-grid { grid-template-columns: 1fr; }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">fn-uns</div>
-      <a href="/docs/" class="active">Overview</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Introduction</div>
-      <a href="/docs/what-is-uns.html">What is the UNS?</a>
-      <a href="/docs/why-uns.html">Why UNS Matters</a>
-      <a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a>
-      <a href="/docs/architecture.html">Architecture</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Getting Started</div>
-      <a href="/docs/getting-started.html">Quick Start</a>
-      <a href="/docs/fnkit-basics.html">fnkit Basics</a>
-      <a href="/docs/first-deployment.html">First Deployment</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Components</div>
-      <a href="/docs/components.html">Overview</a>
-      <a href="/docs/uns-sim.html">uns-sim</a>
-      <a href="/docs/uns-framework.html">uns-framework</a>
-      <a href="/docs/uns-cache.html">uns-cache</a>
-      <a href="/docs/uns-log.html">uns-log</a>
-      <a href="/docs/uns-historian.html">uns-historian</a>
-      <a href="/docs/uns-state.html">uns-state</a>
-      <a href="/docs/uns-stoppage.html">uns-stoppage</a>
-      <a href="/docs/uns-productivity.html">uns-productivity</a>
-      <a href="/docs/uns-input.html">uns-input</a>
-      <a href="/docs/uns-kpi.html">uns-kpi</a>
-      <a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/docs/configuration.html">Configuration</a>
-      <a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a>
-      <a href="/docs/api-reference.html">API Reference</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Developer</div>
-      <a href="/docs/code-patterns.html">Code Patterns</a>
-      <a href="/docs/extending.html">Extending</a>
-      <a href="/docs/database-schema.html">Database Schema</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/" class="active" aria-current="page">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
-    <h1>fn-uns Documentation</h1>
-    <p class="page-desc">
-      Build a manufacturing data backbone using serverless functions, MQTT, and GitOps.
-      10 independent functions that capture, process, and report on real-time factory data.
-    </p>
-
-    <!-- ANIMATED INFOGRAPHIC — Capture → Process → Report pipeline -->
-    <div class="docs-infographic">
-      <svg viewBox="0 0 720 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Documentation</span></div><p class="eyebrow doc-category">DOCUMENTATION</p><h1>Find what you need to build.</h1><p class="page-desc">Use the standard to describe your data, the implementation docs to run fn-uns, and the guides to connect equipment and plan the work.</p><div class="reading-paths"><a class="reading-card" href="/framework/"><span>STANDARD</span><h3>Describe your factory</h3><p>Definitions, examples, and a common structure for equipment and signals.</p><b>Read the standard →</b></a><a class="reading-card" href="/docs/getting-started.html"><span>IMPLEMENTATION</span><h3>Try the data pipeline</h3><p>Run simulated machines and verify that their data reaches the cache.</p><b>Run the sample →</b></a><a class="reading-card" href="/guides/"><span>GUIDES</span><h3>Plan and connect</h3><p>Team planning, hardware setup, data modelling, and implementation choices.</p><b>Choose a guide →</b></a></div><h2 id="get-started">Common tasks</h2><div class="next-reading"><a href="/docs/first-deployment.html">Add history and production metrics →</a><a href="/docs/configuration.html">Configure an existing deployment →</a><a href="/docs/manufacturing-kpis.html">Understand the metrics →</a><a href="/docs/api-reference.html">Look up an API →</a></div><h2 id="what-is-fn-uns">Where fn-uns fits</h2><p>fn-uns is the reference implementation used in these docs. Its components collect machine signals, store current values and history, and serve results to dashboards and other applications. It uses fnkit to package and deploy the software. For a walkthrough of what it provides, <a href="/fn-uns/">explore the implementation</a>.</p><h2 id="architecture-at-a-glance">How the implementation fits together</h2><p>Capture signals through MQTT, process them into records, then use those records for metrics and analysis. The diagram shows the reference architecture; <a href="/docs/architecture.html">the architecture reference</a> explains the shared services and deployment model.</p><div class="docs-infographic">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 280" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Background -->
-        <rect x="0" y="0" width="720" height="280" rx="0" fill="#fafafa"/>
+        <rect x="0" y="0" width="720" height="280" rx="0" fill="var(--diagram-panel)"/>
 
         <!-- Stage labels -->
-        <text x="80" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em">CAPTURE</text>
-        <text x="310" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em">PROCESS</text>
-        <text x="580" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#a3a3a3" letter-spacing="0.08em">REPORT</text>
+        <text x="80" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em">CAPTURE</text>
+        <text x="310" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em">PROCESS</text>
+        <text x="580" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.08em">REPORT</text>
 
         <!-- Vertical dividers -->
-        <line x1="220" y1="14" x2="220" y2="266" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="500" y1="14" x2="500" y2="266" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="220" y1="14" x2="220" y2="266" stroke="var(--diagram-line)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="500" y1="14" x2="500" y2="266" stroke="var(--diagram-line)" stroke-width="1" stroke-dasharray="4 4"/>
 
         <!-- ═══ MACHINES ═══ -->
-        <rect x="16" y="40" width="180" height="36" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
-        <circle cx="32" cy="58" r="4" fill="#0a0a0a" class="ig-pulse ig-pulse-d1"/>
-        <text x="42" y="55" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">cnc-01</text>
-        <text x="42" y="67" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">ACTIVE</text>
-        <text x="180" y="62" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">status</text>
+        <rect x="16" y="40" width="180" height="36" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
+        <circle cx="32" cy="58" r="4" fill="var(--diagram-ink)" class="ig-pulse ig-pulse-d1"/>
+        <text x="42" y="55" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">cnc-01</text>
+        <text x="42" y="67" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">ACTIVE</text>
+        <text x="180" y="62" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">status</text>
 
-        <rect x="16" y="82" width="180" height="36" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
-        <circle cx="32" cy="100" r="4" fill="#0a0a0a" class="ig-pulse ig-pulse-d2"/>
-        <text x="42" y="97" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">cnc-02</text>
-        <text x="42" y="109" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">IDLE</text>
-        <text x="180" y="104" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">program</text>
+        <rect x="16" y="82" width="180" height="36" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
+        <circle cx="32" cy="100" r="4" fill="var(--diagram-ink)" class="ig-pulse ig-pulse-d2"/>
+        <text x="42" y="97" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">cnc-02</text>
+        <text x="42" y="109" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">IDLE</text>
+        <text x="180" y="104" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">program</text>
 
-        <rect x="16" y="124" width="180" height="36" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
-        <circle cx="32" cy="142" r="4" fill="#0a0a0a" class="ig-pulse ig-pulse-d3"/>
-        <text x="42" y="139" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">cnc-03</text>
-        <text x="42" y="151" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">ACTIVE</text>
-        <text x="180" y="146" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">tool</text>
+        <rect x="16" y="124" width="180" height="36" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
+        <circle cx="32" cy="142" r="4" fill="var(--diagram-ink)" class="ig-pulse ig-pulse-d3"/>
+        <text x="42" y="139" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">cnc-03</text>
+        <text x="42" y="151" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">ACTIVE</text>
+        <text x="180" y="146" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">tool</text>
 
-        <rect x="16" y="166" width="180" height="36" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
-        <circle cx="32" cy="184" r="4" fill="#0a0a0a" class="ig-pulse ig-pulse-d4"/>
-        <text x="42" y="181" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">cnc-04</text>
-        <text x="42" y="193" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">ALARM</text>
+        <rect x="16" y="166" width="180" height="36" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
+        <circle cx="32" cy="184" r="4" fill="var(--diagram-ink)" class="ig-pulse ig-pulse-d4"/>
+        <text x="42" y="181" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">cnc-04</text>
+        <text x="42" y="193" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">ALARM</text>
 
         <!-- Flow lines between machines -->
-        <line x1="106" y1="76" x2="106" y2="82" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
-        <line x1="106" y1="118" x2="106" y2="124" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
-        <line x1="106" y1="160" x2="106" y2="166" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="106" y1="76" x2="106" y2="82" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
+        <line x1="106" y1="118" x2="106" y2="124" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
+        <line x1="106" y1="160" x2="106" y2="166" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- MQTT Broker -->
-        <rect x="16" y="216" width="180" height="40" rx="6" fill="#0a0a0a"/>
-        <text x="106" y="234" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">MQTT Broker</text>
-        <text x="106" y="247" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">v1.0/enterprise/site1/#</text>
+        <rect x="16" y="216" width="180" height="40" rx="6" fill="var(--diagram-ink)"/>
+        <text class="ink-label" x="106" y="234" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">MQTT Broker</text>
+        <text class="ink-label" x="106" y="247" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">v1.0/enterprise/site1/#</text>
 
         <!-- Flow: machines → MQTT -->
-        <line x1="106" y1="202" x2="106" y2="216" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="106" y1="202" x2="106" y2="216" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- Data packets: machines → MQTT -->
-        <circle r="2.5" fill="#0a0a0a" style="offset-path: path('M 106 76 L 106 216');" class="ig-packet ig-packet-d1"/>
-        <circle r="2.5" fill="#0a0a0a" style="offset-path: path('M 106 76 L 106 216');" class="ig-packet ig-packet-d3"/>
+        <circle r="2.5" fill="var(--diagram-ink)" style="offset-path: path('M 106 76 L 106 216');" class="ig-packet ig-packet-d1"/>
+        <circle r="2.5" fill="var(--diagram-ink)" style="offset-path: path('M 106 76 L 106 216');" class="ig-packet ig-packet-d3"/>
 
         <!-- ═══ PROCESS COLUMN ═══ -->
 
         <!-- Flow: MQTT → Valkey -->
-        <path d="M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42" stroke="#d4d4d4" stroke-width="1" fill="none" class="ig-flow-line"/>
-        <circle r="2.5" fill="#0a0a0a" style="offset-path: path('M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42');" class="ig-packet ig-packet-d2"/>
-        <circle r="2.5" fill="#0a0a0a" style="offset-path: path('M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42');" class="ig-packet ig-packet-d4"/>
+        <path d="M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42" stroke="var(--diagram-line)" stroke-width="1" fill="none" class="ig-flow-line"/>
+        <circle r="2.5" fill="var(--diagram-ink)" style="offset-path: path('M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42');" class="ig-packet ig-packet-d2"/>
+        <circle r="2.5" fill="var(--diagram-ink)" style="offset-path: path('M 196 236 L 215 236 Q 225 236 225 226 L 225 52 Q 225 42 235 42 L 240 42');" class="ig-packet ig-packet-d4"/>
 
         <!-- Valkey Cache -->
-        <rect x="240" y="36" width="240" height="40" rx="6" fill="#ffffff" stroke="#0a0a0a" stroke-width="1.5"/>
-        <text x="360" y="53" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a" text-anchor="middle">Valkey Cache</text>
-        <text x="360" y="66" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373" text-anchor="middle">uns:data:* · uns:prev:* · uns:meta:*</text>
+        <rect x="240" y="36" width="240" height="40" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-ink)" stroke-width="1.5"/>
+        <text x="360" y="53" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)" text-anchor="middle">Valkey Cache</text>
+        <text x="360" y="66" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">uns:data:* · uns:prev:* · uns:meta:*</text>
 
         <!-- Flow: Valkey → functions -->
-        <line x1="360" y1="76" x2="360" y2="92" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="360" y1="76" x2="360" y2="92" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- Processing functions -->
-        <rect x="240" y="92" width="240" height="30" rx="5" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="ig-glow"/>
-        <text x="256" y="111" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-state</text>
-        <text x="464" y="111" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">Go · state durations</text>
+        <rect x="240" y="92" width="240" height="30" rx="5" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="ig-glow"/>
+        <text x="256" y="111" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-state</text>
+        <text x="464" y="111" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">Go · state durations</text>
 
-        <rect x="240" y="128" width="240" height="30" rx="5" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="ig-glow" style="animation-delay:0.6s"/>
-        <text x="256" y="147" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-stoppage</text>
-        <text x="464" y="147" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">Node · classification</text>
+        <rect x="240" y="128" width="240" height="30" rx="5" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="ig-glow" style="animation-delay:0.6s"/>
+        <text x="256" y="147" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-stoppage</text>
+        <text x="464" y="147" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">Node · classification</text>
 
-        <rect x="240" y="164" width="240" height="30" rx="5" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="ig-glow" style="animation-delay:1.2s"/>
-        <text x="256" y="183" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-productivity</text>
-        <text x="464" y="183" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="end">Go · production runs</text>
+        <rect x="240" y="164" width="240" height="30" rx="5" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="ig-glow" style="animation-delay:1.2s"/>
+        <text x="256" y="183" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-productivity</text>
+        <text x="464" y="183" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="end">Go · production runs</text>
 
-        <rect x="240" y="200" width="240" height="30" rx="5" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" class="ig-glow" style="animation-delay:1.8s"/>
-        <text x="256" y="219" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#0a0a0a">uns-log · uns-input · uns-cache</text>
+        <rect x="240" y="200" width="240" height="30" rx="5" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1" class="ig-glow" style="animation-delay:1.8s"/>
+        <text x="256" y="219" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="var(--diagram-ink)">uns-log · uns-input · uns-cache</text>
 
         <!-- Flow between functions -->
-        <line x1="360" y1="122" x2="360" y2="128" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
-        <line x1="360" y1="158" x2="360" y2="164" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
-        <line x1="360" y1="194" x2="360" y2="200" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="360" y1="122" x2="360" y2="128" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
+        <line x1="360" y1="158" x2="360" y2="164" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
+        <line x1="360" y1="194" x2="360" y2="200" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- PostgreSQL -->
-        <rect x="240" y="244" width="240" height="28" rx="5" fill="#0a0a0a"/>
-        <text x="360" y="262" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#ffffff" text-anchor="middle">PostgreSQL — 5 tables</text>
+        <rect x="240" y="244" width="240" height="28" rx="5" fill="var(--diagram-ink)"/>
+        <text class="ink-label" x="360" y="262" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="var(--diagram-on-ink)" text-anchor="middle">PostgreSQL — 5 tables</text>
 
         <!-- Flow: functions → PostgreSQL -->
-        <line x1="360" y1="230" x2="360" y2="244" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="360" y1="230" x2="360" y2="244" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- ═══ REPORT COLUMN ═══ -->
 
         <!-- Flow: PostgreSQL → uns-kpi -->
-        <path d="M 480 258 L 495 258 Q 505 258 505 248 L 505 52 Q 505 42 515 42 L 520 42" stroke="#d4d4d4" stroke-width="1" fill="none" class="ig-flow-line"/>
-        <circle r="2.5" fill="#0a0a0a" style="offset-path: path('M 480 258 L 495 258 Q 505 258 505 248 L 505 52 Q 505 42 515 42 L 520 42');" class="ig-packet ig-packet-d1"/>
+        <path d="M 480 258 L 495 258 Q 505 258 505 248 L 505 52 Q 505 42 515 42 L 520 42" stroke="var(--diagram-line)" stroke-width="1" fill="none" class="ig-flow-line"/>
+        <circle r="2.5" fill="var(--diagram-ink)" style="offset-path: path('M 480 258 L 495 258 Q 505 258 505 248 L 505 52 Q 505 42 515 42 L 520 42');" class="ig-packet ig-packet-d1"/>
 
         <!-- uns-kpi -->
-        <rect x="520" y="36" width="184" height="40" rx="6" fill="#0a0a0a"/>
-        <text x="612" y="53" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">uns-kpi</text>
-        <text x="612" y="66" font-family="'JetBrains Mono', monospace" font-size="7" fill="#a3a3a3" text-anchor="middle">Go · HTTP · read-only</text>
+        <rect x="520" y="36" width="184" height="40" rx="6" fill="var(--diagram-ink)"/>
+        <text class="ink-label" x="612" y="53" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-on-ink)" text-anchor="middle">uns-kpi</text>
+        <text class="ink-label" x="612" y="66" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)" text-anchor="middle">Go · HTTP · read-only</text>
 
         <!-- Flow: uns-kpi → KPI output -->
-        <line x1="612" y1="76" x2="612" y2="92" stroke="#d4d4d4" stroke-width="1" class="ig-flow-line"/>
+        <line x1="612" y1="76" x2="612" y2="92" stroke="var(--diagram-line)" stroke-width="1" class="ig-flow-line"/>
 
         <!-- KPI Output card -->
-        <rect x="520" y="92" width="184" height="164" rx="6" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+        <rect x="520" y="92" width="184" height="164" rx="6" fill="var(--diagram-paper)" stroke="var(--diagram-line)" stroke-width="1"/>
 
         <g class="ig-kpi ig-kpi-d1">
-          <text x="536" y="116" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" fill="#0a0a0a">72%</text>
-          <text x="580" y="116" font-family="'JetBrains Mono', monospace" font-size="8" fill="#737373">Utilisation</text>
+          <text x="536" y="116" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" fill="var(--diagram-ink)">72%</text>
+          <text x="580" y="116" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-muted)">Utilisation</text>
         </g>
-        <line x1="536" y1="124" x2="688" y2="124" stroke="#f5f5f5" stroke-width="1"/>
+        <line x1="536" y1="124" x2="688" y2="124" stroke="var(--diagram-panel)" stroke-width="1"/>
 
         <g class="ig-kpi ig-kpi-d2">
-          <text x="536" y="144" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">94%</text>
-          <text x="568" y="144" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">Avail</text>
-          <text x="620" y="144" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">48/hr</text>
-          <text x="656" y="144" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">Thru</text>
+          <text x="536" y="144" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">94%</text>
+          <text x="568" y="144" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">Avail</text>
+          <text x="620" y="144" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">48/hr</text>
+          <text x="656" y="144" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">Thru</text>
         </g>
-        <line x1="536" y1="152" x2="688" y2="152" stroke="#f5f5f5" stroke-width="1"/>
+        <line x1="536" y1="152" x2="688" y2="152" stroke="var(--diagram-panel)" stroke-width="1"/>
 
         <g class="ig-kpi ig-kpi-d3">
-          <text x="536" y="172" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">142m</text>
-          <text x="572" y="172" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">MTBF</text>
-          <text x="620" y="172" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#0a0a0a">8.3m</text>
-          <text x="652" y="172" font-family="'JetBrains Mono', monospace" font-size="7" fill="#737373">MTTR</text>
+          <text x="536" y="172" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">142m</text>
+          <text x="572" y="172" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">MTBF</text>
+          <text x="620" y="172" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--diagram-ink)">8.3m</text>
+          <text x="652" y="172" font-family="'JetBrains Mono', monospace" font-size="7" fill="var(--diagram-muted)">MTTR</text>
         </g>
-        <line x1="536" y1="180" x2="688" y2="180" stroke="#f5f5f5" stroke-width="1"/>
+        <line x1="536" y1="180" x2="688" y2="180" stroke="var(--diagram-panel)" stroke-width="1"/>
 
-        <text x="536" y="200" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="600" fill="#a3a3a3" letter-spacing="0.06em">STOPPAGE PARETO</text>
-        <text x="536" y="214" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0a0a0a">NO_WORK</text>
-        <text x="688" y="214" font-family="'JetBrains Mono', monospace" font-size="8" fill="#737373" text-anchor="end">240m</text>
-        <text x="536" y="228" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0a0a0a">SETUP</text>
-        <text x="688" y="228" font-family="'JetBrains Mono', monospace" font-size="8" fill="#737373" text-anchor="end">120m</text>
-        <text x="536" y="242" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0a0a0a">FAULT</text>
-        <text x="688" y="242" font-family="'JetBrains Mono', monospace" font-size="8" fill="#737373" text-anchor="end">30m</text>
+        <text x="536" y="200" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="600" fill="var(--diagram-muted)" letter-spacing="0.06em">STOPPAGE PARETO</text>
+        <text x="536" y="214" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-ink)">NO_WORK</text>
+        <text x="688" y="214" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="end">240m</text>
+        <text x="536" y="228" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-ink)">SETUP</text>
+        <text x="688" y="228" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="end">120m</text>
+        <text x="536" y="242" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-ink)">FAULT</text>
+        <text x="688" y="242" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--diagram-muted)" text-anchor="end">30m</text>
 
         <!-- Topic path bar -->
-        <rect x="520" y="262" width="184" height="10" rx="2" fill="#0a0a0a"/>
-        <text x="612" y="270" font-family="'JetBrains Mono', monospace" font-size="5" fill="#ffffff" text-anchor="middle">GET /uns-kpi?hours=8&amp;machine=cnc-01</text>
+        <rect x="520" y="262" width="184" height="10" rx="2" fill="var(--diagram-ink)"/>
+        <text class="ink-label" x="612" y="270" font-family="'JetBrains Mono', monospace" font-size="5" fill="var(--diagram-on-ink)" text-anchor="middle">GET /uns-kpi?hours=8&amp;machine=cnc-01</text>
       </svg>
-    </div>
-
-    <h2>What is fn-uns?</h2>
-    <p>
-      This project implements a complete <strong>Unified Namespace (UNS)</strong> — the modern approach to manufacturing data integration — using <a href="https://functionkit.github.io/fnkit/" style="color:var(--black);border-bottom:1px solid var(--grey-300);">fnkit</a> as the development and deployment platform.
-    </p>
-    <p>
-      Instead of point-to-point integrations between machines, databases, and dashboards, the UNS creates a <strong>single source of truth</strong> for all operational data. Every machine, sensor, and system publishes to a shared MQTT topic hierarchy, and lightweight serverless functions process, store, and report on that data.
-    </p>
-
-    <h2>The 10 Components</h2>
-    <p>Each function does <strong>one thing well</strong> — they compose through shared infrastructure (MQTT, Valkey, PostgreSQL), not through each other.</p>
-
-    <div class="docs-component-grid">
+    </div><h2 id="the-10-components">Component reference</h2><p>There are 12 documented components, including the dashboard and optional AI analysis. Start with the sample capture pipeline, then add the components your use case needs. <a href="/docs/components.html">Compare their roles and dependencies</a>.</p><div class="docs-component-grid">
       <a href="/docs/uns-sim.html" class="docs-component-card">
         <div class="cc-name">uns-sim</div>
         <div class="cc-meta">Node.js · MQTT</div>
@@ -402,37 +327,10 @@
         <div class="cc-meta">Grafana · SQL</div>
         <div class="cc-desc">5 dashboards for real-time manufacturing visibility</div>
       </a>
-    </div>
-
-    <h2>Architecture at a Glance</h2>
-    <p>
-      Data flows through three stages: <strong>Capture</strong> (machines publish to MQTT, framework caches to Valkey), <strong>Process</strong> (functions detect changes and write to PostgreSQL), and <strong>Report</strong> (KPI function queries all tables on demand).
-    </p>
-    <p>
-      All functions run as Docker containers on a shared <code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">fnkit-network</code>. Deployed via <code style="font-family:var(--font-mono);font-size:13px;background:var(--grey-100);padding:2px 8px;border-radius:4px;">git push</code> using fnkit's GitOps workflow.
-    </p>
-
-    <h2>Get Started</h2>
-    <table class="def-table">
-      <thead><tr><th>Step</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td><a href="/docs/what-is-uns.html">What is the UNS?</a></td><td>Understand the Unified Namespace concept</td></tr>
-        <tr><td><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a></td><td>Why serverless functions beat flow-based tools</td></tr>
-        <tr><td><a href="/docs/getting-started.html">Getting Started</a></td><td>Deploy the full stack in minutes</td></tr>
-        <tr><td><a href="/docs/components.html">Components</a></td><td>Deep dive into each function</td></tr>
-      </tbody>
-    </table>
-
-    <div class="docs-nav-buttons">
-      <div></div>
-      <a href="/docs/what-is-uns.html" class="docs-nav-btn next">
-        <span class="nav-label">Next</span>
-        <span class="nav-title">What is the UNS?</span>
-      </a>
-    </div>
-  </main>
+    <a href="/docs/uns-ai.html" class="docs-component-card"><div class="cc-name">uns-ai</div><div class="cc-meta">Node.js · HTTP</div><div class="cc-desc">Analysis and summaries using machine data and history</div></a></div></main>
 </div>
 
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

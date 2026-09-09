@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><meta name="description" content="The clarity of 3 with more substance: a full architecture plate, hierarchy, and implementation details."><title>03 — System blue | UNS round two</title><link rel="stylesheet" href="round-2.css"></head>
+<body class="concept c3">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="review-bar"><a href="../index.html">← All 10 concepts</a><span>ROUND 02 / 03 System blue</span>
+<nav aria-label="Choose a concept"><a href="01-signal-works.html" aria-label="Concept 1: Signal works">01</a><a href="02-factory-atlas.html" aria-label="Concept 2: Factory atlas">02</a><a href="03-system-blue.html" aria-current="page" aria-label="Concept 3: System blue">03</a><a href="04-control-room.html" aria-label="Concept 4: Control room">04</a><a href="05-open-circuit.html" aria-label="Concept 5: Open circuit">05</a><a href="06-night-shift.html" aria-label="Concept 6: Night shift">06</a><a href="07-field-manual.html" aria-label="Concept 7: Field manual">07</a><a href="08-common-ground.html" aria-label="Concept 8: Common ground">08</a><a href="09-data-spine.html" aria-label="Concept 9: Data spine">09</a><a href="10-framework-zero.html" aria-label="Concept 10: Framework zero">10</a></nav>
+</div>
+<div class="page">
+<header class="site-nav"><a class="brand" href="../../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+<nav aria-label="Main navigation"><a href="../../uns/">What is UNS?</a><a href="../../framework/">The standard</a><a href="../../fn-uns/">fn-uns</a><a href="../../docs/">Docs</a></nav>
+<a class="github" href="https://github.com/unsframework">GitHub <span>↗</span></a></header>
+
+<main id="main">
+<section class="hero hero-blue"><div class="blue-meta"><span>UNS FRAMEWORK / TECHNICAL OVERVIEW</span><span>PLATE 001 · OPEN ARCHITECTURE</span></div><div class="hero-copy"><p class="eyebrow"><i class="dot"></i>THE ARCHITECTURE OF A CONNECTED FACTORY</p>
+<h1>One namespace.<br><em>Every system.</em></h1>
+<p class="intro">A practical standard for turning isolated machine signals into shared manufacturing context. Define it. Publish it. Build on it.</p><div class="actions"><a class="button primary" href="../../framework/">Read the standard<span>↗</span></a><a class="button secondary" href="../../how-it-works/">See how it works<span>→</span></a></div><p class="microproof"><span>OPEN SOURCE</span><span>SELF-HOSTED</span><span>VENDOR-NEUTRAL</span></p></div><div class="blue-plate"><div class="bus-diagram" role="img" aria-label="Machines, PLCs, and sensors publish to a Unified Namespace. Dashboards, a historian, and AI agents subscribe."><div class="bus-row sources"><div><span>01 / PRODUCER</span><b>Machines</b><small>States &amp; production</small></div><div><span>02 / PRODUCER</span><b>PLCs</b><small>Control signals</small></div><div><span>03 / PRODUCER</span><b>Sensors</b><small>Measurements</small></div></div><div class="bus-wires"><i></i><i></i><i></i></div><div class="data-bus"><span>MQTT</span><strong>Unified Namespace</strong><span>PUBLISH / SUBSCRIBE</span></div><div class="bus-wires outgoing"><i></i><i></i><i></i></div><div class="bus-row sinks"><div><b>Dashboards</b><small>See the operation</small></div><div><b>Historian</b><small>Keep the context</small></div><div><b>AI agents</b><small>Work from shared data</small></div></div><div class="figure-caption"><span>FIG. 02 / A COMMON LANGUAGE FOR EVERY SYSTEM</span><span>OPEN INTERFACES ↗</span></div></div></div></section>
+<div class="spec-rail"><span><small>TRANSPORT</small>MQTT</span><span><small>STRUCTURE</small>ISA-95</span><span><small>DEFINITION</small>YAML</span><span><small>DEPLOYMENT</small>Your infrastructure</span></div>
+<section class="namespace-section"><div><p class="eyebrow">STRUCTURE IS THE STARTING POINT</p>
+<h2>Raw signals.<br><em>Real context.</em></h2>
+<p>A value means more when you know where it came from. The framework gives your data a consistent address, from the site down to the equipment.</p><a class="text-link" href="../../framework/example.html">See a complete example →</a></div><div class="hierarchy"><div class="panel-heading"><span>THE NAMESPACE</span><span>ISA-95 / EXAMPLE</span></div><div class="tree"><span>v1.0</span><span>└─ sheffield</span><span>　 └─ machining</span><span>　 　 └─ line-01</span><span>　 　 　 └─ cell-01</span><span>　 　 　 　 └─ <b>cnc-01</b></span><span class="tree-leaf">　 　 　 　 　 └─ state → running</span></div><div class="tree-note">Every signal has a place.<br>Every system gets the same context.</div></div></section>
+
+<section class="projects"><div class="section-top"><div><p class="eyebrow">02 / THE TOOLKIT</p>
+<h2>An open standard.<br>A working starting point.</h2>
+</div><p>Understand the architecture, choose your tools, and learn from an implementation you can inspect and extend.</p></div><div class="project-list"><a href="../../framework/"><span class="project-index">01 / DEFINE</span>
+<h3>UNS Framework</h3>
+<p>The open standard. YAML definitions, topic hierarchy, and conventions for manufacturing data.</p><span class="project-arrow">↗</span></a><a href="https://functionkit.github.io/fnkit/"><span class="project-index">02 / RUN</span>
+<h3>fnkit</h3>
+<p>The functions platform. Run Go, Node.js, or Python in containers on your own infrastructure.</p><span class="project-arrow">↗</span></a><a href="../../fn-uns/"><span class="project-index">03 / BUILD</span>
+<h3>fn-uns</h3>
+<p>The reference implementation. A pipeline from machine simulation to history, KPIs, and AI analysis.</p><span class="project-arrow">↗</span></a></div></section>
+
+<section class="closing"><div><p class="eyebrow">START WITH ONE CONNECTION</p>
+<h2>Make your factory<br>part of the conversation.</h2>
+</div><div class="actions"><a class="button primary" href="../../docs/getting-started.html">Start building<span>↗</span></a><a class="button secondary" href="../../how-it-works/">See how it works<span>→</span></a></div></section>
+
+<footer><a class="brand" href="../../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><span>Open source. Self-hosted. Yours to build on.</span><a href="../../guides/">Guides ↗</a><a href="https://github.com/unsframework">GitHub ↗</a></footer>
+</main>
+</div>
+</body></html>

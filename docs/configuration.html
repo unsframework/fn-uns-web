@@ -3,82 +3,65 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Configuration Guide — fn-uns Docs</title>
+<title>Configuration Guide — UNS Framework</title>
 <meta name="description" content="How runtime configuration works — Valkey config, environment variables, and multi-instance deployment."/>
 <link rel="canonical" href="https://unsframework.com/docs/configuration.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Configuration Guide — Runtime Config for UNS Functions" />
+<meta property="og:title" content="Configuration Guide" />
 <meta property="og:description" content="How runtime configuration works — Valkey config, environment variables, and multi-instance deployment." />
 <meta property="og:url" content="https://unsframework.com/docs/configuration.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Configuration Guide — Runtime Config for UNS Functions" />
-<meta name="twitter:description" content="Configure UNS functions with Valkey, environment variables, and multi-instance deployment." />
+<meta name="twitter:title" content="Configuration Guide" />
+<meta name="twitter:description" content="How runtime configuration works — Valkey config, environment variables, and multi-instance deployment." />
 <meta name="keywords" content="UNS configuration, Valkey config, function configuration, manufacturing setup" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
+<link rel="stylesheet" href="/signal.css" />
+<link rel="icon" href="/assets/favicon.svg" />
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<body class="signal-site docs-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/">Guides</a><a href="/docs/" aria-current="page">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section"><div class="sidebar-title">fn-uns</div><a href="/docs/">Overview</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Introduction</div><a href="/docs/what-is-uns.html">What is the UNS?</a><a href="/docs/why-uns.html">Why UNS Matters</a><a href="/docs/why-faas.html">Why FaaS &amp; GitOps?</a><a href="/docs/architecture.html">Architecture</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Getting Started</div><a href="/docs/getting-started.html">Quick Start</a><a href="/docs/fnkit-basics.html">fnkit Basics</a><a href="/docs/first-deployment.html">First Deployment</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Components</div><a href="/docs/components.html">Overview</a><a href="/docs/uns-sim.html">uns-sim</a><a href="/docs/uns-framework.html">uns-framework</a><a href="/docs/uns-cache.html">uns-cache</a><a href="/docs/uns-log.html">uns-log</a><a href="/docs/uns-historian.html">uns-historian</a><a href="/docs/uns-state.html">uns-state</a><a href="/docs/uns-stoppage.html">uns-stoppage</a><a href="/docs/uns-productivity.html">uns-productivity</a><a href="/docs/uns-input.html">uns-input</a><a href="/docs/uns-kpi.html">uns-kpi</a><a href="/docs/uns-dashboard.html">uns-dashboard</a><a href="/docs/uns-ai.html">uns-ai</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Guides</div><a href="/docs/configuration.html" class="active">Configuration</a><a href="/docs/manufacturing-kpis.html">Manufacturing KPIs</a><a href="/docs/api-reference.html">API Reference</a></div>
-    <div class="sidebar-section"><div class="sidebar-title">Developer</div><a href="/docs/code-patterns.html">Code Patterns</a><a href="/docs/extending.html">Extending</a><a href="/docs/database-schema.html">Database Schema</a></div>
-  </aside>
-  <main class="docs-content">
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html" class="active" aria-current="page">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
     <h1>Configuration Guide</h1>
-    <p class="page-desc">How runtime configuration works — Valkey config, environment variables, and multi-instance deployment.</p>
+    <p class="page-desc">How runtime configuration works — Valkey config, environment variables, and multi-instance deployment.</p><div class="reading-context">Use this after the <a href="/docs/first-deployment.html">core deployment</a> to change connection settings, topics, and runtime options.</div>
 
-    <h2>Two Layers</h2>
-    <table class="def-table"><thead><tr><th>Layer</th><th>Stored in</th><th>Contains</th><th>Changes require</th></tr></thead><tbody>
+    <details class="page-outline"><summary>On this page <span>4 sections</span></summary><div><a href="#two-layers">Two Layers</a><a href="#environment-variables">Environment Variables</a><a href="#valkey-config-pattern">Valkey Config Pattern</a><a href="#which-functions-use-valkey-config">Which Functions Use Valkey Config?</a></div></details>
+<h2 id="two-layers">Two Layers</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Layer</th><th>Stored in</th><th>Contains</th><th>Changes require</th></tr></thead><tbody>
     <tr><td>Connection</td><td>.env file</td><td>DB URLs, cache URLs, broker</td><td>Container restart</td></tr>
-    <tr><td>Business</td><td>Valkey cache</td><td>Topics, table names</td><td>Nothing (hot reload)</td></tr></tbody></table>
-    <h2>Environment Variables</h2>
-    <table class="def-table"><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+    <tr><td>Business</td><td>Valkey cache</td><td>Topics, table names</td><td>Nothing (hot reload)</td></tr></tbody></table></div>
+    <h2 id="environment-variables">Environment Variables</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
     <tr><td>FUNCTION_TARGET</td><td>Function name = Valkey config key</td></tr>
     <tr><td>DATABASE_URL</td><td>PostgreSQL connection</td></tr>
     <tr><td>CACHE_URL</td><td>Valkey connection</td></tr>
-    <tr><td>MQTT_BROKER</td><td>MQTT broker URL</td></tr></tbody></table>
-    <h2>Valkey Config Pattern</h2>
+    <tr><td>MQTT_BROKER</td><td>MQTT broker URL</td></tr></tbody></table></div>
+    <h2 id="valkey-config-pattern">Valkey Config Pattern</h2>
     <div class="yaml-block"><pre style="margin:0;font:inherit;white-space:pre">docker exec fnkit-cache valkey-cli SET fnkit:config:uns-state \
   '{"table":"uns_state","topics":["v1.0/.../cnc-01/status"]}'</pre></div>
     <p>Config cached in-memory for 30 seconds. Change topics without redeploying.</p>
-    <h2>Which Functions Use Valkey Config?</h2>
-    <table class="def-table"><thead><tr><th>Function</th><th>Config Key</th></tr></thead><tbody>
+    <h2 id="which-functions-use-valkey-config">Which Functions Use Valkey Config?</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><thead><tr><th>Function</th><th>Config Key</th></tr></thead><tbody>
     <tr><td>uns-log</td><td>fnkit:config:uns-log</td></tr>
     <tr><td>uns-state</td><td>fnkit:config:uns-state</td></tr>
-    <tr><td>uns-productivity</td><td>fnkit:config:uns-productivity</td></tr></tbody></table>
+    <tr><td>uns-productivity</td><td>fnkit:config:uns-productivity</td></tr></tbody></table></div>
     <p>Others don't need Valkey config: uns-sim (config.yaml), uns-framework (env), uns-cache, uns-stoppage, uns-input, uns-kpi.</p>
 
-    <div class="docs-nav-buttons">
-      <a href="/docs/uns-kpi.html" class="docs-nav-btn"><span class="nav-label">Previous</span><span class="nav-title">uns-kpi</span></a>
-      <a href="/docs/manufacturing-kpis.html" class="docs-nav-btn next"><span class="nav-label">Next</span><span class="nav-title">Manufacturing KPIs</span></a>
-    </div>
+    <div class="next-reading"><a href="/docs/">All documentation →</a><a href="/docs/api-reference.html">API reference →</a></div>
   </main>
 </div>
 <script src="../shared.js"></script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>

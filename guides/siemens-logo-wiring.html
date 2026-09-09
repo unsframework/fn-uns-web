@@ -3,31 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Wiring the Siemens Logo 8.4 — Digital Inputs for Machine Status — UNS
-      Framework
-    </title>
+    <title>Siemens Logo 8.4: connect a digital input — UNS Framework</title>
     <meta
       name="description"
-      content="Step-by-step guide to wiring digital inputs on a Siemens Logo 8.4 PLC for machine running signals. Covers stack lights, door sensors, relay contacts, and proximity switches with wire diagram."
+      content="How to wire real-world signals into the Logo&#x27;s digital inputs to detect whether a machine is running. Covers stack lights, door sensors, relay contacts, and proximity switches — with a complete wire diagram and step-by-step instructions for both electrical engineers and IT teams."
     />
     <link
       rel="canonical"
       href="https://unsframework.com/guides/siemens-logo-wiring.html"
     />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
-    />
+    <link rel="icon" href="/assets/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="Wiring the Siemens Logo 8.4 — Digital Inputs for Machine Status" />
-<meta property="og:description" content="Step-by-step guide to wiring digital inputs on a Siemens Logo 8.4 PLC for machine running signals." />
+<meta property="og:title" content="Siemens Logo 8.4: connect a digital input" />
+<meta property="og:description" content="How to wire real-world signals into the Logo&#x27;s digital inputs to detect whether a machine is running. Covers stack lights, door sensors, relay contacts, and proximity switches — with a complete wire diagram and step-by-step instructions for both electrical engineers and IT teams." />
 <meta property="og:url" content="https://unsframework.com/guides/siemens-logo-wiring.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Wiring the Siemens Logo 8.4 — Digital Inputs for Machine Status" />
-<meta name="twitter:description" content="Wire digital inputs on a Siemens Logo 8.4 for machine status monitoring." />
+<meta name="twitter:title" content="Siemens Logo 8.4: connect a digital input" />
+<meta name="twitter:description" content="How to wire real-world signals into the Logo&#x27;s digital inputs to detect whether a machine is running. Covers stack lights, door sensors, relay contacts, and proximity switches — with a complete wire diagram and step-by-step instructions for both electrical engineers and IT teams." />
 <meta name="keywords" content="Siemens Logo wiring, PLC wiring, digital inputs, machine status, stack light wiring" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../docs.css" />
@@ -496,71 +490,22 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <nav>
-      <a href="/" class="logo">UNS Framework</a>
-      <div class="links">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          aria-label="Toggle dark mode"
-        >
-          <div class="toggle-thumb">
-            <span class="toggle-icon-sun">☀</span
-            ><span class="toggle-icon-moon">☾</span>
-          </div>
-        </button>
-      </div>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        ☰
-      </button>
-      <div class="mobile-menu">
-        <a href="/fn-uns/">fn-uns</a>
-        <a href="/framework/">Standard Docs</a>
-        <a href="/docs/">UNS Docs</a>
-        <a href="/guides/">Guides</a>
-      </div>
-    </nav>
+  <link rel="stylesheet" href="/signal.css" />
+</head>
+  <body class="signal-site docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/" aria-current="page">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
+  </div>
+</header>
 
     <div class="docs-layout">
-      <aside class="docs-sidebar">
-        <div class="sidebar-section">
-          <div class="sidebar-title">Guides</div>
-          <a href="/guides/">All Guides</a>
-        </div>
-        <div class="sidebar-section">
-          <div class="sidebar-title">Hardware</div>
-          <a href="/guides/connectivity-options.html">Connectivity Options</a>
-          <a href="/guides/siemens-logo-mqtt.html">Siemens Logo 8.4 MQTT</a>
-          <a href="/guides/siemens-logo-wiring.html" class="active"
-            >Wiring Digital Inputs</a
-          >
-          <a href="/guides/teltonika-rut200-digital-io.html"
-            >RUT200 Digital I/O</a
-          >
-        </div>
-        <div class="sidebar-section">
-          <div class="sidebar-title">This Guide</div>
-          <a href="#the-goal">The Goal</a>
-          <a href="#prerequisites">Prerequisites</a>
-          <a href="#logo-hardware">Logo Hardware</a>
-          <a href="#wire-diagram">Wire Diagram</a>
-          <a href="#signal-sources">Signal Sources</a>
-          <a href="#wiring-steps">Wiring Step-by-Step</a>
-          <a href="#testing">Testing the Inputs</a>
-          <a href="#safety">Safety &amp; Best Practice</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#lessons">Lessons Learned</a>
-          <a href="#next-steps">Next Steps</a>
-        </div>
-      </aside>
+      <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Practical guides <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Choose a guide</div><a href="/guides/">All guides</a></div><div class="sidebar-section"><div class="sidebar-title">Plan a first use</div><a href="/guides/staffing-uns-team.html">Team & ownership</a><a href="/guides/connectivity-options.html">Connection options</a></div><div class="sidebar-section"><div class="sidebar-title">Connect a machine</div><a href="/guides/siemens-logo-wiring.html" class="active" aria-current="page">Logo digital inputs</a><a href="/guides/siemens-logo-mqtt.html">Logo MQTT setup</a><a href="/guides/teltonika-rut200-digital-io.html">RUT200 digital I/O</a></div><div class="sidebar-section"><div class="sidebar-title">Organize & use data</div><a href="/guides/yaml-definitions.html">Factory definitions</a><a href="/guides/pipeline-functions.html">Pipeline walkthrough</a></div><div class="sidebar-section"><div class="sidebar-title">Extend the system</div><a href="/guides/flow-vs-gitops.html">Flows & functions</a><a href="/guides/digital-twin-gitops.html">Custom twin functions</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-      <main class="docs-content">
+      <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/guides/">Guides</a></div><p class="eyebrow doc-category">PRACTICAL GUIDES / UNS FRAMEWORK</p>
         <!-- HERO -->
         <div class="guide-hero">
           <div class="guide-hero-meta">
@@ -569,40 +514,24 @@
             <span class="tag">Siemens Logo 8.4</span>
             <span class="tag">~30 min</span>
           </div>
-          <h1>Wiring the Siemens Logo 8.4 — Digital Inputs</h1>
+          <h1>Siemens Logo 8.4: connect a digital input</h1>
           <p class="guide-subtitle">
             How to wire real-world signals into the Logo's digital inputs to
             detect whether a machine is running. Covers stack lights, door
             sensors, relay contacts, and proximity switches — with a complete
             wire diagram and step-by-step instructions for both electrical
             engineers and IT teams.
-          </p>
+          </p><div class="reading-context">Hardware walkthrough · The result is a tested input indicating machine state. Use the prerequisites and safety guidance below, then continue to <a href="/guides/siemens-logo-mqtt.html">MQTT setup</a> to publish it.</div>
         </div>
 
         <!-- TABLE OF CONTENTS -->
-        <div class="guide-toc">
-          <div class="guide-toc-title">Contents</div>
-          <ol>
-            <li><a href="#the-goal">The Goal</a></li>
-            <li><a href="#prerequisites">Prerequisites</a></li>
-            <li>
-              <a href="#logo-hardware">Understanding the Logo Hardware</a>
-            </li>
-            <li><a href="#wire-diagram">Wire Diagram</a></li>
-            <li><a href="#signal-sources">Common Signal Sources</a></li>
-            <li><a href="#wiring-steps">Wiring Step-by-Step</a></li>
-            <li><a href="#testing">Testing the Inputs</a></li>
-            <li><a href="#safety">Safety &amp; Best Practice</a></li>
-            <li><a href="#troubleshooting">Troubleshooting</a></li>
-            <li><a href="#lessons">Lessons Learned</a></li>
-            <li><a href="#next-steps">Next Steps</a></li>
-          </ol>
-        </div>
+        <div class="guide-toc"><div class="guide-toc-title">Contents</div><ol><li><a href="#the-goal">The Goal</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#logo-hardware">Understanding the Logo Hardware</a></li><li><a href="#wire-diagram">Wire Diagram</a></li><li><a href="#signal-sources">Common Signal Sources</a></li><li><a href="#wiring-steps">Wiring Step-by-Step</a></li><li><a href="#testing">Testing the Inputs</a></li><li><a href="#safety">Safety &amp; Best Practice</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#lessons">Lessons Learned</a></li><li><a href="#next-steps">Next Steps</a></li></ol></div>
 
         <!-- ═══════════════════════════════════════ -->
         <!-- THE GOAL -->
         <!-- ═══════════════════════════════════════ -->
-        <h2 id="the-goal">The Goal</h2>
+
+<h2 id="the-goal">The Goal</h2>
 
         <p>
           You have a Siemens Logo 8.4 PLC. You want it to report whether a
@@ -625,7 +554,7 @@
           and your process. Common approaches:
         </p>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Signal Source</th>
@@ -665,7 +594,7 @@
               <td>Hydraulic system is pressurised</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <div class="info-banner">
           <div class="info-icon">i</div>
@@ -798,7 +727,7 @@
 
         <h3>Digital Input Specifications</h3>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Parameter</th>
@@ -845,7 +774,7 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>How a Digital Input Works</h3>
 
@@ -896,7 +825,7 @@
         </p>
 
         <div class="wire-diagram">
-          <svg
+          <svg role="img" aria-label="Technical diagram"
             viewBox="0 0 900 520"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -2271,7 +2200,7 @@
           intimidating. Here's what each section means:
         </p>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Component</th>
@@ -2360,7 +2289,7 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <div class="info-banner">
           <div class="info-icon">i</div>
@@ -2887,7 +2816,7 @@
 
         <h3>Electrical Safety</h3>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Rule</th>
@@ -2929,11 +2858,11 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>Wiring Best Practice</h3>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Practice</th>
@@ -2989,7 +2918,7 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>IP Rating Considerations</h3>
 
@@ -3243,7 +3172,7 @@
         <!-- ═══════════════════════════════════════ -->
         <h2 id="next-steps">Next Steps</h2>
 
-        <table class="def-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
           <thead>
             <tr>
               <th>Step</th>
@@ -3332,7 +3261,7 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <div
           style="
@@ -3360,16 +3289,7 @@
         </div>
 
         <!-- NAV BUTTONS -->
-        <div class="docs-nav-buttons">
-          <a href="/guides/siemens-logo-mqtt.html" class="docs-nav-btn">
-            <span class="nav-label">Previous</span>
-            <span class="nav-title">Siemens Logo 8.4 → MQTT</span>
-          </a>
-          <a href="/guides/connectivity-options.html" class="docs-nav-btn next">
-            <span class="nav-label">Next</span>
-            <span class="nav-title">Connectivity Options</span>
-          </a>
-        </div>
+        <div class="next-reading"><a href="/guides/">All guides →</a><a href="/guides/siemens-logo-mqtt.html">Publish the input over MQTT →</a></div>
       </main>
     </div>
 
@@ -3411,5 +3331,6 @@
         update()
       })()
     </script>
-  </body>
+  <footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
+</body>
 </html>

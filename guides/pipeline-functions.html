@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Functions That Make Up the UNS Pipeline — Technical Guide — UNS Framework</title>
-<meta name="description" content="A complete walkthrough of the 12 functions that form the fn-uns data pipeline — from machine capture through processing, reporting, and AI analysis. For developers, IT, and manufacturing engineers."/>
+<title>Follow the fn-uns data pipeline — UNS Framework</title>
+<meta name="description" content="See how the 12 documented components capture machine signals, build production records, and make data available for reporting and analysis."/>
 <link rel="canonical" href="https://unsframework.com/guides/pipeline-functions.html" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
+<link rel="icon" href="/assets/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="UNS Pipeline Functions — Complete Walkthrough of 12 Manufacturing Functions" />
-<meta property="og:description" content="A complete walkthrough of the 12 functions that form the fn-uns data pipeline." />
+<meta property="og:title" content="Follow the fn-uns data pipeline" />
+<meta property="og:description" content="See how the 12 documented components capture machine signals, build production records, and make data available for reporting and analysis." />
 <meta property="og:url" content="https://unsframework.com/guides/pipeline-functions.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="UNS Pipeline Functions — Complete Walkthrough of 12 Manufacturing Functions" />
-<meta name="twitter:description" content="Walkthrough of all 12 serverless functions in the fn-uns manufacturing pipeline." />
+<meta name="twitter:title" content="Follow the fn-uns data pipeline" />
+<meta name="twitter:description" content="See how the 12 documented components capture machine signals, build production records, and make data available for reporting and analysis." />
 <meta name="keywords" content="UNS pipeline, manufacturing functions, data pipeline, fn-uns walkthrough" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -450,58 +450,23 @@
   .guide-hero-meta { gap: 8px; }
 }
 </style>
+<link rel="stylesheet" href="/signal.css" />
 </head>
-<body>
+<body class="signal-site docs-page">
 
-<nav>
-  <a href="/" class="logo">UNS Framework</a>
-  <div class="links">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <div class="toggle-thumb"><span class="toggle-icon-sun">☀</span><span class="toggle-icon-moon">☾</span></div>
-    </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS<span class="brand-sub">Framework</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/uns/">Why UNS</a><a href="/how-it-works/">How it works</a><a href="/guides/" aria-current="page">Guides</a><a href="/docs/">Documentation</a><a href="/start/" class="nav-start">Get started</a></nav>
   </div>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="mobile-menu">
-    <a href="/fn-uns/">fn-uns</a>
-    <a href="/framework/">Standard Docs</a>
-    <a href="/docs/">UNS Docs</a>
-    <a href="/guides/">Guides</a>
-  </div>
-</nav>
+</header>
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Guides</div>
-      <a href="/guides/">All Guides</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">This Guide</div>
-      <a href="#big-picture">The Big Picture</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#layer-capture">Layer 1: Capture</a>
-      <a href="#layer-process">Layer 2: Process</a>
-      <a href="#layer-report">Layer 3: Report</a>
-      <a href="#layer-ai">Layer 4: AI</a>
-      <a href="#end-to-end">End-to-End Flow</a>
-      <a href="#infrastructure">Infrastructure Map</a>
-      <a href="#deploy-order">Deployment Order</a>
-      <a href="#next-steps">Next Steps</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-title">Related</div>
-      <a href="/guides/digital-twin-gitops.html">Digital Twins &amp; GitOps</a>
-      <a href="/docs/components.html">Components Overview</a>
-      <a href="/docs/architecture.html">Architecture</a>
-      <a href="/docs/code-patterns.html">Code Patterns</a>
-    </div>
-  </aside>
+  <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Practical guides <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Choose a guide</div><a href="/guides/">All guides</a></div><div class="sidebar-section"><div class="sidebar-title">Plan a first use</div><a href="/guides/staffing-uns-team.html">Team & ownership</a><a href="/guides/connectivity-options.html">Connection options</a></div><div class="sidebar-section"><div class="sidebar-title">Connect a machine</div><a href="/guides/siemens-logo-wiring.html">Logo digital inputs</a><a href="/guides/siemens-logo-mqtt.html">Logo MQTT setup</a><a href="/guides/teltonika-rut200-digital-io.html">RUT200 digital I/O</a></div><div class="sidebar-section"><div class="sidebar-title">Organize & use data</div><a href="/guides/yaml-definitions.html">Factory definitions</a><a href="/guides/pipeline-functions.html" class="active" aria-current="page">Pipeline walkthrough</a></div><div class="sidebar-section"><div class="sidebar-title">Extend the system</div><a href="/guides/flow-vs-gitops.html">Flows & functions</a><a href="/guides/digital-twin-gitops.html">Custom twin functions</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
 
-  <main class="docs-content">
+  <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/guides/">Guides</a></div><p class="eyebrow doc-category">PRACTICAL GUIDES / UNS FRAMEWORK</p>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- HERO                                    -->
@@ -513,38 +478,23 @@
         <span class="tag">Software</span>
         <span class="tag">~20 min read</span>
       </div>
-      <h1>Functions That Make Up the UNS Pipeline</h1>
-      <p class="guide-subtitle">
-        A complete walkthrough of the 12 functions that form the fn-uns data pipeline — from machine data capture through processing, reporting, and AI-powered analysis. Written for developers, IT engineers, and manufacturing engineers.
-      </p>
+      <h1>Follow the fn-uns data pipeline</h1>
+      <p class="guide-subtitle">See how the 12 documented components capture machine signals, build production records, and make data available for reporting and analysis.</p><div class="reading-context">Implementation walkthrough · For the shorter explanation, see <a href="/how-it-works/">how a signal becomes an answer</a>. To run the software, use the <a href="/docs/getting-started.html">sample quick start</a>.</div>
     </div>
 
     <!-- TABLE OF CONTENTS -->
-    <div class="guide-toc">
-      <div class="guide-toc-title">Contents</div>
-      <ol>
-        <li><a href="#big-picture">The Big Picture</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#layer-capture">Layer 1: Capture</a></li>
-        <li><a href="#layer-process">Layer 2: Process</a></li>
-        <li><a href="#layer-report">Layer 3: Report</a></li>
-        <li><a href="#layer-ai">Layer 4: AI</a></li>
-        <li><a href="#end-to-end">End-to-End Data Flow</a></li>
-        <li><a href="#infrastructure">Infrastructure Map</a></li>
-        <li><a href="#deploy-order">Deployment Order</a></li>
-        <li><a href="#next-steps">Next Steps</a></li>
-      </ol>
-    </div>
+    <div class="guide-toc"><div class="guide-toc-title">Contents</div><ol><li><a href="#big-picture">The Big Picture</a></li><li><a href="#how-it-works">How It Works</a></li><li><a href="#layer-capture">Layer 1: Capture</a></li><li><a href="#layer-process">Layer 2: Process</a></li><li><a href="#layer-report">Layer 3: Report</a></li><li><a href="#layer-ai">Layer 4: AI</a></li><li><a href="#end-to-end">End-to-End Data Flow</a></li><li><a href="#infrastructure">Infrastructure Map</a></li><li><a href="#deploy-order">Deployment Order</a></li><li><a href="#next-steps">Next Steps</a></li></ol></div>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- THE BIG PICTURE                         -->
     <!-- ═══════════════════════════════════════ -->
-    <h2 id="big-picture">The Big Picture</h2>
 
-    <p>The fn-uns pipeline is made up of <strong>12 independent functions</strong> organised into 4 layers. Each function runs in its own Docker container, does one job, and communicates through shared infrastructure — never through direct calls to other functions.</p>
+<h2 id="big-picture">The Big Picture</h2>
+
+    <p>The fn-uns pipeline is made up of <strong>12 components</strong> organised into 4 layers. Each function runs in its own Docker container, does one job, and communicates through shared infrastructure — never through direct calls to other functions.</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Layer labels -->
         <text x="380" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.1em">THE UNS PIPELINE — 12 FUNCTIONS, 4 LAYERS</text>
 
@@ -747,7 +697,7 @@
     <p>The capture layer has one job: get machine data off the factory floor and into a fast, queryable cache. Two functions handle this — a simulator (or your real machines) and a topic monitor.</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 160" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Machines -->
         <rect x="16" y="20" width="140" height="120" rx="8" fill="var(--white)" stroke="var(--grey-200)" stroke-width="1.5"/>
         <text x="86" y="44" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">uns-sim</text>
@@ -910,7 +860,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>Seven functions read from the capture layer and write structured records to PostgreSQL. They run in parallel — each watching for different things in the same data.</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Source: Valkey -->
         <rect x="16" y="10" width="100" height="40" rx="6" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
         <text x="66" y="34" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">Valkey</text>
@@ -1157,7 +1107,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>uns-state tracks transitions like this — each completed state is logged with its exact duration:</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 700 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 700 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Timeline -->
         <line x1="30" y1="50" x2="670" y2="50" stroke="var(--grey-200)" stroke-width="1"/>
 
@@ -1220,7 +1170,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>Two functions consume the PostgreSQL tables and present manufacturing metrics — one as a JSON API, one as visual dashboards.</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- PostgreSQL -->
         <rect x="16" y="40" width="160" height="100" rx="8" fill="var(--white)" stroke="var(--black)" stroke-width="1.5"/>
         <text x="96" y="62" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="var(--black)" text-anchor="middle">PostgreSQL</text>
@@ -1312,7 +1262,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
 
     <h3>KPI Calculations</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>KPI</th><th>Source Table</th><th>Calculation</th><th>Who Uses It</th></tr></thead>
       <tbody>
         <tr><td>Utilisation %</td><td>uns_state</td><td>ACTIVE time / total tracked time</td><td>Production managers, shift leads</td></tr>
@@ -1323,7 +1273,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <tr><td>MTTR</td><td>uns_state</td><td>Average ALARM duration</td><td>Maintenance response</td></tr>
         <tr><td>Scrap</td><td>uns_input</td><td>Total rejected parts per machine</td><td>Quality, production</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="persona-grid">
       <div class="persona-card">
@@ -1353,7 +1303,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>The AI layer reads from <strong>everything</strong> — live data from Valkey, historical data from PostgreSQL — assembles a rich context, and sends it to an AI provider for analysis.</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Title -->
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.08em">UNS-AI — CONTEXT ASSEMBLY PIPELINE</text>
 
@@ -1461,7 +1411,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
 
     <h3>Analysis Types</h3>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Type</th><th>Purpose</th><th>Data Sources</th></tr></thead>
       <tbody>
         <tr><td><code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">anomaly</code></td><td>Detect abnormal machine behaviour</td><td>Live status, state history, baseline stats, alarms, tool data</td></tr>
@@ -1472,7 +1422,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <tr><td><code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">root-cause</code></td><td>Explain why an alarm happened</td><td>State timeline, stoppages, tool condition, sensor history, notes</td></tr>
         <tr><td><code style="font-family:var(--font-mono);font-size:12px;background:var(--grey-100);padding:1px 6px;border-radius:3px;">custom</code></td><td>User-defined prompt</td><td>Configurable — select which data sources to include</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="persona-grid">
       <div class="persona-card">
@@ -1500,7 +1450,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <p>Here's what happens when a single machine event — say, cnc-01 transitions from ACTIVE to ALARM — flows through the entire pipeline:</p>
 
     <div class="network-diagram">
-      <svg viewBox="0 0 720 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Technical diagram" viewBox="0 0 720 380" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="360" y="16" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="var(--grey-400)" text-anchor="middle" letter-spacing="0.08em">GOLDEN PATH — ONE EVENT THROUGH THE PIPELINE</text>
 
         <!-- Step 1 -->
@@ -1570,9 +1520,9 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
     <!-- ═══════════════════════════════════════ -->
     <h2 id="infrastructure">Infrastructure Map</h2>
 
-    <p>All 12 functions share 3 pieces of infrastructure. Here's exactly which function uses which:</p>
+    <p>All 12 components share 3 pieces of infrastructure. Here's exactly which function uses which:</p>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Function</th><th>MQTT Broker</th><th>Valkey Cache</th><th>PostgreSQL</th><th>External</th></tr></thead>
       <tbody>
         <tr><td><strong>uns-sim</strong></td><td>✓ publish</td><td>—</td><td>—</td><td>—</td></tr>
@@ -1588,7 +1538,7 @@ v1.0/enterprise/site1/area2/cnc-04/tool      ...
         <tr><td><strong>uns-dashboard</strong></td><td>—</td><td>—</td><td>✓ read</td><td>—</td></tr>
         <tr><td><strong>uns-ai</strong></td><td>✓ publish</td><td>✓ read</td><td>✓ read/write</td><td>AI API</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="info-banner">
       <div class="info-icon">i</div>
@@ -1664,22 +1614,22 @@ cd uns-ai && cp .env.example .env && docker compose up -d && cd ..</pre></div>
     <!-- ═══════════════════════════════════════ -->
     <h2 id="next-steps">Next Steps</h2>
 
-    <table class="def-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table">
       <thead><tr><th>Resource</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><a href="/docs/components.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Components Overview</a></td><td>Quick reference table of all 12 functions with links to individual docs</td></tr>
-        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Quick Start</a></td><td>Get the full pipeline running in under 5 minutes</td></tr>
+        <tr><td><a href="/docs/components.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Components Overview</a></td><td>Quick reference table of all 12 components with links to individual docs</td></tr>
+        <tr><td><a href="/docs/getting-started.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Quick Start</a></td><td>Run the sample capture pipeline and verify the JSON output</td></tr>
         <tr><td><a href="/docs/architecture.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Architecture</a></td><td>System architecture, infrastructure layout, and design decisions</td></tr>
         <tr><td><a href="/docs/code-patterns.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Code Patterns</a></td><td>Implementation patterns shared across all functions</td></tr>
         <tr><td><a href="/docs/manufacturing-kpis.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Manufacturing KPIs</a></td><td>Deep dive into KPI calculations and what they mean</td></tr>
         <tr><td><a href="/docs/extending.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Extending</a></td><td>How to add your own functions to the pipeline</td></tr>
         <tr><td><a href="/docs/database-schema.html" style="color:var(--black);border-bottom:1px solid var(--grey-300);">Database Schema</a></td><td>All PostgreSQL table definitions and relationships</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div style="margin-top:32px;padding:20px;background:var(--grey-50);border:1px solid var(--grey-200);border-radius:10px;">
       <p style="font-family:var(--font-mono);font-size:12px;color:var(--grey-500);margin-bottom:4px;">
-        Guide Version: 1.0 · Applies To: fn-uns pipeline (all 12 functions)
+        Guide Version: 1.0 · Applies To: fn-uns pipeline (all 12 components)
       </p>
       <p style="font-size:13px;color:var(--grey-500);margin-bottom:0;">
         Last updated March 2026.
@@ -1687,16 +1637,7 @@ cd uns-ai && cp .env.example .env && docker compose up -d && cd ..</pre></div>
     </div>
 
     <!-- NAV BUTTONS -->
-    <div class="docs-nav-buttons">
-      <a href="/guides/" class="docs-nav-btn">
-        <span class="nav-label">Back</span>
-        <span class="nav-title">All Guides</span>
-      </a>
-      <a href="/docs/components.html" class="docs-nav-btn next">
-        <span class="nav-label">Related</span>
-        <span class="nav-title">Components Overview</span>
-      </a>
-    </div>
+    <div class="next-reading"><a href="/guides/">All guides →</a><a href="/guides/yaml-definitions.html">Review the data definitions →</a></div>
 
   </main>
 </div>
@@ -1734,5 +1675,6 @@ cd uns-ai && cp .env.example .env && docker compose up -d && cd ..</pre></div>
   update();
 })();
 </script>
+<footer class="site-footer"><div class="footer-top"><div><a class="brand" href="/"><svg role="img" aria-label="Technical diagram" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V8l8 4V4l8 4v9l8-4v14Z"/><path d="M9 19v5m7-9v9m7-4v4"/></svg><span>UNS Framework</span></a><p>Open infrastructure for a connected factory.<br>Open source. Self-hosted. Yours to build on.</p></div><div class="footer-column"><span>UNDERSTAND</span><a href="/uns/">Why a Unified Namespace?</a><a href="/how-it-works/">How it works</a><a href="/slide/">The presentation ↗</a></div><div class="footer-column"><span>BUILD</span><a href="/framework/">Read the standard</a><a href="/start/">Get started</a><a href="/fn-uns/">Explore fn-uns</a></div><div class="footer-column"><span>EXPLORE</span><a href="/guides/">Practical guides</a><a href="/changelog.html">Changelog</a><a href="https://github.com/unsframework">GitHub ↗</a></div></div><div class="footer-bottom"><span>UNS FRAMEWORK / OPEN MANUFACTURING INFRASTRUCTURE</span><span>MQTT · ISA-95 · YAML</span></div></footer>
 </body>
 </html>
