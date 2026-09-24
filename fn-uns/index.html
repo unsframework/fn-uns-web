@@ -922,38 +922,6 @@
         border-top: 1px solid var(--grey-200);
       }
 
-      /* KPI GRID */
-      .kpi-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--grey-200);
-        border: 1px solid var(--grey-200);
-        border-radius: 12px;
-        overflow: hidden;
-        margin-bottom: 24px;
-      }
-      .kpi-card {
-        background: var(--white);
-        padding: 32px;
-      }
-      .kpi-val {
-        font-family: var(--font-mono);
-        font-size: 44px;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        line-height: 1;
-        margin-bottom: 6px;
-      }
-      .kpi-label {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 4px;
-      }
-      .kpi-sub {
-        font-size: 12px;
-        color: var(--grey-700);
-      }
       .api-line {
         font-family: var(--font-mono);
         font-size: 13px;
@@ -1296,9 +1264,6 @@
         .code-layout {
           grid-template-columns: 1fr;
         }
-        .kpi-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
         .compare {
           grid-template-columns: 1fr;
         }
@@ -1624,23 +1589,6 @@
           font-size: 11px;
         }
 
-        /* KPIs — 2×3 tight grid */
-        .kpi-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 1px;
-        }
-        .kpi-card {
-          padding: 20px;
-        }
-        .kpi-val {
-          font-size: 32px;
-        }
-        .kpi-label {
-          font-size: 12px;
-        }
-        .kpi-sub {
-          font-size: 10px;
-        }
         .api-line {
           font-size: 11px;
           overflow-x: auto;
@@ -2748,46 +2696,80 @@
 
     <div class="divider"></div>
 
-    <!-- HOW IT WORKS -->
-    <section class="fade-in" id="production-visibility">
+    <!-- One set of records serves several applications. -->
+    <section class="data-uses" id="production-visibility" aria-labelledby="data-uses-heading">
       <div class="container">
-        <div class="section-label">Manufacturing KPIs</div>
-        <h2>See the shift. Understand the losses.</h2>
-        <p class="lead">Use machine state history to understand running time, production records to track output, and stoppage records to investigate lost time. Agree the definitions with your operations team before using the numbers to make decisions.</p>
+        <p class="section-label">FROM SIGNAL TO RECORD</p>
+        <h2 id="data-uses-heading">Capture once. Use it across your factory.</h2>
+        <p class="lead">A machine publishes a state change. The pipeline keeps its latest value and records when the change happened. Dashboards, engineering tools, and analysis can work from the same machine identity and timestamps.</p>
+        <div class="record-uses">
+          <article>
+            <span class="record-step">01 / OPERATIONS</span>
+            <h3>Know the current state.</h3>
+            <p>A dashboard reads the latest value for CNC-01 from the cache. The timestamp tells you when that value was observed.</p>
+            <a href="/docs/uns-cache.html">Read current values →</a>
+          </article>
+          <article id="event-history">
+            <span class="record-step">02 / ENGINEERING</span>
+            <h3>Reconstruct what happened.</h3>
+            <p>Keep the original signals, state transitions, and operator entries. Follow a change back to its machine and time.</p>
+            <a href="/docs/uns-historian.html">Store the signal history →</a>
+          </article>
+          <article>
+            <span class="record-step">03 / ANALYSIS</span>
+            <h3>Assemble the relevant context.</h3>
+            <p>Select a machine and time window. Supply the relevant history and notes to the model alongside the question.</p>
+            <a href="#ai-context">Follow an example below ↓</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-val">72%</div>
-            <div class="kpi-label">Utilisation</div>
-            <div class="kpi-sub">ACTIVE time ÷ total tracked time</div>
+    <section class="ai-context-section" aria-labelledby="ai-context-heading">
+      <div class="container" id="ai-context">
+        <p class="section-label">03 / ANALYSIS</p>
+        <h2 id="ai-context-heading">Give AI the records behind the answer.</h2>
+        <p class="lead">A current state tells you what a machine is doing. History and operator notes explain the sequence around it. Here is what that context can look like for one question.</p>
+        <p class="context-example-label">Worked example · Synthetic records and an illustrative response</p>
+        <div class="context-example">
+          <div class="context-records">
+            <div class="context-panel-heading"><h3>Context supplied</h3><span>01—03</span></div>
+            <dl class="context-scope">
+              <div><dt>Machine</dt><dd>CNC-01 · Site 1 / Area 1</dd></div>
+              <div><dt>Window</dt><dd>10:00–11:00 UTC, same day</dd></div>
+            </dl>
+            <ol class="context-timeline">
+              <li id="ai-record-idle" tabindex="-1">
+                <span class="context-record-number">01</span>
+                <div><div class="context-record-meta"><time datetime="10:14:00">10:14</time><a href="/docs/uns-state.html">State history ↗</a></div><p>ACTIVE → IDLE</p><span class="context-record-detail">CNC-01 stops running.</span></div>
+              </li>
+              <li id="ai-record-note" tabindex="-1">
+                <span class="context-record-number">02</span>
+                <div><div class="context-record-meta"><time datetime="10:16:00">10:16</time><a href="/docs/uns-input.html">Operator input ↗</a></div><p>“Tool change in progress.”</p><span class="context-record-detail">An operator records a note for CNC-01.</span></div>
+              </li>
+              <li id="ai-record-active" tabindex="-1">
+                <span class="context-record-number">03</span>
+                <div><div class="context-record-meta"><time datetime="10:32:00">10:32</time><a href="/docs/uns-state.html">State history ↗</a></div><p>IDLE → ACTIVE</p><span class="context-record-detail">CNC-01 resumes running.</span></div>
+              </li>
+            </ol>
           </div>
-          <div class="kpi-card">
-            <div class="kpi-val">94%</div>
-            <div class="kpi-label">Availability</div>
-            <div class="kpi-sub">Excluding unplanned downtime only</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">48/hr</div>
-            <div class="kpi-label">Throughput</div>
-            <div class="kpi-sub">Parts per hour with target attainment</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">142m</div>
-            <div class="kpi-label">MTBF</div>
-            <div class="kpi-sub">Mean time between failures</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">8.3m</div>
-            <div class="kpi-label">MTTR</div>
-            <div class="kpi-sub">Mean time to repair</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">Pareto</div>
-            <div class="kpi-label">Stoppages</div>
-            <div class="kpi-sub">Top reasons ranked by total duration</div>
+          <div class="context-answer">
+            <p class="context-overline">THE QUESTION</p>
+            <h3>What happened on CNC&#8209;01 between 10:00 and 11:00?</h3>
+            <div class="context-response">
+              <p class="context-overline">EXAMPLE RESPONSE</p>
+              <p>CNC-01 was idle from <strong>10:14 to 10:32</strong>, a period of <strong>18 minutes</strong>. <a class="record-reference" href="#ai-record-idle" aria-label="View record 1: machine became idle">1</a> <a class="record-reference" href="#ai-record-active" aria-label="View record 3: machine resumed">3</a></p>
+              <p>At 10:16, an operator recorded <strong>“Tool change in progress.”</strong> <a class="record-reference" href="#ai-record-note" aria-label="View record 2: operator note">2</a></p>
+            </div>
+            <p class="context-answer-note">The timestamps establish the duration. The operator supplies the note. The model can bring those facts together in a readable account.</p>
           </div>
         </div>
-        <p class="example-caption">Illustrative values, not live factory results. Each metric depends on the signals, records, and time range you provide.</p><div class="next-reading"><a href="/docs/uns-dashboard.html">View the dashboard guide →</a><a href="/docs/uns-historian.html">Keep signal history →</a><a href="/docs/manufacturing-kpis.html">Understand the calculations →</a><a href="/docs/uns-ai.html">Explore optional AI analysis →</a></div>
+        <div class="context-method">
+          <div><span>IDENTITY</span><p>Use the same machine name across signals, history, and manual entries.</p></div>
+          <div><span>TIME</span><p>Select a time window and calculate durations from the stored records.</p></div>
+          <div><span>CONTEXT</span><p>Include the relevant events and notes with the question sent to the model.</p></div>
+        </div>
+        <div class="next-reading"><a href="/docs/uns-ai.html">Configure the AI component →</a><a href="/docs/first-deployment.html">Build the history pipeline →</a></div>
       </div>
     </section><section class="fade-in">
       <div class="container">

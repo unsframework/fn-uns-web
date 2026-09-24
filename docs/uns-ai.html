@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>uns-ai — AI-Powered Analysis — UNS Framework</title>
-<meta name="description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis."/>
+<title>uns-ai — Analysis with Manufacturing Context — UNS Framework</title>
+<meta name="description" content="Assembles current machine values, state history, production records, and operator input as context for an AI model. Configure the data sources and analysis type, then store the input and response for review."/>
 <link rel="canonical" href="https://unsframework.com/docs/uns-ai.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UNS Framework" />
-<meta property="og:title" content="uns-ai — AI-Powered Analysis" />
-<meta property="og:description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis." />
+<meta property="og:title" content="uns-ai — Analysis with Manufacturing Context" />
+<meta property="og:description" content="Assembles current machine values, state history, production records, and operator input as context for an AI model. Configure the data sources and analysis type, then store the input and response for review." />
 <meta property="og:url" content="https://unsframework.com/docs/uns-ai.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="uns-ai — AI-Powered Analysis" />
-<meta name="twitter:description" content="Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis." />
+<meta name="twitter:title" content="uns-ai — Analysis with Manufacturing Context" />
+<meta name="twitter:description" content="Assembles current machine values, state history, production records, and operator input as context for an AI model. Configure the data sources and analysis type, then store the input and response for review." />
 <meta name="keywords" content="manufacturing AI, anomaly detection, predictive maintenance, smart alerting, AI manufacturing" />
 <link rel="stylesheet" href="../style.css"/>
 <link rel="stylesheet" href="../docs.css"/>
@@ -33,8 +33,8 @@
 <div class="docs-layout">
   <aside class="docs-sidebar"><details class="sidebar-disclosure" open><summary>Documentation <span aria-hidden="true">＋</span></summary><div class="sidebar-content"><div class="sidebar-section"><div class="sidebar-title">Start here</div><a href="/docs/">Documentation</a><a href="/docs/getting-started.html">Run sample data</a><a href="/docs/first-deployment.html">Add history & metrics</a><a href="/docs/fnkit-basics.html">fnkit basics</a></div><div class="sidebar-section"><div class="sidebar-title">Understand the system</div><a href="/docs/architecture.html">Architecture</a><a href="/docs/components.html">All components</a><a href="/docs/manufacturing-kpis.html">Metric definitions</a></div><div class="sidebar-section"><div class="sidebar-title">Capture data</div><a href="/docs/uns-sim.html">Machine simulator</a><a href="/docs/uns-framework.html">Topic monitor</a><a href="/docs/uns-cache.html">Current values API</a><a href="/docs/uns-historian.html">Signal historian</a><a href="/docs/uns-log.html">Change snapshots</a></div><div class="sidebar-section"><div class="sidebar-title">Measure production</div><a href="/docs/uns-state.html">Machine state history</a><a href="/docs/uns-stoppage.html">Stoppage reasons</a><a href="/docs/uns-productivity.html">Production records</a><a href="/docs/uns-input.html">Operator input</a><a href="/docs/uns-kpi.html">KPI API</a></div><div class="sidebar-section"><div class="sidebar-title">Use the results</div><a href="/docs/uns-dashboard.html">Dashboards</a><a href="/docs/uns-ai.html" class="active" aria-current="page">AI analysis</a></div><div class="sidebar-section"><div class="sidebar-title">Configure & extend</div><a href="/docs/configuration.html">Configuration</a><a href="/docs/api-reference.html">API reference</a><a href="/docs/database-schema.html">Database schema</a><a href="/docs/code-patterns.html">Code patterns</a><a href="/docs/extending.html">Add a component</a></div><div class="sidebar-section"><div class="sidebar-title">Concepts & choices</div><a href="/docs/what-is-uns.html">UNS technical primer</a><a href="/docs/why-uns.html">Integration rationale</a><a href="/docs/why-faas.html">Why functions & Git?</a></div><div class="sidebar-section sidebar-ecosystem"><div class="sidebar-title">Related resources</div><a href="/start/">Choose a starting point ↗</a><a href="/framework/">The open standard ↗</a><a href="/fn-uns/">Working implementation ↗</a></div></div></details></aside>
   <main class="docs-content" id="main"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/docs/">Documentation</a></div><p class="eyebrow doc-category">IMPLEMENTATION DOCS / UNS FRAMEWORK</p>
-    <h1>uns-ai — AI-Powered Analysis</h1>
-    <p class="page-desc">Runs AI analysis on live and historical manufacturing data. Built-in analysis types for anomaly detection, shift summaries, smart alerting, predictive maintenance, production optimisation, and root cause analysis.</p><div class="reading-context">Analysis · An optional component using current values and stored history. Begin with verified data from the <a href="/docs/first-deployment.html">core pipeline</a> and review generated analysis before acting on it.</div>
+    <h1>uns-ai — Analysis with Manufacturing Context</h1>
+    <p class="page-desc">Assembles current machine values, state history, production records, and operator input as context for an AI model. Configure the data sources and analysis type, then store the input and response for review.</p><div class="reading-context">Analysis · <a href="/fn-uns/#ai-context">See a worked example of the records behind an answer</a>. This optional component uses current values and stored history. Begin with verified data from the <a href="/docs/first-deployment.html">core pipeline</a> and review generated analysis before acting on it.</div>
     <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table class="def-table"><tbody>
         <tr><td>Language</td><td>Node.js</td></tr>
         <tr><td>Type</td><td>HTTP function</td></tr>
