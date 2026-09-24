@@ -1,6 +1,6 @@
 # UNS Framework website
 
-A static website for the UNS Framework standard, fn-uns implementation, and practical guides. The design follows **Signal works**, round two, concept 01.
+A static website for the UNS Framework standard, fn-uns implementation, and practical guides. The monochrome design uses white space, black actions, restrained borders, and native system typography.
 
 ## Run locally
 

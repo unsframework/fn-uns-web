@@ -1,16 +1,17 @@
 /* Documentation uses the same materials, with a reading-focused layout. */
-.docs-layout { display: grid; grid-template-columns: 255px minmax(0, 1fr); max-width: 1560px; margin: auto; min-height: calc(100vh - var(--header-height)); }
-.docs-sidebar { position: sticky; top: var(--header-height); height: calc(100vh - var(--header-height)); overflow-y: auto; padding: 30px 24px; border-right: 1px solid var(--line); scrollbar-width: thin; scrollbar-color: var(--grey-300) transparent; }
+.docs-page { --docs-sidebar-width: 255px; }
+.docs-layout { display: grid; grid-template-columns: var(--docs-sidebar-width) minmax(0, 1fr); max-width: var(--page-width); margin: auto; min-height: calc(100vh - var(--header-height)); }
+.docs-sidebar { padding: 30px var(--page-gutter); border-right: 1px solid var(--line); }
 .sidebar-disclosure>summary { list-style: none; font: 10px/1.5 var(--font-mono); color: var(--accent); padding: 0 0 22px; border-bottom: 1px solid var(--line); margin-bottom: 26px; cursor: pointer; }
 .sidebar-disclosure>summary::-webkit-details-marker { display: none; }
 .sidebar-disclosure>summary>span { float: right; }
 .sidebar-section { margin-bottom: 25px; }
 .sidebar-title { font: 9px var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 11px; }
-.docs-sidebar a { display: block; padding: 7px 10px; margin: 0 -10px; color: var(--muted); font-size: 12px; line-height: 1.5; text-decoration: none; border-left: 1px solid transparent; }
+.docs-sidebar a { display: block; padding: 8px 10px; margin: 0 -10px; color: var(--muted); font-size: 13px; line-height: 1.5; text-decoration: none; border-left: 1px solid transparent; border-radius: 5px; }
 .docs-sidebar a:hover { color: var(--fg); background: var(--panel); }
-.docs-sidebar a.active, .docs-sidebar a[aria-current="page"] { color: var(--fg); background: #283125; border-left-color: var(--accent); }
+.docs-sidebar a.active, .docs-sidebar a[aria-current="page"] { color: var(--fg); background: var(--panel); border-left-color: var(--accent); }
 .sidebar-ecosystem { border-top: 1px solid var(--line); padding-top: 23px; margin-top: 30px; }
-.docs-content { min-width: 0; padding: 42px clamp(24px, 4.2vw, 66px) 70px; }
+.docs-content { min-width: 0; padding: 42px var(--page-gutter) 70px; }
 .breadcrumbs { display: flex; align-items: center; gap: 12px; margin-bottom: 35px; color: var(--muted); font: 10px/1.6 var(--font-mono); }
 .breadcrumbs a { text-decoration: none; }
 .doc-category { color: var(--accent); margin-bottom: 19px; font-size: 9px; }
@@ -26,7 +27,7 @@
 .docs-content li+li { margin-top: 6px; }
 .docs-content a:not([class]) { color: var(--fg); text-decoration-color: var(--grey-300); }
 .docs-content a:hover { color: var(--accent); }
-.page-outline { border: 1px solid var(--line); background: var(--panel); margin: 30px 0; }
+.page-outline { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); margin: 30px 0; }
 .page-outline summary { display: flex; justify-content: space-between; gap: 20px; padding: 16px 20px; cursor: pointer; font: 11px var(--font-mono); }
 .page-outline summary>span { color: var(--muted); font-size: 9px; }
 .page-outline>div { padding: 4px 20px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; }
@@ -36,10 +37,10 @@
 .def-table td { padding: 14px 18px; font-size: 13px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; line-height: 1.7; }
 .def-table td:first-child { color: var(--fg); font: 12px/1.7 var(--font-mono); }
 .def-table a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--grey-300); }
-.yaml-block { background: #101711; color: var(--fg); border: 1px solid var(--line); padding: 24px; font: 12px/1.9 var(--font-mono); overflow-x: auto; margin: 24px 0 32px; }
-.yaml-block .yaml-key { color: #e5eada; font-weight: 400; }
-.yaml-block .yaml-val { color: #f3ac84; }
-.yaml-block .yaml-comment { color: #9eae97; }
+.yaml-block { background: var(--panel); color: var(--fg); border: 1px solid var(--line); padding: 24px; font: 12px/1.9 var(--font-mono); overflow-x: auto; margin: 24px 0 32px; }
+.yaml-block .yaml-key { color: var(--fg); font-weight: 400; }
+.yaml-block .yaml-val { color: var(--grey-700); }
+.yaml-block .yaml-comment { color: var(--muted); }
 .yaml-block-label { font: 9px var(--font-mono); color: var(--accent); letter-spacing: .8px; text-transform: uppercase; margin: 30px 0 10px; }
 .info-banner { display: flex; align-items: start; gap: 13px; padding: 19px 22px; border: 1px solid var(--line); border-left: 2px solid var(--accent); background: var(--panel); margin: 26px 0; font-size: 13px; color: var(--muted); line-height: 1.75; }
 .info-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--ink); font: 11px var(--font-mono); flex-shrink: 0; margin-top: 2px; }
@@ -52,18 +53,19 @@
 .docs-nav-btn.next { text-align: right; }
 .topic-path { font: 12px/1.8 var(--font-mono); color: var(--muted); padding: 10px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 @media (max-width: 1000px) {
-  .docs-layout { grid-template-columns: 210px minmax(0, 1fr); }
-  .docs-sidebar { padding-inline: 20px; }
-  .docs-content { padding-inline: 28px; }
+  .docs-page { --docs-sidebar-width: 210px; }
+  .docs-sidebar { padding-inline: var(--page-gutter); }
+  .docs-content { padding-inline: var(--page-gutter); }
 }
 @media (max-width: 760px) {
+  .docs-page { --docs-sidebar-width: 0px; }
   .docs-layout { display: block; }
-  .docs-sidebar { position: static; height: auto; padding: 18px 5%; border-right: 0; border-bottom: 1px solid var(--line); background: var(--panel); }
+  .docs-sidebar { padding: 18px var(--page-gutter); border-right: 0; border-bottom: 1px solid var(--line); background: var(--panel); }
   .sidebar-disclosure>summary { border: 0; margin: 0; padding: 0; }
   .sidebar-content { padding-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .sidebar-section { margin: 0; }
   .sidebar-ecosystem { grid-column: 1/-1; }
-  .docs-content { padding: 30px 5% 50px; }
+  .docs-content { padding: 30px var(--page-gutter) 50px; }
   .docs-content h1 { font-size: clamp(33px, 7vw, 48px); }
   .docs-content .page-desc { font-size: 15px; }
   .breadcrumbs { margin-bottom: 26px; font-size: 9px; }
