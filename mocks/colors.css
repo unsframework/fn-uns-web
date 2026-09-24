@@ -1,0 +1,6 @@
+/* Preserve the original dark theme; replace only orange accents and their companion colors. */
+.primary:hover, .btn-primary:hover { background:var(--accent-hover); color:var(--ink); }
+.closing .eyebrow { color:var(--ink); }
+.closing .secondary { border-color:color-mix(in srgb, var(--accent), var(--ink) 65%); }
+.closing .primary:hover { background:var(--ink); color:var(--accent); }
+.signal-site :is(.yaml-val,.yv,.str) { color:var(--accent); }
