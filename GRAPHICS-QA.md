@@ -1,4 +1,15 @@
-# Graphics QA — 9 September 2026
+# Graphics QA
+
+## Homepage follow-up — 24 September 2026
+
+- Connected all three factory machines to explicit sockets on the namespace hub. Cable endpoints now touch the equipment faces; labels sit clear of the routes and the hub callout.
+- Replaced the lower diagram's disconnected/through-card packet routes with branches around the cards. Connected the output block, centered the stage headings, and aligned the cache/database connections.
+- Animated packets now reference the visible SVG paths directly, including in the expanded viewer. Staggered motion starts on its route rather than flashing at the SVG origin.
+- Added checks for detached endpoints, sockets outside equipment faces, and wires crossing cards or labels, at normal size and 300% zoom.
+
+Verified both homepage diagrams visually on desktop and mobile, plus the expanded factory view. The Chromium regression pass covered **61 pages, 41 diagrams, 18 slides, and four viewport widths with zero failures**; local site and JavaScript syntax checks also passed.
+
+## Site-wide pass — 9 September 2026
 
 Scope: the 61 public pages, their 41 technical SVG diagrams, and all 18 presentation slides. Archived design studies in `mocks/` and `proposals/` are outside this pass.
 

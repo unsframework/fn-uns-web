@@ -56,6 +56,55 @@ async page => {
     }
     return issues;
   });
+  // Endpoint attachment is independent of label/box bounds: a diagram can pass
+  // those checks while wires float beside a machine or packets cross a card.
+  const connections = svg => svg.evaluate(el => {
+    const issues = [];
+    const localPoint = (point, from, to) => new DOMPoint(point.x, point.y)
+      .matrixTransform(to.getScreenCTM().inverse().multiply(from.getScreenCTM()));
+    const cards = [...el.querySelectorAll('rect[data-node]')];
+    const texts = [...el.querySelectorAll('text')].map(node => ({ node, box: node.getBBox() }));
+    for (const path of el.querySelectorAll('path[data-from][data-to]')) {
+      const length = path.getTotalLength();
+      for (const [attribute, distance] of [['data-from', 0], ['data-to', length]]) {
+        const target = el.querySelector(path.getAttribute(attribute));
+        if (!target) { issues.push(`${path.id}: missing ${attribute} target`); continue; }
+        const p = localPoint(path.getPointAtLength(distance), path, target);
+        if (target.tagName === 'circle') {
+          if (Math.hypot(p.x - target.cx.baseVal.value, p.y - target.cy.baseVal.value) > .5)
+            issues.push(`${path.id}: disconnected socket`);
+        } else {
+          const b = target.getBBox();
+          const onEdge = p.x >= b.x - .5 && p.x <= b.x + b.width + .5 && p.y >= b.y - .5 && p.y <= b.y + b.height + .5 &&
+            Math.min(Math.abs(p.x - b.x), Math.abs(p.x - b.x - b.width), Math.abs(p.y - b.y), Math.abs(p.y - b.y - b.height)) <= .5;
+          if (!onEdge) issues.push(`${path.id}: disconnected card`);
+        }
+      }
+      for (let distance = 1; distance < length; distance += 2) {
+        const point = path.getPointAtLength(distance);
+        for (const card of cards) {
+          const p = localPoint(point, path, card), b = card.getBBox();
+          if (p.x > b.x + .5 && p.x < b.x + b.width - .5 && p.y > b.y + .5 && p.y < b.y + b.height - .5)
+            issues.push(`${path.id}: crosses ${card.id}`);
+        }
+        for (const { node, box: b } of texts) {
+          const p = localPoint(point, path, node);
+          if (p.x > b.x - 1 && p.x < b.x + b.width + 1 && p.y > b.y - 1 && p.y < b.y + b.height + 1)
+            issues.push(`${path.id}: crosses label ${node.textContent.trim()}`);
+        }
+      }
+    }
+    for (const port of el.querySelectorAll('circle[data-owner]')) {
+      const owner = el.querySelector(port.getAttribute('data-owner'));
+      const faces = owner?.querySelectorAll('.face-front,.face-side,.face-top,.hub-side,.hub-top') || [];
+      const point = { x: port.cx.baseVal.value, y: port.cy.baseVal.value };
+      if (![...faces].some(face => {
+        const p = localPoint(point, port, face);
+        return face.isPointInFill(p) || face.isPointInStroke(p);
+      })) issues.push(`${port.id}: socket floats outside its machine or hub`);
+    }
+    return [...new Set(issues)];
+  });
   for (const route of routes) {
     await page.setViewportSize({ width: 1440, height: 1000 });
     const response = await page.goto(origin + route);
@@ -92,6 +141,7 @@ async page => {
       await settle(svg);
       for (const issue of await labels(svg)) failures.push(`${name}: ${issue}`);
       for (const issue of await linkedPaths(svg)) failures.push(`${name}: ${issue}`);
+      for (const issue of await connections(svg)) failures.push(`${name}: ${issue}`);
       await page.setViewportSize({ width: 390, height: 844 });
       const trigger = svg.locator('..').getByRole('button');
       await trigger.click();
@@ -105,6 +155,7 @@ async page => {
       await settle(clone);
       for (const issue of await labels(clone)) failures.push(`${name} expanded: ${issue}`);
       for (const issue of await linkedPaths(clone)) failures.push(`${name} expanded: ${issue}`);
+      for (const issue of await connections(clone)) failures.push(`${name} expanded: ${issue}`);
       check(await dialog.locator('.diagram-canvas').evaluate(el => el.clientHeight > 100 && el.getBoundingClientRect().bottom <= el.closest('dialog').getBoundingClientRect().bottom), `${name}: clipped zoom canvas`);
       await dialog.getByRole('button', { name: 'Reset diagram zoom' }).click();
       await page.keyboard.press('Escape');

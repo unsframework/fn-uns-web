@@ -74,6 +74,7 @@
 .wire { fill: none; stroke: var(--wire); stroke-width: 1; }
 .accent-fill, .signal-points { fill: var(--accent); }
 .signal-path { stroke: var(--accent); stroke-width: 2; fill: none; }
+.connection-port { fill: var(--accent); stroke: var(--bg); stroke-width: 1; }
 .hub-side { fill: var(--side); stroke: var(--accent); }
 .hub-top { fill: var(--accent); stroke: var(--accent); }
 .hub-mark { fill: none; stroke: var(--ink); stroke-width: 2; }
